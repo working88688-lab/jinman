@@ -1,0 +1,11 @@
+mixin TagList(tag ={})
+    div(class='mb-2 mt-3')
+        - var items = ['都市', '玄幻', '日本AV','都市', '玄幻', '日本AV','都市', '玄幻', '日本AV','都市', '玄幻', '日本AV','都市', '玄幻', '日本AV','都市', '玄幻', '日本AV','都市', '玄幻', '日本AV','都市', '玄幻', '日本AV','都市', '玄幻', '日本AV','都市', '玄幻', '日本AV','都市', '玄幻', '日本AV','都市', '玄幻', '日本AV','都市', '玄幻', '日本AV','都市', '玄幻', '日本AV']
+            ul(class='flex overflow-auto whitespace-nowrap')
+                li(class='mr-1.5 mb-1.5 flex')
+                    a(class='flex-1 py-1.5 px-3 border border-solid border-base4 rounded-large' href=tag.href)= "全部" + tag.title
+                li(class='mr-1.5 mb-1.5 flex')
+                    a(class='flex-1 py-1.5 px-3 border border-solid border-base4 rounded-large' href=tag.href) 排行榜
+                each item in items
+                    li(class='mr-1.5 mb-1.5 flex')
+                        a(class='flex-1 py-1.5 px-3 border border-solid border-base4 rounded-large' href=tag.href)= item

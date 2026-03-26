@@ -1,0 +1,22 @@
+:root {
+    --dx-drawer-width: 100vw;
+}
+
+.dx-drawer {
+    width: var(--dx-drawer-width);
+    max-width: 430px;
+    position: fixed;
+    top: 60px;
+    left: 0;
+    bottom: 0;
+    transform: translateX(-100%);
+    transition: all .3s cubic-bezier(0, 0, .2, 1);
+    will-change: transform;
+    z-index: var(--dx-drawer-index);
+
+    background: linear-gradient(to top, #e2e5ea, #F7F8FA);
+}
+
+.dx-drawer.dx-drawer--open {
+    transform: translateX(0px)
+}

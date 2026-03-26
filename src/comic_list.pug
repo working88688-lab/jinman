@@ -1,0 +1,39 @@
+
+extends includes/layout.pug
+
+
+include includes/mixin/dx-filter.pug
+
+block css
+
+
+
+block header
+    +Header({
+        active: 'comic',
+        showHeader: true,
+        placeholder: '搜索禁漫作品',
+        search_type: 'comic_list'
+    })
+
+block nav
+    +Nav
+
+
+block content
+    +Breadcrumbs([{  title: '禁漫漫画', isLink: true, href: "comic.html" }, { isLink: false }, {  title: '全部漫画',isLink: true }])
+    
+    +Filter
+
+    div(class='index-content')
+        
+        ul(class='dx-novel-list mt-3 gap-2.5 md:gap-4')
+            each val in [...videos, ...videos]
+                li
+                    +Comic(val)
+        +SimplePager({ page: 'comic_list.html'})
+     
+
+      
+block footer-scripts
+    script(data-main='/static/frontend/js/list_main.js' src="/static/frontend/js/lib/require.js")

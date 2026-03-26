@@ -1,0 +1,12 @@
+mixin FixedMenu()
+  div(class='fixed-menu grid grid-cols-1 gap-2 md:gap-3')
+    div(class='fixed-menu-items grid grid-cols-1 gap-2 md:gap-3')
+      button(class='fixed-menu-item dx-backtop' data-backtop, title='返回顶部'  type='button')
+        svg(class="dx-backtop--trigger")
+          use(href='/static/frontend/icons/icons.svg#backtotop')
+      a(rel="nofollow" class='fixed-menu-item group text-white flex-center' href='./records.html' alt="浏览记录" title='浏览记录')
+        svg
+          use(href='/static/frontend/icons/icons.svg#records')
+    button(class='fixed-menu-item fixed-menu-more' title='更多菜单'  type='button')
+      svg
+        use(href='/static/frontend/icons/icons.svg#more')

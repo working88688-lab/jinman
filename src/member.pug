@@ -1,0 +1,89 @@
+extends includes/layout.pug
+
+
+block css
+    link(rel="stylesheet" href="/static/frontend/css/page.css")
+block header
+    +Header({
+        active: 'home'
+    })
+
+block nav
+    +Nav
+
+
+block content
+
+    div(class='max-w-[720px] m-auto')
+        div(class='dx-fix-margin')
+            div(class='user-box flex text-white items-center p-3 relative')
+                div(class='rounded-full w-[60px] h-[60px] overflow-hidden')
+                    img(class='user_avatar' src="/static/frontend/images/default.jpeg" alt="")
+                div(class='ml-4')
+                    div(class='mb-1 font-semibold user_name') 
+                    div(class='text-sm user_id') 
+
+
+        div(class='grid grid-cols-2 gap-3 mt-3')
+            a(class='bg-white flex items-center rounded justify-between px-4 py-8' href='vip.html')
+                div(class='flex items-center')
+                    svg(class='w-5 h-5 mr-2')
+                        use(href='/static/frontend/icons/icons.svg#buy_vip')
+                    span(class='font-bold') 购买VIP
+
+                svg(class='w-3 h-3')
+                    use(href='/static/frontend/icons/icons.svg#arrow_right')
+            a(class='bg-white flex items-center rounded justify-between px-4 py-8' href='coin.html')
+                div(class='flex items-center')
+                    svg(class='w-5 h-5 mr-2')
+                        use(href='/static/frontend/icons/icons.svg#buy_coin')
+                    span(class='font-bold') 充值U币
+
+                svg(class='w-3 h-3')
+                    use(href='/static/frontend/icons/icons.svg#arrow_right')
+
+        div(class='mt-3 bg-white grid grid-cols-4 gap-4 rounded text-base2 p-5')
+            a(class='flex-col-center' href='profiles.html')
+                div(class='w-[48px] h-[48px] mb-1 rounded-full flex-col-center bg-base7 p-1.5')
+                    svg(class='w-5 h-5')
+                        use(href='/static/frontend/icons/icons.svg#setting2')
+                | 基本资料
+            a(class='flex-col-center' href='favorite.html')
+                div(class='w-[48px] h-[48px] mb-1 rounded-full flex-col-center bg-base7 p-1.5')
+                    svg(class='w-5 h-5')
+                        use(href='/static/frontend/icons/icons.svg#collect_star')
+                | 我的收藏
+            a(class='flex-col-center' href='invite.html')
+                div(class='w-[48px] h-[48px] mb-1 rounded-full flex-col-center bg-base7 p-1.5')
+                    svg(class='w-5 h-5')
+                        use(href='/static/frontend/icons/icons.svg#invite')
+                | 邀请好友
+            a(class='flex-col-center' href='backup.html')
+                div(class='w-[48px] h-[48px] mb-1 rounded-full flex-col-center bg-base7 p-1.5')
+                    svg(class='w-5 h-5')
+                        use(href='/static/frontend/icons/icons.svg#way_home')
+                | 回家的路
+            a(class='flex-col-center' href='contact.html')
+                div(class='w-[48px] h-[48px] mb-1 rounded-full flex-col-center bg-base7 p-1.5')
+                    svg(class='w-5 h-5')
+                        use(href='/static/frontend/icons/icons.svg#contact_us_2')
+                | 联系我们
+            a(class='flex-col-center' href='sign.html')
+                div(class='w-[48px] h-[48px] mb-1 rounded-full flex-col-center bg-base7 p-1.5')
+                    <svg  viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg">
+                        <g fill="none" fill-rule="evenodd">
+                            <circle fill="#F6F6F6" cx="42" cy="42" r="42"/>
+                            <path d="M25 25h34v34H25z"/>
+                            <path d="M55.477 31.391H54c.464-.73.761-1.474.872-2.2.19-1.245-.181-2.366-1.045-3.157-.731-.669-1.675-1.023-2.732-1.023-2.553 0-5.158 1.975-6.483 3.152-.754.67-1.723 1.598-2.543 2.601-.82-1.007-1.795-1.94-2.551-2.612C38.193 26.975 35.589 25 33.035 25c-1.056 0-2 .354-2.731 1.023-.864.79-1.235 1.912-1.045 3.156.111.73.41 1.478.879 2.212h-1.615c-1.943 0-3.523 1.633-3.523 3.64v2.712c0 1.694 1.127 3.122 2.648 3.526a3.36 3.36 0 0 0-.168 1.043v13.342c0 .927.387 1.82 1.062 2.45A3.31 3.31 0 0 0 30.81 59h22.458a3.31 3.31 0 0 0 2.268-.895 3.364 3.364 0 0 0 1.061-2.45V42.311c0-.364-.06-.723-.173-1.063C57.908 40.82 59 39.41 59 37.743V35.03c0-2.007-1.58-3.64-3.523-3.64zm-4.38-3.882c.47 0 .84.13 1.13.395.163.149.339.385.26.897-.112.737-.697 1.692-1.688 2.59h-6.01c.39-.405.85-.848 1.396-1.333 1.798-1.596 3.634-2.549 4.911-2.549zm-19.453 1.28c-.079-.511.098-.747.26-.896.29-.266.66-.395 1.131-.395 1.277 0 3.113.953 4.911 2.549.55.489 1.015.936 1.407 1.344h-6.008c-.999-.9-1.588-1.86-1.701-2.601zm9.22 27.781H30.81c-.542 0-.98-.41-.98-.916V42.312c0-.506.438-.916.98-.916h10.054V56.57zm0-17.686H28.523c-.612 0-1.109-.51-1.109-1.142v-2.711c0-.63.497-1.142 1.109-1.142h12.34v4.995zm13.385 16.77c0 .506-.44.916-.981.916H43.227V41.396h10.041c.542 0 .98.41.98.916v13.342zm2.336-17.911c0 .63-.496 1.142-1.108 1.142h-12.25v-4.996h12.25c.612 0 1.108.511 1.108 1.142v2.712z" fill="#324856" fill-rule="nonzero"/>
+                        </g>
+                    </svg>
+
+                | 积分签到
+
+        button(class='btn btn-primary btn-block btn-logout mt-3' type='button') 退出登录
+
+
+
+
+block footer-scripts
+    script(data-main='/static/frontend/js/member_main.js' src="/static/frontend/js/lib/require.js")

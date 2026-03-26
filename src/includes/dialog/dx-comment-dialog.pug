@@ -1,0 +1,22 @@
+include ../mixin/dx-common.pug
+//  评价弹框
+div(id='comment_modal' class='modal fade dx-modal')
+    div(class='modal-dialog')
+        .modal-content
+            div(class='modal-header flex items-start')
+                div(class='text-black font-bold')
+                    span 评分：
+                    span(class='title')
+                button(class='close text-subtitle ml-auto' type='button' data-dismiss='modal')
+                    svg(class='w-6 h-6')
+                        use(href='/static/frontend/icons/icons.svg#menu_close')
+        div(class='modal-body')
+            form
+                +Rate
+                div(class='dx-textarea mt-3')
+                    textarea(class='flex-1' rows="5" maxlength='150' placeholder="点评该作品")
+                    div(class='flex justify-end mt-0.5 text-base6')
+                        span(class='current') 0
+                        span /
+                        span(class='limit')
+                button(class='btn-primary btn mt-4 btn-block btn-comment-submit' type='button') 提交

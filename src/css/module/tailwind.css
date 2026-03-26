@@ -1,0 +1,81 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@layer components {
+    .dx-btn-link {
+        @apply flex-center py-1 px-2 md:px-4 md:py-2 md:bg-base2 text-subtitle;
+
+        &.round {
+            @apply rounded-large
+        }
+    }
+}
+
+@layer base {
+    .dx-dot {
+        width: 4px;
+        height: 4px;
+        background-color: #fff;
+        border-radius: 50%;
+    }
+
+    .dx-title {
+        @apply text-default md:text-xl
+    }
+
+    .dx-big-title {
+        @apply text-xl md:text-5xl
+    }
+
+    .dx-text {
+        @apply text-sm md:text-default
+    }
+
+    .dx-container {
+        @apply mx-auto lg:w-[1080px] px-3 xl:px-0
+    }
+
+    .dx-subtitle {
+        @apply opacity-40
+    }
+
+    .dx-modal {
+        .modal-dialog {
+
+            @apply md:w-[400px]
+        }
+    }
+
+    .dx-ad-item {
+        padding-top: 56%;
+        position: relative;
+    }
+
+    .dx-textarea {
+        @apply p-3 border rounded-sm border-solid border-border flex flex-col;
+
+        textarea {
+            @apply outline-0
+        }
+    }
+
+    .dx-video-list {
+        @apply grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4
+    }
+
+    .dx-novel-list {
+        @apply grid grid-cols-3 md:grid-cols-4 lg:grid-cols-6
+    }
+
+    .dx-comic-list {
+        @apply grid grid-cols-3 md:grid-cols-4 lg:grid-cols-6
+    }
+
+    .dx-fix-margin {
+        @apply -mx-3
+    }
+
+
+}

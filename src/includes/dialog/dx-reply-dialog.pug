@@ -1,0 +1,20 @@
+
+//  回复评论
+div(id='reply_modal' class='modal fade dx-modal')
+    div(class='modal-dialog')
+        .modal-content
+            div(class='modal-header flex items-center')
+                div(class='text-black font-bold')
+                    span 回复：
+                    span(class='reply-to')
+                button(class='close text-subtitle ml-auto' type='button' data-dismiss='modal')
+                    svg(class='w-6 h-6')
+                        use(href='/static/frontend/icons/icons.svg#menu_close')
+        div(class='modal-body')
+            div(class='dx-textarea')
+                textarea(class='flex-1' rows="5" maxlength='500' placeholder="请输入回复内容")
+                div(class='flex justify-end mt-0.5 text-base6')
+                    span(class='current') 0
+                    span /
+                    span(class='limit')
+            button(class='btn-primary btn mt-4 btn-block btn-reply' type='button') 提交评论

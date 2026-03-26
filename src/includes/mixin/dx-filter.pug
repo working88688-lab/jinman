@@ -1,0 +1,42 @@
+mixin Filter(item={})
+    div(class='dx-filter is-expand mt-3')
+        div(class='dx-filter-content')
+            - var items = ['都市', '校园', '乱伦', '玄幻','都市', '校园', '乱伦', '玄幻','都市', '校园', '乱伦', '玄幻','都市', '校园', '乱伦', '玄幻','都市', '校园', '乱伦', '玄幻']
+            div(class='dx-filter-item')
+                button(type='button' class='px-1 h-[26px] flex-shrink-0 mr-3 md:mr-5 rounded py-0.5 border border-solid border-base2') 全部题材
+                ul(class='flex flex-wrap')
+                    each item in items
+                        li(class="mr-3 last:mr-0")
+                            a(href="#")= item
+            div(class='dx-filter-item')
+                button(type='button' class='px-1 h-[26px] flex-shrink-0 mr-3 md:mr-5 rounded py-0.5 border border-solid border-base2') 全部题材
+                ul(class='flex flex-wrap')
+                    each item in items
+                        li(class="mr-3 last:mr-0")
+                            a(href="#")= item
+
+        div(class='flex-center dx-filter-expand')
+            button(type='button' class='dx-btn-filter') 收起
+
+        div(class='flex items-center mt-3 justify-between')
+            button(class='flex items-center dx-btn-filter' type='button')
+                svg(class='w-4 h-4')
+                    use(href='/static/frontend/icons/icons.svg#filter')
+                span(class='ml-0.5') 筛选
+                span(class='dx-filter-total') （20）
+            
+            div(class='flex items-center')
+                a(class='flex items-center mr-3' href='#')
+                    | 上架时间
+                    svg(class='w-4 h-4')
+                        use(href='/static/frontend/icons/icons.svg#down')
+
+                a(class='flex items-center mr-3' href='#')
+                    | 观看量
+                    svg(class='w-4 h-4 rotate-180')
+                        use(href='/static/frontend/icons/icons.svg#down')
+                
+                a(class='flex items-center' href='#')
+                    | 收藏量
+                    svg(class='w-4 h-4 rotate-180')
+                        use(href='/static/frontend/icons/icons.svg#down')

@@ -1,0 +1,14 @@
+mixin Breadcrumbs(items = [])
+    ul(class='dx-breadcrumbs flex whitespace-nowrap items-center mt-2 md:mt-3 dx-text')
+        li
+            a(href='/') 首页
+        li(class='mx-1.5')
+            svg(class='w-4 h-4')
+                use(href='/static/frontend/icons/icons.svg#crumb_split')
+        each item, index in items
+            if item.isLink
+                 a(class='' + (index === items.length - 1 ? 'text-base3 max-w-[120px] md:max-w-[300px] truncate' : 'text-base2') href=item.href)= item.title
+            else
+                li(class='mx-1.5')
+                    svg(class='w-4 h-4')
+                        use(href='/static/frontend/icons/icons.svg#crumb_split')

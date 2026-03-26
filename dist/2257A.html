@@ -1,0 +1,409 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="renderer" content="webkit" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="referrer" content="same-origin" />
+    <meta content="yes" name="apple-touch-fullscreen" />
+    <meta content="telephone=yes" name="format-detection" />
+    <meta name="robots" content="index,follow" />
+    <meta content="black" name="apple-mobile-web-app-status-bar-style" />
+    <meta
+      name="keywords"
+      content="禁漫天堂是内容最丰富、体验最好的 - 成人网站. 每天为您提供最全的色情内容, 无论是成人小说, 成人视频, 18禁漫画, 色情有声小说, 还是全网第一的性爱社区，我们不断增加特色内容，确保每个人都能找到性爱的乐趣。"
+    />
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no" />
+    <meta
+      name="description"
+      content="禁漫天堂是内容最丰富、体验最好的 - 成人网站. 每天为您提供最全的色情内容, 无论是成人小说, 成人视频, 18禁漫画, 色情有声小说, 还是全网第一的性爱社区，我们不断增加特色内容，确保每个人都能找到性爱的乐趣。"
+    />
+    <title>禁漫天堂,色情,小说,视频, 成人,网站 | 18mh.net</title>
+    <link rel="icon" type="image/x-icon" href="/static/frontend/images/favicon.ico" />
+    <link rel="stylesheet" href="/static/frontend/css/lib/zui.css?v=v1.0.0" />
+    <link rel="stylesheet" href="/static/frontend/css/common.css?v=v1.0.0" />
+    <link rel="stylesheet" href="/static/frontend/css/page.css" />
+    <script src="/static/frontend/js/setup.js"></script>
+  </head>
+  <body>
+    <!-- header-->
+    <header class="text-xl w-full duration-300 transition-all" id="app-header">
+      <div class="header fixed w-full left-0 top-0 bg-white">
+        <div class="dx-container relative">
+          <!-- mobile搜索框-->
+          <div class="app-header relative flex items-center w-full">
+            <button class="md:hidden btn-menu-collapse mr-3" title="打开左侧菜单栏" data-class="dx-drawer--open">
+              <svg class="w-6 h-6">
+                <use class="open" href="/static/frontend/icons/icons.svg#menu"></use>
+                <use class="close" href="/static/frontend/icons/icons.svg#menu_close"></use>
+              </svg>
+            </button>
+            <!--  logo-->
+            <div class="flex-shrink-0 md:col-span-1 items-center flex justify-center md:justify-start">
+              <a class="items-center flex justify-center md:justify-start" href="/">
+                <img
+                  class="app-logo w-[60px] h-[23px] md:w-[120px] md:h-[45px]"
+                  src="/static/frontend/images/logo.png"
+                  title="logo"
+                  alt="logo"
+                />
+              </a>
+            </div>
+            <!--  pc搜索框 -->
+            <!-- mobile 搜索icon-->
+            <div class="flex-shrink-0 items-center flex ml-auto justify-end">
+              <button class="md:hide btn-open-search" type="button" title="search">
+                <svg class="w-7 h-7 text-font1">
+                  <use href="/static/frontend/icons/icons.svg#search"></use>
+                </svg>
+              </button>
+              <button class="btn-login md:hidden" type="button" data-dismiss="popover" data-type="login" title="登录">
+                <svg class="w-6 h-6 md:w-8 md:h-8 text-font1">
+                  <use href="/static/frontend/icons/icons.svg#user_icon"></use>
+                </svg>
+              </button>
+              <div class="popover-container mt-1 relative hidden md:flex items-center text-default text-black">
+                <button class="btn-login py-2" data-dismiss="popover" data-type="register" type="button" title="登录">
+                  注册
+                </button>
+                <span class="mx-3">|</span>
+                <button class="btn-login py-2" data-dismiss="popover" data-type="login" type="button" title="登录">
+                  登录
+                </button>
+              </div>
+            </div>
+          </div>
+          <nav class="dx-hairline--bottom hide md:block" id="app-nav">
+            <ul class="flex justify-between dx-container">
+              <li class="flex mr-6"><a class="app-nav-item flex-1 py-1 text-center" href="/">首页</a></li>
+              <li class="flex mr-6">
+                <a class="app-nav-item flex-1 py-1 text-center" href="/novel_list.html">小说</a>
+              </li>
+              <li class="flex mr-6">
+                <a class="app-nav-item flex-1 py-1 text-center" href="/video_list.html">视频</a>
+              </li>
+              <li class="flex mr-6">
+                <a class="app-nav-item flex-1 py-1 text-center" href="/comic_list.html">禁漫</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </header>
+    <!-- nav-->
+    <aside class="dx-drawer p-3">
+      <nav class="flex flex-col h-full overflow-hidden">
+        <div class="flex-1 overflow-y-auto overflow-x-hidden">
+          <div class="mb-2">
+            <a class="flex items-center mb-1" href="novel.html">
+              <svg class="w-4 h-4 mr-1">
+                <use href="/static/frontend/icons/icons.svg#novel_menu"></use>
+              </svg>
+              <span>小说</span>
+            </a>
+            <ul class="flex flex-wrap">
+              <li class="mr-1.5 mb-1.5"><a href="novel.html">全部小说</a></li>
+              <li class="mr-1.5 mb-1.5"><a href="novel.html">排行榜</a></li>
+              <li class="mr-1.5 mb-1.5"><a>都市</a></li>
+              <li class="mr-1.5 mb-1.5"><a>玄幻</a></li>
+              <li class="mr-1.5 mb-1.5"><a>日本AV</a></li>
+              <li class="mr-1.5 mb-1.5"><a>都市</a></li>
+              <li class="mr-1.5 mb-1.5"><a>玄幻</a></li>
+              <li class="mr-1.5 mb-1.5"><a>日本AV</a></li>
+              <li class="mr-1.5 mb-1.5"><a>都市</a></li>
+              <li class="mr-1.5 mb-1.5"><a>玄幻</a></li>
+              <li class="mr-1.5 mb-1.5"><a>日本AV</a></li>
+              <li class="mr-1.5 mb-1.5"><a>都市</a></li>
+              <li class="mr-1.5 mb-1.5"><a>玄幻</a></li>
+              <li class="mr-1.5 mb-1.5"><a>日本AV</a></li>
+              <li class="mr-1.5 mb-1.5"><a>都市</a></li>
+              <li class="mr-1.5 mb-1.5"><a>玄幻</a></li>
+              <li class="mr-1.5 mb-1.5"><a>日本AV</a></li>
+              <li class="mr-1.5 mb-1.5"><a>都市</a></li>
+              <li class="mr-1.5 mb-1.5"><a>玄幻</a></li>
+              <li class="mr-1.5 mb-1.5"><a>日本AV</a></li>
+              <li class="mr-1.5 mb-1.5"><a>都市</a></li>
+              <li class="mr-1.5 mb-1.5"><a>玄幻</a></li>
+              <li class="mr-1.5 mb-1.5"><a>日本AV</a></li>
+            </ul>
+          </div>
+          <div class="mb-2">
+            <a class="flex items-center mb-1" href="video.html">
+              <svg class="w-4 h-4 mr-1">
+                <use href="/static/frontend/icons/icons.svg#video_menu"></use>
+              </svg>
+              <span>视频</span>
+            </a>
+            <ul class="flex flex-wrap">
+              <li class="mr-1.5 mb-1.5"><a href="video.html">全部视频</a></li>
+              <li class="mr-1.5 mb-1.5"><a href="video.html">排行榜</a></li>
+              <li class="mr-1.5 mb-1.5"><a>都市</a></li>
+              <li class="mr-1.5 mb-1.5"><a>玄幻</a></li>
+              <li class="mr-1.5 mb-1.5"><a>日本AV</a></li>
+              <li class="mr-1.5 mb-1.5"><a>都市</a></li>
+              <li class="mr-1.5 mb-1.5"><a>玄幻</a></li>
+              <li class="mr-1.5 mb-1.5"><a>日本AV</a></li>
+              <li class="mr-1.5 mb-1.5"><a>都市</a></li>
+              <li class="mr-1.5 mb-1.5"><a>玄幻</a></li>
+              <li class="mr-1.5 mb-1.5"><a>日本AV</a></li>
+              <li class="mr-1.5 mb-1.5"><a>都市</a></li>
+              <li class="mr-1.5 mb-1.5"><a>玄幻</a></li>
+              <li class="mr-1.5 mb-1.5"><a>日本AV</a></li>
+              <li class="mr-1.5 mb-1.5"><a>都市</a></li>
+              <li class="mr-1.5 mb-1.5"><a>玄幻</a></li>
+              <li class="mr-1.5 mb-1.5"><a>日本AV</a></li>
+              <li class="mr-1.5 mb-1.5"><a>都市</a></li>
+              <li class="mr-1.5 mb-1.5"><a>玄幻</a></li>
+              <li class="mr-1.5 mb-1.5"><a>日本AV</a></li>
+              <li class="mr-1.5 mb-1.5"><a>都市</a></li>
+              <li class="mr-1.5 mb-1.5"><a>玄幻</a></li>
+              <li class="mr-1.5 mb-1.5"><a>日本AV</a></li>
+            </ul>
+          </div>
+          <div class="mb-2">
+            <a class="flex items-center mb-1" href="comic.html">
+              <svg class="w-4 h-4 mr-1">
+                <use href="/static/frontend/icons/icons.svg#comic_menu"></use>
+              </svg>
+              <span>禁漫</span>
+            </a>
+            <ul class="flex flex-wrap">
+              <li class="mr-1.5 mb-1.5"><a href="comic.html">全部禁漫</a></li>
+              <li class="mr-1.5 mb-1.5"><a href="comic.html">排行榜</a></li>
+              <li class="mr-1.5 mb-1.5"><a>都市</a></li>
+              <li class="mr-1.5 mb-1.5"><a>玄幻</a></li>
+              <li class="mr-1.5 mb-1.5"><a>日本AV</a></li>
+              <li class="mr-1.5 mb-1.5"><a>都市</a></li>
+              <li class="mr-1.5 mb-1.5"><a>玄幻</a></li>
+              <li class="mr-1.5 mb-1.5"><a>日本AV</a></li>
+              <li class="mr-1.5 mb-1.5"><a>都市</a></li>
+              <li class="mr-1.5 mb-1.5"><a>玄幻</a></li>
+              <li class="mr-1.5 mb-1.5"><a>日本AV</a></li>
+              <li class="mr-1.5 mb-1.5"><a>都市</a></li>
+              <li class="mr-1.5 mb-1.5"><a>玄幻</a></li>
+              <li class="mr-1.5 mb-1.5"><a>日本AV</a></li>
+              <li class="mr-1.5 mb-1.5"><a>都市</a></li>
+              <li class="mr-1.5 mb-1.5"><a>玄幻</a></li>
+              <li class="mr-1.5 mb-1.5"><a>日本AV</a></li>
+              <li class="mr-1.5 mb-1.5"><a>都市</a></li>
+              <li class="mr-1.5 mb-1.5"><a>玄幻</a></li>
+              <li class="mr-1.5 mb-1.5"><a>日本AV</a></li>
+              <li class="mr-1.5 mb-1.5"><a>都市</a></li>
+              <li class="mr-1.5 mb-1.5"><a>玄幻</a></li>
+              <li class="mr-1.5 mb-1.5"><a>日本AV</a></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </aside>
+    <!-- main-content-->
+    <main class="dx-container app-content">
+      <section>
+        <div class="flex items-center justify-center relative py-3">
+          <svg class="w-4 h-4 cursor-pointer absolute -translate-y-1/2 left-0 top-1/2" onclick="_back()">
+            <use href="/static/frontend/icons/icons.svg#arrow_left"></use>
+          </svg>
+          <span class="font-bold dx-title">18 U.S.C. §2257 Record Keeping Requirements Compliance Statement</span>
+        </div>
+        <div class="bg-white rounded py-5 px-3">
+          <div class="max-w-[720px] m-auto">
+            The operator of 18mh is not the producer (whether primary or secondary as defined in 18 U.S.C. § 2257) of
+            any of the content found on 18mh. The operator’s activities, with respect to such content, are limited to
+            the transmission, storage, retrieval, hosting and/or formatting of depictions posted by third party users,
+            on areas of the website under the user's control.
+            <br />
+            Please direct any request you may have regarding §2257 records in relation to any content found on 18mh,
+            directly to the respective uploader, amateur, creator, producer, studio or account holder of the content
+            (“Verified Uploaders”).
+            <br />
+            For further assistance in communicating with the Verified Uploaders or any questions regarding this notice,
+            please contact 18mh’s compliance department at support@18mh.net.
+            <br />
+            18mh abides by the following strict compliance procedures regarding uploaded content:
+            <br />
+            o All Verified Uploaders must be over eighteen (18) years of age (or age required by their State,
+            jurisdiction or Country if more than 18 years old) and are personally identified and verified by 18mh at
+            account activation prior to being able to upload, share and sell content on 18mh;
+            <br />
+            o Prior to uploads, 18mh ensures that all Verified Uploaders, provide evidence or certify that:
+            <br />
+            •all individuals appearing in the content are over the age of 18 years old (or minimal age required to
+            appear in such content by their State, jurisdiction or Country if more than 18 years old); that they freely
+            consented to appear in the content at the time of its production and agree to its upload on 18mh;
+            <br />
+            •as producer of said content, the Verified Uploader certifies being compliant with record keeping
+            requirements under U.S.C. § 2257 for all content uploaded on 18mh, and agrees to deliver such documentation
+            promptly upon request;
+            <br />
+            the uploaded content does not violate 18mh’s Terms of Service, and any of its related policies namely but
+            without limitation, its
+            <a class="text-primary" href="/terms?tab=3" target="_blank">Child Sexual Abuse Material Policy</a>
+            , or
+            <a class="text-primary" href="/terms?tab=3" target="_blank">Non-Consensual Content Policy</a>
+            .
+            <br />
+          </div>
+        </div>
+      </section>
+    </main>
+    <!--  footer-->
+    <footer class="mt-3 dx-hairline--top py-2" id="app-footer">
+      <div class="dx-container">
+        <div class="flex items-center justify-center">
+          <img class="w-[80px] h-[30px]" alt="logo" src="/static/frontend/images/logo.png" />
+          禁漫天堂,色情,小说,视频, 成人,网站 | 18mh.net
+        </div>
+        <ul class="flex justify-center divide-x flex-wrap mt-3">
+          <li class="px-2"><a href="contact.html">联系我们</a></li>
+          <li class="px-2"><a href="terms.html">用户条款</a></li>
+          <li class="px-2"><a href="policy.html">隐私政策</a></li>
+          <li class="px-2"><a href="2257A.html">2257A</a></li>
+          <li class="px-2"><a href="DMCA.html">DMCA</a></li>
+          <li class="px-2"><a href="https://www.rtalabel.org/index.php?content=parents" target="_blank">RTA</a></li>
+        </ul>
+        <ul class="flex justify-center divide-x flex-wrap mt-3">
+          <li class="px-2">
+            E-mail：
+            <a href="mailto:18mh.net@gmail.com" target="_blank">18mh.net@gmail.com</a>
+          </li>
+          <li class="px-2">
+            Telegram：
+            <a href="https://t.me/EXE_AD" target="_blank">@EXE_AD</a>
+          </li>
+          <li class="px-2">
+            官方群：
+            <a href="https://t.me/JMTTSQ" target="_blank">@JMTTSQ</a>
+          </li>
+          <li class="px-2">
+            <a href="https://x.com/18mh1671" target="_blank">
+              <svg class="w-6 h-6 mb-1 md:w-5 md:h-5">
+                <use href="/static/frontend/icons/icons.svg#x"></use>
+              </svg>
+            </a>
+          </li>
+          <li class="px-2">
+            <a href="https://t.me/EXE_AD" target="_blank">
+              <svg class="w-6 h-6 mb-1 md:w-5 md:h-5">
+                <use href="/static/frontend/icons/icons.svg#telegram"></use>
+              </svg>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </footer>
+    <!--  登录框 -->
+    <div class="modal fade dx-modal" id="login_modal">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header flex items-center">
+            <button class="close text-subtitle ml-auto" type="button" data-dismiss="modal">
+              <svg class="w-6 h-6">
+                <use href="/static/frontend/icons/icons.svg#menu_close"></use>
+              </svg>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="px-3">
+              <div class="dx-tabs dx-line-tabs">
+                <div class="flex items-center mb-5">
+                  <div class="dx-line-tab-item text-xl dx-tab-item !pt-2 !pb-3 is-active">登录</div>
+                  <div class="dx-line-tab-item text-xl dx-tab-item !pt-2 !pb-3">注册</div>
+                </div>
+                <div class="dx-tab-content dx-tab-content--active">
+                  <form>
+                    <div class="form-group">
+                      <label for="login-email">用户名</label>
+                      <div class="input-control mb-3">
+                        <input
+                          class="form-control"
+                          id="login-email"
+                          autocomplete="off"
+                          type="text"
+                          placeholder="请输入用户名"
+                        />
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label for="login-password">密码</label>
+                      <div class="input-control mb-5">
+                        <input
+                          class="form-control"
+                          id="login-password"
+                          autocomplete="off"
+                          type="password"
+                          placeholder="请输入密码"
+                        />
+                      </div>
+                    </div>
+                    <div class="input-control mb-5">
+                      <button class="btn-login-submit btn btn-primary btn-block" data-type="login" type="button">
+                        登录
+                      </button>
+                    </div>
+                    <div class="flex mb-3 justify-center">
+                      <span class="opacity-60">还没有账号？</span>
+                      <button class="text-primary btn-change-type" data-index="1" type="button">马上注册</button>
+                    </div>
+                  </form>
+                </div>
+                <div class="dx-tab-content">
+                  <form>
+                    <div class="form-group">
+                      <label for="login-email">
+                        用户名
+                        <span class="text-[#c92427] text-sm">(杜绝注册多个帐号，将删除所有帐号，并封IP)</span>
+                      </label>
+                      <div class="input-control mb-3">
+                        <input
+                          class="form-control"
+                          id="register-email"
+                          autocomplete="off"
+                          type="text"
+                          placeholder="请输入用户名"
+                        />
+                        <div class="text-[#f8bb40] mt-1.5 text-sm">不能用微信或qq，类似威信571*, vx:571*, vx_571*</div>
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label for="login-password">密码</label>
+                      <div class="input-control mb-5">
+                        <input
+                          class="form-control"
+                          id="register-password"
+                          autocomplete="off"
+                          type="password"
+                          placeholder="请输入密码"
+                        />
+                      </div>
+                    </div>
+                    <div class="input-control mb-5">
+                      <button class="btn-login-submit btn btn-primary btn-block" data-type="register" type="button">
+                        注册
+                      </button>
+                    </div>
+                    <div class="flex mb-3 justify-center text-sm">
+                      我确认已经在18岁以上我同意用户
+                      <a class="text-primary mx-1" href="link.html?key=protocol">使用条款</a>
+                      和
+                      <a class="text-primary ml-1" href="link.html?key=privacy">隐私政策</a>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <button class="dx-backtop" data-backtop="data-backtop" title="返回顶部">
+      <svg class="w-6 h-6 md:w-5 md:h-5 dx-backtop--trigger">
+        <use href="/static/frontend/icons/icons.svg#backtotop"></use>
+      </svg>
+    </button>
+    <div class="dx-overlay"></div>
+    <script>
+      const js_assets_version = '1.0.0'
+    </script>
+    <script data-main="/static/frontend/js/contact_main.js" src="/static/frontend/js/lib/require.js"></script>
+  </body>
+</html>

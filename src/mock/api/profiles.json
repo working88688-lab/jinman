@@ -1,0 +1,18 @@
+{
+  "data": {
+    "nickname": "老色批",
+    "last_login_at": "2024-10-1 20:00:00",
+    "register_at": "2024-10-1 20:00:00",
+    "videos": 10,
+    "fans": 10,
+    "attentions": 22,
+    "about": "",
+    "sign": "",
+    "is_follow": 1,
+    "email": "laosepi@qq.com",
+    "username": 222333,
+    "pic": "https://d3lb01dzg01544.cloudfront.net/upload_01/upload/20240801/2024080119484970245.jpeg"
+  },
+  "code": 200,
+  "msg:": "ok"
+}

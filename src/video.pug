@@ -1,0 +1,70 @@
+extends includes/layout.pug
+
+mixin RankItem(item, index)
+    +VideoItem(item, index)
+
+mixin EditorRecommendItem(item)
+    +VideoItem(item)
+
+block css
+    link(rel='stylesheet' href='/static/frontend/css/lib/swiper.css')
+
+block header
+    +Header({
+        active: 'video',
+        showHeader: true,
+        placeholder: '搜索视频作品',
+        search_type: 'video_list',
+        type: 'video_list'
+    })
+
+block nav
+    +Nav
+
+block swiper
+    +Swiper
+
+block content
+    +TagList({
+        title: '视频',
+        href: 'video_search.html'
+    })
+
+    div(class='index-content')
+        section(class="mb-1.5 md:mb-3 last:mb-0")
+           
+            +DxTitle({ title: '最近更新', showMore: true})
+        
+            ul(class='dx-video-list gap-2.5 md:gap-4')
+                each val in [...videos, ...videos]
+                    li
+                        +VideoItem(val)
+
+        section(class="mb-1.5 md:mb-3 last:mb-0")
+           
+            +DxTitle({ title: '最受欢迎女优', icon: 'video_logo', subtitle: 'TOP18',showMore: true})
+
+            ul(class='flex overflow-auto md:grid md:grid-cols-6 lg:grid-cols-9 gap-2.5 md:gap-4')
+                each val in [...videos, ...videos, ...videos]
+                    li
+                        +ActressItem(val)
+        +RankList({
+            title: '排行榜',
+            href: 'video_rank.html'
+        })
+        section(class="mb-1.5 md:mb-3 last:mb-0")
+            +EditorRecommend
+        
+        section(class="mb-1.5 md:mb-3 last:mb-0")
+           
+            +DxTitle({ title: '热门视频', showMore: true})
+        
+            ul(class='dx-video-list gap-2.5 md:gap-4')
+                each val in [...videos, ...videos]
+                    li
+                        +VideoItem(val)
+     
+
+      
+block footer-scripts
+    script(data-main='/static/frontend/js/index_main.js' src="/static/frontend/js/lib/require.js")

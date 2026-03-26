@@ -1,0 +1,25 @@
+mixin SimpleHeader(config = {})
+  // header
+  header(id='app-header' class='text-xl w-full  is-simple duration-300 dx-hairline--bottom transition-all')
+    div(class='header fixed w-full left-0 top-0 bg-white')
+      div(class='dx-container !px-0 relative')
+        div(class='flex overflow-auto whitespace-nowrap text-base2 items-center text-sm absolute top-0 left-0 right-0 dx-menu-container px-3')
+          +Menus
+           
+        div(class='app-header px-3 bg-white relative flex items-center w-full')
+          button(class='btn-menu-collapse mr-3' type='button' title='打开左侧菜单栏'  data-class='dx-drawer--open')
+            svg(class='w-6 h-6')
+              use(class='open' href='/static/frontend/icons/icons.svg#menu')
+              use(class='close' href='/static/frontend/icons/icons.svg#menu_close')
+          a(class='flex items-center cursor-pointer' onclick='_back()')
+            svg(class='w-4 h-4 mr-3')
+              use(href='/static/frontend/icons/icons.svg#arrow_left')
+            h1(class='font-bold') 赘婿的荣耀
+          div(class='flex-shrink-0 items-center flex ml-auto justify-end')
+            button(class='btn-open-menu mr-5' type='button' title='more_menu')
+              svg(class='w-6 h-6 text-base3')
+                use(class='open' href='/static/frontend/icons/icons.svg#more_menu')
+                use(class='close' href='/static/frontend/icons/icons.svg#menu_close')
+            button(type='button' data-dismiss='popover' data-type='login' title='登录' class='btn-login')
+              svg(class='w-6 h-6 md:w-8 md:h-8 text-base3')
+                use(href='/static/frontend/icons/icons.svg#user_icon')

@@ -1,0 +1,57 @@
+extends includes/layout.pug
+
+block css
+    link(rel="stylesheet", href="/static/frontend/css/page.css")
+block header
+    +Header({
+        active: 'home'
+    })
+
+block nav
+    +Nav
+
+block content
+    section
+        +BackHeader('邀请好友')
+    div(class='bg-white rounded py-5 px-3')
+        div(class='max-w-[720px] m-auto')
+
+            div(class='flex justify-between my-3 pb-3 dx-hairline--bottom')
+                span 邀请码
+                div(class='flex items-center')
+                    span(class='invite_code')
+                    button(class='btn-share-code' type='button')
+                        svg(class='w-5 h-5')
+                            use(href='/static/frontend/icons/icons.svg#copy')
+            div(class='flex justify-between my-3 pb-3 dx-hairline--bottom')
+                span 邀请链接
+                div(class='flex items-center')
+                    span(class='invite_url')
+                    button(class='btn-share' type='button')
+                        svg(class='w-5 h-5')
+                            use(href='/static/frontend/icons/icons.svg#copy')
+            div(class='flex justify-between my-3')
+                span 二维码
+                div(id='qrCode')
+            
+
+            div(class='my-3')
+                | 您邀请了
+                span(class='invite_num') 0
+                | 位好友
+
+            table(class='w-full mt-3')
+                thead
+                    tr(class='text-left')
+                        th 注册日期
+                        th 用户ID
+                        th 用户群组
+                        th 状态
+                tbody(class='invites')
+            div(class='flex-center empty')
+
+block hbs
+    include includes/hbs/hbs-empty.pug
+
+block footer-scripts
+    script(data-main='/static/frontend/js/invite_main.js' src="/static/frontend/js/lib/require.js")

@@ -1,0 +1,23 @@
+
+<!--  回复评论-->
+<div class="modal fade dx-modal" id="reply_modal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header flex items-center">
+        <div class="text-black font-bold"><span>回复：</span><span class="reply-to"></span></div>
+        <button class="close text-subtitle ml-auto" type="button" data-dismiss="modal">
+          <svg class="w-6 h-6">
+            <use href="/static/frontend/icons/icons.svg#menu_close"></use>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <div class="modal-body">
+      <div class="dx-textarea">
+        <textarea class="flex-1" rows="5" maxlength="500" placeholder="请输入回复内容"></textarea>
+        <div class="flex justify-end mt-0.5 text-base6"><span class="current">0</span><span>/</span><span class="limit"></span></div>
+      </div>
+      <button class="btn-primary btn mt-4 btn-block btn-reply" type="button">提交评论</button>
+    </div>
+  </div>
+</div>

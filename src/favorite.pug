@@ -1,0 +1,54 @@
+extends includes/layout.pug
+
+
+
+block css
+
+block header
+    +Header({
+        active: 'home'
+    })
+
+block nav
+    +Nav
+
+
+block content
+
+    div(class='index-content')
+        section
+            +BackHeader('我的收藏')
+        div(class='grid grid-cols-3 gap-x-3 cate-container mb-3')
+            button(class='btn w-full btn-primary' data-type='1') 我的收藏
+            button(class='btn w-full' data-type='2') 我的购买
+            button(class='btn w-full' data-type='3') 我的足迹
+        div(class='mb-2 dx-tabs')
+            div(class='flex items-center types dx-tab-list mb-3')
+                button(class='dx-tab dx-button-tab-item btn-primary')
+                    | 文学·
+                    span 0
+                button(class='dx-tab dx-button-tab-item')
+                    | 视频·
+                    span 0
+                button(class='dx-tab dx-button-tab-item')
+                    | 漫画·
+                    span 0
+            div(class='dx-tab-content dx-tab-content--active')
+                ul(class='dx-novel-list lists gap-2.5 md:gap-4 justify-center')
+                +Pager('pager1')
+            div(class='dx-tab-content')
+                ul(class='dx-video-list lists gap-2.5 md:gap-4 justify-center')
+                +Pager('pager2', 2)
+                   
+            div(class='dx-tab-content')
+                ul(class='dx-novel-list lists gap-2.5 md:gap-4 justify-center')
+                +Pager('pager3', 3)
+
+
+block hbs
+    include includes/hbs/hbs-novel-card.pug
+    include includes/hbs/hbs-video-card.pug
+    include includes/hbs/hbs-comic-card.pug
+    include includes/hbs/hbs-empty.pug
+block footer-scripts
+    script(data-main='/static/frontend/js/favorite_main.js' src="/static/frontend/js/lib/require.js")

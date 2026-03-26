@@ -1,0 +1,42 @@
+extends includes/layout.pug
+
+
+block css
+    link(rel='stylesheet' href='/static/frontend/css/page.css')
+
+block header
+    +Header({
+        active: ''
+    })
+
+block nav
+    +Nav
+
+
+block content
+    section
+        +BackHeader('联系我们')
+
+        div(class='bg-white rounded py-5 px-3')
+            form(id="form" class='max-w-[720px] m-auto' enctype="multipart/form-data")
+                div(class='form-group')
+                    div(class='input-control mb-3')
+                        input(id='email' class='form-control' name='email' autocomplete='off' type='text' placeholder='请输入您的Email以获得我们的回复')
+                div(class='form-group')
+                    label(class='cursor-pointer' for='upload') 
+                        | 附件：
+                        div(class='img-preview w-10 h-10 mt-1')
+                            img(style='display: none' src="", alt="")
+                            svg(class='w-10 h-10')
+                                use(href='/static/frontend/icons/icons.svg#upload')
+                    input(id='upload' type="file" class='hidden')
+
+                div(class='form-group')
+                    button(id='btn_submit' type='submit' name='media' class='btn btn-primary btn-block') 提交
+
+
+     
+
+      
+block footer-scripts
+    script(data-main='/static/frontend/js/contact_main.js' src="/static/frontend/js/lib/require.js")

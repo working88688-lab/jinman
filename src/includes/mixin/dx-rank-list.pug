@@ -1,0 +1,39 @@
+
+        
+
+mixin RankList(item ={})
+    div(class='mb-2 dx-tabs')
+        div(class='flex items-center mb-1')
+            span(class='dx-title mr-2 font-semibold')= item.title
+
+            a(class='ml-auto flex-center text-base5' href=item.href)
+                span 更多
+                span(class='rank-title') 收藏榜
+                svg(class='w-3.5 h-3.5')
+                    use(href='/static/frontend/icons/icons.svg#more')
+            
+        div(class='grid grid-cols-4 gap-x-3 dx-tab-list mb-3')
+            button(class='btn dx-tab w-full btn-primary') 收藏榜
+            button(class='btn dx-tab w-full') 周榜
+            button(class='btn dx-tab w-full') 月榜
+            button(class='btn dx-tab w-full') 年榜
+        div(class='dx-tab-content dx-tab-content--active')
+            ul(class='dx-video-list gap-2.5 md:gap-4')
+                each val, index in [...videos, ...videos, ...videos, ...videos.slice(0,2)]
+                    li
+                        +RankItem(val, index)
+        div(class='dx-tab-content')
+           ul(class='dx-video-list gap-2.5 md:gap-4')
+                each val, index in [...videos, ...videos, ...videos.slice(0,2)]
+                    li
+                        +RankItem(val, index)
+        div(class='dx-tab-content')
+           ul(class='dx-video-list gap-2.5 md:gap-4')
+                each val, index in [...videos, ...videos.slice(0,2)]
+                    li
+                        +RankItem(val, index)
+        div(class='dx-tab-content')
+           ul(class='dx-video-list gap-2.5 md:gap-4')
+                each val, index in [...videos, ...videos, ...videos, ...videos.slice(0,2)]
+                    li
+                        +RankItem(val, index)

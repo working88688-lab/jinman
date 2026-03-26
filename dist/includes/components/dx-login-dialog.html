@@ -1,0 +1,181 @@
+
+<!--  登录框 -->
+<div class="modal fade dx-modal" id="login_modal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header flex items-center">
+        <button class="close text-subtitle ml-auto" type="button" data-dismiss="modal">
+          <svg class="w-6 h-6">
+            <use href="/static/frontend/icons/icons.svg#menu_close"></use>
+          </svg>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="px-3">
+          <div class="dx-tabs dx-line-tabs">
+            <div class="flex items-center mb-5">
+              <div class="dx-line-tab-item text-xl dx-tab-item !pt-0 !pb-2 is-active">登录</div>
+              <div class="dx-line-tab-item text-xl dx-tab-item !pt-0 !pb-2">注册</div>
+              <div class="dx-line-tab-item text-xl dx-tab-item !pt-0 !pb-2">找回密码</div>
+            </div>
+            <div class="dx-tab-content dx-tab-content--active">
+              <form>
+                <div class="form-group">
+                  <div class="input-control mb-3 has-icon-left has-icon-right">
+                    <div class="input-control-icon-left">
+                      <svg class="w-6 h-6">
+                        <use href="/static/frontend/icons/icons.svg#username"></use>
+                      </svg>
+                    </div>
+                    <input class="form-control !pl-[26px]" id="login-email" autocomplete="off" type="text" placeholder="邮箱地址"/>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <div class="input-control mb-3 has-icon-left has-icon-right">
+                    <div class="input-control-icon-left">
+                      <svg class="w-6 h-6">
+                        <use href="/static/frontend/icons/icons.svg#password"></use>
+                      </svg>
+                    </div>
+                    <input class="form-control !pl-[26px]" id="login-password" autocomplete="off" type="password" placeholder="密码"/>
+                    <div class="input-control-icon-right btn-password-type">
+                      <svg class="w-5 h-5">
+                        <use class="close" href="/static/frontend/icons/icons.svg#close_eye_icon"></use>
+                        <use class="open" href="/static/frontend/icons/icons.svg#view_icon"></use>
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+                <div class="input-control mb-5">
+                  <button class="btn-login-submit btn btn-primary btn-block" data-type="login" type="button">登录</button>
+                </div>
+                <div class="flex mb-3 justify-center"><span class=" opacity-60">还没有账号？</span>
+                  <button class="text-primary btn-change-type" data-index="1" type="button">马上注册</button>
+                </div>
+              </form>
+            </div>
+            <div class="dx-tab-content">
+              <form>
+                <div class="form-group">
+                  <div class="input-control has-icon-left has-icon-right mb-3">
+                    <div class="input-control-icon-left">
+                      <svg class="w-6 h-6">
+                        <use href="/static/frontend/icons/icons.svg#username"></use>
+                      </svg>
+                    </div>
+                    <input class="form-control !pl-[26px]" id="register-email" autocomplete="off" type="text" placeholder="邮箱地址"/>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <div class="input-control has-icon-left has-icon-right mb-5">
+                    <div class="input-control-icon-left">
+                      <svg class="w-6 h-6">
+                        <use href="/static/frontend/icons/icons.svg#email_icon"></use>
+                      </svg>
+                    </div>
+                    <input class="form-control !pl-[26px] !pr-[70px]" id="register-checkcode" autocomplete="off" type="text" placeholder="请输入验证码"/>
+                    <div class="input-control-icon-right text-sm !w-[70px]">
+                      <button class="btn-send-code" type="button" data-type="register">获取验证码</button>
+                    </div>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <div class="input-control has-icon-left has-icon-right mb-5">
+                    <div class="input-control-icon-left">
+                      <svg class="w-6 h-6">
+                        <use href="/static/frontend/icons/icons.svg#password"></use>
+                      </svg>
+                    </div>
+                    <input class="form-control !pl-[26px]" id="register-password" autocomplete="off" type="password" placeholder="密码"/>
+                    <div class="input-control-icon-right btn-password-type">
+                      <svg class="w-5 h-5">
+                        <use class="close" href="/static/frontend/icons/icons.svg#close_eye_icon"></use>
+                        <use class="open" href="/static/frontend/icons/icons.svg#view_icon"></use>
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <div class="input-control has-icon-left has-icon-right mb-5">
+                    <div class="input-control-icon-left !left-1 !top-2.5">
+                      <svg class="w-5 h-5">
+                        <use href="/static/frontend/icons/icons.svg#invent_icon"></use>
+                      </svg>
+                    </div>
+                    <input class="form-control !pl-[26px]" id="register-aff" autocomplete="off" type="text" placeholder="推荐码（可不填）"/>
+                  </div>
+                </div>
+                <div class="input-control mb-5">
+                  <button class="btn-register-submit btn btn-primary btn-block" data-type="register" type="button">注册</button>
+                </div>
+                <div class="flex mb-3 justify-center text-sm">如果加入会员，则表示您同意我们的<a class="text-primary mx-1" href="terms.html">使用条款</a>和<a class="text-primary ml-1" href="policy.html">隐私政策</a></div>
+              </form>
+            </div>
+            <div class="dx-tab-content">
+              <form>
+                <div class="form-group">
+                  <div class="input-control has-icon-left has-icon-right mb-3">
+                    <div class="input-control-icon-left">
+                      <svg class="w-6 h-6">
+                        <use href="/static/frontend/icons/icons.svg#username"></use>
+                      </svg>
+                    </div>
+                    <input class="form-control !pl-[26px]" id="back-email" autocomplete="off" type="text" placeholder="邮箱地址"/>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <div class="input-control has-icon-left has-icon-right mb-5">
+                    <div class="input-control-icon-left">
+                      <svg class="w-6 h-6">
+                        <use href="/static/frontend/icons/icons.svg#email_icon"></use>
+                      </svg>
+                    </div>
+                    <input class="form-control !pl-[26px] !pr-[70px]" id="back-checkcode" autocomplete="off" type="text" placeholder="请输入验证码"/>
+                    <div class="input-control-icon-right text-sm !w-[70px]">
+                      <button class="btn-send-code" type="button" data-type="back">获取验证码</button>
+                    </div>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <div class="input-control has-icon-left has-icon-right mb-5">
+                    <div class="input-control-icon-left">
+                      <svg class="w-6 h-6">
+                        <use href="/static/frontend/icons/icons.svg#password"></use>
+                      </svg>
+                    </div>
+                    <input class="form-control !pl-[26px]" id="back-password" autocomplete="off" type="password" placeholder="新密码"/>
+                    <div class="input-control-icon-right btn-password-type">
+                      <svg class="w-5 h-5">
+                        <use class="close" href="/static/frontend/icons/icons.svg#close_eye_icon"></use>
+                        <use class="open" href="/static/frontend/icons/icons.svg#view_icon"></use>
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <div class="input-control has-icon-left has-icon-right mb-5">
+                    <div class="input-control-icon-left">
+                      <svg class="w-6 h-6">
+                        <use href="/static/frontend/icons/icons.svg#password"></use>
+                      </svg>
+                    </div>
+                    <input class="form-control !pl-[26px]" id="back-password2" autocomplete="off" type="password" placeholder="确认新密码"/>
+                    <div class="input-control-icon-right btn-password-type">
+                      <svg class="w-5 h-5">
+                        <use class="close" href="/static/frontend/icons/icons.svg#close_eye_icon"></use>
+                        <use class="open" href="/static/frontend/icons/icons.svg#view_icon"></use>
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+                <div class="input-control mb-5">
+                  <button class="btn-back-submit btn btn-primary btn-block" data-type="register" type="button">修改密码</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,42 @@
+
+extends includes/layout.pug
+
+
+include includes/mixin/dx-novel-card.pug
+include includes/mixin/dx-filter.pug
+
+block css
+
+
+block header
+    +Header({
+        active: 'novel',
+        showHeader: true,
+        placeholder: '搜索小说作品',
+        search_type: 'novel_list'
+    })
+
+block nav
+    +Nav
+
+block content
+    +Breadcrumbs([{  title: '禁漫小说', isLink: true, href: "novel.html" }, { isLink: false }, {  title: '全部小说',isLink: true }])
+    
+    +Filter
+    
+    div(class='index-content')
+        section(class="my-2 md:my-3")
+           
+        
+            ul(class='grid grid-cols-1 md:grid-cols-2 gap-2.5 md:gap-4')
+                each val in [...videos, ...videos]
+                    li
+                        +NovelCard(val)
+     
+        
+            +SimplePager({ page: 'novel_list.html'})
+     
+
+      
+block footer-scripts
+    script(data-main='/static/frontend/js/list_main.js' src="/static/frontend/js/lib/require.js")

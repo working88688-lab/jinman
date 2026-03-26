@@ -1,0 +1,102 @@
+@import 'tailwindcss/base';
+
+:root {
+    --dx-tab-line-item-padding: 4px 0;
+    --dx-tab-line-height: 3px;
+    --dx-tab-line-width-percent: 60%;
+    --dx-button-tab-item-padding-pc: 4px 8px;
+    --dx-button-tab-item-padding-mobile: 6px 8px;
+    --dx-button-tab-item-bg-color: #1f1f1f;
+    --dx-button-tab-item-color: #b1b1b1;
+}
+
+
+
+.dx-tab-content {
+    display: none;
+
+    &.is-active,
+    &.dx-tab-content--active {
+        display: block;
+    }
+}
+
+.dx-line-tab-item {
+    margin-right: 16px;
+    white-space: nowrap;
+    position: relative;
+    padding: var(--dx-tab-line-item-padding);
+    cursor: pointer;
+
+    &:last-child {
+        margin-right: 0;
+    }
+
+    &::after {
+        content: '';
+        display: none !important;
+        position: absolute;
+        width: var(--dx-tab-line-width-percent);
+        height: var(--dx-tab-line-height);
+        left: 0;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    &.is-active {
+        color: var(--dx-primary-color);
+        font-weight: 500;
+        background: #FF5656;
+        color: #fff;
+        font-size: 12px;
+        &::after {
+
+            background-color: var(--dx-primary-color);
+        }
+    }
+
+}
+
+
+.dx-button-tab-item {
+    margin-right: 16px;
+    white-space: nowrap;
+    margin-bottom: 12px;
+    position: relative;
+    padding: var(--dx-button-tab-item-padding-pc);
+    border-radius: 4px;
+    color: var(--dx-button-tab-item-color);
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+
+    &:last-child {
+        margin-right: 0;
+    }
+
+
+    &.btn-primary {
+        background-color: #010101;
+
+        color: #fff;
+    }
+}
+
+
+@media (max-width: 768px) {
+    .dx-line-tab-item {
+        margin-right: 12px;
+
+        &::after {
+
+            display: none;
+        }
+    }
+
+    .dx-button-tab-item {
+        margin-right: 8px;
+        margin-bottom: 8px;
+        padding: var(--dx-button-tab-item-padding-mobile);
+    }
+}

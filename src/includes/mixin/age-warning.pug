@@ -1,0 +1,15 @@
+mixin AgeWarning()
+  div(id="age-warning")
+    div(class='warning-container')
+      div(class='warning-flex-box')
+        img(src="/images/lang.png" class="lang-icon" alt="")
+        select(id="lang")
+          option(value="Chinese") Chinese
+          option(value="English") English
+      div(class='content-container')
+        img(src="/images/logo.png" class="warn-logo" alt="")
+        p(class='warn-title') 这是个成人网站
+        p(class="warn-content") 本网站包含有年龄限制的内容，包括裸体和露骨色情素材的内容。 点击继续即表示您确认您已年满 18 岁，或在您访问本网站时所在的司法管辖区已是成年人
+        div 
+          button(class="btn-age-confirm btn-item") 我已年满18岁-进入
+          button(class="btn-age-cancel btn-item") 我未满18岁-退出

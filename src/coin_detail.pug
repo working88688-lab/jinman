@@ -1,0 +1,42 @@
+extends includes/layout.pug
+
+block css
+    link(rel="stylesheet", href="/static/frontend/css/page.css")
+block header
+    +Header({
+        active: 'home'
+    })
+
+block nav
+    +Nav
+
+block content
+    section
+        +BackHeader('金币明细')
+    div(class='bg-white rounded py-5 px-3')
+        div(class='max-w-[720px] m-auto')
+            div(class='my-3 pb-3 dx-hairline--bottom')
+                div(class='flex justify-between')
+                    div(class='flex items-center mb-1 font-bold')
+                        img(class='w-5 h-5 mr-1' src="/static/frontend/images/coin.png", alt="")
+                        | 可用金币：
+                        span(class='user_coin') 0
+                    
+                    span 1金币=¥1.00(人民币)
+
+            table(class='w-full mt-3')
+                thead
+                    tr(class='text-left')
+                        th 交易日期
+                        th 类目
+                        th 金额
+                        th 金币余额
+                        th 明细
+                tbody(class='lists')
+            div(class='flex-center empty')
+
+block hbs
+    include includes/hbs/hbs-empty.pug
+
+block footer-scripts
+    script(data-main='/static/frontend/js/coin_detail_main.js' src="/static/frontend/js/lib/require.js")

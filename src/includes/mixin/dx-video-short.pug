@@ -1,0 +1,12 @@
+mixin VideoShort(item)
+  div(class='video-item')
+    div(class="dx-short-video")
+      a(href='view_video.html?id=1' class='poster bg-base2 overflow-hidden pointer-events-auto' data-url='https://10play.aoftrg.cn/videos3/b9fa1cc9ab1a3ad86cd57401594698ed/b9fa1cc9ab1a3ad86cd57401594698ed.m3u8?auth_key=1740206089-0-0-3ecd056d342aa7ed0efce0229c612d2a&via_m=91pron_web')
+        img.w-full.h-full(src='/static/frontend/images/poster_loading.png' data-src=item.poster alt=item.title)
+        div(class='dx-bg-linear w-full px-2 py-2 absolute left-0 bottom-0')
+          span.text-sm 高清
+        div(class='dx-video-tag')
+          span.text-sm 常看
+        div(class='video-preview w-full h-full left-0 top-0')
+    div(class='text-font1 mt-1 px-2 md:px-0')
+      a(href='view_video.html?id=1' class='text-default block truncate link')= item.subtitle

@@ -1,0 +1,30 @@
+mixin EditorRecommend
+
+    div(class='mb-2 dx-tabs')
+        +DxTitle({ title: '编辑推荐',showMore: true})
+            
+        div(class='flex overflow-auto dx-tab-list mb-3')
+            button(class='btn dx-tab mr-3 flex-shrink-0 px-2 btn-primary') 探花视频 TOP10
+            button(class='btn dx-tab mr-3 flex-shrink-0 px-2') SM捆绑 TOP10
+            button(class='btn dx-tab mr-3 flex-shrink-0 px-2') 美乳视频 TOP10
+            button(class='btn dx-tab mr-3 flex-shrink-0 px-2') HongKong Doll TOP 10
+        div(class='dx-tab-content dx-tab-content--active')
+            ul(class='flex overflow-auto')
+                each val, index in [...videos,  ...videos.slice(0,4)]
+                    li(class='w-[160px] md:w-[270px] flex-shrink-0 mr-3 last:mr-0')
+                        +RankItem(val, index)
+        div(class='dx-tab-content')
+           ul(class='flex overflow-auto')
+                each val, index in [...videos, ...videos.slice(0, 4)]
+                    li(class='w-[160px] md:w-[270px] flex-shrink-0 mr-3 last:mr-0')
+                        +RankItem(val, index)
+        div(class='dx-tab-content')
+           ul(class='flex overflow-auto')
+                each val, index in [...videos, ...videos.slice(0, 4)]
+                    li(class='w-[160px] md:w-[270px] flex-shrink-0 mr-3 last:mr-0')
+                        +RankItem(val, index)
+        div(class='dx-tab-content')
+           ul(class='flex overflow-auto')
+                each val, index in [...videos, ...videos.slice(0, 4)]
+                    li(class='w-[160px] md:w-[270px] flex-shrink-0 mr-3 last:mr-0')
+                        +RankItem(val, index)

@@ -1,0 +1,141 @@
+extends includes/layout.pug
+
+include includes/mixin/dx-card-list.pug
+
+include includes/mixin/dx-post-item.pug
+
+block css
+    link(rel='stylesheet' href='/static/frontend/css/lib/swiper.css')
+    link(rel='stylesheet' href='/static/frontend/css/lib/editormd.css')
+    link(rel='stylesheet' href='/static/frontend/css/lib/xgplayer.css')
+    link(rel='stylesheet' href='/static/frontend/css/view_main.css?v=' + css_assets_version)
+
+block header
+    +Header({
+        active: 'cg'
+    })
+
+block nav
+    +Nav
+
+block content
+    +RecommendIcon
+
+
+
+include includes/mixin/dx-novel-card.pug
+
+block content
+    - var items1 = ['全部','性爱故事', '都市激情', '校园春色', '乡村村色', '91', '海角', '人妻熟女', '古典武侠']
+
+    div(class='index-content')
+        +DxTitle('站长推荐', '撸片必备神器')
+        - var items = [{ icon: "/static/frontend/images/loading.svg", title: "海角"},{ icon: "/static/frontend/images/loading.svg", title: "海角"},{ icon: "/static/frontend/images/loading.svg", title: "海角"},{ icon: "/static/frontend/images/loading.svg", title: "海角"}, { icon: "/static/frontend/images/loading.svg", title: "海角"}, { icon: "/static/frontend/images/loading.svg", title: "海角"}, { icon: "/static/frontend/images/loading.svg", title: "海角"}, { icon: "/static/frontend/images/loading.svg", title: "海角"}, { icon: "/static/frontend/images/loading.svg", title: "海角"}, { icon: "/static/frontend/images/loading.svg", title: "海角"}, { icon: "/static/frontend/images/loading.svg", title: "海角"}, { icon: "/static/frontend/images/loading.svg", title: "海角"}, { icon: "/static/frontend/images/loading.svg", title: "海角"}, { icon: "/static/frontend/images/loading.svg", title: "海角"}, { icon: "/static/frontend/images/loading.svg", title: "海角"}]
+            ul(class='grid grid-cols-5 gap-x-7 gap-y-3 md:gap-0 md:flex flex-wrap items-center rounded-lg border md:border-0 border-solid border-border md:p-0 p-4 bg-base8 md:bg-inherit')
+                each item in items
+                    li(class="flex justify-center w-[40px] md:w-[50px] md:mr-5 md:mb-5 flex-shrink-0 group")
+                        a(class='flex-1 flex-col-center' target="_blank" href="#" rel="external nofollow" title=item.title)
+                            img(class='rounded w-[40px] h-[40px] md:w-[50px] md:h-[50px] ' data-src=item.icon, src="/static/frontend/images/loading.svg" alt=item.title)
+                            span(class='mt-3 group-hover:text-primary transition-all')= item.title
+        div
+            h1(class='text-xl md:text-2xl my-2') 刀剑神域—论随处可见的我，如何在暑假，让结城明日奈和桐谷直叶成为我的炮友作者 成人小说
+            div(class='flex mt-auto text-[#a7a7a7] dx-text mb-3')
+                div(class='flex items-center mr-5')
+                    a(href="./cg_author.html" class='border-link') 瓜酱
+                    span(class='mx-0.5') • 
+                    time 2024年11月07日
+                    span(class='mx-0.5') • 
+                    a(href="#"  class='border-link') 今日吃瓜
+                    | ，
+                    a(href="#"  class='border-link') 热门大瓜
+                    | ，
+                    a(href="#"  class='border-link') 人人吃瓜
+            div(class='bg-base1 p-3 rounded-sm my-3')
+                div 51吃瓜网最新免翻墙地址 https://aacg7.com
+
+                div 视频播放异常? 请刷新页面 或 使用51吃瓜App
+
+                div 点击加入51吃瓜官方微信QQ群
+
+                div 苹果App白屏 请等待1分钟/切换网络/重新下载
+            article(class='markdown-body')
+                img(data-src="https://pic.shnztkj.cn/new/xiao/20201211/2020121111305193526.png", alt="")
+                img(file="https://pic.shnztkj.cn/new/xiao/20201211/2020121111305193526.png", alt="")
+                | 曾经轰动日本的“Sao事件”我就是其中的受害者之一。
+
+                |  虽然不是什么有名的玩家，但总算活到了事件结束，回到了现实世界。
+
+                | 在那之后，我被送往了一所集中了所有受害者的高中。
+
+                | 因为只有我度过了“不一样的时间”与家人的关系出现了矛盾，为了消除这种矛盾，我主动请求一个人住在公寓里。
+
+                | 于是就这样我开始了灰色的高中生活。
+
+                | 在游戏里被当作“NPC”的我在现实世界里肯定还是这样，脱离了普通的轨道，就这样看不到希望郁郁寡欢地度过毕业前的每一天，毕业后还要继续生活下去。
+
+                | 直到那天为止，我都是这么想。
+
+                | “直、直叶酱……！好紧……！直叶的小穴好舒服……感觉要断了……！”
+
+                | “——嗯呜♥嗯♥不，不行了♥被学长从后面侵犯♥哈啊♥”
+
+                | “呜♥啊啊……好舒服……射了，要射了直叶……”
+
+                | “啊♥啊啊……要射了……学长的肉棒在我体内……”？？
+
+                | 现在，少女在不停地娇喘，而我则是专心用精液来填满她的子宫。
+
+                | 盛夏的某天，在空调性能跟不上的酷暑的房间里，我侵犯了低年级的女学生——
+
+                | 桐谷直叶。
+                | “我把影片发给你，你用电脑打开就可以看了。”对方说道。
+
+                | 林晓心里既紧张又期待，她打开电脑，点击对方发来的链接，果然是一段影片。她好奇地点击播放，影片里是一对男女正在做爱，各种激情的画面让林晓看得目不转睛。
+
+                | 林晓看着看着，渐渐地被影片里的画面所吸引，她感觉自己的身体也开始有了反应，不禁脸红心跳。
+                p 关键词：#乔乔子辣舞视频合集 #乔乔子童颜巨乳 #乔乔子火辣骚舞视频 #乔乔子包臀裙骚舞 #乔乔子 #巨乳 #网红 #抖音 #51吃瓜 #51吃瓜网 #黑料 #吃瓜
+            
+            ul(class='hide md:flex flex-wrap text-default my-3')
+              each item in tags
+                li(class='flex items-center mr-2 mb-2 last:mr-0')
+                  a(class='flex-1 py-2 px-4 rounded-large bg-base2 link' href="search.html?keyword=学生")= item
+            
+            div(class='text-right text-[#a7a7a7]') 最后编辑于：2024年11月06日
+
+            div(class='bg-base1 grid grid-cols-2 gap-3 p-4 mt-3')
+                a(href='#')
+                    div(class='text-primary mb-2') 上一篇
+                    div(class='line-clamp-2') 【绿帽淫妻】杭州博士献妻和小女友的双飞之行一（35P）
+                a(href='#')
+                    div(class='text-primary mb-2') 下一篇
+                    div(class='line-clamp-2') 【绿帽淫妻】杭州博士献妻和小女友的双飞之行一（35P）
+            div(class='flex items-center md:py-3 my-1 md:my-2')
+                h2(class='text-2xl md:text-5xl text-white mr-2.5 font-semibold') 评论留言
+                div(class='video-drop drop hidden md:block ml-auto')
+                    div(class='flex items-center handle-btn handle-more')
+                        svg(class='w-5 h-5 svg-icon mr-1')
+                            use(href='/static/frontend/icons/icons.svg#qrcode')
+                        | 手机看
+                    div(class='drop-content handle-more-drop')
+                        div(class='drop-content-box')
+                            div(class='drop-content-items')
+                                div(class='flex items-center')
+                                    div(id="qrCode" class='qrcode-img w-[90px] flex-shrink-0 h-[90px]')
+                                    div(class="ml-2 text-default min-w-[165px] text-[#101010]")
+                                        p(class='mb-2') 使用 手机浏览器 扫码观看
+                                        strong 我瞎编功法你们怎么都成仙了 -第31-60集
+            div(class='mb-2 md:mb-3')
+                div(class='flex flex-col justify-center bg-base1')
+                    div(class='flex items-center px-3 pt-2 bg-base1 flex-1 rounded-sm')
+                        textarea(id='comment-input' rows="4" class='bg-base1 flex-1' autocomplete='off' placeholder='在这里输入您的评论…' type='text')
+                    div(class='flex px-3 md:pb-3 pb-2 pt-1.5 md:pt-2')
+                        button(class='ml-auto btn btn-primary h-[32px] md:h-[40px] btn-login w-[94px] flex-shrink-0  !px-0' data-type='login') 登录发表留言
+                div(class='dx-safe-area-bottom')
+            div(class='comments')
+                include includes/components/dx-video-comment.pug
+            
+
+       
+
+block footer-scripts
+    script(data-main='/static/frontend/js/cg_detail_main.js' src="/static/frontend/js/lib/require.js")

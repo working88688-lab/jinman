@@ -1,0 +1,11 @@
+mixin VideoShort(item)
+  div(class='video-item')
+    .aspect-w-16.aspect-h-9.overflow-hidden
+      a(href='view_video.html?id=1' class='poster bg-base2 overflow-hidden pointer-events-auto' data-url=item.url)
+        img.w-full.h-full(src='/static/frontend/images/poster_loading.png' data-src=item.poster alt=item.title)
+        .dx-bg-linear.w-full.px-2.py-2.absolute.left-0.bottom-0.flex.justify-end.gap-2
+          span.text-sm 11:54
+        div(class='video-preview w-full h-full left-0 top-0')
+    div(class='text-font1 mt-1 px-2 md:px-0')
+      a(href='view_video.html?id=1' class='text-default line-clamp-2')= item.subtitle
+      span(class='text-subtitle text-sm') 15K观看

@@ -1,0 +1,18 @@
+mixin ButtonTab
+  div(class='w-full overflow-x-hidden md:hide px-3 text-default mt-3')
+    div(class='overflow-auto scrollbar-none')
+      ul.dx-button-tabs.dx-tabs.flex
+        li(class='dx-button-tab-item dx-tab-item' data-code='')
+          a(href='./search.html?code=') 全部
+        li(class='dx-button-tab-item dx-tab-item' data-code='top_new')
+          a(href='./search.html?code=top_new') 最新
+        li(class='dx-button-tab-item dx-tab-item' data-code='like')
+          a(href='./search.html?code=like') 最多喜欢
+        li(class='dx-button-tab-item dx-tab-item' data-code='top_click')
+          a(href='./search.html?code=top_click') 最多观看
+        li(class='dx-button-tab-item dx-tab-item' data-code='top_good')
+          a(href='./search.html?code=top_good') 最多点赞
+        li(class='dx-button-tab-item dx-tab-item' data-code='top_comment')
+          a(href='./search.html?code=top_comment') 最多评论
+        li(class='dx-button-tab-item dx-tab-item' data-code='video_duration')
+          a(href='./search.html?code=video_duration') 最长

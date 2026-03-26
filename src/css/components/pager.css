@@ -1,0 +1,50 @@
+@tailwind base;
+
+@layer base {
+
+    .dx-pager {
+
+        @apply gap-1 md:gap-2 whitespace-nowrap md:text-default text-sm;
+
+        .pager-item-left,
+        .pager-item-right {
+            background-color: var(--dx-primary-color);
+            color: #fff;
+            border-radius: 4px;
+
+            @apply items-center;
+
+
+            .pager-item {
+                @apply w-[54px] md:w-[100px] flex-1 p-0 flex-center h-full;
+            }
+
+        }
+
+        /* .pager-label {
+            @apply md:text-default text-mini
+        } */
+
+        .pager-goto {
+            width: initial;
+        }
+
+        .pager-goto .form-control {
+            /* background-color: var(--dx-primary-color);
+            color: #fff; */
+            height: 36px;
+            @apply w-[54px] md:w-[100px] flex-shrink-0 text-center mr-2 md:mr-7
+        }
+
+        .pager-goto-btn {
+            background-color: #262626;
+            color: #fff;
+            height: 36px;
+            @apply w-[54px] md:w-[100px] flex-shrink-0 border-none
+        }
+
+        .disabled {
+            cursor: not-allowed;
+        }
+    }
+}

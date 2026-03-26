@@ -1,0 +1,22 @@
+//  注册框
+div(id='register_modal' class='modal fade dx-modal')
+  div(class='modal-dialog')
+    .modal-content
+      div(class='modal-header flex items-center')
+        button(class='close text-subtitle ml-auto' type='button' data-dismiss='modal')
+          svg(class='w-6 h-6')
+             use(href='/static/frontend/icons/icons.svg#close')
+      .modal-body
+        div(class='flex-col-center mt-[-12px]')
+          img(class='w-[114px] mb-3' src="/static/frontend/images/logo.png", alt="logo" title="logo")
+          p(class='text-4xl mb-6') 免费注册
+        form.px-2
+          .input-control.mb-3
+            input(id='register-email' class='form-control' autocomplete='off' type='text' placeholder='邮箱')
+          .input-control.mb-5
+            input(id='register-password' class='form-control' autocomplete='off' type='password' placeholder='密码')
+          .input-control.mb-5
+            button(class='btn-login-submit btn btn-primary btn-block' data-type='register' type='button') 立即注册
+          div(class='flex mb-3 justify-end')
+            | 已经有账号？立即
+            button(class='text-primary btn-change-type' data-type='login'  type='button' data-dismiss='modal') 登录

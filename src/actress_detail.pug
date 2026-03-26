@@ -1,0 +1,65 @@
+
+extends includes/layout.pug
+
+
+include includes/mixin/dx-novel-card.pug
+include includes/mixin/dx-filter.pug
+
+block css
+
+block header
+    +Header({
+        active: 'novel',
+        showHeader: false,
+        placeholder: '搜索小说作品',
+        search_type: 'novel'
+    })
+
+block nav
+    +Nav
+
+block content
+    +Breadcrumbs([{  title: '禁漫视频', isLink: true, href: "video.html" }, { isLink: false }, {  title: '新有菜-桥本有菜',isLink: true }])
+    
+    
+    div(class='index-content')
+        div(class='flex-center mt-3')
+            div( class='md:w-[98px] md:h-[98px] w-[56px] h-[56px] rounded-full overflow-hidden pointer-events-auto')
+                img(class="w-full h-full rounded-sm group-hover:scale-125 transition-all" src='/static/frontend/images/loading.svg')
+            div(class='ml-4')
+                div(class='font-semibold') 新ありな/新有菜-桥本有菜
+                div(class='text-sm') Arina Hashimoto
+                div(class='text-sm') 2016年03月01日
+        div(class='md:w-[600px] mx-auto mt-3') 新有菜（日语：新ありな，英文：Arata Arina，旧名桥本有菜，1996年12月15日—），日本的AV女优，东京都出身。目前为MOODYZ专属女优，此前长时间为S1及FALENO旗下的专属女优。所属于“ACT事务所” 。享有日本AV界“最强美腿”封号。
+        div(class='flex items-center justify-between mt-3')
+            div(class='text-base3') 共 64 部作品
+            div(class='flex items-center')
+                a(class='flex items-center mr-3' href='#')
+                    | 上架
+                    svg(class='w-4 h-4')
+                        use(href='/static/frontend/icons/icons.svg#down')
+
+                a(class='flex items-center mr-3' href='#')
+                    | 观看
+                    svg(class='w-4 h-4 rotate-180')
+                        use(href='/static/frontend/icons/icons.svg#down')
+                
+                a(class='flex items-center' href='#')
+                    | 收藏
+                    svg(class='w-4 h-4 rotate-180')
+                        use(href='/static/frontend/icons/icons.svg#down')
+        section(class="my-2 md:my-3")
+           
+        
+            ul(class='dx-video-list gap-2.5 md:gap-4')
+                each val in [...videos, ...videos]
+                    li
+                        +VideoItem(val)
+     
+        
+            +Pager
+     
+
+      
+block footer-scripts
+    script(data-main='/static/frontend/js/index_main.js' src="/static/frontend/js/lib/require.js")

@@ -1,0 +1,42 @@
+
+<!--  评价弹框-->
+<div class="modal fade dx-modal" id="comment_modal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header flex items-start">
+        <div class="text-black font-bold"><span>评分：</span><span class="title"></span></div>
+        <button class="close text-subtitle ml-auto" type="button" data-dismiss="modal">
+          <svg class="w-6 h-6">
+            <use href="/static/frontend/icons/icons.svg#menu_close"></use>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <div class="modal-body">
+      <form>
+        <div class="flex items-center dx-rate"><span>请评分：</span>
+          <svg class="w-3.5 h-3.5 cursor-pointer mr-1">
+            <use href="/static/frontend/icons/icons.svg#star_red"></use>
+          </svg>
+          <svg class="w-3.5 h-3.5 cursor-pointer mr-1">
+            <use href="/static/frontend/icons/icons.svg#star_red"></use>
+          </svg>
+          <svg class="w-3.5 h-3.5 cursor-pointer mr-1">
+            <use href="/static/frontend/icons/icons.svg#star_red"></use>
+          </svg>
+          <svg class="w-3.5 h-3.5 cursor-pointer mr-1">
+            <use href="/static/frontend/icons/icons.svg#star_red"></use>
+          </svg>
+          <svg class="w-3.5 h-3.5 cursor-pointer">
+            <use href="/static/frontend/icons/icons.svg#star_icon"></use>
+          </svg><span class="dx-rate-title ml-2">还不错</span>
+        </div>
+        <div class="dx-textarea mt-3">
+          <textarea class="flex-1" rows="5" maxlength="150" placeholder="点评该作品"></textarea>
+          <div class="flex justify-end mt-0.5 text-base6"><span class="current">0</span><span>/</span><span class="limit"></span></div>
+        </div>
+        <button class="btn-primary btn mt-4 btn-block btn-comment-submit" type="button">提交</button>
+      </form>
+    </div>
+  </div>
+</div>

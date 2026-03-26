@@ -1,0 +1,128 @@
+#age-warning {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(255, 255, 255, 1);
+
+  z-index: 9999;
+}
+
+#age-warning .warning-container {
+    width: 80vw;
+    height: 53%;
+    /* background-image: url(/static/web/images/pc_background.png); */
+    background-color: #fff;
+    box-shadow: 6px 3px 20px 8px rgb(64 64 64 / 45%);
+    padding: 12px 12px 24px 12px;
+    border-radius: 20px;
+  }
+
+#age-warning .warning-flex-box {
+    display: flex;
+
+    align-items: center;
+    /* background: #292828; */
+    padding: 6px 12px;
+    width: -moz-fit-content;
+    width: fit-content;
+    border-radius: 8px;
+    border: 1px solid #f55757;
+    color: #000;
+  }
+
+#age-warning .lang-icon {
+    width: 24px;
+    margin-right: 4px;
+  }
+
+#age-warning #lang {
+    background-color: transparent;
+    outline: none;
+  }
+
+#age-warning .warn-logo {
+    width: 40%;
+    display: block;
+    margin: 17px auto;
+  }
+
+#age-warning .content-container {
+    text-align: center;
+  }
+
+#age-warning .warn-title {
+    font-size: 20px;
+  }
+
+#age-warning .warn-content {
+    margin: 12px 0;
+    font-size: 12px;
+    text-align: left;
+  }
+
+#age-warning .warn-btn-group {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+  }
+
+#age-warning .btn-item {
+      width: 45% !important;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      width: 150px;
+      padding: 10px 0px !important;
+      border-radius: 30px !important;
+    }
+
+#age-warning .btn-age-confirm {
+    color: #fff;
+    background: #f55757;
+    white-space: nowrap;
+  }
+
+#age-warning .btn-age-cancel {
+    background: #f9abaa;
+    color: #fff;
+  }
+
+@media (min-width:768px) {
+  #age-warning .warning-container {
+    width: 520px;
+    height: 400px !important;
+    /* background-image: url(/static/web/images/pc_background.png); */
+    background-color: #fff;
+    box-shadow: 6px 3px 20px 8px rgb(64 64 64/45%);
+    padding: 20px 30px 24px;
+    border-radius: 20px
+  }
+    .warn-logo {
+    width: 129px !important;
+    display: block !important;
+    margin: 24px auto;
+  }
+    .warn-content {
+    text-align: left;
+    margin: 12px 0;
+    font-size: 14px !important;
+  }
+    .btn-item {
+      width: 40% !important;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      width: 150px;
+      padding: 15px 0px !important;
+      border-radius: 30px !important;
+    }
+
+}

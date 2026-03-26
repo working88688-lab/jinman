@@ -1,0 +1,28 @@
+mixin Nav(index = 'home')
+    // nav
+    aside(class='dx-drawer p-3 text-base2')
+        nav(class='flex flex-col h-full overflow-hidden')
+            div(class='flex-1 overflow-y-auto overflow-x-hidden')
+                +SideMenu({
+                    title: '小说',
+                    href: 'novel.html',
+                    icon: 'novel_menu',
+                    all_href: 'novel_list.html',
+                    rank_href: 'novel_rank.html'
+                })
+
+                +SideMenu({
+                    title: '视频',
+                    href: 'video.html',
+                    icon: 'video_menu',
+                    all_href: 'video_list.html',
+                    rank_href: 'video_rank.html'
+                })
+
+                +SideMenu({
+                    title: '禁漫',
+                    href: 'comic.html',
+                    icon: 'comic_menu',
+                    all_href: 'comic.html',
+                    rank_href: 'comic_rank.html'
+                })

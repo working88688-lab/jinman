@@ -1,0 +1,41 @@
+extends includes/layout.pug
+
+block css
+    link(rel="stylesheet", href="/static/frontend/css/page.css")
+block header
+    +Header({
+        active: 'home'
+    })
+
+block nav
+    +Nav
+
+block content
+    section
+        +BackHeader('回家的路')
+    div(class='bg-white rounded py-5 px-3')
+        div(class='max-w-[720px] m-auto')
+            div(class='dx-title font-semibold mb-3') 永久网址（主站）
+            div
+                a(href="https://www.18mh.net/") https://www.18mh.net/
+            div(class='dx-hairline--bottom pb-4') 已被墙，只要VPN梯子正常就可流畅访问。地球不爆炸，我们就一直在线！～
+
+            div(class='dx-title font-semibold mb-3') 备用网址（镜像站）
+            div
+                a(href="https://www.18dm.net/") https://www.18dm.net/(部分地区被墙)
+            div(class='dx-hairline--bottom pb-4')
+
+            div(class='dx-title font-semibold mb-3') 联系我们
+            div
+                | 添加电报 ，或发送Email到  
+                a(href="mailto:18mh.net@gmail.com") 18mh.net@gmail.com
+                | 可随时获得最新地址。
+            div(class='dx-hairline--bottom pb-4')
+
+            div(class='dx-title font-semibold mb-3') 谨防假冒
+            div 除上述列出的地址外，18mh没有任何其他网址，谨防上当受骗。
+
+
+
+block footer-scripts
+    script(data-main='/static/frontend/js/backup_main.js' src="/static/frontend/js/lib/require.js")

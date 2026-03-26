@@ -1,0 +1,877 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="renderer" content="webkit" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="referrer" content="same-origin" />
+    <meta content="yes" name="apple-touch-fullscreen" />
+    <meta content="telephone=yes" name="format-detection" />
+    <meta name="robots" content="index,follow" />
+    <meta content="black" name="apple-mobile-web-app-status-bar-style" />
+    <meta
+      name="keywords"
+      content="禁漫天堂是内容最丰富、体验最好的 - 成人网站. 每天为您提供最全的色情内容, 无论是成人小说, 成人视频, 18禁漫画, 色情有声小说, 还是全网第一的性爱社区，我们不断增加特色内容，确保每个人都能找到性爱的乐趣。"
+    />
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no" />
+    <meta
+      name="description"
+      content="禁漫天堂是内容最丰富、体验最好的 - 成人网站. 每天为您提供最全的色情内容, 无论是成人小说, 成人视频, 18禁漫画, 色情有声小说, 还是全网第一的性爱社区，我们不断增加特色内容，确保每个人都能找到性爱的乐趣。"
+    />
+    <title>禁漫天堂,色情,小说,视频, 成人,网站 | 18mh.net</title>
+    <link rel="icon" type="image/x-icon" href="/static/frontend/images/favicon.ico" />
+    <link rel="stylesheet" href="/static/frontend/css/lib/zui.css?v=v1.0.0" />
+    <link rel="stylesheet" href="/static/frontend/css/common.css?v=v1.0.0" />
+    <link rel="stylesheet" href="/static/frontend/css/page.css" />
+    <script src="/static/frontend/js/setup.js"></script>
+  </head>
+  <body>
+    <!-- header-->
+    <header class="text-xl w-full duration-300 transition-all" id="app-header">
+      <div class="header fixed w-full left-0 top-0 bg-white">
+        <div class="dx-container relative">
+          <!-- mobile搜索框-->
+          <div class="app-header relative flex items-center w-full">
+            <button class="md:hidden btn-menu-collapse mr-3" title="打开左侧菜单栏" data-class="dx-drawer--open">
+              <svg class="w-6 h-6">
+                <use class="open" href="/static/frontend/icons/icons.svg#menu"></use>
+                <use class="close" href="/static/frontend/icons/icons.svg#menu_close"></use>
+              </svg>
+            </button>
+            <!--  logo-->
+            <div class="flex-shrink-0 md:col-span-1 items-center flex justify-center md:justify-start">
+              <a class="items-center flex justify-center md:justify-start" href="/">
+                <img
+                  class="app-logo w-[60px] h-[23px] md:w-[120px] md:h-[45px]"
+                  src="/static/frontend/images/logo.png"
+                  title="logo"
+                  alt="logo"
+                />
+              </a>
+            </div>
+            <!--  pc搜索框 -->
+            <!-- mobile 搜索icon-->
+            <div class="flex-shrink-0 items-center flex ml-auto justify-end">
+              <button class="md:hide btn-open-search" type="button" title="search">
+                <svg class="w-7 h-7 text-font1">
+                  <use href="/static/frontend/icons/icons.svg#search"></use>
+                </svg>
+              </button>
+              <button class="btn-login md:hidden" type="button" data-dismiss="popover" data-type="login" title="登录">
+                <svg class="w-6 h-6 md:w-8 md:h-8 text-font1">
+                  <use href="/static/frontend/icons/icons.svg#user_icon"></use>
+                </svg>
+              </button>
+              <div class="popover-container mt-1 relative hidden md:flex items-center text-default text-black">
+                <button class="btn-login py-2" data-dismiss="popover" data-type="register" type="button" title="登录">
+                  注册
+                </button>
+                <span class="mx-3">|</span>
+                <button class="btn-login py-2" data-dismiss="popover" data-type="login" type="button" title="登录">
+                  登录
+                </button>
+              </div>
+            </div>
+          </div>
+          <nav class="dx-hairline--bottom hide md:block" id="app-nav">
+            <ul class="flex justify-between dx-container">
+              <li class="flex mr-6"><a class="app-nav-item flex-1 py-1 text-center" href="/">首页</a></li>
+              <li class="flex mr-6">
+                <a class="app-nav-item flex-1 py-1 text-center" href="/novel_list.html">小说</a>
+              </li>
+              <li class="flex mr-6">
+                <a class="app-nav-item flex-1 py-1 text-center" href="/video_list.html">视频</a>
+              </li>
+              <li class="flex mr-6">
+                <a class="app-nav-item flex-1 py-1 text-center" href="/comic_list.html">禁漫</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </header>
+    <!-- nav-->
+    <aside class="dx-drawer p-3">
+      <nav class="flex flex-col h-full overflow-hidden">
+        <div class="flex-1 overflow-y-auto overflow-x-hidden">
+          <div class="mb-2">
+            <a class="flex items-center mb-1" href="novel.html">
+              <svg class="w-4 h-4 mr-1">
+                <use href="/static/frontend/icons/icons.svg#novel_menu"></use>
+              </svg>
+              <span>小说</span>
+            </a>
+            <ul class="flex flex-wrap">
+              <li class="mr-1.5 mb-1.5"><a href="novel.html">全部小说</a></li>
+              <li class="mr-1.5 mb-1.5"><a href="novel.html">排行榜</a></li>
+              <li class="mr-1.5 mb-1.5"><a>都市</a></li>
+              <li class="mr-1.5 mb-1.5"><a>玄幻</a></li>
+              <li class="mr-1.5 mb-1.5"><a>日本AV</a></li>
+              <li class="mr-1.5 mb-1.5"><a>都市</a></li>
+              <li class="mr-1.5 mb-1.5"><a>玄幻</a></li>
+              <li class="mr-1.5 mb-1.5"><a>日本AV</a></li>
+              <li class="mr-1.5 mb-1.5"><a>都市</a></li>
+              <li class="mr-1.5 mb-1.5"><a>玄幻</a></li>
+              <li class="mr-1.5 mb-1.5"><a>日本AV</a></li>
+              <li class="mr-1.5 mb-1.5"><a>都市</a></li>
+              <li class="mr-1.5 mb-1.5"><a>玄幻</a></li>
+              <li class="mr-1.5 mb-1.5"><a>日本AV</a></li>
+              <li class="mr-1.5 mb-1.5"><a>都市</a></li>
+              <li class="mr-1.5 mb-1.5"><a>玄幻</a></li>
+              <li class="mr-1.5 mb-1.5"><a>日本AV</a></li>
+              <li class="mr-1.5 mb-1.5"><a>都市</a></li>
+              <li class="mr-1.5 mb-1.5"><a>玄幻</a></li>
+              <li class="mr-1.5 mb-1.5"><a>日本AV</a></li>
+              <li class="mr-1.5 mb-1.5"><a>都市</a></li>
+              <li class="mr-1.5 mb-1.5"><a>玄幻</a></li>
+              <li class="mr-1.5 mb-1.5"><a>日本AV</a></li>
+            </ul>
+          </div>
+          <div class="mb-2">
+            <a class="flex items-center mb-1" href="video.html">
+              <svg class="w-4 h-4 mr-1">
+                <use href="/static/frontend/icons/icons.svg#video_menu"></use>
+              </svg>
+              <span>视频</span>
+            </a>
+            <ul class="flex flex-wrap">
+              <li class="mr-1.5 mb-1.5"><a href="video.html">全部视频</a></li>
+              <li class="mr-1.5 mb-1.5"><a href="video.html">排行榜</a></li>
+              <li class="mr-1.5 mb-1.5"><a>都市</a></li>
+              <li class="mr-1.5 mb-1.5"><a>玄幻</a></li>
+              <li class="mr-1.5 mb-1.5"><a>日本AV</a></li>
+              <li class="mr-1.5 mb-1.5"><a>都市</a></li>
+              <li class="mr-1.5 mb-1.5"><a>玄幻</a></li>
+              <li class="mr-1.5 mb-1.5"><a>日本AV</a></li>
+              <li class="mr-1.5 mb-1.5"><a>都市</a></li>
+              <li class="mr-1.5 mb-1.5"><a>玄幻</a></li>
+              <li class="mr-1.5 mb-1.5"><a>日本AV</a></li>
+              <li class="mr-1.5 mb-1.5"><a>都市</a></li>
+              <li class="mr-1.5 mb-1.5"><a>玄幻</a></li>
+              <li class="mr-1.5 mb-1.5"><a>日本AV</a></li>
+              <li class="mr-1.5 mb-1.5"><a>都市</a></li>
+              <li class="mr-1.5 mb-1.5"><a>玄幻</a></li>
+              <li class="mr-1.5 mb-1.5"><a>日本AV</a></li>
+              <li class="mr-1.5 mb-1.5"><a>都市</a></li>
+              <li class="mr-1.5 mb-1.5"><a>玄幻</a></li>
+              <li class="mr-1.5 mb-1.5"><a>日本AV</a></li>
+              <li class="mr-1.5 mb-1.5"><a>都市</a></li>
+              <li class="mr-1.5 mb-1.5"><a>玄幻</a></li>
+              <li class="mr-1.5 mb-1.5"><a>日本AV</a></li>
+            </ul>
+          </div>
+          <div class="mb-2">
+            <a class="flex items-center mb-1" href="comic.html">
+              <svg class="w-4 h-4 mr-1">
+                <use href="/static/frontend/icons/icons.svg#comic_menu"></use>
+              </svg>
+              <span>禁漫</span>
+            </a>
+            <ul class="flex flex-wrap">
+              <li class="mr-1.5 mb-1.5"><a href="comic.html">全部禁漫</a></li>
+              <li class="mr-1.5 mb-1.5"><a href="comic.html">排行榜</a></li>
+              <li class="mr-1.5 mb-1.5"><a>都市</a></li>
+              <li class="mr-1.5 mb-1.5"><a>玄幻</a></li>
+              <li class="mr-1.5 mb-1.5"><a>日本AV</a></li>
+              <li class="mr-1.5 mb-1.5"><a>都市</a></li>
+              <li class="mr-1.5 mb-1.5"><a>玄幻</a></li>
+              <li class="mr-1.5 mb-1.5"><a>日本AV</a></li>
+              <li class="mr-1.5 mb-1.5"><a>都市</a></li>
+              <li class="mr-1.5 mb-1.5"><a>玄幻</a></li>
+              <li class="mr-1.5 mb-1.5"><a>日本AV</a></li>
+              <li class="mr-1.5 mb-1.5"><a>都市</a></li>
+              <li class="mr-1.5 mb-1.5"><a>玄幻</a></li>
+              <li class="mr-1.5 mb-1.5"><a>日本AV</a></li>
+              <li class="mr-1.5 mb-1.5"><a>都市</a></li>
+              <li class="mr-1.5 mb-1.5"><a>玄幻</a></li>
+              <li class="mr-1.5 mb-1.5"><a>日本AV</a></li>
+              <li class="mr-1.5 mb-1.5"><a>都市</a></li>
+              <li class="mr-1.5 mb-1.5"><a>玄幻</a></li>
+              <li class="mr-1.5 mb-1.5"><a>日本AV</a></li>
+              <li class="mr-1.5 mb-1.5"><a>都市</a></li>
+              <li class="mr-1.5 mb-1.5"><a>玄幻</a></li>
+              <li class="mr-1.5 mb-1.5"><a>日本AV</a></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </aside>
+    <!-- main-content-->
+    <main class="dx-container app-content">
+      <section>
+        <div class="flex items-center justify-center relative py-3">
+          <svg class="w-4 h-4 cursor-pointer absolute -translate-y-1/2 left-0 top-1/2" onclick="_back()">
+            <use href="/static/frontend/icons/icons.svg#arrow_left"></use>
+          </svg>
+          <span class="font-bold dx-title">隐私政策</span>
+        </div>
+        <div class="bg-white rounded py-5 px-3">
+          <div class="content max-w-[720px] m-auto">
+            <b>Introduction</b>
+            <br />
+            18mh operates the website
+            <a class="text-primary" href="https://www.18mh.net/" target="_blank">www.18mh.net</a>
+            (hereinafter "
+            <b>(18mh)</b>
+            ") (hereinafter the "
+            <b>(Website)</b>
+            ") and is the controller of the information collected or provided via the Website.
+            <br />
+            Please read this privacy policy carefully, as your access to and use of our Website signifies that you have
+            read and understand all terms within this privacy policy. We respect your privacy and are committed to
+            protecting your personal data.
+            <br />
+            If you have any questions about our privacy practices, please see "Contact Information" below for
+            information on how to contact us.
+            <br />
+            <br />
+            <b>Scope</b>
+            <br />
+            This privacy policy applies to information we collect:
+            <br />
+            • on the Website and your email communications with the Website,
+            <br />
+            • through our mobile applications that provide dedicated non-browser-based interaction between you and the
+            Website, or
+            <br />
+            • when you interact with our advertising and applications on third-party websites and services, if those
+            applications or advertising include links to this privacy policy.
+            <br />
+            <br />
+            <b>The Data We Collect About You</b>
+            <br />
+            We may collect different kinds of personal data about you, depending on whether you chose to create an
+            account with us.
+            <br />
+            Persons who visit the Website without logging in or registering ("
+            <b>unregistered users</b>
+            "):
+            <br />
+            •
+            <b>Contact Information</b>
+            : We collect email address or any other information which you voluntarily provide to us at your direction
+            for a specific function, for example a contest or survey.
+            <br />
+            •
+            <b>Website activity data</b>
+            : We collect information about how you use our Website, products and services and interact with our content
+            and advertisements, including the pages you visit in our Website, search history, and the referring web page
+            from which you arrived at our Website. We collect browser and operating system information, devices you use
+            to access the Website and your time zone setting. We also collect online identifiers. Specifically, we
+            collect internet protocol (IP) address information and we set cookies as explained below in the section on
+            Cookies and Automatic Data Collection Technologies
+            <br />
+            Persons who choose to create an account on 18mh:
+            <br />
+            • We collect from registered users the same categories of information described above for unregistered
+            users.
+            <br />
+            •
+            <b>Contact Information</b>
+            : We collect username or similar identifier, and email address.
+            <br />
+            •
+            <b>Payment and Commercial Information</b>
+            : If you make a purchase, or receive payments from us, we collect payment card or account details and
+            related information necessary to process payments. We also collect details about payments to and from you
+            and details of products and services you have purchased or received from us.
+            <br />
+            •
+            <b>User Submitted Personal Information</b>
+            : We collect information you submit in order to personalize your account or for a specific function, for
+            example date of birth, age, gender, your interests, preferences, feedback, survey responses, your
+            preferences in receiving marketing from us and our third parties, and your communication preferences, as
+            well as any other information which you voluntarily provide to us at your direction for a specific function.
+            <br />
+            •
+            <b>Identifiers and Biometric Information</b>
+            : If you choose to register to certain services on the Website, we collect identifiers you submit to us
+            (including government-issued photo identification as well as other documentation) in order for us to verify
+            your identity. We also collect biometric information in order to verify the authenticity of the identifiers
+            you provide to us while registering for such services as further explained in the section "Biometric
+            Information" below.
+            <br />
+            •
+            <b>User Contributions including Audio/Video Information</b>
+            : We provide areas on our Website where you can post information about yourself and others, communicate with
+            others, upload content (e.g., pictures, video files, etc.), and post comments or reviews of content found on
+            the Website.
+            <br />
+            Please use caution in providing user contributions. By providing user contributions you are making that
+            content and information publicly available. User contributions can be read, collected, used, and disclosed
+            by others, and we cannot control who accesses your user contributions or what other users may do with the
+            information you voluntarily post or submit. User contributions shall be governed by laws in the relevant
+            jurisdiction if there are any liabilities or criminal activities which arise from therein.
+            <br />
+            We may use your data to produce and share aggregated insights that do not directly or indirectly identify
+            you and are not associated with you. Such aggregate information is not personal information.
+            <br />
+            Our website are not directed to persons under the age of 18 or the applicable age of majority in the
+            jurisdiction from which the Website are accessed ("
+            <b>(minors)</b>
+            "), and we prohibit minors from using the Website. We do not knowingly collect personal information from
+            minors. If you are the parent or legal guardian of a minor who has provided us with personal information,
+            then please contact us at support@18mh.net to have that minor’s personal information deleted.
+            <br />
+            <br />
+            <b>The Sources from Which We Collect Personal Information</b>
+            <br />
+            We collect Personal Information in the following ways:
+            <br />
+            •
+            <b>Directly from you</b>
+            : We collect the categories of information listed above directly from you.
+            <br />
+            •
+            <b>Automated technologies or interactions</b>
+            . As explained in the section below on Cookies and Automatic Data Collection Technologies, we set cookies
+            and other automatic techniques to collect website activity data when you visit the Website or other website
+            owned by our corporate group.
+            <br />
+            <br />
+            <b>Purposes for Which We Use Your Personal Information</b>
+            <br />
+            We use personal information for the purposes described below.
+            <br />
+            •
+            <b>Provision of services</b>
+            : We use identifiers, website activity data, and, additionally, for registered users only, contact
+            information, and payment and commercial information and user contributions to present our Website and their
+            contents to you, including any interactive features on our Website, to provide you with information,
+            products or services that you request from us, and to verify your eligibility and deliver prizes in
+            connection with contests and sweepstakes.
+            <br />
+            •
+            <b>Customer management (Registered Users and Premium Users Only)</b>
+            : We use identifiers and contact information, and payment and commercial information to manage a registered
+            users’ account, to provide customer support and notices to the registered user about his account or
+            subscription, including expiration and renewal notices, and notices about changes to our Website or any
+            products or services we offer or provide through them. We use identifiers and biometric information for the
+            purpose of verifying your identity and the authenticity of the identifiers you provide to us while
+            registering for certain services on the Website.
+            <br />
+            •
+            <b>Customization of content and marketing (Unregistered Users and Registered Users Only)</b>
+            : We use identifiers and contact information, website activity data, user submitted personal information and
+            user contributions to analyze your use of, or interest in, our Website’s content, products, or services, in
+            order to develop and display content and advertising tailored to your interests on our Website.
+            <br />
+            •
+            <b>Analytics</b>
+            : We use identifiers and website activity data to determine whether users of our Website are unique, or
+            whether the same user is using the Website on multiple occasions, and to monitor aggregate metrics such as
+            total number of visitors, pages viewed, demographic patterns.
+            <br />
+            •
+            <b>Functionality and security</b>
+            : We may use any of the categories of data we collect to diagnose or fix technology problems, to verify your
+            payment information, and to detect, prevent, and respond to actual or potential fraud, illegal activities,
+            or intellectual property infringement.
+            <br />
+            •
+            <b>Compliance</b>
+            : We may use any of the categories of data we collect to enforce our terms and conditions and to comply with
+            our legal obligations.
+            <br />
+            • We will use contact information and user submitted personal information in any other way we may describe
+            when you provide the information (e.g., for a contest); or for any other purpose with your consent provided
+            separately from this privacy policy.
+            <br />
+            <br />
+            <b>Our Legal Bases Under EU Law</b>
+            <br />
+            We have the following legal bases under EU law for processing your personal data for the purposes described
+            under Section Purposes for Which We Use Your Personal Information:
+            <br />
+            • We process personal data for the purposes of providing the services, customer management, certain
+            customization of content (e.g., based on your selected preferences, favorites and ratings), and
+            functionality and security because the processing is necessary for the performance of a contract,
+            specifically it is necessary to provide the services or products you have requested, or to provide our
+            Website and services in a manner consistent with our terms and conditions and any other contract that you
+            have with us.
+            <br />
+            • We process personal data, including identifiers, for the purpose of verifying your identity because such
+            processing is necessary for us to comply with a legal or regulatory obligation.
+            <br />
+            • We process biometric information based upon your consent to do so.
+            <br />
+            • We process personal data for the purposes of customization of advertising, marketing and analytics for our
+            legitimate interests.
+            <br />
+            • We process personal data for functionality and security because it is necessary for our legitimate
+            interests, and in certain cases because the processing is necessary for us to comply with a legal or
+            regulatory obligation.
+            <br />
+            • We process personal information in specific circumstances where you have provided your consent to such
+            processing.
+            <br />
+            <br />
+            <b>Disclosure of Your Personal Information</b>
+            <br />
+            We disclose personal information:
+            <br />
+            •
+            <b>To the public</b>
+            : When you submit user contributions including audio/video content, you are using our Website and services
+            to make that information public.
+            <br />
+            •
+            <b>Within our corporate group</b>
+            : We may disclose any of the categories of personal information to members of our corporate group (including
+            affiliates and related entities) to the extent this is necessary for our purposes listed in the sections
+            above.
+            <br />
+            •
+            <b>Service providers</b>
+            : We disclose the categories of personal information we collect to our authorized service providers that
+            perform certain services on our behalf. These services may include payment processing and fulfilling orders,
+            identity and document authenticity verification including biometric processing, risk and fraud detection and
+            mitigation, customer service, marketing and advertising, customization of content, analytics, security, or
+            hosting our Website or supporting our Website’s functionality. These service providers may have access to
+            personal information needed to perform their functions but are not permitted to share or use such
+            information for any other purposes.
+            <br />
+            v• Legal successors: We may disclose all of the categories of personal information we collect to a buyer or
+            other successor in the event of a merger, acquisition or sale or transfer of some or all of our assets,
+            whether as a going concern or as part of bankruptcy, liquidation or similar proceeding.
+            <br />
+            •
+            <b>To comply with the law or protect our rights or the rights of third parties</b>
+            : We access, preserve and share all of the categories of personal information with regulators, law
+            enforcement or others where we reasonably believe such disclosure is needed to (a) satisfy any applicable
+            law, regulation, legal process, or governmental request, (b) enforce applicable terms of use, including
+            investigation of potential violations thereof, (c) detect, prevent, or otherwise address illegal or
+            suspected illegal activities, security or technical issues, (d) protect against harm to the rights, property
+            or safety of our company, our users, our employees, or others; or (e) to maintain and protect the security
+            and integrity of our Website or infrastructure. In such cases, we may raise or waive any legal objection or
+            right available to us, in our sole discretion.
+            <br />
+            <br />
+            <b>Cookies and Automatic Data Collection Technologies</b>
+            <br />
+            As you navigate through and interact with our Website, we use automatic data collection technologies to
+            collect website activity data.
+            <br />
+            We use cookies, which are small text files that are stored in your web browser or downloaded to your device
+            when you visit a website.
+            <br />
+            We currently use the following types of cookies, which are set by the Website’s domains, or by other domains
+            we own or control:
+            <br />
+            • Strictly necessary cookies: These are cookies that are required for the operation of our Website. These
+            include, for example, cookies that enable a user to log in to our Website and to check if a user is allowed
+            access to a particular service or content.
+            <br />
+            • Functionality cookies: These cookies help us to personalize and enhance your online experience on our
+            Website. This type of cookies allows us to recognize you when you return to our Website and to remember, for
+            example, your choice of language.
+            <br />
+            • Analytics cookies: These cookies allow us to recognize and count the number of users and to see how users
+            use and explore our Website. These cookies help us to improve our Website, for example by ensuring that all
+            users are able to find what they are looking for easily.
+            <br />
+            • Targeting and Advertising cookies: These cookies record visits of a user on our Website, the pages a user
+            visits and the links a user follows in order to enable us to make our Website more relevant to the user’s
+            interests and to help us serve ads that might be of interest to the user. Targeting and advertising cookies
+            are only used for unregistered users and registered users.
+            <br />
+            • Cookies can be either session cookies or persistent cookies. A session cookie expires automatically when
+            you close your browser. A persistent cookie will remain until it expires or you delete your cookies.
+            <br />
+            You can set your browser to refuse all or some browser cookies, or to alert you when cookies are being sent.
+            If you disable or refuse cookies, please note that some parts of the Website may then be inaccessible or not
+            function properly.
+            <br />
+            <b>Do Not Track</b>
+            : Our systems do not recognize browser "Do Not Track" signals.
+            <br />
+            <b>Use of Google Analytics</b>
+            . We use Google as a service provider to collect and analyze information about how users use the Website,
+            including by collecting website activity data through first-party cookies set by our domains, and
+            third-party cookies set by Google. Because we activated IP anonymization for Google Analytics, Google will
+            anonymize the last octet of a particular IP address and will not store your full IP address. Google will use
+            the information only for the purpose of providing Google Analytics services to us, and will not use this
+            information for other purposes. The information collected by Google Analytics may be transmitted to and
+            stored by Google on servers in the United States pursuant to standard contractual clauses approved by the
+            EU. You can learn more on how Google uses data here, and you can opt-out of Google Analytics by visiting the
+            Google Analytics opt-out page.
+            <br />
+            <br />
+            <b>Third-party Use of Cookies and Other Tracking Technologies</b>
+            <br />
+            Some content or applications, including advertisements, on 18mh are provided or served by third parties.
+            These third parties may use cookies alone or in conjunction with other tracking technologies to collect
+            information about you when you use 18mh. Unless expressly stated otherwise, 18mh does not provide any
+            personal information to these third parties, however they may collect information, including your IP
+            address, advertisements you click, time zone setting and location, and information about your browser,
+            operating system and devices you use to access 18mh. They may use this information to provide you with
+            interest-based advertising or other targeted content. They may track users across different websites and
+            over time.
+            <br />
+            You can set your browser to refuse all third-party cookies, or to alert you when cookies are being sent.
+            <br />
+            <br />
+            <b>Your Choices About How We Collect, Use and Disclose Your Personal Information</b>
+            <br />
+            We strive to provide you with choices regarding the personal information you provide to us.
+            <br />
+            • You can choose not to provide us with certain personal information, but that may result in you being
+            unable to use certain features of our Website because such information may be required in order for you to
+            register as a member; purchase products or services; participate in a contest, promotion, survey, or
+            sweepstakes; ask a question; or initiate other transactions on our Website.
+            <br />
+            • As explained in the section Cookies and Automatic Data Collection Technologies, you may set your browser
+            to refuse some or all cookies. In addition, you may opt out of Google Analytics by visiting the Google
+            Analytics opt-out page.
+            <br />
+            • You can opt out of receiving marketing emails from us using the opt-out link provided in our emails. If
+            you are a Registered User, we may continue to send you other types of transactional and relationship e-mail
+            communications, such as emails about your account or orders, administrative notices, and surveys.
+            <br />
+            • You may use your account settings to delete your user contributions and audio/video information.
+            <br />
+            • You may also delete and deactivate your account with us at any time. If you do so, your profile will no
+            longer be accessible by you. If you later choose to have an account with us, you will have to sign up for a
+            new account as none of the information you previously provided or saved within your account will have been
+            saved.
+            <br />
+            <br />
+            <b>Your Rights Related to Your Personal Information</b>
+            <br />
+            You have certain rights regarding the personal information we collect, use or disclose and that is related
+            to you, including the right:
+            <br />
+            • to receive information on the personal information we hold about you and how such personal information is
+            used (right to access);
+            <br />
+            • to correct inaccurate personal information concerning you (right to data rectification);
+            <br />
+            • to delete/erase your personal information (right to deletion, "right to be forgotten");
+            <br />
+            • to receive the personal information provided by you in a structured, commonly used and machine-readable
+            format and to transmit the personal information to another data controller (right to data portability)
+            <br />
+            • to object to the use of your personal information where such use is based on our legitimate interests or
+            on public interests (right to object);
+            <br />
+            • in some cases, to restrict our use of your personal information (right to restriction of processing); and
+            <br />
+            • to withdraw your consent at any time where our processing is based on consent.
+            <br />
+            You may exercise your right to access and deletion using the buttons at the bottom of this page.
+            Additionally, you may, at any time, send us an e-mail at support@18mh.net to exercise your above rights in
+            accordance with the applicable legal requirements and limitations. If you are located in the European
+            Economic Area, the UK or any other jurisdiction, you have a right to lodge a complaint with your local data
+            protection authority.
+            <br />
+            Please note that unless you have created an account with us, we may not have sufficient information to
+            identify you and therefore may not be in a position to respond to your request. Additionally, in some cases
+            in order to adequately verify your identity or your authorization to make the request, we may require you to
+            provide additional information.
+            <br />
+            Note that some requests to delete certain personal information will require the deletion of your user
+            account as the provision of user accounts are inextricably linked to the use of certain personal information
+            (e.g., your e-mail address).
+            <br />
+            <b>California Rights and Choices</b>
+            <br />
+            The California Consumer Privacy Act ("
+            <b>(CCPA)</b>
+            ") provides you certain rights in relation to your personal information:
+            <br />
+            • Right to Know: You have the right to request that we disclose certain information about our collection of
+            your personal information over the past 12 months, including the specific pieces of information we
+            collected.
+            <br />
+            • Right to Request Deletion: You have the right to request that we delete any of your personal information
+            we collected from you and retained, subject to certain exceptions set forth in the CCPA.
+            <br />
+            • Right to Non-Discrimination for the Exercise of Your Rights: We will not discriminate against you because
+            you have exercised any of your rights under the CCPA.
+            <br />
+            To exercise the rights described above, please email us at support@18mh.net with the email subject line
+            "CCPA Request." In either case you will need to provide the following information to verify your identity
+            and enable us to locate your information in our systems: your username and email address that you used to
+            create an account with us, as well as any other information which we may reasonably request in order for us
+            to verify your identity. We may require you verify that you have access to your account and/or email account
+            that you used to register with us.
+            <br />
+            You can designate an agent to make a request by executing a notarized power of attorney to have that person
+            act on your behalf and providing that person with the information listed above that allows us to verify your
+            identity and locate your information. Alternatively, you will need to directly confirm your identity with us
+            using the methods described above, sign an authorization for the agent to act on your behalf and provide us
+            with confirmation that you have done so.
+            <br />
+            We disclose certain categories of California residents’ personal information for our business purposes, as
+            described in the section above titled Disclosure of Your Personal Information.
+            <br />
+            We do not sell California residents’ personal information.
+            <br />
+            <b>Notice to Nevada Residents/Your Nevada Privacy Rights</b>
+            <br />
+            We do not exchange Nevada residents’ personal information for money with anyone so they may license or sell
+            the personal information to additional parties.
+            <br />
+            <br />
+            <b>Biometric Information</b>
+            <br />
+            We employ third-party service providers to help verify your identity and age and to check the authenticity
+            of identification documents you provide using facial recognition technology. The facial recognition
+            technology creates a mathematical representation of your face and detects facial features from the live scan
+            of your face, your selfie, and the government-issued ID you submit or previously submitted to us. This
+            mathematical representation, which is considered biometric information/identifier/data under the laws of
+            certain states and countries, is not shared by our service providers with us, and is deleted by our service
+            providers 7 days after its creation. Information derived from this mathematical representation, which may be
+            considered biometric information/identifier/data under the laws of certain states and countries, is shared
+            by our service providers with us and is deleted by us as further described below.
+            <br />
+            Your biometric information will be used to:
+            <br />
+            • verify you are a real, live person and to prevent the use of methods which would allow a user to identify
+            as someone else;
+            <br />
+            • to match your selfie with your government-issued ID you submit or previously submitted to us to make sure
+            that nobody is impersonating you;
+            <br />
+            • to help confirm your age.
+            <br />
+            We may disclose your biometric information, face scan, selfie, and government-issued ID (including any
+            government-issued ID or selfie you previously submitted to us) with members of our corporate group, and with
+            third-party service providers. These entities may be located in jurisdictions that do not offer the same
+            level of data protection as your jurisdiction. We (and/or any of these entities) may perform facial
+            recognition and collect your biometric information from your face scan, selfie and any government-issued ID,
+            and use your biometric information for the above purposes.
+            <br />
+            You will be asked to provide your consent to biometric processing. You may withdraw your consent to this
+            processing at any time by using the links below. Withdrawing your consent will not affect the lawfulness of
+            any collection, use, processing or disclosure that occurred prior to the withdrawal.
+            <br />
+            <br />
+            <b>Notice to Law Enforcement</b>
+            <br />
+            For any notice, subpoena regarding formal legal proceeding or document production requests, please direct to
+            your communication to: support@18mh.net.
+            <br />
+            <br />
+            <b>Transfers of Your Personal Information to Other Countries</b>
+            <br />
+            Where the laws of your country allow you to do so, by using the Website you consent to the transfer of
+            information that we collect about you, including personal information, to other countries in which we,
+            members of our corporate group (including affiliates and related entities) or our service providers are
+            located. When we transfer personal information to countries outside of the European Economic Area ("
+            <b>(EEA)</b>
+            ") or other regions with comprehensive data protection laws, we will ensure that the information is
+            transferred in accordance with the applicable laws. Where relevant, our transfers outside the EEA are made
+            pursuant to standard contractual clauses approved for use by the European Union.
+            <br />
+            <br />
+            <b>Retention of Personal Information</b>
+            <br />
+            We will only retain your personal information for as long as your account is active, or for as long as
+            necessary to fulfil the purposes we collected it for, including for the purposes of satisfying any legal,
+            accounting, or reporting requirements.
+            <br />
+            To determine the appropriate retention period for personal data, we consider a number of factors, including
+            what personal data we are processing, the risk of harm from any unauthorized disclosure, why we are
+            processing your personal data and whether we can achieve this outcome by another means without having to
+            process it.
+            <br />
+            Where we no longer need to process your personal information for the purposes set out in this Privacy
+            Policy, we will delete your personal information from our systems.
+            <br />
+            Where permissible, we will also delete your personal information upon your request.
+            <br />
+            <br />
+            <b>Third-Party Links and Sites</b>
+            <br />
+            If you click on a link to a third-party site, you will be taken to websites we do not control. This policy
+            does not apply to the privacy practices of these websites. Read the privacy policy of other websites
+            carefully. We are not responsible for these third-party practices.
+            <br />
+            <br />
+            <b>Changes to Our Privacy Policy</b>
+            <br />
+            We may modify or revise our privacy policy from time to time. If we change anything in our privacy policy,
+            the date of change will be reflected in the "last modified date". We may attempt to notify you of any
+            material changes as required by law. Please also periodically review the most up-to-date version of our
+            privacy policy, which will be posted at this location, so you are aware of any changes.
+            <br />
+            <br />
+            <b>Contact Information</b>
+            <br />
+            If you have any questions about this privacy policy or our information-handling practices, please contact us
+            at support@18mh.net.
+            <br />
+            Our Data Protection Officer can be contacted at the following email address: support@18mh.net.
+            <br />
+            <br />
+            <b>GDPR (General Data Protection Regulation)</b>
+            <br />
+            In accordance with the General Data Protection Regulation law in the European Union effective May 25, 2018,
+            18mh users can request a copy of their personal data as well as get 18mh to delete their personal data.
+            <br />
+          </div>
+        </div>
+      </section>
+    </main>
+    <!--  footer-->
+    <footer class="mt-3 dx-hairline--top py-2" id="app-footer">
+      <div class="dx-container">
+        <div class="flex items-center justify-center">
+          <img class="w-[80px] h-[30px]" alt="logo" src="/static/frontend/images/logo.png" />
+          禁漫天堂,色情,小说,视频, 成人,网站 | 18mh.net
+        </div>
+        <ul class="flex justify-center divide-x flex-wrap mt-3">
+          <li class="px-2"><a href="contact.html">联系我们</a></li>
+          <li class="px-2"><a href="terms.html">用户条款</a></li>
+          <li class="px-2"><a href="policy.html">隐私政策</a></li>
+          <li class="px-2"><a href="2257A.html">2257A</a></li>
+          <li class="px-2"><a href="DMCA.html">DMCA</a></li>
+          <li class="px-2"><a href="https://www.rtalabel.org/index.php?content=parents" target="_blank">RTA</a></li>
+        </ul>
+        <ul class="flex justify-center divide-x flex-wrap mt-3">
+          <li class="px-2">
+            E-mail：
+            <a href="mailto:18mh.net@gmail.com" target="_blank">18mh.net@gmail.com</a>
+          </li>
+          <li class="px-2">
+            Telegram：
+            <a href="https://t.me/EXE_AD" target="_blank">@EXE_AD</a>
+          </li>
+          <li class="px-2">
+            官方群：
+            <a href="https://t.me/JMTTSQ" target="_blank">@JMTTSQ</a>
+          </li>
+          <li class="px-2">
+            <a href="https://x.com/18mh1671" target="_blank">
+              <svg class="w-6 h-6 mb-1 md:w-5 md:h-5">
+                <use href="/static/frontend/icons/icons.svg#x"></use>
+              </svg>
+            </a>
+          </li>
+          <li class="px-2">
+            <a href="https://t.me/EXE_AD" target="_blank">
+              <svg class="w-6 h-6 mb-1 md:w-5 md:h-5">
+                <use href="/static/frontend/icons/icons.svg#telegram"></use>
+              </svg>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </footer>
+    <!--  登录框 -->
+    <div class="modal fade dx-modal" id="login_modal">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header flex items-center">
+            <button class="close text-subtitle ml-auto" type="button" data-dismiss="modal">
+              <svg class="w-6 h-6">
+                <use href="/static/frontend/icons/icons.svg#menu_close"></use>
+              </svg>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="px-3">
+              <div class="dx-tabs dx-line-tabs">
+                <div class="flex items-center mb-5">
+                  <div class="dx-line-tab-item text-xl dx-tab-item !pt-2 !pb-3 is-active">登录</div>
+                  <div class="dx-line-tab-item text-xl dx-tab-item !pt-2 !pb-3">注册</div>
+                </div>
+                <div class="dx-tab-content dx-tab-content--active">
+                  <form>
+                    <div class="form-group">
+                      <label for="login-email">用户名</label>
+                      <div class="input-control mb-3">
+                        <input
+                          class="form-control"
+                          id="login-email"
+                          autocomplete="off"
+                          type="text"
+                          placeholder="请输入用户名"
+                        />
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label for="login-password">密码</label>
+                      <div class="input-control mb-5">
+                        <input
+                          class="form-control"
+                          id="login-password"
+                          autocomplete="off"
+                          type="password"
+                          placeholder="请输入密码"
+                        />
+                      </div>
+                    </div>
+                    <div class="input-control mb-5">
+                      <button class="btn-login-submit btn btn-primary btn-block" data-type="login" type="button">
+                        登录
+                      </button>
+                    </div>
+                    <div class="flex mb-3 justify-center">
+                      <span class="opacity-60">还没有账号？</span>
+                      <button class="text-primary btn-change-type" data-index="1" type="button">马上注册</button>
+                    </div>
+                  </form>
+                </div>
+                <div class="dx-tab-content">
+                  <form>
+                    <div class="form-group">
+                      <label for="login-email">
+                        用户名
+                        <span class="text-[#c92427] text-sm">(杜绝注册多个帐号，将删除所有帐号，并封IP)</span>
+                      </label>
+                      <div class="input-control mb-3">
+                        <input
+                          class="form-control"
+                          id="register-email"
+                          autocomplete="off"
+                          type="text"
+                          placeholder="请输入用户名"
+                        />
+                        <div class="text-[#f8bb40] mt-1.5 text-sm">不能用微信或qq，类似威信571*, vx:571*, vx_571*</div>
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label for="login-password">密码</label>
+                      <div class="input-control mb-5">
+                        <input
+                          class="form-control"
+                          id="register-password"
+                          autocomplete="off"
+                          type="password"
+                          placeholder="请输入密码"
+                        />
+                      </div>
+                    </div>
+                    <div class="input-control mb-5">
+                      <button class="btn-login-submit btn btn-primary btn-block" data-type="register" type="button">
+                        注册
+                      </button>
+                    </div>
+                    <div class="flex mb-3 justify-center text-sm">
+                      我确认已经在18岁以上我同意用户
+                      <a class="text-primary mx-1" href="link.html?key=protocol">使用条款</a>
+                      和
+                      <a class="text-primary ml-1" href="link.html?key=privacy">隐私政策</a>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <button class="dx-backtop" data-backtop="data-backtop" title="返回顶部">
+      <svg class="w-6 h-6 md:w-5 md:h-5 dx-backtop--trigger">
+        <use href="/static/frontend/icons/icons.svg#backtotop"></use>
+      </svg>
+    </button>
+    <div class="dx-overlay"></div>
+    <script>
+      const js_assets_version = '1.0.0'
+    </script>
+    <script data-main="/static/frontend/js/contact_main.js" src="/static/frontend/js/lib/require.js"></script>
+  </body>
+</html>

@@ -1,0 +1,484 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="renderer" content="webkit" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="referrer" content="same-origin" />
+    <meta content="yes" name="apple-touch-fullscreen" />
+    <meta content="telephone=yes" name="format-detection" />
+    <meta name="robots" content="index,follow" />
+    <meta content="black" name="apple-mobile-web-app-status-bar-style" />
+    <meta
+      name="keywords"
+      content="禁漫天堂是内容最丰富、体验最好的 - 成人网站. 每天为您提供最全的色情内容, 无论是成人小说, 成人视频, 18禁漫画, 色情有声小说, 还是全网第一的性爱社区，我们不断增加特色内容，确保每个人都能找到性爱的乐趣。"
+    />
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no" />
+    <meta
+      name="description"
+      content="禁漫天堂是内容最丰富、体验最好的 - 成人网站. 每天为您提供最全的色情内容, 无论是成人小说, 成人视频, 18禁漫画, 色情有声小说, 还是全网第一的性爱社区，我们不断增加特色内容，确保每个人都能找到性爱的乐趣。"
+    />
+    <title>禁漫天堂,色情,小说,视频, 成人,网站 | 18mh.net</title>
+    <link rel="icon" type="image/x-icon" href="/static/frontend/images/favicon.ico" />
+    <link rel="stylesheet" href="/static/frontend/css/lib/zui.css?v=v1.0.0" />
+    <link rel="stylesheet" href="/static/frontend/css/common.css?v=v1.0.0" />
+    <link rel="stylesheet" href="/static/frontend/css/page.css" />
+    <script src="/static/frontend/js/setup.js"></script>
+  </head>
+  <body>
+    <!-- header-->
+    <header class="text-xl w-full duration-300 transition-all" id="app-header">
+      <div class="header fixed w-full left-0 top-0 bg-white">
+        <div class="dx-container relative">
+          <!-- mobile搜索框-->
+          <div class="app-header relative flex items-center w-full">
+            <button class="md:hidden btn-menu-collapse mr-3" title="打开左侧菜单栏" data-class="dx-drawer--open">
+              <svg class="w-6 h-6">
+                <use class="open" href="/static/frontend/icons/icons.svg#menu"></use>
+                <use class="close" href="/static/frontend/icons/icons.svg#menu_close"></use>
+              </svg>
+            </button>
+            <!--  logo-->
+            <div class="flex-shrink-0 md:col-span-1 items-center flex justify-center md:justify-start">
+              <a class="items-center flex justify-center md:justify-start" href="/">
+                <img
+                  class="app-logo w-[60px] h-[23px] md:w-[120px] md:h-[45px]"
+                  src="/static/frontend/images/logo.png"
+                  title="logo"
+                  alt="logo"
+                />
+              </a>
+            </div>
+            <!--  pc搜索框 -->
+            <!-- mobile 搜索icon-->
+            <div class="flex-shrink-0 items-center flex ml-auto justify-end">
+              <button class="md:hide btn-open-search" type="button" title="search">
+                <svg class="w-7 h-7 text-font1">
+                  <use href="/static/frontend/icons/icons.svg#search"></use>
+                </svg>
+              </button>
+              <button class="btn-login md:hidden" type="button" data-dismiss="popover" data-type="login" title="登录">
+                <svg class="w-6 h-6 md:w-8 md:h-8 text-font1">
+                  <use href="/static/frontend/icons/icons.svg#user_icon"></use>
+                </svg>
+              </button>
+              <div class="popover-container mt-1 relative hidden md:flex items-center text-default text-black">
+                <button class="btn-login py-2" data-dismiss="popover" data-type="register" type="button" title="登录">
+                  注册
+                </button>
+                <span class="mx-3">|</span>
+                <button class="btn-login py-2" data-dismiss="popover" data-type="login" type="button" title="登录">
+                  登录
+                </button>
+              </div>
+            </div>
+          </div>
+          <nav class="dx-hairline--bottom hide md:block" id="app-nav">
+            <ul class="flex justify-between dx-container">
+              <li class="flex mr-6"><a class="app-nav-item flex-1 py-1 text-center" href="/">首页</a></li>
+              <li class="flex mr-6">
+                <a class="app-nav-item flex-1 py-1 text-center" href="/novel_list.html">小说</a>
+              </li>
+              <li class="flex mr-6">
+                <a class="app-nav-item flex-1 py-1 text-center" href="/video_list.html">视频</a>
+              </li>
+              <li class="flex mr-6">
+                <a class="app-nav-item flex-1 py-1 text-center" href="/comic_list.html">禁漫</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </header>
+    <!-- nav-->
+    <aside class="dx-drawer p-3">
+      <nav class="flex flex-col h-full overflow-hidden">
+        <div class="flex-1 overflow-y-auto overflow-x-hidden">
+          <div class="mb-2">
+            <a class="flex items-center mb-1" href="novel.html">
+              <svg class="w-4 h-4 mr-1">
+                <use href="/static/frontend/icons/icons.svg#novel_menu"></use>
+              </svg>
+              <span>小说</span>
+            </a>
+            <ul class="flex flex-wrap">
+              <li class="mr-1.5 mb-1.5"><a href="novel.html">全部小说</a></li>
+              <li class="mr-1.5 mb-1.5"><a href="novel.html">排行榜</a></li>
+              <li class="mr-1.5 mb-1.5"><a>都市</a></li>
+              <li class="mr-1.5 mb-1.5"><a>玄幻</a></li>
+              <li class="mr-1.5 mb-1.5"><a>日本AV</a></li>
+              <li class="mr-1.5 mb-1.5"><a>都市</a></li>
+              <li class="mr-1.5 mb-1.5"><a>玄幻</a></li>
+              <li class="mr-1.5 mb-1.5"><a>日本AV</a></li>
+              <li class="mr-1.5 mb-1.5"><a>都市</a></li>
+              <li class="mr-1.5 mb-1.5"><a>玄幻</a></li>
+              <li class="mr-1.5 mb-1.5"><a>日本AV</a></li>
+              <li class="mr-1.5 mb-1.5"><a>都市</a></li>
+              <li class="mr-1.5 mb-1.5"><a>玄幻</a></li>
+              <li class="mr-1.5 mb-1.5"><a>日本AV</a></li>
+              <li class="mr-1.5 mb-1.5"><a>都市</a></li>
+              <li class="mr-1.5 mb-1.5"><a>玄幻</a></li>
+              <li class="mr-1.5 mb-1.5"><a>日本AV</a></li>
+              <li class="mr-1.5 mb-1.5"><a>都市</a></li>
+              <li class="mr-1.5 mb-1.5"><a>玄幻</a></li>
+              <li class="mr-1.5 mb-1.5"><a>日本AV</a></li>
+              <li class="mr-1.5 mb-1.5"><a>都市</a></li>
+              <li class="mr-1.5 mb-1.5"><a>玄幻</a></li>
+              <li class="mr-1.5 mb-1.5"><a>日本AV</a></li>
+            </ul>
+          </div>
+          <div class="mb-2">
+            <a class="flex items-center mb-1" href="video.html">
+              <svg class="w-4 h-4 mr-1">
+                <use href="/static/frontend/icons/icons.svg#video_menu"></use>
+              </svg>
+              <span>视频</span>
+            </a>
+            <ul class="flex flex-wrap">
+              <li class="mr-1.5 mb-1.5"><a href="video.html">全部视频</a></li>
+              <li class="mr-1.5 mb-1.5"><a href="video.html">排行榜</a></li>
+              <li class="mr-1.5 mb-1.5"><a>都市</a></li>
+              <li class="mr-1.5 mb-1.5"><a>玄幻</a></li>
+              <li class="mr-1.5 mb-1.5"><a>日本AV</a></li>
+              <li class="mr-1.5 mb-1.5"><a>都市</a></li>
+              <li class="mr-1.5 mb-1.5"><a>玄幻</a></li>
+              <li class="mr-1.5 mb-1.5"><a>日本AV</a></li>
+              <li class="mr-1.5 mb-1.5"><a>都市</a></li>
+              <li class="mr-1.5 mb-1.5"><a>玄幻</a></li>
+              <li class="mr-1.5 mb-1.5"><a>日本AV</a></li>
+              <li class="mr-1.5 mb-1.5"><a>都市</a></li>
+              <li class="mr-1.5 mb-1.5"><a>玄幻</a></li>
+              <li class="mr-1.5 mb-1.5"><a>日本AV</a></li>
+              <li class="mr-1.5 mb-1.5"><a>都市</a></li>
+              <li class="mr-1.5 mb-1.5"><a>玄幻</a></li>
+              <li class="mr-1.5 mb-1.5"><a>日本AV</a></li>
+              <li class="mr-1.5 mb-1.5"><a>都市</a></li>
+              <li class="mr-1.5 mb-1.5"><a>玄幻</a></li>
+              <li class="mr-1.5 mb-1.5"><a>日本AV</a></li>
+              <li class="mr-1.5 mb-1.5"><a>都市</a></li>
+              <li class="mr-1.5 mb-1.5"><a>玄幻</a></li>
+              <li class="mr-1.5 mb-1.5"><a>日本AV</a></li>
+            </ul>
+          </div>
+          <div class="mb-2">
+            <a class="flex items-center mb-1" href="comic.html">
+              <svg class="w-4 h-4 mr-1">
+                <use href="/static/frontend/icons/icons.svg#comic_menu"></use>
+              </svg>
+              <span>禁漫</span>
+            </a>
+            <ul class="flex flex-wrap">
+              <li class="mr-1.5 mb-1.5"><a href="comic.html">全部禁漫</a></li>
+              <li class="mr-1.5 mb-1.5"><a href="comic.html">排行榜</a></li>
+              <li class="mr-1.5 mb-1.5"><a>都市</a></li>
+              <li class="mr-1.5 mb-1.5"><a>玄幻</a></li>
+              <li class="mr-1.5 mb-1.5"><a>日本AV</a></li>
+              <li class="mr-1.5 mb-1.5"><a>都市</a></li>
+              <li class="mr-1.5 mb-1.5"><a>玄幻</a></li>
+              <li class="mr-1.5 mb-1.5"><a>日本AV</a></li>
+              <li class="mr-1.5 mb-1.5"><a>都市</a></li>
+              <li class="mr-1.5 mb-1.5"><a>玄幻</a></li>
+              <li class="mr-1.5 mb-1.5"><a>日本AV</a></li>
+              <li class="mr-1.5 mb-1.5"><a>都市</a></li>
+              <li class="mr-1.5 mb-1.5"><a>玄幻</a></li>
+              <li class="mr-1.5 mb-1.5"><a>日本AV</a></li>
+              <li class="mr-1.5 mb-1.5"><a>都市</a></li>
+              <li class="mr-1.5 mb-1.5"><a>玄幻</a></li>
+              <li class="mr-1.5 mb-1.5"><a>日本AV</a></li>
+              <li class="mr-1.5 mb-1.5"><a>都市</a></li>
+              <li class="mr-1.5 mb-1.5"><a>玄幻</a></li>
+              <li class="mr-1.5 mb-1.5"><a>日本AV</a></li>
+              <li class="mr-1.5 mb-1.5"><a>都市</a></li>
+              <li class="mr-1.5 mb-1.5"><a>玄幻</a></li>
+              <li class="mr-1.5 mb-1.5"><a>日本AV</a></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </aside>
+    <!-- main-content-->
+    <main class="dx-container app-content">
+      <section>
+        <div class="flex items-center justify-center relative py-3">
+          <svg class="w-4 h-4 cursor-pointer absolute -translate-y-1/2 left-0 top-1/2" onclick="_back()">
+            <use href="/static/frontend/icons/icons.svg#arrow_left"></use>
+          </svg>
+          <span class="font-bold dx-title">Copyright Policy</span>
+        </div>
+        <div class="bg-white rounded py-5 px-3">
+          <div class="max-w-[720px] m-auto">
+            <b>REPORTING CLAIMS OF COPYRIGHT INFRINGEMENT</b>
+            <br />
+            In general, 18mh does not assume or take responsibilities for any content uploaded in the Website by Content
+            Partners, Verified Uploaders and Models. However, we take claims of copyright infringement seriously. We may
+            respond to notices of alleged copyright infringement that comply with the Digital Millennium Copyright Act
+            (the “DMCA”) or any other applicable intellectual property legislation or laws. Responses may include
+            removing, blocking or disabling access to material claimed to be the subject of infringing activity,
+            terminating the user’s access to
+            <a class="text-primary" href="https://www.18mh.net" target="_blank">www.18mh.net</a>
+            (“18mh”), or all of the foregoing.
+            <br />
+            If you believe any material accessible on 18mh infringes your copyright, you may submit a copyright
+            infringement notification by contacting us at
+            <a class="text-primary" href="mailto:support@18mh.net" target="_blank">support@18mh.net</a>
+            (steps to be followed are shown below). These requests should only be submitted by the copyright owner or an
+            agent authorized to act on the owner’s behalf. If we remove or disable access to material in response to
+            such a notice, we will take reasonable steps to notify the user that uploaded the affected content material
+            that we have removed or disabled access to so that the user has the opportunity to submit a counter
+            notification (see below, “Counter-Notification Procedures” for instructions on filing a counter
+            notification). It is our policy to document all notices of alleged infringement on which we act.
+            <br />
+            All copyright infringement notifications and counter-notifications must be written in English or Mandarin.
+            Any attempted notifications written in foreign languages or using foreign characters may, at our discretion,
+            be deemed non-compliant and disregarded.
+            <br />
+            <b>FILING A DMCA NOTICE OF COPYRIGHT INFRINGEMENT</b>
+            <br />
+            If you choose to request removal of content by submitting an infringement notification, please remember that
+            you are initiating a legal process. Do not make false claims. Misuse of this process may result in the
+            suspension of your account or other legal consequences.
+            <br />
+            You may notify 18mh of alleged copyright infringement by contacting us at
+            <a href="mailto:support@18mh.net" target="_blank">support@18mh.net</a>
+            and provide us with the following information: 1. Identification of the copyrighted work you believe to have
+            been infringed or, if the claim involves multiple works, a representative list of such works. 2.
+            Identification of the material you believe to be infringing in a sufficiently precise manner to allow us to
+            locate that material. If your complaint does not contain the specific URL of the video you believe infringes
+            your rights, we may be unable to locate and remove it. General information about the video, such as a
+            channel URL or username, is typically not adequate. Please include the URL(s) of the exact video(s). 3.
+            Adequate information by which we, and the uploader(s) of any video(s) you remove, can contact you (including
+            your name, postal address, telephone number and, if available, e-mail address). 4. A statement that you have
+            a good faith belief that use of the copyrighted material is not authorized by the copyright owner, its agent
+            or the law. 5. A statement that the information in the written notice is accurate, and under penalty of
+            perjury, that you are the owner, or an agent authorized to act on behalf of the owner, of an exclusive right
+            that is allegedly infringed. 6. Complete complaints require the physical or electronic signature of the
+            copyright owner or a representative authorized to act on their behalf. To satisfy this requirement, you may
+            type your full legal name to act as your signature at the bottom of your complaint.
+            <br />
+            Please do not send other inquiries or requests to
+            <a class="text-primary" href="mailto:support@18mh.net" target="_blank">support@18mh.net</a>
+            without basis. If you fail to comply with all of the requirements of Section 512(c)(3) of the DMCA, your
+            DMCA Notice may not be effective.
+            <br />
+            Please be aware that if you knowingly materially misrepresent that material or activity on 18mh is
+            infringing your copyright, you may be held liable for damages (including costs and attorneys’ fees) under
+            Section 512(f) of the DMCA. The copyright owner’s name will be published on 18mh in place of disabled
+            content. This will become part of the public record of your DMCA Notice, along with your description of the
+            work(s) allegedly infringed. All the information provided in a DMCA Notice, the actual DMCA Notice
+            (including your personal information), or both may be forwarded to the uploader of the allegedly infringing
+            content. By submitting a DMCA Notice, you consent to having your information revealed in this way.
+            <br />
+            <b>COUNTER-NOTIFICATION PROCEDURES</b>
+            <br />
+            If you have received a DMCA Notice and believe that material you posted on 18mh was removed or access to it
+            was disabled by mistake or misidentification, you may file a counter-notification with us (a
+            “Counter-Notice”). Counter notifications must be submitted by the video’s original uploader or an agent
+            authorized to act on their behalf.
+            <br />
+            Counter-notices must be sent to us at
+            <a class="text-primary" href="mailto:support@18mh.net" target="_blank">support@18mh.net</a>
+            . Please do not send other inquiries or requests to
+            <a class="text-primary" href="mailto:support@18mh.net" target="_blank">support@18mh.net</a>
+            without basis. Pursuant to the DMCA, the Counter-Notice must include substantially the following:
+            <br />
+            • Your name, address, phone number and physical or electronic signature;
+            <br />
+            • Identification of the allegedly infringing content and its location before removal or access to it was
+            disabled;
+            <br />
+            • A statement under penalty of perjury that you believe in good faith that the content was removed by
+            mistake or misidentification; and
+            <br />
+            • A statement that you consent to the jurisdiction of the U.S. Federal District Court for the judicial
+            district in which you are located (or if you are outside the U.S., for any judicial district in which the
+            operator of 18mh may be found), and that you will accept service of process from the person who originally
+            provided us with the DMCA Notice or an agent of such person.
+            <br />
+            We will not respond to Counter-Notices that do not meet the requirements set out above.
+            <br />
+            Notice and inform that party that the removed material may be restored after 10 business days but no later
+            than 14 business days from the date we received your Counter Notice, unless our Designated Agent first
+            receives notice from the party who filed the original DMCA Notice informing us that such party has filed a
+            court action to restrain you from engaging in infringing activity related to the material in question.
+            <br />
+            Please note that when we forward your Counter Notice, it will include your personal information. By
+            submitting a counter notification, you consent to having your information revealed in this way. We will not
+            forward the counter notification to any party other than the original claimant or to law enforcement or
+            parties that assist us with enforcing and protecting our rights. Please be aware that if you knowingly
+            materially misrepresent that material or activity on 18mh was removed or disabled by mistake or
+            misidentification, you may be held liable for damages (including costs and attorneys’ fees) under Section
+            512(f) of the DMCA.
+            <br />
+            <b>REPEAT INFRINGERS</b>
+            <br />
+            In accordance with the DMCA and other applicable law, we have adopted a policy of terminating or disabling,
+            in appropriate circumstances and at our sole discretion, the accounts of users who are deemed to be repeat
+            infringers. We may also at our sole discretion limit access to 18mh, terminate or disable the accounts of
+            any users who infringe any intellectual property rights of others, whether or not there is any repeat
+            infringement.
+            <br />
+          </div>
+        </div>
+      </section>
+    </main>
+    <!--  footer-->
+    <footer class="mt-3 dx-hairline--top py-2" id="app-footer">
+      <div class="dx-container">
+        <div class="flex items-center justify-center">
+          <img class="w-[80px] h-[30px]" alt="logo" src="/static/frontend/images/logo.png" />
+          禁漫天堂,色情,小说,视频, 成人,网站 | 18mh.net
+        </div>
+        <ul class="flex justify-center divide-x flex-wrap mt-3">
+          <li class="px-2"><a href="contact.html">联系我们</a></li>
+          <li class="px-2"><a href="terms.html">用户条款</a></li>
+          <li class="px-2"><a href="policy.html">隐私政策</a></li>
+          <li class="px-2"><a href="2257A.html">2257A</a></li>
+          <li class="px-2"><a href="DMCA.html">DMCA</a></li>
+          <li class="px-2"><a href="https://www.rtalabel.org/index.php?content=parents" target="_blank">RTA</a></li>
+        </ul>
+        <ul class="flex justify-center divide-x flex-wrap mt-3">
+          <li class="px-2">
+            E-mail：
+            <a href="mailto:18mh.net@gmail.com" target="_blank">18mh.net@gmail.com</a>
+          </li>
+          <li class="px-2">
+            Telegram：
+            <a href="https://t.me/EXE_AD" target="_blank">@EXE_AD</a>
+          </li>
+          <li class="px-2">
+            官方群：
+            <a href="https://t.me/JMTTSQ" target="_blank">@JMTTSQ</a>
+          </li>
+          <li class="px-2">
+            <a href="https://x.com/18mh1671" target="_blank">
+              <svg class="w-6 h-6 mb-1 md:w-5 md:h-5">
+                <use href="/static/frontend/icons/icons.svg#x"></use>
+              </svg>
+            </a>
+          </li>
+          <li class="px-2">
+            <a href="https://t.me/EXE_AD" target="_blank">
+              <svg class="w-6 h-6 mb-1 md:w-5 md:h-5">
+                <use href="/static/frontend/icons/icons.svg#telegram"></use>
+              </svg>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </footer>
+    <!--  登录框 -->
+    <div class="modal fade dx-modal" id="login_modal">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header flex items-center">
+            <button class="close text-subtitle ml-auto" type="button" data-dismiss="modal">
+              <svg class="w-6 h-6">
+                <use href="/static/frontend/icons/icons.svg#menu_close"></use>
+              </svg>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="px-3">
+              <div class="dx-tabs dx-line-tabs">
+                <div class="flex items-center mb-5">
+                  <div class="dx-line-tab-item text-xl dx-tab-item !pt-2 !pb-3 is-active">登录</div>
+                  <div class="dx-line-tab-item text-xl dx-tab-item !pt-2 !pb-3">注册</div>
+                </div>
+                <div class="dx-tab-content dx-tab-content--active">
+                  <form>
+                    <div class="form-group">
+                      <label for="login-email">用户名</label>
+                      <div class="input-control mb-3">
+                        <input
+                          class="form-control"
+                          id="login-email"
+                          autocomplete="off"
+                          type="text"
+                          placeholder="请输入用户名"
+                        />
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label for="login-password">密码</label>
+                      <div class="input-control mb-5">
+                        <input
+                          class="form-control"
+                          id="login-password"
+                          autocomplete="off"
+                          type="password"
+                          placeholder="请输入密码"
+                        />
+                      </div>
+                    </div>
+                    <div class="input-control mb-5">
+                      <button class="btn-login-submit btn btn-primary btn-block" data-type="login" type="button">
+                        登录
+                      </button>
+                    </div>
+                    <div class="flex mb-3 justify-center">
+                      <span class="opacity-60">还没有账号？</span>
+                      <button class="text-primary btn-change-type" data-index="1" type="button">马上注册</button>
+                    </div>
+                  </form>
+                </div>
+                <div class="dx-tab-content">
+                  <form>
+                    <div class="form-group">
+                      <label for="login-email">
+                        用户名
+                        <span class="text-[#c92427] text-sm">(杜绝注册多个帐号，将删除所有帐号，并封IP)</span>
+                      </label>
+                      <div class="input-control mb-3">
+                        <input
+                          class="form-control"
+                          id="register-email"
+                          autocomplete="off"
+                          type="text"
+                          placeholder="请输入用户名"
+                        />
+                        <div class="text-[#f8bb40] mt-1.5 text-sm">不能用微信或qq，类似威信571*, vx:571*, vx_571*</div>
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label for="login-password">密码</label>
+                      <div class="input-control mb-5">
+                        <input
+                          class="form-control"
+                          id="register-password"
+                          autocomplete="off"
+                          type="password"
+                          placeholder="请输入密码"
+                        />
+                      </div>
+                    </div>
+                    <div class="input-control mb-5">
+                      <button class="btn-login-submit btn btn-primary btn-block" data-type="register" type="button">
+                        注册
+                      </button>
+                    </div>
+                    <div class="flex mb-3 justify-center text-sm">
+                      我确认已经在18岁以上我同意用户
+                      <a class="text-primary mx-1" href="link.html?key=protocol">使用条款</a>
+                      和
+                      <a class="text-primary ml-1" href="link.html?key=privacy">隐私政策</a>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <button class="dx-backtop" data-backtop="data-backtop" title="返回顶部">
+      <svg class="w-6 h-6 md:w-5 md:h-5 dx-backtop--trigger">
+        <use href="/static/frontend/icons/icons.svg#backtotop"></use>
+      </svg>
+    </button>
+    <div class="dx-overlay"></div>
+    <script>
+      const js_assets_version = '1.0.0'
+    </script>
+    <script data-main="/static/frontend/js/contact_main.js" src="/static/frontend/js/lib/require.js"></script>
+  </body>
+</html>

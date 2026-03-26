@@ -1,0 +1,60 @@
+extends includes/layout.pug
+
+
+block css
+    link(rel='stylesheet' href='/static/frontend/css/lib/swiper.css')
+    link(rel="stylesheet" href="/static/frontend/css/warn.css")
+
+block header
+    +Header({
+        active: 'home',
+        showHeader: true
+    })
+
+block nav
+    +Nav
+
+block content
+    +RecommendIcon
+
+    div(class='index-content')
+        +Swiper
+        section(class="mb-1.5 md:mb-3 last:mb-0")
+           
+            +DxTitle({ title: '热门小说', icon: 'novel_logo', more_href: 'novel.html'})
+
+            ul(data-type="novel" class='swiper-list overflow-hidden dx-novel-list gap-2.5 md:gap-4')
+                each val in [...videos, ...videos, ...videos, ...videos.slice(0, 4)]
+                    li
+                        +Novel(val)
+        section(class="mb-1.5 md:mb-3 last:mb-0")
+        +SwiperAd
+           
+            +DxTitle({ title: '热辣视频', icon: 'video_logo', more_href: 'video.html'})
+        
+            ul(data-type="video" class='dx-video-list swiper-list overflow-hidden gap-2.5 md:gap-4')
+                each val in [...videos, ...videos, ...videos]
+                    li
+                        +VideoItem(val)
+        section(class="mb-1.5 md:mb-3 last:mb-0")
+           
+            +DxTitle({ title: '最受欢迎女优', icon: 'video_logo', more_href: 'actress.html'})
+
+            ul(class='flex overflow-auto md:grid md:grid-cols-6 lg:grid-cols-9 gap-2.5 md:gap-4')
+                each val in [...videos, ...videos, ...videos]
+                    li
+                        +ActressItem(val)
+
+        section(class="mb-1.5 md:mb-3 last:mb-0")
+           
+            +DxTitle({ title: '热门禁漫', icon: 'comic_logo', more_href: 'comic.html'})
+        
+            ul(data-type="novel" class='swiper-list overflow-hidden dx-novel-list gap-2.5 md:gap-4')
+                each val in [...videos, ...videos, ...videos]
+                    li
+                        +Comic(val)
+     
+
+      
+block footer-scripts
+    script(data-main='/static/frontend/js/index_main.js' src="/static/frontend/js/lib/require.js")

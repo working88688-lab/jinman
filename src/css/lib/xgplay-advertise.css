@@ -1,0 +1,115 @@
+.xgplayer {
+  .dx-ad-plugin {
+    background: #000;
+    z-index: 11;
+    &.is-playing {
+      display: block;
+    }
+    &.is-muted {
+      .ad-muted-on {
+        display: none;
+      }
+
+      .ad-muted-off {
+        display: block;
+      }
+    }
+
+    .ad-muted-on {
+      display: block;
+    }
+
+    .ad-muted-off {
+      display: none;
+    }
+
+    &.can-skip-ad {
+      .ad-time,
+      .ad-skip-text {
+        display: none;
+      }
+    }
+
+    &.is-playing {
+      .xgplayer-loading {
+        display: none;
+      }
+    }
+
+    .xgplayer-loading {
+      display: block;
+    }
+  }
+
+  .dx-ad-mask {
+    background-color: #66666680;
+    padding: 2px 10px;
+    border-radius: 15px;
+    font-size: 13px;
+  }
+
+  .ad-skip {
+    display: flex;
+  }
+
+  .ad-timer {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    display: flex;
+  }
+
+  .ad-control {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    display: flex;
+
+    svg {
+      width: 20px;
+      height: 20px;
+    }
+  }
+
+  .ad-duration-container {
+    margin-left: 5px;
+    cursor: text;
+  }
+
+  .ad-volume {
+    margin-left: 5px;
+  }
+
+  .ad-fullscreen {
+    margin-left: 5px;
+  }
+
+  &.xgplayer-is-fullscreen {
+    .ad-fullscreen-on {
+      display: none;
+    }
+
+    .ad-fullscreen-off {
+      display: block;
+    }
+  }
+
+  .ad-fullscreen-off {
+    display: none;
+  }
+}
+
+.xgplayer-is-error,
+.xgplayer-is-enter {
+  .dx-last-play-time {
+    display: none;
+  }
+}
+
+.dx-ad-plugin .ad-video-external img[data-src] {
+  object-fit: cover !important;
+}
+
+.dx-ad-plugin .ad-video-external img {
+  object-fit: fill !important;
+}

@@ -1,0 +1,22 @@
+.type-item.is-active {
+    svg {
+        display: block;
+    }
+
+    background-color: var(--dx-base11-color);
+}
+
+.second-tabs {
+    --dx-tab-line-width-percent: 100%;
+
+    .is-active {
+        background-color: var(--dx-base11-color);
+    }
+}
+
+.novel-tag {
+    background: linear-gradient(to top, #d95c04, #ffad00, #fff4bf);
+    padding: 2px 4px 4px 6px;
+    border-radius: 2px 2px 0 12px;
+    color: #4a170f;
+}

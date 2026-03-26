@@ -1,0 +1,44 @@
+
+extends includes/layout.pug
+
+
+include includes/mixin/dx-novel-card.pug
+include includes/mixin/dx-filter.pug
+
+block css
+
+block header
+    +Header({
+        active: 'novel',
+        showHeader: false,
+        placeholder: '搜索小说作品',
+        search_type: 'novel'
+    })
+
+block nav
+    +Nav
+
+block content
+    +Breadcrumbs([{  title: '禁漫视频', isLink: true, href: "video.html" }, { isLink: false }, {  title: '女优排行榜',isLink: true }])
+    
+    
+    div(class='index-content')
+        h1(class='text-center font-semibold dx-title mt-3') 2024年09月 女优排行榜
+        section(class="my-2 md:my-3")
+           
+        
+            ul(class='grid grid-cols-4 md:grid-cols-5 lg:grid-cols-6 gap-2.5 md:gap-4')
+                each val, index in [...videos, ...videos,...videos]
+                    li
+                        +ActressItem({
+                            ...val,
+                            rank: `第${index+1}名`,
+                            count: '50部影片'
+                        })
+     
+        
+     
+
+      
+block footer-scripts
+    script(data-main='/static/frontend/js/index_main.js' src="/static/frontend/js/lib/require.js")

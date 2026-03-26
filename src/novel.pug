@@ -1,0 +1,80 @@
+
+extends includes/layout.pug
+
+mixin EditorRecommendItem(item)
+    +Novel(item)
+
+block css
+    link(rel='stylesheet' href='/static/frontend/css/lib/swiper.css')
+
+mixin RankItem(item, index)
+    div(class='grid grid-cols-2 gap-x-1')
+        div
+            a(class='flex aspect-w-11 group aspect-h-16 overflow-hidden' href='#')
+                div( class='poster rounded-sm overflow-hidden pointer-events-auto')
+                    img(class="w-full h-full rounded-sm group-hover:scale-125 transition-all" src='/static/frontend/images/loading.svg' data-src=item.poster alt=item.title)
+        div
+            div(class='bg-primary w-5 h-4.5 flex-center text-white text-sm rounded-[6px] rounded-bl-none rounded-tr-none')= index + 1
+            div(class='text-base2 font-bold md:mt-2 md:mb-1')= item.title
+            div(class='text-base3 truncate text-sm md:mb-1') 作者：棺材里的笑声
+            div(class='text-base3 truncate text-sm md:mb-1') 题材：乱伦,系统
+            div(class='line-clamp-2 md:line-clamp-3 text-base3 text-sm') 【叮！禽兽系统绑定成功！】【“叮！主线任务：一家之人；作为一个上门女婿，应该反客为主让岳母一家知道，什么叫引狼入室。”】恍惚间，电脑介面悬空出现在许斌面前，多个支线任务摆放着，丰腴性感美岳母，高挑妖娆大姨子，童颜巨乳小姨子，还有多个隐藏的支线任务看不到。
+block header
+    +Header({
+        active: 'novel',
+        showHeader: true,
+        placeholder: '搜索小说作品',
+        search_type: 'novel_list',
+        type: 'comic'
+    })
+
+block nav
+    +Nav
+
+block swiper
+    +Swiper
+
+block content
+    +TagList({
+        title: '小说',
+        href: 'novel_search.html'
+    })
+
+    div(class='index-content')
+        section(class="mb-1.5 md:mb-3 last:mb-0")
+           
+            +DxTitle({ title: '最近更新', showMore: true})
+        
+            ul(class='dx-novel-list gap-2.5 md:gap-4')
+                each val in [...videos, ...videos]
+                    li
+                        +Novel(val)
+        +RankList({
+            title: '排行榜',
+            href: 'novel_rank.html'
+        })
+        
+        section(class="mb-1.5 md:mb-3 last:mb-0")
+            +EditorRecommend
+
+        section(class="mb-1.5 md:mb-3 last:mb-0")
+           
+            +DxTitle({ title: '新书上架', showMore: true})
+        
+            ul(class='dx-novel-list gap-2.5 md:gap-4')
+                each val in [...videos, ...videos]
+                    li
+                        +Novel(val)
+        section(class="mb-1.5 md:mb-3 last:mb-0")
+           
+            +DxTitle({ title: '原创首发', showMore: true})
+        
+            ul(class='dx-novel-list gap-2.5 md:gap-4')
+                each val in [...videos, ...videos]
+                    li
+                        +Novel(val)
+     
+
+      
+block footer-scripts
+    script(data-main='/static/frontend/js/index_main.js' src="/static/frontend/js/lib/require.js")

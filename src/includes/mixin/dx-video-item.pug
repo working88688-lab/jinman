@@ -1,0 +1,29 @@
+mixin VideoItem(item, index)
+    div
+        a(class='flex aspect-w-16 group aspect-h-9 overflow-hidden' href='video_detail.html?id=1')
+            div( class='poster rounded-sm overflow-hidden pointer-events-auto')
+                img(class="w-full h-full rounded-sm group-hover:scale-125 transition-all" src='/static/frontend/images/loading.svg' data-src=item.poster alt=item.title)
+                div(class='w-full absolute left-0 top-0 justify-end flex group-hover:hidden')
+                    if (item.vip === 1 && typeof index === 'undefined')
+                        img(class='w-7 h-7 rounded-sm' src="/static/frontend/images/video_vip.webp", alt="")
+
+                    if (index >= 0)
+                        div(class='bg-primary w-5 h-4.5 mt-1 mr-1 flex-center text-white text-sm rounded-[6px] rounded-bl-none rounded-tr-none')= index + 1
+
+
+        a(class='block mt-0.5 text-sm' href='video_detail.html?id=1')
+            div(class='line-clamp-2 text-default text-base2') SONE-306 | 花アリス | Alice in Kimesekrando - 虾扭曲的充满春药的不间断性爱，不断摇晃G乳房让你射精
+            div(class='flex justify-between text-base3 mt-0.5')
+                div(class='flex items-center')
+                    svg(class='w-3 h-3 md:w-4 md:h-4 mr-0.5')
+                        use(href='/static/frontend/icons/icons.svg#time')
+                    span 6天前
+                div(class='flex items-center')
+                    div(class='flex items-center mr-1')
+                        svg(class='w-3 h-3 md:w-4 md:h-4 mr-0.5')
+                            use(href='/static/frontend/icons/icons.svg#like')
+                        span 16K
+                    div(class='flex items-center')
+                        svg(class='w-3 h-3 md:w-4 md:h-4 mr-0.5')
+                            use(href='/static/frontend/icons/icons.svg#view')
+                        span 1.1K

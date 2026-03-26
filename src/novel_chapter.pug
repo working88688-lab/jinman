@@ -1,0 +1,200 @@
+extends includes/layout-simple.pug
+
+include includes/dialog/dx-popup.pug
+
+mixin Menus
+  button(class='btn-open-popup flex-col-center py-1 px-2 bg-white rounded-sm mr-3' data-type='directory')
+    svg(class='w-6 h-6')
+      use(href='/static/frontend/icons/icons.svg#catalog')
+    | 目录
+  button(class='btn-mark flex-col-center py-1 px-2 bg-white rounded-sm mr-3')
+    svg(class='w-6 h-6')
+      use(href='/static/frontend/icons/icons.svg#mark')
+    | 书签
+  button(class='flex-col-center py-1 px-2 bg-white btn-collect rounded-sm mr-3' data-type='1')
+    svg(class='w-6 h-6')
+      use(class='not-like' href='/static/frontend/icons/icons.svg#like')
+      use(class='like' href='/static/frontend/icons/icons.svg#heart')
+    | 收藏
+  button(class='btn-open-popup flex-col-center py-1 px-2 bg-white rounded-sm mr-3' data-type='music')
+    svg(class='w-6 h-6')
+      use(href='/static/frontend/icons/icons.svg#music')
+    | 音乐
+  button(class='btn-open-popup flex-col-center py-1 px-2 bg-white rounded-sm mr-3' data-type='replace')
+    svg(class='w-6 h-6')
+      use(href='/static/frontend/icons/icons.svg#replace')
+    | 替换
+  button(class='btn-open-popup flex-col-center py-1 px-2 bg-white rounded-sm mr-3' data-type='theme')
+    svg(class='w-6 h-6')
+      use(href='/static/frontend/icons/icons.svg#setting')
+    | 设置
+  button(class='flex-col-center py-1 px-2 bg-white rounded-sm btn-share  mr-3')
+    svg(class='w-6 h-6')
+      use(href='/static/frontend/icons/icons.svg#option_share')
+    | 分享
+  //- div(class='flex-col-center py-1 px-2 bg-white rounded-sm mr-3')
+  //-   +BtnReport(1, '举报')
+
+mixin CustomFooter
+  div(class='flex justify-between dx-fix-margin items-center footer bg-white h-full px-3')
+    a(class='flex items-center cursor-pointer' href='novel_chapter.html?id=1')
+      svg(class='w-4 h-4 mr-2')
+        use(href='/static/frontend/icons/icons.svg#arrow_left')
+      span(class='font-bold') 上一章
+    a(class='flex items-center cursor-pointer' onclick='_back()') 返回书页
+    a(class='flex items-center cursor-pointer' href='novel_chapter.html?id=2')
+      span(class='font-bold') 下一章
+      svg(class='w-4 h-4 ml-2')
+        use(href='/static/frontend/icons/icons.svg#arrow_right')
+  
+mixin PopupContent()
+  div(class='max-w-[80vw] w-[350px] text-base2 h-full')
+    - var items = [1,2,3,4,5,6,7,8,9,10,1,2,3,4,5,6,7,8,9,10,1,2,3,4,5,6,7,8,9,10,1,2,3,4,5,6,7,8,9,10,1,2,3,4,5,6,7,8,9,10,1,2,3,4,5,6,7,8,9,10,1,2,3,4,5,6,7,8,9,10]
+    div(class='theme h-full text-sm whitespace-nowrap')
+      div(class='flex items-center px-3 py-2 text-xl dx-hairline--bottom')
+        span 设置您喜欢的阅读方式
+
+        button(class='ml-auto btn-close-popup')
+          svg(class='w-6 h-6')
+            use(class='open' href='/static/frontend/icons/icons.svg#menu_close')
+      div(class='theme-container flex items-center px-3 mt-5')
+        span 阅读主题：
+        div(class='custom-theme theme_1' data-color="rgb(255, 255, 255)")
+          svg(class='w-5 h-4.5')
+            use(href='/static/frontend/icons/icons.svg#theme_check')
+        
+        div(class='custom-theme theme_2' data-color="rgb(246, 234, 210)")
+          svg(class='w-5 h-4.5')
+            use(href='/static/frontend/icons/icons.svg#theme_check')
+        div(class='custom-theme theme_3' data-color="rgb(234, 240, 231)")
+          svg(class='w-5 h-4.5')
+            use(href='/static/frontend/icons/icons.svg#theme_check')
+
+        div(class='custom-theme theme_4' data-color="rgb(232, 239, 243)")
+          svg(class='w-5 h-4.5')
+            use(href='/static/frontend/icons/icons.svg#theme_check')
+        
+        div(class='custom-theme theme_5' data-color="rgb(245, 228, 228)")
+          svg(class='w-5 h-4.5')
+            use(href='/static/frontend/icons/icons.svg#theme_check')
+
+        div(class='custom-theme theme_6' data-color="rgb(229, 229, 229)")
+          svg(class='w-5 h-4.5')
+            use(href='/static/frontend/icons/icons.svg#theme_check')
+
+        div(class='custom-theme theme_7' data-color="rgb(0, 0, 0)")
+          svg(class='w-5 h-4.5')
+            use(href='/static/frontend/icons/icons.svg#theme_check')
+      div(class='theme-container flex items-center px-3 mt-5')
+        span 字体大小：
+        button(class='fontsize_btn btn btn-primary' data-type='-1') A-
+
+        span(class='font_size mx-3') 17
+
+        button(class='fontsize_btn btn btn-primary' data-type='1') A+
+        
+      div(class='flex-center my-3')
+        button(class='btn w-[100px] btn-primary mr-4 btn-theme-submit') 保存
+        button(class='btn w-[100px] btn-theme-reset') 恢复默认
+
+       
+    div(class='replace h-full')
+      div(class='flex items-center px-3 py-2 text-xl dx-hairline--bottom')
+        span 内容替换
+
+        button(class='ml-auto btn-close-popup')
+          svg(class='w-6 h-6')
+            use(class='open' href='/static/frontend/icons/icons.svg#menu_close')
+      div(class='replace_box')
+        div(class='flex items-center whitespace-nowrap px-2 mb-3')
+          | 将
+          input(type="text" data-type="origin" class='w-[100px] mx-1 border border-solid border-border')
+          | 替换成
+          input(type="text" data-type="target" class='w-[100px] ml-1 border border-solid border-border')
+          svg(class='w-6 h-6')
+            use(class='open' href='/static/frontend/icons/icons.svg#remove')
+      div(class='flex-center my-3')
+        button(class='btn w-[80px] add_replace') 添加
+        button(class='btn btn-primary w-[80px] mx-3 btn_replace') 替换
+        button(class='btn w-[80px] reset_replace') 复原
+      div(class='text-center') * 只有您本人可以看到替换后的结果
+       
+        
+    div(class='music h-full')
+      div(class='flex items-center px-3 py-2 text-xl dx-hairline--bottom')
+        span 背景声
+
+        button(class='ml-auto btn-close-popup')
+          svg(class='w-6 h-6')
+            use(class='open' href='/static/frontend/icons/icons.svg#menu_close')
+      div(class='grid grid-cols-2 lists')
+        
+          button(class='flex items-center px-3 py-2 dx-hairline--bottom' type='button')
+            svg(class='w-4 h-4 mr-1')
+              use(class='open' href='/static/frontend/icons/icons.svg#play_music')
+            span xxxxxx
+    div(class='dx-tabs directory flex flex-col h-full')
+      div(class='flex items-center dx-tab-list text-xl dx-hairline--bottom')
+        div(class='dx-tab-item cursor-pointer py-3 px-2 is-active') 目录列表
+        div(class='dx-tab-item cursor-pointer py-3 px-2') 书签
+
+        button(class='ml-auto btn-close-popup')
+          svg(class='w-6 h-6')
+            use(class='open' href='/static/frontend/icons/icons.svg#menu_close')
+      div(class='dx-tab-content flex-1 overflow-auto dx-tab-content--active')
+        ul
+          each item, index in items
+            li(class='volume_box')
+              div(class='dx-title flex volume_box-title items-center cursor-pointer px-3 py-2 dx-hairline--bottom justify-between font-medium')
+                span= '第' + (index + 1) + "卷"
+                svg(class='w-4 h-4 arrow')
+                  use(href='/static/frontend/icons/icons.svg#arrow_up')
+              ul(class='lists')
+                li(class='volume_box px-3 py-2 flex items-center justify-between cursor-pointer')
+                  span 第1章 索菲亚
+                  span 注册会员
+                li(class='volume_box px-3 py-2 flex items-center justify-between cursor-pointer')
+                  span 第1章 索菲亚
+                  span 注册会员
+                li(class='volume_box px-3 py-2 flex items-center justify-between cursor-pointer')
+                  span 第1章 索菲亚
+                  span 注册会员
+
+         
+      div(class='dx-tab-content flex-1 overflow-autos marks')
+        ul(class='lists')
+          li(class='volume_box')
+            a(class='px-3 py-2 flex items-center justify-between cursor-pointer')
+              span 第1章 索菲亚
+              div(class='flex-center')
+                span(class='mr-1') 2024-09-12
+                svg(class='w-4 h-4')
+                  use(class='open' href='/static/frontend/icons/icons.svg#trash') 
+        
+
+block css
+  link(rel="stylesheet", href="/static/frontend/css/chapter.css")
+
+block header
+  +SimpleHeader({
+      active: 'novel'
+  })
+
+block nav
+  +Nav
+
+block content
+  div(id='audio' class='hidden')
+  article(class='line')= videos[0].novel
+
+block footer
+  +FixedFooter
+
+block dialog
+  include includes/dialog/dx-reply-dialog.pug
+  include includes/dialog/dx-comment-dialog.pug
+  +Popup
+
+block footer-scripts
+  script(data-main='/static/frontend/js/novel_chapter_main.js' src="/static/frontend/js/lib/require.js")
+

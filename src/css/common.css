@@ -1,0 +1,388 @@
+@import "./module/var.css";
+@import "./module/tailwind.css";
+@import './components/index.css';
+
+html,
+body {
+    font-size: 14px;
+    color: var(--dx-base2-color);
+}
+
+html {
+    overflow-y: scroll;
+
+    &.overflow {
+        overflow-y: hidden;
+    }
+}
+
+/* 仅影响某些浏览器 */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input::placeholder,
+textarea::placeholder {
+    color: var(--dx-placeholder-color);
+}
+
+/* Firefox */
+input[type="number"] {
+    -moz-appearance: textfield;
+    /* Hide spinners in Firefox */
+}
+
+img {
+    -webkit-touch-callout: none;
+    /* 禁用长按时的默认弹出菜单（Webkit 浏览器） */
+    -webkit-user-select: none;
+    /* 禁用图片选中（Webkit 浏览器） */
+    -moz-user-select: none;
+    /* 禁用图片选中（Firefox 浏览器） */
+    -ms-user-select: none;
+    /* 禁用图片选中（Internet Explorer 浏览器） */
+    user-select: none;
+    /* 禁用图片选中（标准属性） */
+    pointer-events: none;
+    /* 禁用图片的点击事件（可能影响其他交互） */
+}
+
+:root {
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+:root body {
+    position: absolute;
+}
+
+
+body {
+    width: 100vw;
+    padding: 0 !important;
+    font-size: 13px;
+}
+
+a {
+    text-decoration: none !important;
+}
+
+.active,
+.is-active {
+    a:hover {
+        opacity: 0.9;
+    }
+}
+
+img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+a {
+    &.link:hover {
+        color: var(--dx-primary-color);
+    }
+
+    &.underline {
+        &:hover {
+
+            text-decoration: underline !important;
+        }
+    }
+}
+
+a:focus {
+    outline: none !important;
+}
+
+.video-items .video-preview {
+    position: absolute;
+}
+
+.is-active {
+    color: var(--dx-primary-color);
+}
+
+.dx-bg-linear {
+    background: linear-gradient(to right, #73726d, #333);
+}
+
+.dx-video-linear {
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5));
+}
+
+
+.dx-safe-area-bottom {
+    padding-bottom: constant(safe-area-inset-bottom);
+    padding-bottom: env(safe-area-inset-bottom);
+}
+
+.dx-aspect-container {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+}
+
+.dx-banner-item {
+    padding-top: 12%;
+    position: relative;
+
+    img[data-src] {
+        object-fit: contain;
+        background: rgb(37, 36, 43);
+    }
+}
+
+
+* {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.swiper {
+    .swiper-button-prev {
+        margin-left: 3%;
+        width: 36px;
+        background: url(/static/frontend/images/banner_icon_arrow_prev.svg);
+        background-size: 36px 36px;
+        background-position: center;
+        background-repeat: no-repeat;
+
+        &:after {
+            content: '';
+        }
+    }
+
+    .swiper-button-next {
+        margin-right: 3%;
+        width: 36px;
+        background: url(/static/frontend/images/banner_icon_arrow_next.svg);
+        background-size: 36px 36px;
+        background-position: center;
+        background-repeat: no-repeat;
+
+        &:after {
+            content: '';
+        }
+    }
+}
+
+.user-box {
+    background-image: url(/static/frontend/images/member/user_bg.webp);
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    height: 178px;
+    width: 100%;
+    border-bottom-right-radius: 12px;
+    border-bottom-left-radius: 12px;
+}
+
+.btn-password-type {
+    cursor: pointer;
+
+    &.is-open {
+        .open {
+            display: block;
+        }
+
+        .close {
+            display: none;
+        }
+    }
+
+    .open {
+        display: none;
+    }
+
+    .close {
+        display: block;
+    }
+
+}
+
+.dx-filter-item {
+    position: relative;
+    display: flex;
+    margin-bottom: 12px;
+    padding-bottom: 12px;
+
+    &::after {
+        box-sizing: border-box;
+        content: " ";
+        pointer-events: none;
+        border: 0 solid var(--dx-border-color);
+        position: absolute;
+        left: -50%;
+        top: -50%;
+        right: -50%;
+        bottom: -50%;
+        transform: scale(.5);
+        border-bottom-width: var(--dx-border-width)
+    }
+
+    &:last-child {
+
+        padding-bottom: 0;
+
+        &::after {
+
+            border-bottom-width: 0;
+        }
+    }
+}
+
+.dx-filter-expand {
+    position: relative;
+    align-items: center;
+    display: none;
+
+    .dx-btn-filter {
+        margin: 0 12px;
+        flex-shrink: 0;
+        white-space: nowrap;
+    }
+
+    &::after {
+        content: '';
+        display: block;
+        height: 1px;
+        background-color: var(--dx-border-color);
+        width: calc(50vw - 80px);
+    }
+
+    &::before {
+        content: '';
+        display: block;
+        height: 1px;
+        background-color: var(--dx-border-color);
+        width: calc(50vw - 80px);
+    }
+}
+
+.dx-filter {
+    .dx-filter-content {
+        display: none;
+    }
+
+    &.is-expand {
+        .dx-filter-content {
+            display: block;
+        }
+
+        .dx-filter-expand {
+
+            display: flex;
+        }
+    }
+}
+
+.pc-filter-cg {
+  background: #FF5656;
+  padding: 4px;
+  color: #fff;
+  border-radius: 6px;
+}
+
+.cus-empty-part {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+}
+.cus-empty-part  img {
+    width: 434px;
+    height: 434px;
+    object-fit: contain;
+}
+.cus-empty-part .empty_tip {
+    font-size: 18px;
+    font-weight: 600;
+}
+.cusActressRank {
+    width: 20px;
+    height: 18px;
+    position: absolute;
+}
+.rankItem {
+    background: url('/static/frontend/images/rank01.png') no-repeat center;
+    background-size: 100%;
+    z-index: 10;
+    top: 0px;
+    right: 40px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+}
+
+.afterRank {
+    background: url('/static/frontend/images/rank02.png') no-repeat center;
+    background-size: 100%;
+}
+
+@media (max-width: 768px) {
+    .cusActressRank {
+    width: 20px;
+    height: 18px;
+    position: absolute;
+}
+    .rankItem {
+    background: url('/static/frontend/images/rank01.png') no-repeat center;
+    background-size: 100%;
+    z-index: 10;
+    top: 0px;
+    right: 3px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+}
+
+.afterRank {
+    background: url('/static/frontend/images/rank02.png') no-repeat center;
+    background-size: 100%;
+}
+}
+
+.diffBg {
+    background: #ff35a1;
+}
+
+.cus-swiper-ad-box {
+    height: 48px;
+}
+.swiper-ad {
+    height: 48px;
+}
+
+.cusSwiperAdContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+    flex-wrap: wrap;
+}
+.cusSwiperAdContainer a {
+width: 49%;
+    height: 48px;
+}
+
+.cusSwiperAdContainer a img  {
+    width: 100%;
+    height: 100%;
+}
+
+@media (max-width: 768px) {
+    .cusSwiperAdContainer a {
+    width: 100%;
+}
+}

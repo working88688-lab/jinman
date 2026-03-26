@@ -1,0 +1,13 @@
+.dx-collapse {
+
+    .icon-caret-down {
+        transition: all 0.2s;
+        transform: rotateZ(-180deg);
+    }
+
+    &.collapsed {
+        .icon-caret-down {
+            transform: rotateZ(0);
+        }
+    }
+}

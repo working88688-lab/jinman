@@ -1,0 +1,11 @@
+include ../components/dx-video-card.pug
+mixin CardList(showTitle = true, title='青春校园')
+   
+    div(class="mb-1.5 md:mb-3 last:mb-0")
+        if showTitle
+            div(class='sticky bg-black z-10 top-[58px]')
+                +DxTitle(title, '分类名称4个或8个哦～', true)
+        ul(class='video-items grid grid-cols-2 md:grid-cols-4 xl:grid-cols-6 gap-2.5 md:gap-4')
+            each val in videos
+                li
+                    +VideoCard(val)

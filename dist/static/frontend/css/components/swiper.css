@@ -1,0 +1,22 @@
+
+    .swiper .swiper-pagination-bullet {
+        transition: all 0.2s;
+    }
+.swiper .swiper-pagination-bullets .swiper-pagination-bullet {
+        background: #fff;
+        border: none;
+        width: 9pt;
+        height: 3pt;
+        border-radius: 6px;
+        margin: 0 1.5%;
+        opacity: .5;
+    }
+.swiper .swiper-pagination-bullets .swiper-pagination-bullet-active {
+        background: var(--dx-primary-color);
+        border: none;
+        width: 18pt;
+        height: 3pt;
+        border-radius: 6px;
+        margin: 0 1.5%;
+        opacity: 1;
+    }

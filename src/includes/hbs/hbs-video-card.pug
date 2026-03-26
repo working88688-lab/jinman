@@ -1,0 +1,28 @@
+template(id='video-item-template' type="text/x-handlebars-template")
+    | {{#each items}}
+    li
+        div
+            a(class='flex aspect-w-16 group aspect-h-9 overflow-hidden' href='video_detail.html?id=1')
+                div( class='poster rounded-sm overflow-hidden pointer-events-auto')
+                    img(class="w-full h-full rounded-sm group-hover:scale-125 transition-all" src='/static/frontend/images/loading.svg' data-src="{{target.frontend_cover}}" alt="{{target.frontend_cover}}")
+                    div(class='w-full absolute left-0 top-0 justify-end flex group-hover:hidden')
+                        | {{#if (equals target.toll_type 2)}}
+                        img(class='w-7 h-7 rounded-sm' src="/static/frontend/images/video_vip.webp", alt="")
+                        | {{/if}}
+            a(class='block mt-0.5 text-sm' href='video_detail.html?id=1')
+                div(class='line-clamp-2 text-default text-base2') {{target.title}}
+                div(class='flex justify-between text-base3 mt-0.5')
+                    div(class='flex items-center')
+                        svg(class='w-3 h-3 md:w-4 md:h-4 mr-0.5')
+                            use(href='/static/frontend/icons/icons.svg#time')
+                        span {{target.created_at_str}}
+                    div(class='flex items-center')
+                        div(class='flex items-center mr-1')
+                            svg(class='w-3 h-3 md:w-4 md:h-4 mr-0.5')
+                                use(href='/static/frontend/icons/icons.svg#like')
+                            span {{target.collect_count}}
+                        div(class='flex items-center')
+                            svg(class='w-3 h-3 md:w-4 md:h-4 mr-0.5')
+                                use(href='/static/frontend/icons/icons.svg#view')
+                            span {{target.view_count}}
+    | {{/each}}

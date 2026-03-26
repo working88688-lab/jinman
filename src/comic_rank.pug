@@ -1,0 +1,59 @@
+
+extends includes/layout.pug
+
+
+include includes/mixin/dx-novel-card.pug
+
+
+block css
+
+
+block header
+    +Header({
+        active: 'comic',
+        showHeader: false,
+        placeholder: '搜索小说作品',
+        search_type: 'comic'
+    })
+
+block nav
+    +Nav
+
+
+block content
+    +Breadcrumbs([{  title: '禁漫漫画', isLink: true, href: "comic.html" }, { isLink: false }, {  title: '全部漫画',isLink: true }])
+
+    div(class='index-content')
+        div(class='mb-2 dx-tabs mt-3')
+         
+            div(class='grid grid-cols-4 gap-x-3 dx-tab-list mb-3')
+                a(class='btn dx-tab w-full btn-primary' href='comic_rank.html?type=1') 收藏榜
+                a(class='btn dx-tab w-full' href='comic_rank.html?type=2') 周榜
+                a(class='btn dx-tab w-full' href='comic_rank.html?type=3') 月榜
+                a(class='btn dx-tab w-full' href='comic_rank.html?type=4') 年榜
+            div(class='dx-tab-content dx-tab-content--active')
+                ul(class='dx-novel-list gap-2.5 md:gap-4')
+                    each val, index in [...videos, ...videos, ...videos, ...videos.slice(0,2)]
+                        li
+                            +Comic(val, index + 1)
+            div(class='dx-tab-content')
+                ul(class='dx-novel-list gap-2.5 md:gap-4')
+                    each val, index in [...videos, ...videos, ...videos.slice(0,2)]
+                        li
+                            +Comic(val, index + 1)
+            div(class='dx-tab-content')
+                ul(class='dx-novel-list gap-2.5 md:gap-4')
+                    each val, index in [...videos, ...videos.slice(0,2)]
+                        li
+                            +Comic(val, index + 1)
+            div(class='dx-tab-content')
+                ul(class='dx-novel-list gap-2.5 md:gap-4')
+                    each val, index in [...videos, ...videos, ...videos, ...videos.slice(0,2)]
+                        li
+                            +Comic(val, index + 1)
+            
+     
+
+      
+block footer-scripts
+    script(data-main='/static/frontend/js/index_main.js' src="/static/frontend/js/lib/require.js")

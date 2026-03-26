@@ -1,0 +1,7 @@
+mixin Pager(selector = '', type = 1)
+    div(class='flex justify-center w-full overflow-hidden mt-3 md:mt-5')
+        ul(class='pager dx-pager scrollbar-none ' + selector data-page='1' data-lang='zh_cn' data-rec-total='0' data-rec-per-page='10' data-max-nav-count='10' data-elements='prev,page_of_total_text,goto,next' data-type=type )
+
+mixin SimplePager(config = { page: '' })
+    div(class='flex justify-center w-full overflow-hidden mt-3 md:mt-5')
+        ul(class='pager dx-pager scrollbar-none'  data-link=config.page  data-page='1' data-lang='zh_cn' data-rec-total='100' data-rec-per-page='10' data-max-nav-count='10' data-elements='prev,page_of_total_text,goto,next')

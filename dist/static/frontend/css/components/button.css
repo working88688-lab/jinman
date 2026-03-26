@@ -1,0 +1,19 @@
+.btn-round {
+    border-radius: 50px;
+}
+
+.btn-collect .not-like {
+        display: block;
+    }
+
+.btn-collect .like {
+        display: none;
+    }
+
+.btn-collect.text-primary .not-like {
+            display: none;
+        }
+
+.btn-collect.text-primary .like {
+            display: block;
+        }

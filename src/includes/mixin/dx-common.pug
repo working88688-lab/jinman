@@ -1,0 +1,45 @@
+mixin BtnComment(item)
+    a(class='flex-col-center' href="#comment")
+        svg(class='w-5 h-5')
+            use(href='/static/frontend/icons/icons.svg#comment')
+        span(class='mt-0.5') 评论
+
+mixin BtnLike(item={})
+    button(class='flex-col-center btn-collect' data-type=item.type || 1)
+        svg(class='w-5 h-5')
+            use(class='not-like' href='/static/frontend/icons/icons.svg#like')
+            use(class='like' href='/static/frontend/icons/icons.svg#heart')
+        span(class='mt-0.5') 收藏
+
+mixin BtnShare(item)
+    button(class='flex-col-center btn-share'  data-clipboard-text="https://18mh.net/mv/video?id=21609")
+        svg(class='w-5 h-5')
+            use(href='/static/frontend/icons/icons.svg#forward')
+        span(class='mt-0.5') 分享
+
+mixin BtnReport(type = 1, text = '投诉')
+    button(class='flex-col-center btn-report' data-title='黑狱之凌月篇宁落尘泥碾作尘'  data-type=type)
+        svg(class='w-5 h-5')
+            use(href='/static/frontend/icons/icons.svg#report')
+        span(class='mt-0.5')= text
+
+mixin BtnComment2(item = {})
+    button(id='comment' data-id='1' data-title='连体网丝美女,爸爸用力操我好受,深喉吃鸡舔菊花,被胖哥无套插屁眼,鸡吧操操吃吃,喷了一床黄水,都操肿合不拢了 - 国产自拍视频' class='btn btn-block btn-comment btn-primary my-3' data-type=(item.type || 1)) 给作品评个分
+
+
+mixin Rate
+    div(class='flex items-center dx-rate')
+        span 请评分：
+        svg(class='w-3.5 h-3.5 cursor-pointer mr-1')
+            use(href='/static/frontend/icons/icons.svg#star_red')
+        svg(class='w-3.5 h-3.5 cursor-pointer mr-1')
+            use(href='/static/frontend/icons/icons.svg#star_red')
+        svg(class='w-3.5 h-3.5 cursor-pointer mr-1')
+            use(href='/static/frontend/icons/icons.svg#star_red')
+        svg(class='w-3.5 h-3.5 cursor-pointer mr-1')
+            use(href='/static/frontend/icons/icons.svg#star_red')
+        svg(class='w-3.5 h-3.5 cursor-pointer')
+            use(href='/static/frontend/icons/icons.svg#star_icon')
+        
+        span(class='dx-rate-title ml-2') 还不错
+        

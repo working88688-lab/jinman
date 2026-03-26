@@ -1,0 +1,98 @@
+extends includes/layout-simple.pug
+include includes/dialog/dx-popup.pug
+
+
+mixin Menus
+  button(class='btn-open-popup flex-col-center py-1 px-2 bg-white rounded-sm mr-3' data-type='directory')
+    svg(class='w-6 h-6')
+      use(href='/static/frontend/icons/icons.svg#catalog')
+    | 目录
+  button(class='flex-col-center py-1 px-2 btn-collect bg-white rounded-sm mr-3'  data-type='1')
+    svg(class='w-6 h-6')
+      use(href='/static/frontend/icons/icons.svg#like')
+    | 收藏
+  button(class='flex-col-center py-1 px-2 bg-white rounded-sm btn-share  mr-3')
+    svg(class='w-6 h-6')
+      use(href='/static/frontend/icons/icons.svg#option_share')
+    | 分享
+  button(class='flex-col-center py-1 px-2 bg-white rounded-sm mr-3')
+    svg(class='w-6 h-6')
+      use(href='/static/frontend/icons/icons.svg#comment')
+    | 评论
+  //- div(class='flex-col-center py-1 px-2 bg-white rounded-sm mr-3')
+  //-   +BtnReport('举报')
+
+mixin CustomFooter
+  div(class='flex justify-between items-center bg-white h-full px-3')
+    a(class='flex items-center cursor-pointer' href='novel_chapter.html?id=1')
+      svg(class='w-4 h-4 mr-2')
+        use(href='/static/frontend/icons/icons.svg#arrow_left')
+      span(class='font-bold') 上一章
+    a(class='flex items-center cursor-pointer' onclick='_back()') 返回书页
+    a(class='flex items-center cursor-pointer' href='novel_chapter.html?id=2')
+      span(class='font-bold') 下一章
+      svg(class='w-4 h-4 ml-2')
+        use(href='/static/frontend/icons/icons.svg#arrow_right')
+      
+mixin PopupContent()
+  div(class='max-w-[80vw] w-[350px] text-base2 h-full')
+    - var items = [1,2,3,4,5,6,7,8,9,10,1,2,3,4,5,6,7,8,9,10,1,2,3,4,5,6,7,8,9,10,1,2,3,4,5,6,7,8,9,10,1,2,3,4,5,6,7,8,9,10,1,2,3,4,5,6,7,8,9,10,1,2,3,4,5,6,7,8,9,10]
+    div(class='dx-tabs directory flex flex-col h-full')
+      div(class='flex items-center dx-tab-list text-xl dx-hairline--bottom')
+        div(class='dx-tab-item cursor-pointer py-3 px-2 is-active') 目录列表
+
+
+        button(class='ml-auto btn-close-popup')
+          svg(class='w-6 h-6')
+            use(class='open' href='/static/frontend/icons/icons.svg#menu_close')
+      div(class='dx-tab-content flex-1 overflow-auto dx-tab-content--active')
+        ul
+          each item, index in items
+            li(class='volume_box')
+              div(class='dx-title flex volume_box-title items-center cursor-pointer px-3 py-2 dx-hairline--bottom justify-between font-medium')
+                span= '第' + (index + 1) + "卷"
+                svg(class='w-4 h-4 arrow')
+                  use(href='/static/frontend/icons/icons.svg#arrow_up')
+              ul(class='lists')
+                li(class='volume_box px-3 py-2 flex items-center justify-between cursor-pointer')
+                  span 第1章 索菲亚
+                  span 注册会员
+                li(class='volume_box px-3 py-2 flex items-center justify-between cursor-pointer')
+                  span 第1章 索菲亚
+                  span 注册会员
+                li(class='volume_box px-3 py-2 flex items-center justify-between cursor-pointer')
+                  span 第1章 索菲亚
+                  span 注册会员
+
+         
+
+block css
+  link(rel="stylesheet", href="/static/frontend/css/chapter.css")
+
+block header
+  +SimpleHeader({
+      active: 'novel'
+  })
+
+block nav
+  +Nav
+
+block content
+
+  section
+    each item in videos
+      img(src='/static/frontend/images/loading.svg' data-src="https://pic.sheengs.cn/upload_01/upload/20240623/2024062307123141379.jpeg", alt="")
+
+
+block footer
+  +FixedFooter
+
+block dialog
+  include includes/dialog/dx-reply-dialog.pug
+  include includes/dialog/dx-comment-dialog.pug
+  +Popup
+
+
+block footer-scripts
+  script(data-main='/static/frontend/js/comic_chapter_main.js' src="/static/frontend/js/lib/require.js")
+

@@ -1,0 +1,15 @@
+{
+  "data": {
+    "nickname": "老色批",
+    "last_login_at": "2024-10-1 20:00:00",
+    "register_at": "2024-10-1 20:00:00",
+    "videos": 10,
+    "fans": 10,
+    "attentions": 22,
+    "desc": "我是老色批",
+    "signature": "大家都是老色批",
+    "is_follow": 1
+  },
+  "code": 200,
+  "msg:": "ok"
+}

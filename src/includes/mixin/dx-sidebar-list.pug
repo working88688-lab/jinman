@@ -1,0 +1,15 @@
+mixin SideMenu(item ={})
+    div(class='mb-2')
+        a(class='flex items-center mb-1' href=item.href)
+            svg(class='w-4 h-4 mr-1')
+                use(href='/static/frontend/icons/icons.svg#'+item.icon)
+            span= item.title
+        - var items = ['都市', '玄幻', '日本AV','都市', '玄幻', '日本AV','都市', '玄幻', '日本AV','都市', '玄幻', '日本AV','都市', '玄幻', '日本AV','都市', '玄幻', '日本AV','都市', '玄幻', '日本AV']
+            ul(class='flex flex-wrap')
+                li(class='mr-1.5 mb-1.5')
+                    a(href=item.all_href)= "全部" + item.title
+                li(class='mr-1.5 mb-1.5')
+                    a(href=item.rank_href) 排行榜
+                each item in items
+                    li(class='mr-1.5 mb-1.5')
+                        a(href=item.all_href)= item

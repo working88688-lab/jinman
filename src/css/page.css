@@ -1,0 +1,63 @@
+.vip_card {
+    width: 100px;
+    flex-shrink: 0;
+
+    &.active {
+        background-color: var(--dx-primary-color);
+        color: #fff;
+    }
+}
+
+.user-box {
+    height: 136px !important;
+}
+
+.btn-sign-item {
+    width: 92px;
+    transition: all 0.2s;
+    border-radius: 8px;
+    flex-shrink: 0;
+
+    &.is-hover:hover {
+        color: var(--dx-primary-color);
+        border-color: var(--dx-primary-color);
+    }
+
+    &:active,
+    &.is-active {
+        color: var(--dx-primary-color);
+        border-color: var(--dx-primary-color);
+    }
+}
+
+.sign-border {
+    margin: 0 20px;
+    width: 1px;
+    background-color: #eeeeee;
+}
+
+@media (max-width: 768px) {
+    .sign-header {
+        margin: 0 -12px;
+    }
+
+    .btn-sign-item {
+        width: 78px;
+    }
+}
+
+.sign-rule p {
+    line-height: 1.6;
+}
+
+@media (min-width:768px) {
+
+    .sign-header {
+        border-radius: 8px;
+        overflow: hidden;
+    }
+}
+
+.app-content {
+    min-height: 66vh;
+}

@@ -1,0 +1,10 @@
+include ../components/dx-video-card.pug
+mixin List(len = 6)
+    ul(class='video-items grid grid-cols-2 md:grid-cols-4 gap-2 md:gap-4')
+        li(class='flex')
+            a(class="flex-1" href="#")
+                div(class="dx-ad-item")
+                    img(src="/static/frontend/images/loading.svg" data-src="https://pic.xxerhu.cn/upload_01/upload/20240718/2024071815571925668.gif", alt="") 
+        each val in videos.slice(0, len)
+            li
+                +VideoCard(val)

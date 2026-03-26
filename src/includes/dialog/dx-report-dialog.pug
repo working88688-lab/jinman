@@ -1,0 +1,43 @@
+//  投诉弹框
+div(id='report_modal' class='modal fade dx-modal')
+    div(class='modal-dialog')
+        .modal-content
+            div(class='modal-header flex items-start')
+                div(class='text-black font-bold')
+                    span 举报：
+                    span(class='title')
+                button(class='close text-subtitle ml-auto' type='button' data-dismiss='modal')
+                    svg(class='w-6 h-6')
+                        use(href='/static/frontend/icons/icons.svg#menu_close')
+        div(class='modal-body')
+            div(class='mb-2 text-base6 -mt-3') 请选择举报原因（可多选）：
+            form
+                div(class='grid grid-cols-1 gap-y-1')
+                    div(class='checkbox-primary')
+                        input(id='report_item1' type="checkbox" name='report_item' value='1')
+                        label(for="report_item1") 章节或内容错误
+                    div(class='checkbox-primary')
+                        input(id='report_item2' type="checkbox" name='report_item' value='2')
+                        label(for="report_item2") 有更好的版本
+                    div(class='checkbox-primary')
+                        input(id='report_item3' type="checkbox" name='report_item' value='3')
+                        label(for="report_item3") 带有严重的政治倾向
+                    div(class='checkbox-primary')
+                        input(id='report_item4' type="checkbox" name='report_item' value='4')
+                        label(for="report_item4") 煽动恐怖主义或犯罪
+                    div(class='checkbox-primary')
+                        input(id='report_item5' type="checkbox" name='report_item' value='5')
+                        label(for="report_item5") 涉及幼童色情
+                    div(class='checkbox-primary')
+                        input(id='report_item6' type="checkbox" name='report_item' value='6')
+                        label(for="report_item6") 侮辱民族英雄
+                    div(class='checkbox-primary')
+                        input(id='report_item7' type="checkbox" name='report_item' value='7')
+                        label(for="report_item7") 其他问题
+                div(class='dx-textarea mt-3')
+                    textarea(class='flex-1 content' rows="3" maxlength='500' placeholder="请输入举报内容")
+                    div(class='flex justify-end mt-0.5 text-base6')
+                        span(class='current') 0
+                        span /
+                        span(class='limit')
+                button(class='btn-primary btn mt-4 btn-block btn-submit-report' type='button') 提交举报

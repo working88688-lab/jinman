@@ -1,0 +1,25 @@
+mixin VideoCard(item)
+  div(class='video-item' href='view_video.html?id=1')
+    a(class='flex aspect-w-16 aspect-h-9 overflow-hidden' href='#')
+      div( class='poster bg-base2 overflow-hidden pointer-events-auto' data-url=item.url)
+        img(class="w-full h-full rounded-sm" src='/static/frontend/images/loading.svg' data-src=item.poster alt=item.title)
+        div(class='dx-bg-linear w-full px-0.5 py-1 md:p-2 absolute left-0 bottom-0 flex justify-end')
+          div(class='text-sm opacity-50 py-0.5 px-1.5 bg-black rounded-large ') 11:54
+        div(class='video-preview w-full h-full left-0 top-0')
+    a(class='px-2 md:px-0' href='#')
+      h6(class='truncate w-full md:text-xl my-0.5 md:my-1.5')= item.subtitle
+      div(class='title dx-subtitle')
+        div(class='flex items-center mb-1 md:mb-2 text-mini md:text-default')
+          div(class='flex items-center mr-5')
+            svg(class='w-3 h-3 md:w-4 md:h-4 mr-0.5')
+              use(href='/static/frontend/icons/icons.svg#time')
+            | 7个月前
+          div(class='flex items-center')
+            svg(class='w-3 h-3 md:w-4 md:h-4 mr-0.5')
+              use(href='/static/frontend/icons/icons.svg#author')
+            | 作者
+    div(class='truncate dx-subtitle text-sm md:text-default')
+      a(class='mr-2 inline hover:text-primary ' href='#') 大胸3131
+      a(class='mr-2 inline' href='#') 粉穴13313
+      a(class='mr-2 inline' href='#') 网红222313
+      a(class='mr-2 inline' href='#') 萝莉2222

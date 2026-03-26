@@ -1,0 +1,51 @@
+.video-item {
+    user-select: none;
+
+    .title,
+    img {
+        transition: all 0.2s;
+        -webkit-touch-callout: none;
+    }
+
+
+    .tag {
+        max-width: 58px;
+        color: #fff;
+        padding: 0 4px;
+        line-height: 20px;
+        font-size: 10px;
+        border-radius: 0 50px 50px 0;
+    }
+
+    .poster {
+        &::before {
+            width: 0;
+            height: 3px;
+            background-color: var(--dx-primary-color);
+            content: '';
+            display: block;
+            position: absolute;
+            left: 0;
+            top: 0;
+            z-index: 1;
+        }
+
+        &.preloading {
+            &::before {
+
+                animation: preview 2s forwards;
+            }
+        }
+    }
+
+}
+
+@keyframes preview {
+    0% {
+        width: 0%;
+    }
+
+    100% {
+        width: 100%;
+    }
+}

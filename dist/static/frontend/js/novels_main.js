@@ -1,0 +1,37 @@
+"use strict";
+
+requirejs.config({
+  urlArgs: "v=".concat(js_assets_version),
+  // 资源版本号
+  baseUrl: '/static/frontend/js',
+  paths: {
+    jquery: 'lib/jquery',
+    zui: 'lib/zui',
+    lazyload: 'plugins/lazyload',
+    cryptojs: 'lib/crypto'
+  },
+  shim: {
+    zui: ['jquery']
+  }
+});
+requirejs(['lazyload', 'utils', 'jquery', 'common'], function (lazyload, utils) {
+  lazyload.load_image();
+  const params = new URLSearchParams(window.location.search);
+  $('.pager').pager({
+    maxNavCount: 8,
+    page: Number(params.get('page') || 1),
+    linkCreator: function linkCreator(page, pager) {
+      return '?' + utils.format_url_search_params({
+        page
+      });
+    },
+    onPageChange: function onPageChange(state, oldState) {
+      if (state.page !== oldState.page) {
+        console.log('页码从', oldState.page, '变更为', state.page);
+        window.location.href = '?' + utils.format_url_search_params({
+          page: state.page
+        });
+      }
+    }
+  });
+});

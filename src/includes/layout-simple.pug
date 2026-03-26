@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+- var css_assets_version = 'v1.0.0'
+include mixin/dx-title.pug
+include mixin/banner.pug
+include mixin/list.pug
+include mixin/dx-overlay.pug
+include mixin/dx-tag-tab.pug
+include mixin/dx-recommend-icon.pug
+include mixin/dx-follow-list.pug
+include mixin/dx-message-list.pug
+include mixin/dx-swiper.pug
+include mixin/dx-breadcrumbs.pug
+include mixin/dx-nav
+include mixin/dx-header
+include mixin/dx-novel-item.pug
+include mixin/dx-video-item.pug
+include mixin/dx-comic-item.pug
+include mixin/dx-actress-item.pug
+include mixin/dx-sidebar-list.pug
+include mixin/dx-tag-list.pug
+include mixin/dx-rank-list.pug
+include mixin/dx-editor-recommend.pug
+include mixin/dx-back-header.pug
+include mixin/dx-common.pug
+include mixin/dx-simple-header.pug
+include mixin/dx-fixed-footer.pug
+html(lang='zh-CN')
+    head
+        include app-meta-head-pc.pug
+
+        block css 
+
+        block scripts
+
+        block inline-scripts
+
+    - var banner = [1, 2]
+    body
+        block header
+        
+        block nav
+            
+        block swiper
+
+        // main-content
+        main(class='dx-container app-content')
+            block content
+
+
+        +Overlay
+        include common.pug
+        
+        block dialog
+
+        block footer
+
+
+        script
+            | const js_assets_version = '1.0.0'
+        block footer-scripts
+
+        block hbs

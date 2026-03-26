@@ -1,0 +1,7 @@
+mixin LineTab
+  - var items = [ { title: "当前最热", href: "?cate=now_hot", className: ' is-active' }, { title: "最近更新", href: "?cate=new_update"},{ title: "91原创", href: "?cate=original"},{ title: "本月最热", href: "?cate=now_month_hot"},{ title: "10分钟以上", href: "?cate=ten_minutes"},{ title: "20分钟以上" , href: "?cate=twenty_minutes"},{ title: "本月收藏" , href: "?cate=now_month_collect"},{ title: "高清", href: "?cate=hd"}, { title: "每月最热", href: "?cate=month_hot"},{ title: "本月讨论", href: "?cate=now_month_comment"},{ title: "收藏最多", href: "?cate=max_collect"}, ]
+  div(class='w-full text-2xl mb-3')
+    ul(class='dx-line-tabs dx-tabs flex flex-wrap text-default md:text-xl')
+      each item in items
+        li(class='dx-line-tab-item dx-tab-item text-font1' + (item.title === '当前最热' ? ' is-active' : ''))
+          a(href=item.href)= item.title

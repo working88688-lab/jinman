@@ -1,0 +1,27 @@
+mixin FollowCard(item)
+    div(class='bg-base4 p-2.5 md:p-4 rounded-sm')
+        div(class='flex items-center justify-between mb-3')
+            div(class='flex items-center')
+                img(class='w-[60px] h-[60px] rounded-full mr-3' src="/static/frontend/images/default.jpeg", title='头像' alt="头像")
+                span Tomi paull
+            
+            button(class='btn btn-primary' type='button')  取消关注
+        div(class='flex pb-3 dx-hairline--bottom')
+            div(class='flex-col-center mr-[54px]')
+                span(class='text-font1') 注册时间
+                span(class='text-primary') 08-08
+            div(class='flex-col-center mr-[54px]')
+                span(class='text-font1') 公开视频
+                span(class='text-primary') 94
+            div(class='flex-col-center mr-[54px]')
+                span(class='text-font1') 粉丝
+                span(class='text-primary') 2
+        div(class='mt-2 md:mt-3')
+            div(class='flex')
+                span(class=' text-xl mr-2.5') 最近更新
+                span(class='text-font1') 添加时间：19个小时前
+            a(href="view_video.html") 
+                h6(class='text-primary my-1.5 hover:underline') 初體驗從喪失處男的那天開始單獨2人專心SEX直到天亮的脫處DREAM同居記錄 三上悠亞）
+                div(class='w-[140px] md:w-[214px]')
+                    div(class='aspect-w-6 aspect-h-5')
+                        img(data-src=item.poster, src='/static/frontend/images/loading.svg' alt=item.title title=item.title)

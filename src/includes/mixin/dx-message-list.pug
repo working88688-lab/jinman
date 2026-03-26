@@ -1,0 +1,6 @@
+mixin MessageList(len = 2)
+    ul(class='video-items grid grid-cols-1 md:grid-cols-2 gap-2 md:gap-4')
+        each val in videos.slice(0, len)
+            li
+                include ../components/dx-message-card.pug
+                +MessageCard(val)

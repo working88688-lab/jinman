@@ -1,0 +1,31 @@
+//  全局弹框 
+div(id='tip_modal' class='modal fade dx-modal')
+    div(class='modal-dialog')
+        div(class='modal-content')
+            div(class='modal-header flex items-center')
+                div(class='modal-title text-3xl')
+                    span(class='time') 45
+                    span 秒后将会自动关闭
+                button(class='close text-subtitle ml-auto' type='button' data-dismiss='modal')
+                    svg(class='w-6 h-6')
+                        use(href='/static/frontend/icons/icons.svg#menu_close')
+            div(class='modal-body')
+                div(class='px-3 whitespace-pre-line relative' id="tip_content")
+                    div 请花几秒钟记住以下信息！
+                    div 最新地址(请用https://访问)：  
+                        a(href='https://18mh.net' target='__blank' class='text-primary !underline') https://18mh.net
+                    div 移动用户访问： 
+                        a(href='https://18mh.net' target='__blank' class='text-primary !underline') https://18mh.net
+                    div 找视频找作者：  
+                        a(href="https://t.me/porn91fun" target='__blank' class='text-primary !underline') 加入官方电报群组！
+                    div 发送邮件至sqhub3678@gmail.com或截图收藏地址发布页随时获取最新地址。
+                    div(class='flex flex-wrap')
+                        a(class=' mr-3') 地址发布页1
+                        a(class='') 地址发布页2
+                    div(class="absolute btn-download right-0 top-0 flex items-center" role="button")
+                        svg(class="w-6 h-6 mr-0.5")
+                            use( href="/static/frontend/icons/icons.svg?v=1.0.1#download-image")
+                        | 保存地址为图片
+            div(class='modal-footer')
+                a(class='btn btn-success leading-[30px] mr-3') 🔥地址发布页1🔥
+                button(class='btn btn-primary' type='button' data-dismiss='modal') 立即关闭

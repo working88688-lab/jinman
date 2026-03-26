@@ -1,0 +1,6 @@
+mixin BackHeader(title)
+    div(class='flex items-center justify-center relative py-3')
+        svg(class='w-4 h-4 cursor-pointer absolute -translate-y-1/2 left-0 top-1/2' onclick='_back()')
+            use(href='/static/frontend/icons/icons.svg#arrow_left')
+        
+        span(class='font-bold dx-title')= title

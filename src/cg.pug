@@ -1,0 +1,76 @@
+extends includes/layout.pug
+
+include includes/mixin/dx-card-list.pug
+
+include includes/mixin/dx-post-item.pug
+
+block css
+    link(rel='stylesheet' href='/static/frontend/css/lib/swiper.css')
+
+block header
+    +Header({
+        active: 'cg'
+    })
+
+block nav
+    +Nav
+
+block content
+    //- +Swiper
+   
+
+
+    div(class='index-content')
+        div(class='grid grid-cols-1 gap-2 my-2 md:my-3')
+            each item in [1,2]
+                div(class='dx-banner-item') 
+                    a(class='dx-aspect-container' aria-label='广告' href='https://tea.dsvasouda.com/?code=bckQM&c=2663' rel="external nofollow" target="_blank")
+                        img(src="/static/frontend/images/poster_loading.png" data-src='https://pic.sheengs.cn/upload_01/upload/20240916/2024091617223848083.gif' alt="广告")
+        //- +SRecommendIcon('站长推荐', '撸片必备神器', 20)
+        +RecommendIcon
+        +DxTitle({ title: '黑料吃瓜', icon: '', more_href: ''})
+        - var items = [ { title: "今日吃瓜", href: "?cate=now_hot", className: ' is-active' }, { title: "吃瓜榜单", href: "?cate=new_update"},{ title: "必看大瓜", href: "?cate=original"}, { title: "吃瓜榜单", href: "?cate=new_update"},{ title: "必看大瓜", href: "?cate=original"}, { title: "吃瓜榜单", href: "?cate=new_update"},{ title: "必看大瓜", href: "?cate=original"}, { title: "吃瓜榜单", href: "?cate=new_update"},{ title: "必看大瓜", href: "?cate=original"}, { title: "吃瓜榜单", href: "?cate=new_update"},{ title: "必看大瓜", href: "?cate=original"}, { title: "吃瓜榜单", href: "?cate=new_update"},{ title: "必看大瓜", href: "?cate=original"}, { title: "吃瓜榜单", href: "?cate=new_update"},{ title: "必看大瓜", href: "?cate=original"}, { title: "吃瓜榜单", href: "?cate=new_update"},{ title: "必看大瓜", href: "?cate=original"}]
+        div(class='w-full flex items-start text-default md:sticky md:pt-2 my-2 top-[60px]   z-10')
+            // pc分类
+            ul(class='dx-line-tabs dx-tabs hidden md:flex flex-wrap text-default md:text-default')
+                each item in items
+                    li(class='dx-line-tab-item text-center mr-3 mb-2 dx-tab-item text-font1 flex flex-row rounded-[6px]' + (item.title === '今日吃瓜' ? ' is-active' : ''))
+                        a(class='flex-1 px-1 flex flex-row items-center justify-center' href=item.href)= item.title
+            // 移动分类
+            ul(class='dx-line-tabs dx-tabs flex md:hidden rounded-sm bg-base1 px-3 pt-3 flex-wrap text-default md:text-xl')
+                each item in items
+                    li(class='text-center mr-2 mb-3 dx-tab-item text-font1')
+                        a(href=item.href class='dx-button-tab-item' + (item.title === '今日吃瓜' ? ' is-active' : ''))= item.title
+            // pc筛选
+            button(class='ml-auto relative group open-popover text-default hidden md:flex items-center flex-shrink-0 pc-filter-cg' data-target='.post-cate-items' type='button')
+                svg(class='w-4.5 h-4.5 ml-auto flex-shrink-0 mr-2 group-hover:text-primary')
+                    use(href='/static/frontend/icons/icons.svg#filter ')
+                strong(class='post-cate') 推荐
+
+                div(class='post-cate-items hidden absolute top-7 right-0 text-white bg-[#404040] whitespace-nowrap')
+                    ul
+                        li
+                            a(href="#" class='block px-9 py-2.5 hover:text-primary hover:bg-base12') 推荐
+                        li
+                            a(href="#" class='block px-9 py-2.5 hover:text-primary hover:bg-base12') 热门
+                        li
+                            a(href="#" class='block px-9 py-2.5 hover:text-primary hover:bg-base12') 最新
+        // 移动筛选
+        ul(class='flex md:hidden items-center dx-line-tabs dx-tabs second-tabs bg-base1 mb-3 sticky top-[60px]  z-10' style="--dx-tab-line-width-percent: 100%")
+            - var items = ['推荐', '热门', '最新']
+                each item in items
+                    li(class='flex flex-1 md:flex-auto dx-line-tab-item dx-tab-item'+( item === '推荐' ? ' is-active' : ''))
+                        a(class='flex justify-center flex-1 py-2 md:w-[160px] hover:text-primary' href='#')= item
+        ul(class='grid grid-cols-1 gap-2.5 md:gap-4')
+            each item in videos
+                li
+                    a(href='./cg_detail.html')
+                        article(class='h-[200px]  md:h-[248px] rounded-sm overflow-hidden post-item post-item--big')
+                            +PostItem()
+
+
+        +SimplePager({ page: 'cg.html'})
+
+
+block footer-scripts
+    script(data-main='/static/frontend/js/cg_main.js' src="/static/frontend/js/lib/require.js")

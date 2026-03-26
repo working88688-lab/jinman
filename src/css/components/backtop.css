@@ -1,0 +1,66 @@
+@import 'tailwindcss/base';
+
+
+@layer base {
+    .dx-backtop--trigger {
+        @apply flex-center m-auto
+    }
+}
+
+.dx-backtop {
+    display: none;
+    position: fixed;
+    width: 44px;
+    height: 44px;
+    bottom: 100px;
+    right: 20px;
+    z-index: 99;
+
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    text-align: center;
+    cursor: pointer;
+
+    .progress-circle {
+        stroke: var(--dx-primary-color);
+        fill: var(--dx-primary-color);
+        stroke-width: 3px;
+        stroke-linecap: round;
+    }
+
+    .progress-bar {
+        stroke: #fff;
+        stroke-width: 3px;
+    }
+
+    .dx-backtop--trigger {
+        width: 44px;
+        height: 44px;
+        transform: rotate(-90deg);
+    }
+
+    &:hover {
+        .dx-backtop--arrow {
+            transform: translate(-50%, -50%) rotate(180deg);
+        }
+    }
+}
+
+.dx-backtop--arrow {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: transform 0.3s;
+}
+
+.dx-backtop:hover {
+    opacity: var(--dx-hover-opacity);
+}
+
+@media (max-width: 768px) {
+    .dx-backtop--arrow {
+        /* transform: translate(-50%, -50%) rotate(180deg) !important; */
+    }
+}

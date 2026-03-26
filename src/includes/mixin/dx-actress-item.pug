@@ -1,0 +1,10 @@
+mixin ActressItem(item)
+    a(class='flex-col-center w-full group overflow-hidden relative' href='actress_detail.html?id=2')
+        div(class="cusActressRank rankItem") 1
+        div( class='md:w-[98px] md:h-[98px]  w-[56px]  h-[56px] rounded-full overflow-hidden pointer-events-auto')
+            img(class="w-full h-full rounded-sm group-hover:scale-125 transition-all" src='/static/frontend/images/loading.svg' data-src=item.poster alt=item.title)
+        div(class='text-default w-full text-center truncate text-base2 mt-0.5') 超美回昂
+        //- if item.rank
+            //- div(class='text-default w-full text-center truncate text-base2 mt-0.5')= item.rank
+        if item.count
+            div(class='text-default w-full text-center truncate text-base2 mt-0.5')= item.count

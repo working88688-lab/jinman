@@ -1,0 +1,14 @@
+mixin DxTitle(item)
+    header(class='flex items-center md:py-3 py-2 text-default')
+        if item.icon
+            svg(class='w-4 h-4 mr-2 text-primary')
+                use(href='/static/frontend/icons/icons.svg#'+item.icon)
+        h2(class='mr-2 font-semibold')= item.title
+        if item.subtitle
+            span(class='text-primary font-semibold')= item.subtitle
+        if item.desc
+            strong(class='dx-subtitle text-sm md:text-default font-medium')= item.desc
+        if item.more_href      
+            a(class='ml-auto text-sm md:text-xl text-font1' href=item.more_href)
+                svg(class='w-3.5 h-3.5')
+                    use(href='/static/frontend/icons/icons.svg#title_more')

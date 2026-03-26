@@ -1,0 +1,62 @@
+extends includes/layout.pug
+
+block css
+    link(rel="stylesheet", href="/static/frontend/css/page.css")
+block header
+    +Header({
+        active: 'home'
+    })
+
+block nav
+    +Nav
+
+block content
+    section
+        +BackHeader('充值金币')
+    div(class='bg-white rounded py-5 px-3')
+        div(class='max-w-[720px] m-auto')
+            div(class='my-3 pb-3 dx-hairline--bottom')
+                div(class='flex justify-between')
+                    div(class='flex items-center mb-1 font-bold')
+                        img(class='w-5 h-5 mr-1' src="/static/frontend/images/coin.png", alt="")
+                        | 可用金币：
+                        span(class='user_coin') 0
+                    
+                    span 1金币=¥1.00(人民币)
+            div(class='text-base3 flex justify-between my-3') 
+                span 金币是平台内流通的货币，可用于购买金币视频、漫画、小说等。
+                a(href="coin_detail.html" class='text-primary underline') 金币明细 
+            div(class='lists flex flex-wrap')
+
+
+            div(class='mt-4')
+                div(class='pb-3 dx-hairline--bottom') 请选择支付方式
+
+                div
+                    div(class='radio')
+                        label(for="vip_recharge1" class='flex items-center justify-between')
+                            div(class='flex items-center')
+                                img(class='w-8 h-8 mr-1' src="/static/frontend/images/member/alipay.png", alt="")
+                                | 支付宝
+                            input(type="radio" class='!static' id='vip_recharge1' checked="checked" name='vip_recharge' value='1')
+                    div(class='radio')
+                        label(for="vip_recharge2" class='flex items-center justify-between')
+                            div(class='flex items-center')
+                                img(class='w-8 h-8 mr-1' src="/static/frontend/images/member/wechat.png", alt="")
+                                | 微信
+                            input(type="radio" class='!static' id='vip_recharge2' name='vip_recharge' value='2')
+                
+                button(class='btn btn-block btn-primary btn-pay mt-5') 充值
+
+                div(class='mt-3')
+                    div(class='text-center font-bold') 支付注意事项
+                    div(class='text-sm text-base2')
+                        div 1.若您多次尝试无法支付，请联系在线客服人工支付。
+                        div 2.因行业限制，有时会遇到支付宝交易风险提示，请放心付款。
+                        div 3.支付后若未及时到账，请联系在线客服，无需任何担心。
+
+block hbs
+    include includes/hbs/hbs-empty.pug
+
+block footer-scripts
+    script(data-main='/static/frontend/js/coin_main.js' src="/static/frontend/js/lib/require.js")

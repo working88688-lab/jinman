@@ -1,0 +1,89 @@
+extends includes/layout.pug
+
+block css
+  link(rel='stylesheet' href='/static/frontend/css/lib/xgplayer.css')
+  link(rel='stylesheet' href='/static/frontend/css/view_main.css?v=' + css_assets_version)
+
+block header
+  +Header({
+      active: 'video'
+  })
+
+block nav
+  +Nav
+
+block content
+
+  div(class='flex text-font1')
+    div(class='flex-1')
+      +Breadcrumbs([{ title: '禁漫视频', isLink: true, href: 'video.html'}, { isLink: false},{ title: '全部视频', isLink: true, href: 'video_list.html'}, { isLink: false}, { title: '13331133131视频', isLink: true} ])
+     
+      div(class='aspect-w-16 aspect-h-9 mt-3')
+        div(class='player-container')
+          div(id='mse' data-url='https://hls.vdtuzv.com/videos2/39935e0bef81fba5b26ac4b203292c68/39935e0bef81fba5b26ac4b203292c68.m3u8?auth_key=1725527713-66d976a1375e5-0-586776a466ac9ccf2fcfa6804d248a9b&v=3&time=0&via=ap' data-poster='https://pic.shedtgs.cn/upload/upload/20231103/2023110315282821878.jpeg')
+      div(class='mt-2 md:mt-3')
+        h1(class='dx-title font-semibold leading-22')
+          | 手机新浪网新闻中心，新浪网新闻中心是新浪网最重要的频道之每日编发新闻数以万计。
+        div
+          span 番号：MIDV-813
+        div
+          span 片商：Moodyz
+        div
+          span 类型：高清AV
+        div
+          span 女优：
+          a(class='underline' href="actress.html") 彌生美月
+        div
+          span 标签：
+          a(class='underline' href="video_list.html?tag=1") #弟妹 
+          a(class='underline' href="video_list.html?tag=2") #乱伦
+
+        div(class='flex items-center my-3')
+          div(class='flex-center mr-3')
+            svg(class='w-4 h-4 svg-icon mr-1')
+              use(href='/static/frontend/icons/icons.svg#time')
+            span 12小时前
+          div(class='flex-center mr-3')
+            svg(class='w-4 h-4 svg-icon mr-1')
+              use(href='/static/frontend/icons/icons.svg#view')
+            span 2.3K
+          div(class='flex-center mr-3')
+            svg(class='w-4 h-4 svg-icon mr-1')
+              use(href='/static/frontend/icons/icons.svg#like')
+            span 204
+        div(class='flex justify-between')
+          +BtnComment
+
+          +BtnLike({ type: 2})
+
+          +BtnShare
+
+          +BtnReport(3)
+        div(class='comments mt-3')
+          div(class='font-bold text-black') 全部评论[共118条]
+          include includes/components/dx-video-comment.pug
+
+          +BtnComment2({ type: 4 })
+    div(class='w-[240px] max-h-[720px] overflow-auto flex-shrink-0 ml-4 hide lg:block')
+
+      +DxTitle({ title: '热门推荐'})
+      
+      ul(class='grid grid-cols-1 mr-3 gap-3')
+        each item in [...videos, ...videos.slice(0, 4)]
+          li(class='border-solid border border-border p-3 rounded')
+            a(class='block overflow-hidden' href='video_detail.html?id=1')
+              div(class='aspect-w-16 group aspect-h-9')
+                div( class='poster rounded-sm overflow-hidden pointer-events-auto')
+                  img(class="w-full h-full rounded-sm group-hover:scale-125 transition-all" src='/static/frontend/images/loading.svg' data-src=item.poster alt=item.title)
+              div(class='truncate font-bold mt-0.5')= item.title
+  
+
+block dialog
+  include includes/dialog/dx-reply-dialog.pug
+  include includes/dialog/dx-comment-dialog.pug
+  include includes/dialog/dx-report-dialog.pug
+
+
+block footer-scripts
+  script(data-main='/static/frontend/js/video_detail_main.js' src="/static/frontend/js/lib/require.js")
+

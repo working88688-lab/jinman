@@ -1,0 +1,72 @@
+extends includes/layout.pug
+
+block css
+    link(rel="stylesheet", href="/static/frontend/css/page.css")
+    link(rel="stylesheet", href="/static/frontend/css/lib/cropper.css")
+block header
+    +Header({
+        active: 'home'
+    })
+
+block nav
+    +Nav
+
+block content
+      div(class="flex flex-col items-center justify-center") 
+          img(class="w-[180px] h-[180px] md:w-[434px] md:h-[434px]" src="/static/frontend/images/no_data.png", alt="")
+          div(class="font-semibold dx-title") 对不起，没有找到关于『酸梅超人』的任何内容！
+      div(class="font-semibold dx-text my-4") 您是否要尝试搜寻⋯⋯
+      div(class="") 
+          ul(class="flex overflow-hidden flex-wrap")
+            li(class="mr-1.5 mb-1.5 flex")
+              a(class="flex-1 py-1.5 px-3 border border-solid border-base4 rounded-sm" href="video_search.html") 全部
+            li(class="mr-1.5 mb-1.5 flex")
+              a(class="flex-1 py-1.5 px-3 border border-solid border-base4 rounded-sm" href="video_search.html") 全部
+            li(class="mr-1.5 mb-1.5 flex")
+              a(class="flex-1 py-1.5 px-3 border border-solid border-base4 rounded-sm" href="video_search.html") 全部
+            li(class="mr-1.5 mb-1.5 flex")
+              a(class="flex-1 py-1.5 px-3 border border-solid border-base4 rounded-sm" href="video_search.html") 全部
+            li(class="mr-1.5 mb-1.5 flex")
+              a(class="flex-1 py-1.5 px-3 border border-solid border-base4 rounded-sm" href="video_search.html") 全部
+            li(class="mr-1.5 mb-1.5 flex")
+              a(class="flex-1 py-1.5 px-3 border border-solid border-base4 rounded-sm" href="video_search.html") 全部
+            li(class="mr-1.5 mb-1.5 flex")
+              a(class="flex-1 py-1.5 px-3 border border-solid border-base4 rounded-sm" href="video_search.html") 全部
+            li(class="mr-1.5 mb-1.5 flex")
+              a(class="flex-1 py-1.5 px-3 border border-solid border-base4 rounded-sm" href="video_search.html") 全部
+            li(class="mr-1.5 mb-1.5 flex")
+              a(class="flex-1 py-1.5 px-3 border border-solid border-base4 rounded-sm" href="video_search.html") 全部
+            li(class="mr-1.5 mb-1.5 flex")
+              a(class="flex-1 py-1.5 px-3 border border-solid border-base4 rounded-sm" href="video_search.html") 全部  
+            li(class="mr-1.5 mb-1.5 flex")
+              a(class="flex-1 py-1.5 px-3 border border-solid border-base4 rounded-sm" href="video_search.html") 全部  
+            li(class="mr-1.5 mb-1.5 flex")
+              a(class="flex-1 py-1.5 px-3 border border-solid border-base4 rounded-sm" href="video_search.html") 全部  
+            li(class="mr-1.5 mb-1.5 flex")
+              a(class="flex-1 py-1.5 px-3 border border-solid border-base4 rounded-sm" href="video_search.html") 全部  
+            li(class="mr-1.5 mb-1.5 flex")
+              a(class="flex-1 py-1.5 px-3 border border-solid border-base4 rounded-sm" href="video_search.html") 全部  
+            li(class="mr-1.5 mb-1.5 flex")
+              a(class="flex-1 py-1.5 px-3 border border-solid border-base4 rounded-sm" href="video_search.html") 全部  
+            li(class="mr-1.5 mb-1.5 flex")
+              a(class="flex-1 py-1.5 px-3 border border-solid border-base4 rounded-sm" href="video_search.html") 全部  
+            li(class="mr-1.5 mb-1.5 flex")
+              a(class="flex-1 py-1.5 px-3 border border-solid border-base4 rounded-sm" href="video_search.html") 全部  
+            li(class="mr-1.5 mb-1.5 flex")
+              a(class="flex-1 py-1.5 px-3 border border-solid border-base4 rounded-sm" href="video_search.html") 全部  
+            li(class="mr-1.5 mb-1.5 flex")
+              a(class="flex-1 py-1.5 px-3 border border-solid border-base4 rounded-sm" href="video_search.html") 全部  
+            li(class="mr-1.5 mb-1.5 flex")
+              a(class="flex-1 py-1.5 px-3 border border-solid border-base4 rounded-sm" href="video_search.html") 全部  
+            li(class="mr-1.5 mb-1.5 flex")
+              a(class="flex-1 py-1.5 px-3 border border-solid border-base4 rounded-sm" href="video_search.html") 全部  
+            li(class="mr-1.5 mb-1.5 flex")
+              a(class="flex-1 py-1.5 px-3 border border-solid border-base4 rounded-sm" href="video_search.html") 全部  
+            li(class="mr-1.5 mb-1.5 flex")
+              a(class="flex-1 py-1.5 px-3 border border-solid border-base4 rounded-sm" href="video_search.html") 全部  
+            li(class="mr-1.5 mb-1.5 flex")
+              a(class="flex-1 py-1.5 px-3 border border-solid border-base4 rounded-sm" href="video_search.html") 全部    
+      
+
+block footer-scripts
+    script(data-main='/static/frontend/js/profiles_main.js' src="/static/frontend/js/lib/require.js")

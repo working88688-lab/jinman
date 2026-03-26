@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8"/>
+    <meta name="renderer" content="webkit"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta name="referrer" content="same-origin"/>
+    <meta content="yes" name="apple-touch-fullscreen"/>
+    <meta content="telephone=yes" name="format-detection"/>
+    <meta name="robots" content="index,follow"/>
+    <meta content="black" name="apple-mobile-web-app-status-bar-style"/>
+    <meta name="keywords" content="禁漫天堂是内容最丰富、体验最好的 - 成人网站. 每天为您提供最全的色情内容, 无论是成人小说, 成人视频, 18禁漫画, 色情有声小说, 还是全网第一的性爱社区，我们不断增加特色内容，确保每个人都能找到性爱的乐趣。"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no"/>
+    <meta name="description" content="禁漫天堂是内容最丰富、体验最好的 - 成人网站. 每天为您提供最全的色情内容, 无论是成人小说, 成人视频, 18禁漫画, 色情有声小说, 还是全网第一的性爱社区，我们不断增加特色内容，确保每个人都能找到性爱的乐趣。"/>
+    <title>禁漫天堂,色情,小说,视频, 成人,网站 | 18mh.net</title>
+    <link rel="icon" type="image/x-icon" href="/static/frontend/images/favicon.ico"/>
+    <link rel="stylesheet" href="/static/frontend/css/lib/zui.css?v=v1.0.0"/>
+    <link rel="stylesheet" href="/static/frontend/css/common.css?v=v1.0.0"/>
+    <script src="/static/frontend/js/setup.js"> </script>
+    <link rel="stylesheet" href="/static/frontend/css/lib/swiper.css"/>
+  </head>
+  <body>
+    <!-- header-->
+    <header class="text-xl w-full duration-300 transition-all" id="app-header">
+      <div class="header fixed w-full left-0 top-0 bg-white">
+        <div class="dx-container relative">
+          <div class="app-header relative flex items-center w-full">
+            <button class="md:hidden btn-menu-collapse mr-3" type="button" title="打开左侧菜单栏" data-class="dx-drawer--open">
+              <svg class="w-6 h-6">
+                <use class="open" href="/static/frontend/icons/icons.svg#menu"></use>
+                <use class="close" href="/static/frontend/icons/icons.svg#menu_close"></use>
+              </svg>
+            </button>
+            <!--  logo-->
+            <div class="app-logo-container md:!flex mr-auto flex-shrink-0 flex-center"><a class="items-center flex justify-center md:justify-start" href="/"><img class="app-logo w-[60px] h-[23px] md:w-[120px] md:h-[45px]" src="/static/frontend/images/logo.png" title="logo" alt="logo"/></a></div>
+            <!-- mobile搜索-->
+            <!--  pc搜索框 -->
+            <div class="items-center md:hidden flex mobile-like"><a class="mr-3" href="favorite.html">
+                <svg class="w-6 h-6 text-base3">
+                  <use href="/static/frontend/icons/icons.svg#heart"></use>
+                </svg></a>
+              <button class="btn-login" type="button" data-dismiss="popover" data-type="login" title="登录">
+                <svg class="w-6 h-6 text-base3">
+                  <use href="/static/frontend/icons/icons.svg#user_icon"></use>
+                </svg>
+              </button>
+            </div>
+            <div class="popover-container relative hidden md:flex ml-auto items-center text-default text-black">
+              <button class="mr-6" type="button" title="更多应用">
+                <svg class="w-6 h-6 text-base3">
+                  <use href="/static/frontend/icons/icons.svg#more_app"></use>
+                </svg>
+              </button>
+              <div class="login-container">
+                <button class="btn-login py-2" data-dismiss="popover" data-type="register" type="button" title="登录">注册</button><span class="mx-3">|</span>
+                <button class="btn-login py-2" data-dismiss="popover" data-type="login" type="button" title="登录">登录</button>
+              </div>
+              <div class="logged-container hide">
+                <div class="flex items-center"><a class="mr-3" href="favorite.html">
+                    <svg class="w-6 h-6 text-base3">
+                      <use href="/static/frontend/icons/icons.svg#heart"></use>
+                    </svg></a><a href="member.html">
+                    <svg class="w-6 h-6 text-base3">
+                      <use href="/static/frontend/icons/icons.svg#user_icon"></use>
+                    </svg></a></div>
+              </div>
+            </div>
+          </div>
+          <nav class="dx-hairline--bottom hide md:block" id="app-nav">
+            <ul class="flex justify-between dx-container">
+              <li class="flex items-center"><a class="app-nav-item flex-1 py-1 text-center" href="/">首页</a>
+              </li>
+              <li class="flex items-center"><span class="app-nav-item flex-1 py-1 text-center">小说</span>
+                <svg class="w-5 h-5 ml-0.5">
+                  <use href="/static/frontend/icons/icons.svg#arrow_down"></use>
+                </svg>
+                <div class="submenu text-base2">
+                  <div class="submenu-item"><a href="novel.html">小说首页</a></div>
+                  <div class="submenu-item"><a href="novel_list.html">全部小说</a></div>
+                  <div class="submenu-item"><a href="novel_rank.html">小说排行榜</a></div>
+                  <div class="submenu-item"><a href="novel_common.html?type=1">热门小说</a></div>
+                  <div class="submenu-item"><a href="novel_common.html?type=2">最新上架</a></div>
+                  <div class="submenu-item"><a href="novel_common.html?type=3">最新更新</a></div>
+                </div>
+              </li>
+              <li class="flex items-center"><span class="app-nav-item flex-1 py-1 text-center">视频</span>
+                <svg class="w-5 h-5 ml-0.5">
+                  <use href="/static/frontend/icons/icons.svg#arrow_down"></use>
+                </svg>
+                <div class="submenu text-base2">
+                  <div class="submenu-item"><a href="video.html">视频首页</a></div>
+                  <div class="submenu-item"><a href="video_list.html">全部视频</a></div>
+                  <div class="submenu-item"><a href="video_rank.html">视频排行榜</a></div>
+                  <div class="submenu-item"><a href="actress.html">女优排行榜</a></div>
+                  <div class="submenu-item"><a href="video_common.html?type=1">热门视频</a></div>
+                  <div class="submenu-item"><a href="video_common.html?type=2">最新上架</a></div>
+                </div>
+              </li>
+              <li class="flex items-center"><span class="app-nav-item flex-1 py-1 text-center">禁漫</span>
+                <svg class="w-5 h-5 ml-0.5">
+                  <use href="/static/frontend/icons/icons.svg#arrow_down"></use>
+                </svg>
+                <div class="submenu text-base2">
+                  <div class="submenu-item"><a href="comic.html">禁漫首页</a></div>
+                  <div class="submenu-item"><a href="comic_list.html">全部禁漫</a></div>
+                  <div class="submenu-item"><a href="comic_rank.html">禁漫排行榜</a></div>
+                  <div class="submenu-item"><a href="comic_common.html?type=1">热门禁漫</a></div>
+                  <div class="submenu-item"><a href="comic_common.html?type=2">最新上架</a></div>
+                  <div class="submenu-item"><a href="comic_common.html?type=3">最新更新</a></div>
+                </div>
+              </li>
+              <li class="flex items-center is-active"><a class="app-nav-item flex-1 py-1 text-center" href="/cg.html">黑料吃瓜</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </header>
+    <!-- nav-->
+    <aside class="dx-drawer p-3 text-base2">
+      <nav class="flex flex-col h-full overflow-hidden">
+        <div class="flex-1 overflow-y-auto overflow-x-hidden">
+          <div class="mb-2"><a class="flex items-center mb-1" href="novel.html">
+              <svg class="w-4 h-4 mr-1">
+                <use href="/static/frontend/icons/icons.svg#novel_menu"></use>
+              </svg><span>小说</span></a>
+            <ul class="flex flex-wrap">
+              <li class="mr-1.5 mb-1.5"><a href="novel_list.html">全部小说</a></li>
+              <li class="mr-1.5 mb-1.5"><a href="novel_rank.html">排行榜</a></li>
+              <li class="mr-1.5 mb-1.5"><a>都市</a></li>
+              <li class="mr-1.5 mb-1.5"><a>玄幻</a></li>
+              <li class="mr-1.5 mb-1.5"><a>日本AV</a></li>
+              <li class="mr-1.5 mb-1.5"><a>都市</a></li>
+              <li class="mr-1.5 mb-1.5"><a>玄幻</a></li>
+              <li class="mr-1.5 mb-1.5"><a>日本AV</a></li>
+              <li class="mr-1.5 mb-1.5"><a>都市</a></li>
+              <li class="mr-1.5 mb-1.5"><a>玄幻</a></li>
+              <li class="mr-1.5 mb-1.5"><a>日本AV</a></li>
+              <li class="mr-1.5 mb-1.5"><a>都市</a></li>
+              <li class="mr-1.5 mb-1.5"><a>玄幻</a></li>
+              <li class="mr-1.5 mb-1.5"><a>日本AV</a></li>
+              <li class="mr-1.5 mb-1.5"><a>都市</a></li>
+              <li class="mr-1.5 mb-1.5"><a>玄幻</a></li>
+              <li class="mr-1.5 mb-1.5"><a>日本AV</a></li>
+              <li class="mr-1.5 mb-1.5"><a>都市</a></li>
+              <li class="mr-1.5 mb-1.5"><a>玄幻</a></li>
+              <li class="mr-1.5 mb-1.5"><a>日本AV</a></li>
+              <li class="mr-1.5 mb-1.5"><a>都市</a></li>
+              <li class="mr-1.5 mb-1.5"><a>玄幻</a></li>
+              <li class="mr-1.5 mb-1.5"><a>日本AV</a></li>
+            </ul>
+          </div>
+          <div class="mb-2"><a class="flex items-center mb-1" href="video.html">
+              <svg class="w-4 h-4 mr-1">
+                <use href="/static/frontend/icons/icons.svg#video_menu"></use>
+              </svg><span>视频</span></a>
+            <ul class="flex flex-wrap">
+              <li class="mr-1.5 mb-1.5"><a href="video_list.html">全部视频</a></li>
+              <li class="mr-1.5 mb-1.5"><a href="video_rank.html">排行榜</a></li>
+              <li class="mr-1.5 mb-1.5"><a>都市</a></li>
+              <li class="mr-1.5 mb-1.5"><a>玄幻</a></li>
+              <li class="mr-1.5 mb-1.5"><a>日本AV</a></li>
+              <li class="mr-1.5 mb-1.5"><a>都市</a></li>
+              <li class="mr-1.5 mb-1.5"><a>玄幻</a></li>
+              <li class="mr-1.5 mb-1.5"><a>日本AV</a></li>
+              <li class="mr-1.5 mb-1.5"><a>都市</a></li>
+              <li class="mr-1.5 mb-1.5"><a>玄幻</a></li>
+              <li class="mr-1.5 mb-1.5"><a>日本AV</a></li>
+              <li class="mr-1.5 mb-1.5"><a>都市</a></li>
+              <li class="mr-1.5 mb-1.5"><a>玄幻</a></li>
+              <li class="mr-1.5 mb-1.5"><a>日本AV</a></li>
+              <li class="mr-1.5 mb-1.5"><a>都市</a></li>
+              <li class="mr-1.5 mb-1.5"><a>玄幻</a></li>
+              <li class="mr-1.5 mb-1.5"><a>日本AV</a></li>
+              <li class="mr-1.5 mb-1.5"><a>都市</a></li>
+              <li class="mr-1.5 mb-1.5"><a>玄幻</a></li>
+              <li class="mr-1.5 mb-1.5"><a>日本AV</a></li>
+              <li class="mr-1.5 mb-1.5"><a>都市</a></li>
+              <li class="mr-1.5 mb-1.5"><a>玄幻</a></li>
+              <li class="mr-1.5 mb-1.5"><a>日本AV</a></li>
+            </ul>
+          </div>
+          <div class="mb-2"><a class="flex items-center mb-1" href="comic.html">
+              <svg class="w-4 h-4 mr-1">
+                <use href="/static/frontend/icons/icons.svg#comic_menu"></use>
+              </svg><span>禁漫</span></a>
+            <ul class="flex flex-wrap">
+              <li class="mr-1.5 mb-1.5"><a href="comic.html">全部禁漫</a></li>
+              <li class="mr-1.5 mb-1.5"><a href="comic_rank.html">排行榜</a></li>
+              <li class="mr-1.5 mb-1.5"><a>都市</a></li>
+              <li class="mr-1.5 mb-1.5"><a>玄幻</a></li>
+              <li class="mr-1.5 mb-1.5"><a>日本AV</a></li>
+              <li class="mr-1.5 mb-1.5"><a>都市</a></li>
+              <li class="mr-1.5 mb-1.5"><a>玄幻</a></li>
+              <li class="mr-1.5 mb-1.5"><a>日本AV</a></li>
+              <li class="mr-1.5 mb-1.5"><a>都市</a></li>
+              <li class="mr-1.5 mb-1.5"><a>玄幻</a></li>
+              <li class="mr-1.5 mb-1.5"><a>日本AV</a></li>
+              <li class="mr-1.5 mb-1.5"><a>都市</a></li>
+              <li class="mr-1.5 mb-1.5"><a>玄幻</a></li>
+              <li class="mr-1.5 mb-1.5"><a>日本AV</a></li>
+              <li class="mr-1.5 mb-1.5"><a>都市</a></li>
+              <li class="mr-1.5 mb-1.5"><a>玄幻</a></li>
+              <li class="mr-1.5 mb-1.5"><a>日本AV</a></li>
+              <li class="mr-1.5 mb-1.5"><a>都市</a></li>
+              <li class="mr-1.5 mb-1.5"><a>玄幻</a></li>
+              <li class="mr-1.5 mb-1.5"><a>日本AV</a></li>
+              <li class="mr-1.5 mb-1.5"><a>都市</a></li>
+              <li class="mr-1.5 mb-1.5"><a>玄幻</a></li>
+              <li class="mr-1.5 mb-1.5"><a>日本AV</a></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </aside>
+    <!-- main-content-->
+    <main class="dx-container app-content">
+      <div class="index-content">
+        <div class="grid grid-cols-1 gap-2 my-2 md:my-3">
+          <div class="dx-banner-item"> <a class="dx-aspect-container" aria-label="广告" href="https://tea.dsvasouda.com/?code=bckQM&amp;c=2663" rel="external nofollow" target="_blank"><img src="/static/frontend/images/poster_loading.png" data-src="https://pic.sheengs.cn/upload_01/upload/20240916/2024091617223848083.gif" alt="广告"/></a></div>
+          <div class="dx-banner-item"> <a class="dx-aspect-container" aria-label="广告" href="https://tea.dsvasouda.com/?code=bckQM&amp;c=2663" rel="external nofollow" target="_blank"><img src="/static/frontend/images/poster_loading.png" data-src="https://pic.sheengs.cn/upload_01/upload/20240916/2024091617223848083.gif" alt="广告"/></a></div>
+        </div>
+        <section class="py-3 text-sm md:text-default">
+          <ul class="grid grid-cols-5  md:gap-0 md:flex items-center rounded-lg  md:justify-start  md:flex-wrap">
+            <li class="flex justify-center mb-2 flex-shrink-0 group"><a class="flex-1 flex-col-center" target="_blank" href="#" rel="external nofollow" title="海角909090909"><img class="rounded w-[50px] h-[50px] lg:w-[44px] lg:h-[44px] xl:w-[50px] xl:h-[50px] " data-src="https://pic.bsgxzy.cn/upload_01/upload/20240619/2024061920070995843.png" src="/static/frontend/images/loading.svg" alt="海角909090909"/><span class="mt-2 mb-2 group-hover:text-primary text-center transition-all w-[70px] h-[18px] md:w-[72px] block md:h-[18px] lg:w-[72px] lg:h-[18px] xl:w-[72px] xl:h-[18px] truncate">海角909090909</span></a></li>
+            <li class="flex justify-center mb-2 flex-shrink-0 group"><a class="flex-1 flex-col-center" target="_blank" href="#" rel="external nofollow" title="海角909090909"><img class="rounded w-[50px] h-[50px] lg:w-[44px] lg:h-[44px] xl:w-[50px] xl:h-[50px] " data-src="https://pic.bsgxzy.cn/upload_01/upload/20240619/2024061920070995843.png" src="/static/frontend/images/loading.svg" alt="海角909090909"/><span class="mt-2 mb-2 group-hover:text-primary text-center transition-all w-[70px] h-[18px] md:w-[72px] block md:h-[18px] lg:w-[72px] lg:h-[18px] xl:w-[72px] xl:h-[18px] truncate">海角909090909</span></a></li>
+            <li class="flex justify-center mb-2 flex-shrink-0 group"><a class="flex-1 flex-col-center" target="_blank" href="#" rel="external nofollow" title="海角909090909"><img class="rounded w-[50px] h-[50px] lg:w-[44px] lg:h-[44px] xl:w-[50px] xl:h-[50px] " data-src="https://pic.bsgxzy.cn/upload_01/upload/20240619/2024061920070995843.png" src="/static/frontend/images/loading.svg" alt="海角909090909"/><span class="mt-2 mb-2 group-hover:text-primary text-center transition-all w-[70px] h-[18px] md:w-[72px] block md:h-[18px] lg:w-[72px] lg:h-[18px] xl:w-[72px] xl:h-[18px] truncate">海角909090909</span></a></li>
+            <li class="flex justify-center mb-2 flex-shrink-0 group"><a class="flex-1 flex-col-center" target="_blank" href="#" rel="external nofollow" title="海角909090909"><img class="rounded w-[50px] h-[50px] lg:w-[44px] lg:h-[44px] xl:w-[50px] xl:h-[50px] " data-src="https://pic.bsgxzy.cn/upload_01/upload/20240619/2024061920070995843.png" src="/static/frontend/images/loading.svg" alt="海角909090909"/><span class="mt-2 mb-2 group-hover:text-primary text-center transition-all w-[70px] h-[18px] md:w-[72px] block md:h-[18px] lg:w-[72px] lg:h-[18px] xl:w-[72px] xl:h-[18px] truncate">海角909090909</span></a></li>
+            <li class="flex justify-center mb-2 flex-shrink-0 group"><a class="flex-1 flex-col-center" target="_blank" href="#" rel="external nofollow" title="海角909090909"><img class="rounded w-[50px] h-[50px] lg:w-[44px] lg:h-[44px] xl:w-[50px] xl:h-[50px] " data-src="https://pic.bsgxzy.cn/upload_01/upload/20240619/2024061920070995843.png" src="/static/frontend/images/loading.svg" alt="海角909090909"/><span class="mt-2 mb-2 group-hover:text-primary text-center transition-all w-[70px] h-[18px] md:w-[72px] block md:h-[18px] lg:w-[72px] lg:h-[18px] xl:w-[72px] xl:h-[18px] truncate">海角909090909</span></a></li>
+            <li class="flex justify-center mb-2 flex-shrink-0 group"><a class="flex-1 flex-col-center" target="_blank" href="#" rel="external nofollow" title="海角909090909"><img class="rounded w-[50px] h-[50px] lg:w-[44px] lg:h-[44px] xl:w-[50px] xl:h-[50px] " data-src="https://pic.bsgxzy.cn/upload_01/upload/20240619/2024061920070995843.png" src="/static/frontend/images/loading.svg" alt="海角909090909"/><span class="mt-2 mb-2 group-hover:text-primary text-center transition-all w-[70px] h-[18px] md:w-[72px] block md:h-[18px] lg:w-[72px] lg:h-[18px] xl:w-[72px] xl:h-[18px] truncate">海角909090909</span></a></li>
+            <li class="flex justify-center mb-2 flex-shrink-0 group"><a class="flex-1 flex-col-center" target="_blank" href="#" rel="external nofollow" title="海角909090909"><img class="rounded w-[50px] h-[50px] lg:w-[44px] lg:h-[44px] xl:w-[50px] xl:h-[50px] " data-src="https://pic.bsgxzy.cn/upload_01/upload/20240619/2024061920070995843.png" src="/static/frontend/images/loading.svg" alt="海角909090909"/><span class="mt-2 mb-2 group-hover:text-primary text-center transition-all w-[70px] h-[18px] md:w-[72px] block md:h-[18px] lg:w-[72px] lg:h-[18px] xl:w-[72px] xl:h-[18px] truncate">海角909090909</span></a></li>
+            <li class="flex justify-center mb-2 flex-shrink-0 group"><a class="flex-1 flex-col-center" target="_blank" href="#" rel="external nofollow" title="海角"><img class="rounded w-[50px] h-[50px] lg:w-[44px] lg:h-[44px] xl:w-[50px] xl:h-[50px] " data-src="https://pic.bsgxzy.cn/upload_01/upload/20240619/2024061920070995843.png" src="/static/frontend/images/loading.svg" alt="海角"/><span class="mt-2 mb-2 group-hover:text-primary text-center transition-all w-[70px] h-[18px] md:w-[72px] block md:h-[18px] lg:w-[72px] lg:h-[18px] xl:w-[72px] xl:h-[18px] truncate">海角</span></a></li>
+            <li class="flex justify-center mb-2 flex-shrink-0 group"><a class="flex-1 flex-col-center" target="_blank" href="#" rel="external nofollow" title="海角"><img class="rounded w-[50px] h-[50px] lg:w-[44px] lg:h-[44px] xl:w-[50px] xl:h-[50px] " data-src="https://pic.bsgxzy.cn/upload_01/upload/20240619/2024061920070995843.png" src="/static/frontend/images/loading.svg" alt="海角"/><span class="mt-2 mb-2 group-hover:text-primary text-center transition-all w-[70px] h-[18px] md:w-[72px] block md:h-[18px] lg:w-[72px] lg:h-[18px] xl:w-[72px] xl:h-[18px] truncate">海角</span></a></li>
+            <li class="flex justify-center mb-2 flex-shrink-0 group"><a class="flex-1 flex-col-center" target="_blank" href="#" rel="external nofollow" title="海角"><img class="rounded w-[50px] h-[50px] lg:w-[44px] lg:h-[44px] xl:w-[50px] xl:h-[50px] " data-src="https://pic.bsgxzy.cn/upload_01/upload/20240619/2024061920070995843.png" src="/static/frontend/images/loading.svg" alt="海角"/><span class="mt-2 mb-2 group-hover:text-primary text-center transition-all w-[70px] h-[18px] md:w-[72px] block md:h-[18px] lg:w-[72px] lg:h-[18px] xl:w-[72px] xl:h-[18px] truncate">海角</span></a></li>
+            <li class="flex justify-center mb-2 flex-shrink-0 group"><a class="flex-1 flex-col-center" target="_blank" href="#" rel="external nofollow" title="海角"><img class="rounded w-[50px] h-[50px] lg:w-[44px] lg:h-[44px] xl:w-[50px] xl:h-[50px] " data-src="https://pic.bsgxzy.cn/upload_01/upload/20240619/2024061920070995843.png" src="/static/frontend/images/loading.svg" alt="海角"/><span class="mt-2 mb-2 group-hover:text-primary text-center transition-all w-[70px] h-[18px] md:w-[72px] block md:h-[18px] lg:w-[72px] lg:h-[18px] xl:w-[72px] xl:h-[18px] truncate">海角</span></a></li>
+            <li class="flex justify-center mb-2 flex-shrink-0 group"><a class="flex-1 flex-col-center" target="_blank" href="#" rel="external nofollow" title="海角"><img class="rounded w-[50px] h-[50px] lg:w-[44px] lg:h-[44px] xl:w-[50px] xl:h-[50px] " data-src="https://pic.bsgxzy.cn/upload_01/upload/20240619/2024061920070995843.png" src="/static/frontend/images/loading.svg" alt="海角"/><span class="mt-2 mb-2 group-hover:text-primary text-center transition-all w-[70px] h-[18px] md:w-[72px] block md:h-[18px] lg:w-[72px] lg:h-[18px] xl:w-[72px] xl:h-[18px] truncate">海角</span></a></li>
+            <li class="flex justify-center mb-2 flex-shrink-0 group"><a class="flex-1 flex-col-center" target="_blank" href="#" rel="external nofollow" title="海角"><img class="rounded w-[50px] h-[50px] lg:w-[44px] lg:h-[44px] xl:w-[50px] xl:h-[50px] " data-src="https://pic.bsgxzy.cn/upload_01/upload/20240619/2024061920070995843.png" src="/static/frontend/images/loading.svg" alt="海角"/><span class="mt-2 mb-2 group-hover:text-primary text-center transition-all w-[70px] h-[18px] md:w-[72px] block md:h-[18px] lg:w-[72px] lg:h-[18px] xl:w-[72px] xl:h-[18px] truncate">海角</span></a></li>
+            <li class="flex justify-center mb-2 flex-shrink-0 group"><a class="flex-1 flex-col-center" target="_blank" href="#" rel="external nofollow" title="海角"><img class="rounded w-[50px] h-[50px] lg:w-[44px] lg:h-[44px] xl:w-[50px] xl:h-[50px] " data-src="https://pic.bsgxzy.cn/upload_01/upload/20240619/2024061920070995843.png" src="/static/frontend/images/loading.svg" alt="海角"/><span class="mt-2 mb-2 group-hover:text-primary text-center transition-all w-[70px] h-[18px] md:w-[72px] block md:h-[18px] lg:w-[72px] lg:h-[18px] xl:w-[72px] xl:h-[18px] truncate">海角</span></a></li>
+            <li class="flex justify-center mb-2 flex-shrink-0 group"><a class="flex-1 flex-col-center" target="_blank" href="#" rel="external nofollow" title="海角"><img class="rounded w-[50px] h-[50px] lg:w-[44px] lg:h-[44px] xl:w-[50px] xl:h-[50px] " data-src="https://pic.bsgxzy.cn/upload_01/upload/20240619/2024061920070995843.png" src="/static/frontend/images/loading.svg" alt="海角"/><span class="mt-2 mb-2 group-hover:text-primary text-center transition-all w-[70px] h-[18px] md:w-[72px] block md:h-[18px] lg:w-[72px] lg:h-[18px] xl:w-[72px] xl:h-[18px] truncate">海角</span></a></li>
+            <li class="flex justify-center mb-2 flex-shrink-0 group"><a class="flex-1 flex-col-center" target="_blank" href="#" rel="external nofollow" title="海角"><img class="rounded w-[50px] h-[50px] lg:w-[44px] lg:h-[44px] xl:w-[50px] xl:h-[50px] " data-src="https://pic.bsgxzy.cn/upload_01/upload/20240619/2024061920070995843.png" src="/static/frontend/images/loading.svg" alt="海角"/><span class="mt-2 mb-2 group-hover:text-primary text-center transition-all w-[70px] h-[18px] md:w-[72px] block md:h-[18px] lg:w-[72px] lg:h-[18px] xl:w-[72px] xl:h-[18px] truncate">海角</span></a></li>
+            <li class="flex justify-center mb-2 flex-shrink-0 group"><a class="flex-1 flex-col-center" target="_blank" href="#" rel="external nofollow" title="海角"><img class="rounded w-[50px] h-[50px] lg:w-[44px] lg:h-[44px] xl:w-[50px] xl:h-[50px] " data-src="https://pic.bsgxzy.cn/upload_01/upload/20240619/2024061920070995843.png" src="/static/frontend/images/loading.svg" alt="海角"/><span class="mt-2 mb-2 group-hover:text-primary text-center transition-all w-[70px] h-[18px] md:w-[72px] block md:h-[18px] lg:w-[72px] lg:h-[18px] xl:w-[72px] xl:h-[18px] truncate">海角</span></a></li>
+          </ul>
+        </section>
+        <header class="flex items-center md:py-3 py-2 text-default">
+          <h2 class="mr-2 font-semibold">黑料吃瓜</h2>
+        </header>
+        <div class="w-full flex items-start text-default md:sticky md:pt-2 my-2 top-[60px]   z-10">
+          <!-- pc分类-->
+          <ul class="dx-line-tabs dx-tabs hidden md:flex flex-wrap text-default md:text-default">
+            <li class="dx-line-tab-item text-center mr-3 mb-2 dx-tab-item text-font1 flex flex-row rounded-[6px] is-active"><a class="flex-1 px-1 flex flex-row items-center justify-center" href="?cate=now_hot">今日吃瓜</a></li>
+            <li class="dx-line-tab-item text-center mr-3 mb-2 dx-tab-item text-font1 flex flex-row rounded-[6px]"><a class="flex-1 px-1 flex flex-row items-center justify-center" href="?cate=new_update">吃瓜榜单</a></li>
+            <li class="dx-line-tab-item text-center mr-3 mb-2 dx-tab-item text-font1 flex flex-row rounded-[6px]"><a class="flex-1 px-1 flex flex-row items-center justify-center" href="?cate=original">必看大瓜</a></li>
+            <li class="dx-line-tab-item text-center mr-3 mb-2 dx-tab-item text-font1 flex flex-row rounded-[6px]"><a class="flex-1 px-1 flex flex-row items-center justify-center" href="?cate=new_update">吃瓜榜单</a></li>
+            <li class="dx-line-tab-item text-center mr-3 mb-2 dx-tab-item text-font1 flex flex-row rounded-[6px]"><a class="flex-1 px-1 flex flex-row items-center justify-center" href="?cate=original">必看大瓜</a></li>
+            <li class="dx-line-tab-item text-center mr-3 mb-2 dx-tab-item text-font1 flex flex-row rounded-[6px]"><a class="flex-1 px-1 flex flex-row items-center justify-center" href="?cate=new_update">吃瓜榜单</a></li>
+            <li class="dx-line-tab-item text-center mr-3 mb-2 dx-tab-item text-font1 flex flex-row rounded-[6px]"><a class="flex-1 px-1 flex flex-row items-center justify-center" href="?cate=original">必看大瓜</a></li>
+            <li class="dx-line-tab-item text-center mr-3 mb-2 dx-tab-item text-font1 flex flex-row rounded-[6px]"><a class="flex-1 px-1 flex flex-row items-center justify-center" href="?cate=new_update">吃瓜榜单</a></li>
+            <li class="dx-line-tab-item text-center mr-3 mb-2 dx-tab-item text-font1 flex flex-row rounded-[6px]"><a class="flex-1 px-1 flex flex-row items-center justify-center" href="?cate=original">必看大瓜</a></li>
+            <li class="dx-line-tab-item text-center mr-3 mb-2 dx-tab-item text-font1 flex flex-row rounded-[6px]"><a class="flex-1 px-1 flex flex-row items-center justify-center" href="?cate=new_update">吃瓜榜单</a></li>
+            <li class="dx-line-tab-item text-center mr-3 mb-2 dx-tab-item text-font1 flex flex-row rounded-[6px]"><a class="flex-1 px-1 flex flex-row items-center justify-center" href="?cate=original">必看大瓜</a></li>
+            <li class="dx-line-tab-item text-center mr-3 mb-2 dx-tab-item text-font1 flex flex-row rounded-[6px]"><a class="flex-1 px-1 flex flex-row items-center justify-center" href="?cate=new_update">吃瓜榜单</a></li>
+            <li class="dx-line-tab-item text-center mr-3 mb-2 dx-tab-item text-font1 flex flex-row rounded-[6px]"><a class="flex-1 px-1 flex flex-row items-center justify-center" href="?cate=original">必看大瓜</a></li>
+            <li class="dx-line-tab-item text-center mr-3 mb-2 dx-tab-item text-font1 flex flex-row rounded-[6px]"><a class="flex-1 px-1 flex flex-row items-center justify-center" href="?cate=new_update">吃瓜榜单</a></li>
+            <li class="dx-line-tab-item text-center mr-3 mb-2 dx-tab-item text-font1 flex flex-row rounded-[6px]"><a class="flex-1 px-1 flex flex-row items-center justify-center" href="?cate=original">必看大瓜</a></li>
+            <li class="dx-line-tab-item text-center mr-3 mb-2 dx-tab-item text-font1 flex flex-row rounded-[6px]"><a class="flex-1 px-1 flex flex-row items-center justify-center" href="?cate=new_update">吃瓜榜单</a></li>
+            <li class="dx-line-tab-item text-center mr-3 mb-2 dx-tab-item text-font1 flex flex-row rounded-[6px]"><a class="flex-1 px-1 flex flex-row items-center justify-center" href="?cate=original">必看大瓜</a></li>
+          </ul>
+          <!-- 移动分类-->
+          <ul class="dx-line-tabs dx-tabs flex md:hidden rounded-sm bg-base1 px-3 pt-3 flex-wrap text-default md:text-xl">
+            <li class="text-center mr-2 mb-3 dx-tab-item text-font1"><a class="dx-button-tab-item is-active" href="?cate=now_hot">今日吃瓜</a></li>
+            <li class="text-center mr-2 mb-3 dx-tab-item text-font1"><a class="dx-button-tab-item" href="?cate=new_update">吃瓜榜单</a></li>
+            <li class="text-center mr-2 mb-3 dx-tab-item text-font1"><a class="dx-button-tab-item" href="?cate=original">必看大瓜</a></li>
+            <li class="text-center mr-2 mb-3 dx-tab-item text-font1"><a class="dx-button-tab-item" href="?cate=new_update">吃瓜榜单</a></li>
+            <li class="text-center mr-2 mb-3 dx-tab-item text-font1"><a class="dx-button-tab-item" href="?cate=original">必看大瓜</a></li>
+            <li class="text-center mr-2 mb-3 dx-tab-item text-font1"><a class="dx-button-tab-item" href="?cate=new_update">吃瓜榜单</a></li>
+            <li class="text-center mr-2 mb-3 dx-tab-item text-font1"><a class="dx-button-tab-item" href="?cate=original">必看大瓜</a></li>
+            <li class="text-center mr-2 mb-3 dx-tab-item text-font1"><a class="dx-button-tab-item" href="?cate=new_update">吃瓜榜单</a></li>
+            <li class="text-center mr-2 mb-3 dx-tab-item text-font1"><a class="dx-button-tab-item" href="?cate=original">必看大瓜</a></li>
+            <li class="text-center mr-2 mb-3 dx-tab-item text-font1"><a class="dx-button-tab-item" href="?cate=new_update">吃瓜榜单</a></li>
+            <li class="text-center mr-2 mb-3 dx-tab-item text-font1"><a class="dx-button-tab-item" href="?cate=original">必看大瓜</a></li>
+            <li class="text-center mr-2 mb-3 dx-tab-item text-font1"><a class="dx-button-tab-item" href="?cate=new_update">吃瓜榜单</a></li>
+            <li class="text-center mr-2 mb-3 dx-tab-item text-font1"><a class="dx-button-tab-item" href="?cate=original">必看大瓜</a></li>
+            <li class="text-center mr-2 mb-3 dx-tab-item text-font1"><a class="dx-button-tab-item" href="?cate=new_update">吃瓜榜单</a></li>
+            <li class="text-center mr-2 mb-3 dx-tab-item text-font1"><a class="dx-button-tab-item" href="?cate=original">必看大瓜</a></li>
+            <li class="text-center mr-2 mb-3 dx-tab-item text-font1"><a class="dx-button-tab-item" href="?cate=new_update">吃瓜榜单</a></li>
+            <li class="text-center mr-2 mb-3 dx-tab-item text-font1"><a class="dx-button-tab-item" href="?cate=original">必看大瓜</a></li>
+          </ul>
+          <!-- pc筛选-->
+          <button class="ml-auto relative group open-popover text-default hidden md:flex items-center flex-shrink-0 pc-filter-cg" data-target=".post-cate-items" type="button">
+            <svg class="w-4.5 h-4.5 ml-auto flex-shrink-0 mr-2 group-hover:text-primary">
+              <use href="/static/frontend/icons/icons.svg#filter "></use>
+            </svg><strong class="post-cate">推荐</strong>
+            <div class="post-cate-items hidden absolute top-7 right-0 text-white bg-[#404040] whitespace-nowrap">
+              <ul>
+                <li><a class="block px-9 py-2.5 hover:text-primary hover:bg-base12" href="#">推荐</a></li>
+                <li><a class="block px-9 py-2.5 hover:text-primary hover:bg-base12" href="#">热门</a></li>
+                <li><a class="block px-9 py-2.5 hover:text-primary hover:bg-base12" href="#">最新</a></li>
+              </ul>
+            </div>
+          </button>
+        </div>
+        <!-- 移动筛选-->
+        <ul class="flex md:hidden items-center dx-line-tabs dx-tabs second-tabs bg-base1 mb-3 sticky top-[60px]  z-10" style="--dx-tab-line-width-percent: 100%">
+          <li class="flex flex-1 md:flex-auto dx-line-tab-item dx-tab-item is-active"><a class="flex justify-center flex-1 py-2 md:w-[160px] hover:text-primary" href="#">推荐</a></li>
+          <li class="flex flex-1 md:flex-auto dx-line-tab-item dx-tab-item"><a class="flex justify-center flex-1 py-2 md:w-[160px] hover:text-primary" href="#">热门</a></li>
+          <li class="flex flex-1 md:flex-auto dx-line-tab-item dx-tab-item"><a class="flex justify-center flex-1 py-2 md:w-[160px] hover:text-primary" href="#">最新</a></li>
+        </ul>
+        <ul class="grid grid-cols-1 gap-2.5 md:gap-4">
+          <li><a href="./cg_detail.html">
+              <article class="h-[200px]  md:h-[248px] rounded-sm overflow-hidden post-item post-item--big">
+                <div class="post-item-poster bg-poster h-full" data-src="https://pic.btfddq.cn/upload_01/position/20241102/2024110218093890920.jpg">
+                  <div class="post-card-mask h-full md:p-8 p-4 text-center flex-col-center">
+                    <h2 class="text-xl mb-1 md:mb-2.5 post-item-title">姐模特朴泰伊 湿身泳衣大尺度写真 油光微胖肉感扭动身姿 巨乳揉搓魅惑无比</h2>
+                    <div class="text-[#eee] post-item-desc"><span>瓜弟 • </span><span>2024 年 11 月 07 日 • </span><span>今日吃瓜, 海外吃瓜</span></div>
+                  </div>
+                </div>
+              </article></a></li>
+          <li><a href="./cg_detail.html">
+              <article class="h-[200px]  md:h-[248px] rounded-sm overflow-hidden post-item post-item--big">
+                <div class="post-item-poster bg-poster h-full" data-src="https://pic.btfddq.cn/upload_01/position/20241102/2024110218093890920.jpg">
+                  <div class="post-card-mask h-full md:p-8 p-4 text-center flex-col-center">
+                    <h2 class="text-xl mb-1 md:mb-2.5 post-item-title">姐模特朴泰伊 湿身泳衣大尺度写真 油光微胖肉感扭动身姿 巨乳揉搓魅惑无比</h2>
+                    <div class="text-[#eee] post-item-desc"><span>瓜弟 • </span><span>2024 年 11 月 07 日 • </span><span>今日吃瓜, 海外吃瓜</span></div>
+                  </div>
+                </div>
+              </article></a></li>
+          <li><a href="./cg_detail.html">
+              <article class="h-[200px]  md:h-[248px] rounded-sm overflow-hidden post-item post-item--big">
+                <div class="post-item-poster bg-poster h-full" data-src="https://pic.btfddq.cn/upload_01/position/20241102/2024110218093890920.jpg">
+                  <div class="post-card-mask h-full md:p-8 p-4 text-center flex-col-center">
+                    <h2 class="text-xl mb-1 md:mb-2.5 post-item-title">姐模特朴泰伊 湿身泳衣大尺度写真 油光微胖肉感扭动身姿 巨乳揉搓魅惑无比</h2>
+                    <div class="text-[#eee] post-item-desc"><span>瓜弟 • </span><span>2024 年 11 月 07 日 • </span><span>今日吃瓜, 海外吃瓜</span></div>
+                  </div>
+                </div>
+              </article></a></li>
+          <li><a href="./cg_detail.html">
+              <article class="h-[200px]  md:h-[248px] rounded-sm overflow-hidden post-item post-item--big">
+                <div class="post-item-poster bg-poster h-full" data-src="https://pic.btfddq.cn/upload_01/position/20241102/2024110218093890920.jpg">
+                  <div class="post-card-mask h-full md:p-8 p-4 text-center flex-col-center">
+                    <h2 class="text-xl mb-1 md:mb-2.5 post-item-title">姐模特朴泰伊 湿身泳衣大尺度写真 油光微胖肉感扭动身姿 巨乳揉搓魅惑无比</h2>
+                    <div class="text-[#eee] post-item-desc"><span>瓜弟 • </span><span>2024 年 11 月 07 日 • </span><span>今日吃瓜, 海外吃瓜</span></div>
+                  </div>
+                </div>
+              </article></a></li>
+          <li><a href="./cg_detail.html">
+              <article class="h-[200px]  md:h-[248px] rounded-sm overflow-hidden post-item post-item--big">
+                <div class="post-item-poster bg-poster h-full" data-src="https://pic.btfddq.cn/upload_01/position/20241102/2024110218093890920.jpg">
+                  <div class="post-card-mask h-full md:p-8 p-4 text-center flex-col-center">
+                    <h2 class="text-xl mb-1 md:mb-2.5 post-item-title">姐模特朴泰伊 湿身泳衣大尺度写真 油光微胖肉感扭动身姿 巨乳揉搓魅惑无比</h2>
+                    <div class="text-[#eee] post-item-desc"><span>瓜弟 • </span><span>2024 年 11 月 07 日 • </span><span>今日吃瓜, 海外吃瓜</span></div>
+                  </div>
+                </div>
+              </article></a></li>
+          <li><a href="./cg_detail.html">
+              <article class="h-[200px]  md:h-[248px] rounded-sm overflow-hidden post-item post-item--big">
+                <div class="post-item-poster bg-poster h-full" data-src="https://pic.btfddq.cn/upload_01/position/20241102/2024110218093890920.jpg">
+                  <div class="post-card-mask h-full md:p-8 p-4 text-center flex-col-center">
+                    <h2 class="text-xl mb-1 md:mb-2.5 post-item-title">姐模特朴泰伊 湿身泳衣大尺度写真 油光微胖肉感扭动身姿 巨乳揉搓魅惑无比</h2>
+                    <div class="text-[#eee] post-item-desc"><span>瓜弟 • </span><span>2024 年 11 月 07 日 • </span><span>今日吃瓜, 海外吃瓜</span></div>
+                  </div>
+                </div>
+              </article></a></li>
+        </ul>
+        <div class="flex justify-center w-full overflow-hidden mt-3 md:mt-5">
+          <ul class="pager dx-pager scrollbar-none" data-link="cg.html" data-page="1" data-lang="zh_cn" data-rec-total="100" data-rec-per-page="10" data-max-nav-count="10" data-elements="prev,page_of_total_text,goto,next"></ul>
+        </div>
+      </div>
+    </main>
+    <!--  footer-->
+    <footer class="mt-3 dx-hairline--top dx-text py-2" id="app-footer">
+      <div class="dx-container">
+        <div class="flex items-center justify-center"><img class="w-[80px] h-[30px]" alt="logo" src="/static/frontend/images/logo.png"/> 禁漫天堂,色情,小说,视频, 成人,网站 | 18mh.net</div>
+        <ul class="flex justify-center divide-x flex-wrap mt-3">
+          <li class="px-2"><a href="contact.html">联系我们</a></li>
+          <li class="px-2"><a href="terms.html">用户条款</a></li>
+          <li class="px-2"><a href="policy.html">隐私政策</a></li>
+          <li class="px-2"><a href="2257A.html">2257A</a></li>
+          <li class="px-2"><a href="DMCA.html">DMCA</a></li>
+          <li class="px-2"><a href="https://www.rtalabel.org/index.php?content=parents" target="_blank">RTA</a></li>
+        </ul>
+        <ul class="flex justify-center divide-x flex-wrap mt-3">
+          <li class="px-2">E-mail：<a href="mailto:18mh.net@gmail.com" target="_blank">18mh.net@gmail.com</a></li>
+          <li class="px-2">Telegram：<a href="https://t.me/EXE_AD" target="_blank">@EXE_AD</a></li>
+          <li class="px-2">官方群：<a href="https://t.me/JMTTSQ" target="_blank">@JMTTSQ</a></li>
+        </ul>
+        <ul class="flex justify-center divide-x flex-wrap mt-3">
+          <li class="px-2"><a href="https://x.com/18mh1671" target="_blank">
+              <svg class="w-6 h-6 mb-1 md:w-5 md:h-5">
+                <use href="/static/frontend/icons/icons.svg#x"></use>
+              </svg></a></li>
+          <li class="px-2"><a href="https://t.me/EXE_AD" target="_blank">
+              <svg class="w-6 h-6 mb-1 md:w-5 md:h-5">
+                <use href="/static/frontend/icons/icons.svg#telegram"></use>
+              </svg></a></li>
+        </ul>
+      </div>
+    </footer>
+    <div class="dx-overlay"></div>
+    <!--  登录框 -->
+    <div class="modal fade dx-modal" id="login_modal">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header flex items-center">
+            <button class="close text-subtitle ml-auto" type="button" data-dismiss="modal">
+              <svg class="w-6 h-6">
+                <use href="/static/frontend/icons/icons.svg#menu_close"></use>
+              </svg>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="px-3">
+              <div class="dx-tabs dx-line-tabs">
+                <div class="flex items-center mb-5">
+                  <div class="dx-line-tab-item text-xl dx-tab-item !pt-0 !pb-2 is-active">登录</div>
+                  <div class="dx-line-tab-item text-xl dx-tab-item !pt-0 !pb-2">注册</div>
+                  <div class="dx-line-tab-item text-xl dx-tab-item !pt-0 !pb-2">找回密码</div>
+                </div>
+                <div class="dx-tab-content dx-tab-content--active">
+                  <form>
+                    <div class="form-group">
+                      <div class="input-control mb-3 has-icon-left has-icon-right">
+                        <div class="input-control-icon-left">
+                          <svg class="w-6 h-6">
+                            <use href="/static/frontend/icons/icons.svg#username"></use>
+                          </svg>
+                        </div>
+                        <input class="form-control !pl-[26px]" id="login-email" autocomplete="off" type="text" placeholder="邮箱地址"/>
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <div class="input-control mb-3 has-icon-left has-icon-right">
+                        <div class="input-control-icon-left">
+                          <svg class="w-6 h-6">
+                            <use href="/static/frontend/icons/icons.svg#password"></use>
+                          </svg>
+                        </div>
+                        <input class="form-control !pl-[26px]" id="login-password" autocomplete="off" type="password" placeholder="密码"/>
+                        <div class="input-control-icon-right btn-password-type">
+                          <svg class="w-5 h-5">
+                            <use class="close" href="/static/frontend/icons/icons.svg#close_eye_icon"></use>
+                            <use class="open" href="/static/frontend/icons/icons.svg#view_icon"></use>
+                          </svg>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="input-control mb-5">
+                      <button class="btn-login-submit btn btn-primary btn-block" data-type="login" type="button">登录</button>
+                    </div>
+                    <div class="flex mb-3 justify-center"><span class=" opacity-60">还没有账号？</span>
+                      <button class="text-primary btn-change-type" data-index="1" type="button">马上注册</button>
+                    </div>
+                  </form>
+                </div>
+                <div class="dx-tab-content">
+                  <form>
+                    <div class="form-group">
+                      <div class="input-control has-icon-left has-icon-right mb-3">
+                        <div class="input-control-icon-left">
+                          <svg class="w-6 h-6">
+                            <use href="/static/frontend/icons/icons.svg#username"></use>
+                          </svg>
+                        </div>
+                        <input class="form-control !pl-[26px]" id="register-email" autocomplete="off" type="text" placeholder="邮箱地址"/>
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <div class="input-control has-icon-left has-icon-right mb-5">
+                        <div class="input-control-icon-left">
+                          <svg class="w-6 h-6">
+                            <use href="/static/frontend/icons/icons.svg#email_icon"></use>
+                          </svg>
+                        </div>
+                        <input class="form-control !pl-[26px] !pr-[70px]" id="register-checkcode" autocomplete="off" type="text" placeholder="请输入验证码"/>
+                        <div class="input-control-icon-right text-sm !w-[70px]">
+                          <button class="btn-send-code" type="button" data-type="register">获取验证码</button>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <div class="input-control has-icon-left has-icon-right mb-5">
+                        <div class="input-control-icon-left">
+                          <svg class="w-6 h-6">
+                            <use href="/static/frontend/icons/icons.svg#password"></use>
+                          </svg>
+                        </div>
+                        <input class="form-control !pl-[26px]" id="register-password" autocomplete="off" type="password" placeholder="密码"/>
+                        <div class="input-control-icon-right btn-password-type">
+                          <svg class="w-5 h-5">
+                            <use class="close" href="/static/frontend/icons/icons.svg#close_eye_icon"></use>
+                            <use class="open" href="/static/frontend/icons/icons.svg#view_icon"></use>
+                          </svg>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <div class="input-control has-icon-left has-icon-right mb-5">
+                        <div class="input-control-icon-left !left-1 !top-2.5">
+                          <svg class="w-5 h-5">
+                            <use href="/static/frontend/icons/icons.svg#invent_icon"></use>
+                          </svg>
+                        </div>
+                        <input class="form-control !pl-[26px]" id="register-aff" autocomplete="off" type="text" placeholder="推荐码（可不填）"/>
+                      </div>
+                    </div>
+                    <div class="input-control mb-5">
+                      <button class="btn-register-submit btn btn-primary btn-block" data-type="register" type="button">注册</button>
+                    </div>
+                    <div class="flex mb-3 justify-center text-sm">如果加入会员，则表示您同意我们的<a class="text-primary mx-1" href="terms.html">使用条款</a>和<a class="text-primary ml-1" href="policy.html">隐私政策</a></div>
+                  </form>
+                </div>
+                <div class="dx-tab-content">
+                  <form>
+                    <div class="form-group">
+                      <div class="input-control has-icon-left has-icon-right mb-3">
+                        <div class="input-control-icon-left">
+                          <svg class="w-6 h-6">
+                            <use href="/static/frontend/icons/icons.svg#username"></use>
+                          </svg>
+                        </div>
+                        <input class="form-control !pl-[26px]" id="back-email" autocomplete="off" type="text" placeholder="邮箱地址"/>
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <div class="input-control has-icon-left has-icon-right mb-5">
+                        <div class="input-control-icon-left">
+                          <svg class="w-6 h-6">
+                            <use href="/static/frontend/icons/icons.svg#email_icon"></use>
+                          </svg>
+                        </div>
+                        <input class="form-control !pl-[26px] !pr-[70px]" id="back-checkcode" autocomplete="off" type="text" placeholder="请输入验证码"/>
+                        <div class="input-control-icon-right text-sm !w-[70px]">
+                          <button class="btn-send-code" type="button" data-type="back">获取验证码</button>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <div class="input-control has-icon-left has-icon-right mb-5">
+                        <div class="input-control-icon-left">
+                          <svg class="w-6 h-6">
+                            <use href="/static/frontend/icons/icons.svg#password"></use>
+                          </svg>
+                        </div>
+                        <input class="form-control !pl-[26px]" id="back-password" autocomplete="off" type="password" placeholder="新密码"/>
+                        <div class="input-control-icon-right btn-password-type">
+                          <svg class="w-5 h-5">
+                            <use class="close" href="/static/frontend/icons/icons.svg#close_eye_icon"></use>
+                            <use class="open" href="/static/frontend/icons/icons.svg#view_icon"></use>
+                          </svg>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <div class="input-control has-icon-left has-icon-right mb-5">
+                        <div class="input-control-icon-left">
+                          <svg class="w-6 h-6">
+                            <use href="/static/frontend/icons/icons.svg#password"></use>
+                          </svg>
+                        </div>
+                        <input class="form-control !pl-[26px]" id="back-password2" autocomplete="off" type="password" placeholder="确认新密码"/>
+                        <div class="input-control-icon-right btn-password-type">
+                          <svg class="w-5 h-5">
+                            <use class="close" href="/static/frontend/icons/icons.svg#close_eye_icon"></use>
+                            <use class="open" href="/static/frontend/icons/icons.svg#view_icon"></use>
+                          </svg>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="input-control mb-5">
+                      <button class="btn-back-submit btn btn-primary btn-block" data-type="register" type="button">修改密码</button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--  全局弹框 -->
+    <div class="modal fade dx-modal" id="tip_modal">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header flex items-center">
+            <div class="modal-title text-3xl"><span class="time">45</span><span>秒后将会自动关闭</span></div>
+            <button class="close text-subtitle ml-auto" type="button" data-dismiss="modal">
+              <svg class="w-6 h-6">
+                <use href="/static/frontend/icons/icons.svg#menu_close"></use>
+              </svg>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="px-3 whitespace-pre-line relative" id="tip_content">
+              <div>请花几秒钟记住以下信息！</div>
+              <div>最新地址(请用https://访问)：  <a class="text-primary !underline" href="https://18mh.net" target="__blank">https://18mh.net</a></div>
+              <div>移动用户访问： <a class="text-primary !underline" href="https://18mh.net" target="__blank">https://18mh.net</a></div>
+              <div>找视频找作者：  <a class="text-primary !underline" href="https://t.me/porn91fun" target="__blank">加入官方电报群组！</a></div>
+              <div>发送邮件至sqhub3678@gmail.com或截图收藏地址发布页随时获取最新地址。</div>
+              <div class="flex flex-wrap"><a class=" mr-3">地址发布页1</a><a>地址发布页2</a></div>
+              <div class="absolute btn-download right-0 top-0 flex items-center" role="button">
+                <svg class="w-6 h-6 mr-0.5">
+                  <use href="/static/frontend/icons/icons.svg?v=1.0.1#download-image"></use>
+                </svg>保存地址为图片
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer"><a class="btn btn-success leading-[30px] mr-3">🔥地址发布页1🔥</a>
+            <button class="btn btn-primary" type="button" data-dismiss="modal">立即关闭</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <button class="dx-backtop" data-backtop="data-backtop" title="返回顶部">
+      <svg class="dx-backtop--trigger" width="44" height="44" viewport="0 0 44 44">
+        <circle class="progress-circle" cx="22" cy="22" r="20"></circle>
+        <circle class="progress-bar" cx="22" cy="22" r="20" style="stroke-dasharray: 126; stroke-dashoffset: 126" stroke-linecap="round" fill="none"></circle>
+      </svg>
+      <svg class="w-3 h-5 dx-backtop--arrow">
+        <use href="/static/frontend/icons/icons.svg#up"></use>
+      </svg>
+    </button>
+    <div class="fixed bg-[#ededed] bottom-0 w-full z-50 pt-2 pb-2">
+      <nav class="flex justify-around w-full overflow-hidden">
+        <div class="flex-shrink-0"><a class="flex flex-col items-center mb-1" href="novel.html">
+<svg class="w-4 h-4 mr-1">
+<use href="/static/frontend/icons/icons.svg#home_default"></use>
+</svg>
+<span>首页</span>
+</a>
+        </div>
+        <div class="flex-shrink-0"><a class="flex flex-col items-center mb-1" href="novel.html">
+<svg class="w-4 h-4 mr-1">
+<use href="/static/frontend/icons/icons.svg#manhu_default"></use>
+</svg>
+<span>漫画</span>
+</a>
+        </div>
+        <div class="flex-shrink-0"><a class="flex flex-col items-center mb-1" href="video.html">
+<svg class="w-4 h-4 mr-1">
+<use href="/static/frontend/icons/icons.svg#novel_default"></use>
+</svg>
+<span>小说</span>
+</a>
+        </div>
+        <div class="flex-shrink-0"><a class="flex flex-col items-center mb-1" href="novel.html">
+<svg class="w-4 h-4 mr-1">
+<use href="/static/frontend/icons/icons.svg#video_default"></use>
+</svg>
+<span>视频</span>
+</a>
+        </div>
+        <div class="flex-shrink-0"><a class="flex flex-col items-center mb-1" target="_blank" rel="noopener noreferrer" href="novel.html">
+<svg class="w-4 h-4 mr-1">
+<use href="/static/frontend/icons/icons.svg#more_default"></use>
+</svg>
+<span>更多</span>
+</a>
+        </div>
+      </nav>
+    </div>
+    <script>const js_assets_version = '1.0.0'</script>
+    <script data-main="/static/frontend/js/cg_main.js" src="/static/frontend/js/lib/require.js"></script>
+  </body>
+</html>

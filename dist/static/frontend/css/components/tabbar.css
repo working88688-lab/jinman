@@ -1,0 +1,20 @@
+.app-tabbar {
+    padding-bottom: 70px;
+    width: 100%;
+    z-index: 105;
+    position: relative;
+}
+.app-tabbar .tabbar {
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+    }
+.app-tabbar .tabbar-item {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
