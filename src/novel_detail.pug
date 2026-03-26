@@ -1,7 +1,5 @@
 extends includes/layout.pug
 
-block css
-
 block header
   +Header({
     active: 'novel',
@@ -19,98 +17,106 @@ block content
     div(class='flex-1')
       +Breadcrumbs([{ title: '禁漫小说', isLink: true, href: 'novel.html'}, { isLink: false },{ title: '全部小说', isLink: true, href: 'novel_list.html'}, { isLink: false}, { title: '完蛋了，被七大魔女强上了！', isLink: true} ])
 
-      div(class='flex items-center')
-        div(class='w-[128px] flex-shrink-0')
-          div(class='aspect-w-11 aspect-h-16 mt-3')
-            div( class='poster rounded-sm overflow-hidden pointer-events-auto')
-              img(class="w-full h-full rounded-sm group-hover:scale-125 transition-all" src='/static/frontend/images/loading.svg'  alt='poster')
-        div(class='ml-3')
-          div(class='dx-title font-semibold mb-1') 爆奸调教身材极品的高冷女神和清纯白袜甜妹留学生，射满她们的鞋柜里的高跟鞋和小皮鞋
-          div(class='text-primary') 状态：连载中
-          div 最新：3小时前更新
-          div
-            span 作者：
-            a(class='underline' href="novel_list.html?author=fishx") fishx
-          div(class='line-clamp-1')
-            span 题材：
-            a(class='underline mr-1' href="novel_list.html?theme=1") 都市激情
-            a(class='underline mr-1' href="novel_list.html?theme=2") 贤者小说
-            a(class='underline mr-1' href="novel_list.html?theme=3") 校园春色
-          div
-            span 评分：
-            span(class='inline-flex items-center')
-              span(class='text-primary mr-1') 8.00
+      //- 外层边框：包含 图片 + 图片下评分 + 右侧内容
+      div(class='mt-3 border border-border rounded-[5px] px-[20px] py-[13px]')
+        //- 顶部两列：左（图+评分）右（标题/基础信息）
+        div(class='flex gap-[24px]')
+          //- 左侧：204x256 图片 + 下方评分
+          div(class='w-[204px] flex-shrink-0')
+            div(class='w-[204px] h-[256px] rounded-sm overflow-hidden')
+              img(class='w-full h-full object-cover' src='/static/frontend/images/loading.svg' alt='poster')
+            div(class='mt-3 w-full border border-border rounded-[5px] px-3 py-3 flex flex-col items-center justify-center')
               div(class='flex items-center')
-                svg(class='w-4 h-4')
+                svg(class='w-5 h-5')
                   use(href='/static/frontend/icons/icons.svg#star_red')
-                svg(class='w-4 h-4')
+                svg(class='w-5 h-5')
                   use(href='/static/frontend/icons/icons.svg#star_red')
-                svg(class='w-4 h-4')
+                svg(class='w-5 h-5')
                   use(href='/static/frontend/icons/icons.svg#star_red')
-                svg(class='w-4 h-4')
+                svg(class='w-5 h-5')
                   use(href='/static/frontend/icons/icons.svg#star_red')
-                svg(class='w-4 h-4')
+                svg(class='w-5 h-5')
                   use(href='/static/frontend/icons/icons.svg#star_icon')
-      div 小说简介：不列颠群岛的天气总是变化无常，前一秒还晴空万里，下一秒却是阴云密布。我凝望着逐渐变成黑色的天空，本就不好的心情变得更加压抑。家里支持我在英国留学已经整整两年，本该努力学习的我却无所事事度过了这两年，始终学无所成，情感上也是，面对喜欢的人总是望着她的背影，就连上去多搭一句话的勇气都没有，明明每天相处的机会很多，却像路人一样疏远……虽说家里有点小钱，自己也是成功在国外留学，还和两个美女合租在一间大房子，多少人梦寐以求的剧本，却被我一手好牌打得稀烂。都说男生最悲惨的事莫过于窗外在下雨，你没在看我，我没在看雨……
+              div(class='mt-2 text-base3') 共 999,999 人参与评分
+
+          //- 右侧：标题 + 一排信息（项间距 20px）
+          div(class='flex-1 min-w-0')
+            div(class='dx-title font-semibold text-[15px] leading-none') 作品名称作品名称作品名称作品名称作品名称作品名称作品名称作品名称作品名称
+            div(class='mt-3 flex items-center flex-wrap gap-x-[20px] gap-y-2 text-font2')
+              div 日本小说
+              div 作者名称
+              div 连载中
+              div 2025-12-16 更新
+            //- 作品简介：放在右列（红框区域）
+            div(class='mt-4 h-[180px] bg-[#F5F5F5] rounded-[5px] px-[20px] py-[13px] flex overflow-hidden')
+              div(class='w-[64px] flex-shrink-0 font-semibold text-black') 作品简介
+              div(class='flex-1 text-[12px] leading-none text-font1') 这里是作品简介，字数超过适用「……」显示。这里是作品简介，字数超过适用「……」显示。这里是作品简介，字数超过适用「……」显示。这里是作品简介，字数超过适用「……」显示。
+
+            //- 按钮 + 操作区：放在右列（红框区域）
+            div(class='mt-4 flex items-center gap-[12px]')
+              a(class='btn btn-primary w-[353px] h-[70px] leading-[70px] flex items-center justify-center !px-0 !py-0 !text-white rounded-[5px] flex-shrink-0' href='novel_chapter.html?id=1') 开始阅读
+
+              div(class='flex-1 border border-border rounded-[5px] h-[70px] flex items-stretch divide-x divide-border')
+                div(class='flex-1 flex-center')
+                  +BtnComment
+                div(class='flex-1 flex-center')
+                  +BtnLike
+                div(class='flex-1 flex-center')
+                  +BtnShare
+                div(class='flex-1 flex-center')
+                  +BtnReport
+
+      //- 标签（外框外，距上方外框 20px）
+      div(class='mt-[20px] flex flex-wrap gap-[12px]')
+        a(class='w-[101px] h-[30px] rounded-[4px] bg-[#FFBEBE80] text-[#FF5656] text-[14px] leading-[14px] flex items-center justify-center whitespace-nowrap' href="video_list.html?tag=1") #标签
+        a(class='w-[101px] h-[30px] rounded-[4px] bg-[#FFBEBE80] text-[#FF5656] text-[14px] leading-[14px] flex items-center justify-center whitespace-nowrap' href="video_list.html?tag=2") #标签
+
+      //- 统计信息（外框外）
+      div(class='flex items-center justify-between my-3')
+        div(class='flex-center mr-3')
+          svg(class='w-4 h-4 svg-icon mr-1')
+            use(href='/static/frontend/icons/icons.svg#rou')
+          span 50(多肉)
+        div(class='flex-center mr-3')
+          svg(class='w-4 h-4 svg-icon mr-1')
+            use(href='/static/frontend/icons/icons.svg#word_count')
+          span 91.5K字
+        div(class='flex-center mr-3')
+          svg(class='w-4 h-4 svg-icon mr-1')
+            use(href='/static/frontend/icons/icons.svg#view')
+          span 2.3K
+        div(class='flex-center')
+          svg(class='w-4 h-4 svg-icon mr-1')
+            use(href='/static/frontend/icons/icons.svg#like')
+          span 204
+
+      //- 评论内容（外框外）
+      div(class='mt-3')
+        div(class='font-bold text-black total-comment') 全部评论[共0条]
+        div(class='comments')
+
+      div(class='hidden')
+        button(class='flex-center btn-expand-comment')
+          span(class='mr-2 total-comment-expand') 展开剩余0条评论
+          svg(class='w-4 h-4')
+            use(href='/static/frontend/icons/icons.svg#arrow_down')
+
+        +BtnComment2
+    //- div(class='w-[320px] max-h-[720px] overflow-auto flex-shrink-0 ml-4 hide lg:block')
+
+      //- +DxTitle({ title: '热门推荐'})
       
-      a(class='btn btn-block btn-primary mt-3' href='novel_chapter.html?id=1') 开始阅读
-
-      div(class='mt-2 md:mt-3')
-        div(class='mb-2')
-          span 标签：
-          a(class='underline' href="video_list.html?tag=1") #弟妹 
-          a(class='underline' href="video_list.html?tag=2") #乱伦
-
-        div(class='flex items-center justify-between my-3')
-          div(class='flex-center mr-3')
-            svg(class='w-4 h-4 svg-icon mr-1')
-              use(href='/static/frontend/icons/icons.svg#rou')
-            span 50(多肉)
-          div(class='flex-center mr-3')
-            svg(class='w-4 h-4 svg-icon mr-1')
-              use(href='/static/frontend/icons/icons.svg#word_count')
-            span 91.5K字
-          div(class='flex-center mr-3')
-            svg(class='w-4 h-4 svg-icon mr-1')
-              use(href='/static/frontend/icons/icons.svg#view')
-            span 2.3K
-          div(class='flex-center')
-            svg(class='w-4 h-4 svg-icon mr-1')
-              use(href='/static/frontend/icons/icons.svg#like')
-            span 204
-        div(class='flex justify-between')
-          +BtnComment
-
-          +BtnLike
-
-          +BtnShare
-
-          +BtnReport
-        div(class='mt-3')
-          div(class='font-bold text-black total-comment') 全部评论[共0条]
-          div(class='comments')
-        div(class='hidden')
-          button(class='flex-center btn-expand-comment')
-            span(class='mr-2 total-comment-expand') 展开剩余0条评论
-            svg(class='w-4 h-4')
-              use(href='/static/frontend/icons/icons.svg#arrow_down')
-
-          +BtnComment2
-    div(class='w-[320px] max-h-[720px] overflow-auto flex-shrink-0 ml-4 hide lg:block')
-
-      +DxTitle({ title: '热门推荐'})
-      
-      ul(class='grid grid-cols-1 gap-3 mr-3')
-        each item in [...videos, ...videos.slice(0, 4)]
-          li(class='border-solid border border-border p-3 rounded')
-            a(class='flex items-center overflow-hidden' href='novel_detail.html?id=1')
-              div(class='w-[75px] flex-shrink-0')
-                div(class='aspect-w-11 aspect-h-16')
-                  div( class='poster rounded-sm overflow-hidden pointer-events-auto')
-                    img(class="w-full h-full rounded-sm group-hover:scale-125 transition-all" src='/static/frontend/images/loading.svg' data-src=item.poster alt=item.title)
-              div(class='ml-3')
-                div(class='truncate font-bold mt-0.5')= item.title
-                div(class='line-clamp-4') 女神攻略调教 - 系统开启,主线攻略任务开启 | 目标:小姨子温婷 - 请宿主在温婷自愿的情况下用肉根进入小姨子
+      //- ul(class='grid grid-cols-1 gap-3 mr-3')
+        //- each item in [...videos, ...videos.slice(0, 4)]
+          //- li(class='border-solid border border-border p-3 rounded')
+            //- a(class='flex items-center overflow-hidden' href='novel_detail.html?id=1')
+              //- div(class='w-[75px] flex-shrink-0')
+                //- div(class='aspect-w-11 aspect-h-16')
+                  //- div( class='poster rounded-sm overflow-hidden pointer-events-auto')
+                    //- img(class="w-full h-full rounded-sm group-hover:scale-125 transition-all" src='/static/frontend/images/loading.svg' data-src=item.poster alt=item.title)
+              //- div(class='ml-3')
+                //- div(class='truncate font-bold mt-0.5')= item.title
+                //- div(class='line-clamp-4') 女神攻略调教 - 系统开启,主线攻略任务开启 | 目标:小姨子温婷 - 请宿主在温婷自愿的情况下用肉根进入小姨子
 
   
 
