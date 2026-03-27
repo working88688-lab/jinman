@@ -14,49 +14,81 @@ block nav
 block content
 
   div(class='flex text-font1')
-    div(class='flex-1')
+    div(class='flex-1 max-w-full')
       +Breadcrumbs([{ title: '禁漫小说', isLink: true, href: 'novel.html'}, { isLink: false },{ title: '全部小说', isLink: true, href: 'novel_list.html'}, { isLink: false}, { title: '完蛋了，被七大魔女强上了！', isLink: true} ])
 
-      //- 外层边框：包含 图片 + 图片下评分 + 右侧内容
-      div(class='mt-3 border border-border rounded-[5px] px-[20px] py-[13px]')
-        //- 顶部两列：左（图+评分）右（标题/基础信息）
-        div(class='flex gap-[24px]')
-          //- 左侧：204x256 图片 + 下方评分
-          div(class='w-[204px] flex-shrink-0')
-            div(class='w-[204px] h-[256px] rounded-sm overflow-hidden')
-              img(class='w-full h-full object-cover' src='/static/frontend/images/loading.svg' alt='poster')
-            div(class='mt-3 w-full border border-border rounded-[5px] px-3 py-3 flex flex-col items-center justify-center')
-              div(class='flex items-center')
-                svg(class='w-5 h-5')
-                  use(href='/static/frontend/icons/icons.svg#star_red')
-                svg(class='w-5 h-5')
-                  use(href='/static/frontend/icons/icons.svg#star_red')
-                svg(class='w-5 h-5')
-                  use(href='/static/frontend/icons/icons.svg#star_red')
-                svg(class='w-5 h-5')
-                  use(href='/static/frontend/icons/icons.svg#star_red')
-                svg(class='w-5 h-5')
-                  use(href='/static/frontend/icons/icons.svg#star_icon')
-              div(class='mt-2 text-base3') 共 999,999 人参与评分
+      //- 外层边框：移动端单列，桌面端双列
+      div(class='mt-3 border border-border rounded-[5px] px-[12px] py-[12px] md:px-[20px] md:py-[13px]')
+        div(class='flex flex-col md:flex-row gap-[14px] md:gap-[24px]')
+          //- 左侧封面：移动端居中，桌面端固定尺寸
+          div(class='w-full md:w-[204px] md:flex-shrink-0 flex justify-center md:block')
+            div(class='w-[204px]')
+              div(class='w-[204px] h-[256px] rounded-sm overflow-hidden')
+                img(class='w-full h-full object-cover' src='/static/frontend/images/loading.svg' alt='poster')
 
-          //- 右侧：标题 + 一排信息（项间距 20px）
+              //- PC：评分在图片下方（仅 md+ 显示）
+              div(class='hidden md:block mt-3')
+                //- PC评分框：204x70，文字右下角10px
+                div(class='w-[204px] h-[70px] box-border border border-[rgba(245,245,245,1)] rounded-[5px] px-[12px] py-[10px] flex flex-col justify-between overflow-hidden')
+                  div(class='flex items-center justify-center gap-2')
+                    svg(class='w-6 h-6 text-[rgba(236,99,93,1)] fill-current')
+                      use(href='/static/frontend/icons/icons.svg#star_red')
+                    svg(class='w-6 h-6 text-[rgba(236,99,93,1)] fill-current')
+                      use(href='/static/frontend/icons/icons.svg#star_red')
+                    svg(class='w-6 h-6 text-[rgba(236,99,93,1)] fill-current')
+                      use(href='/static/frontend/icons/icons.svg#star_red')
+                    svg(class='w-6 h-6 text-[rgba(236,99,93,1)] fill-current')
+                      use(href='/static/frontend/icons/icons.svg#star_red')
+                    svg(class='w-6 h-6 text-[rgba(236,99,93,1)] fill-current')
+                      use(href='/static/frontend/icons/icons.svg#star_icon')
+                  div(class='text-[10px] leading-none text-[rgba(147,147,147,1)] text-right truncate') 共 999,999 人参与评分
+
+          //- 右侧内容
           div(class='flex-1 min-w-0')
-            div(class='dx-title font-semibold text-[15px] leading-none') 作品名称作品名称作品名称作品名称作品名称作品名称作品名称作品名称作品名称
-            div(class='mt-3 flex items-center flex-wrap gap-x-[20px] gap-y-2 text-font2')
+            //- 作品名：强制单行省略号（PC/H5一致）
+            div(class='dx-title w-full max-w-full font-semibold text-[32px] md:text-[15px] leading-[1.35] md:leading-none truncate') 作品名称作品名称作品名称作品名称作品
+
+            //- H5：评分在标题下方（仅 <md 显示）
+            div(class='md:hidden mt-4 w-full max-w-full box-border border border-[rgba(245,245,245,1)] rounded-[5px] px-[20px] py-[16px] flex items-center justify-between gap-3 overflow-hidden')
+              div(class='flex items-center gap-2 flex-shrink-0')
+                svg(class='w-6 h-6 text-[rgba(236,99,93,1)] fill-current')
+                  use(href='/static/frontend/icons/icons.svg#star_red')
+                svg(class='w-6 h-6 text-[rgba(236,99,93,1)] fill-current')
+                  use(href='/static/frontend/icons/icons.svg#star_red')
+                svg(class='w-6 h-6 text-[rgba(236,99,93,1)] fill-current')
+                  use(href='/static/frontend/icons/icons.svg#star_red')
+                svg(class='w-6 h-6 text-[rgba(236,99,93,1)] fill-current')
+                  use(href='/static/frontend/icons/icons.svg#star_red')
+                svg(class='w-6 h-6 text-[rgba(236,99,93,1)] fill-current')
+                  use(href='/static/frontend/icons/icons.svg#star_icon')
+              div(class='flex-1 min-w-0 truncate text-right text-[rgba(147,147,147,1)]') 共 999,999 人参与评分
+
+            div(class='mt-4 md:mt-3 flex items-center flex-wrap gap-x-[16px] md:gap-x-[20px] gap-y-2 text-[#666666]')
               div 日本小说
-              div 作者名称
-              div 连载中
-              div 2025-12-16 更新
-            //- 作品简介：放在右列（红框区域）
-            div(class='mt-4 h-[180px] bg-[#F5F5F5] rounded-[5px] px-[20px] py-[13px] flex overflow-hidden')
-              div(class='w-[64px] flex-shrink-0 font-semibold text-black') 作品简介
-              div(class='flex-1 text-[12px] leading-none text-font1') 这里是作品简介，字数超过适用「……」显示。这里是作品简介，字数超过适用「……」显示。这里是作品简介，字数超过适用「……」显示。这里是作品简介，字数超过适用「……」显示。
+              div(class='flex items-center gap-[6px]')
+                svg(width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg")
+                  path(d="M7.86426 1.23047C8.21767 1.23048 8.56255 1.33201 8.8584 1.52148L8.98242 1.6084L9.00879 1.62891L9.32812 1.94824C9.4883 2.08604 9.75237 2.24369 10.0566 2.375C10.3631 2.50724 10.6647 2.59388 10.8848 2.61523H10.8896L11.3623 2.66504H11.3613C12.1561 2.73806 12.8777 3.43348 12.9072 4.2666L12.957 4.73926L12.958 4.74902C12.9777 4.9779 13.0547 5.28555 13.1748 5.59766C13.265 5.8318 13.3719 6.0479 13.4805 6.21973L13.5889 6.37598L13.5957 6.38379L13.6016 6.39258L13.8506 6.74316L13.9395 6.86816C14.3554 7.51148 14.3257 8.37305 13.8506 8.98535L13.8311 9.01074L13.8086 9.03223L13.5117 9.32812C13.374 9.48835 13.2171 9.75269 13.0859 10.0566C12.9537 10.3631 12.8671 10.6647 12.8457 10.8848V10.8896L12.7959 11.3623C12.7222 12.1589 12.0233 12.8815 11.1875 12.9072L10.7285 12.957L10.7178 12.958C10.489 12.9777 10.182 13.0547 9.87012 13.1748C9.55773 13.2951 9.27658 13.4447 9.09082 13.5889L9.08301 13.5957L9.07422 13.6016L8.72363 13.8496C8.07057 14.3565 7.13447 14.3575 6.48145 13.8506L6.45703 13.8311L6.13477 13.5088C5.97424 13.372 5.71246 13.216 5.41113 13.0859C5.10448 12.9536 4.80213 12.867 4.58203 12.8457H4.57812L4.10547 12.7959V12.7949C3.31088 12.7217 2.58901 12.0273 2.55957 11.1943L2.50977 10.7217L2.50879 10.7119C2.4891 10.483 2.41214 10.1754 2.29199 9.86328C2.17177 9.55111 2.02206 9.27062 1.87793 9.08496L1.87109 9.07617L1.60449 8.71582L1.60547 8.71484C1.36298 8.39461 1.23047 8.00434 1.23047 7.60254C1.23057 7.19877 1.36353 6.80641 1.6084 6.48535L1.62891 6.45801L1.65234 6.43457L1.95117 6.13477C2.08811 5.97429 2.24479 5.71277 2.375 5.41113C2.50734 5.10448 2.59393 4.80213 2.61523 4.58203V4.57812L2.66504 4.10547C2.73826 3.31085 3.43361 2.58805 4.2666 2.55859L4.73926 2.50977L4.74902 2.50879L4.93457 2.4834C5.13209 2.4479 5.36371 2.38205 5.59766 2.29199C5.90985 2.17176 6.19031 2.02206 6.37598 1.87793L6.38184 1.87402L6.3877 1.86914L6.75488 1.60156V1.60254C7.07455 1.36151 7.46371 1.23047 7.86426 1.23047ZM9.10742 5.83984C8.41096 6.14457 7.79459 6.67182 7.25879 7.32031C7.00767 7.62428 6.78112 7.95155 6.5752 8.28418H7.39746C7.41828 8.28418 7.51985 8.26857 7.72266 8.03125C7.91475 7.80645 8.11526 7.48198 8.35156 7.0791C8.57052 6.70578 8.81853 6.26496 9.10742 5.83984Z" stroke="#666666")
+                span 作者名称
+              div(class='flex items-center gap-[6px]')
+                svg(width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg")
+                  path(d="M3.51855 4.07227C3.779 3.02804 4.89544 2.37333 5.96484 2.75293L6.40039 2.90723L6.85449 3.07422C9.11507 3.92809 11.2368 5.11388 13.1494 6.59375C13.3641 6.75991 13.5386 6.97307 13.6582 7.2168C13.7777 7.46049 13.8398 7.72858 13.8398 8C13.8398 8.27144 13.7778 8.5395 13.6582 8.7832C13.5386 9.02693 13.3641 9.24009 13.1494 9.40625C11.2368 10.8861 9.11506 12.0719 6.85449 12.9258L6.40039 13.0928L5.96484 13.2471C4.89552 13.6266 3.77908 12.9718 3.51855 11.9277L3.47852 11.7139C3.15822 9.24839 3.15822 6.75161 3.47852 4.28613L3.51855 4.07227Z" stroke="#666666")
+                span 连载中
+              div(class='flex items-center gap-[6px]')
+                svg(width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg")
+                  path(d="M8.00098 1.8335C9.63636 1.83358 11.2049 2.48374 12.3613 3.64014C13.5176 4.79658 14.167 6.36514 14.167 8.00049C14.1669 9.63587 13.5177 11.2044 12.3613 12.3608C11.2049 13.5172 9.63636 14.1664 8.00098 14.1665C6.36563 14.1665 4.79707 13.5171 3.64062 12.3608C2.48423 11.2044 1.83407 9.63587 1.83398 8.00049C1.83398 6.36499 2.48415 4.79661 3.64062 3.64014C4.7971 2.48366 6.36547 1.8335 8.00098 1.8335ZM8.00098 8.00049H8L10 9.25049H10.001L8.23535 8.14697L8.00098 7.99951V8.00049Z" stroke="#666666")
+                span 2025-12-16 更新
 
-            //- 按钮 + 操作区：放在右列（红框区域）
-            div(class='mt-4 flex items-center gap-[12px]')
-              a(class='btn btn-primary w-[353px] h-[70px] leading-[70px] flex items-center justify-center !px-0 !py-0 !text-white rounded-[5px] flex-shrink-0' href='novel_chapter.html?id=1') 开始阅读
+            //- 简介：左侧“作品简介”竖排 + 中间 2px 分割线（PC/H5一致）
+            div(class='mt-4 md:mt-4 min-h-[192px] md:h-[192px] bg-[#F5F5F5] rounded-[5px] px-[12px] md:px-[20px] py-[12px] md:py-[13px] flex overflow-hidden')
+              div(class='w-6 md:w-6 flex-shrink-0 flex items-center justify-center')
+                div(class='font-semibold text-black tracking-[0.35em] [writing-mode:vertical-rl] [text-orientation:upright] leading-none') 作品简介
+              div(class='w-[1px] bg-[rgba(211,211,211,1)] mx-[12px] md:mx-[12px] rounded-full')
+              div(class='flex-1 text-[12px] leading-[1.8] text-font1 text-[#333333]') 这里是作品简介，字数超过适用「……」显示。这里是作品简介，字数超过适用「……」显示。这里是作品简介，字数超过适用「……」显示。这里是作品简介，字数超过适用「……」显示。
 
-              div(class='flex-1 border border-border rounded-[5px] h-[70px] flex items-stretch divide-x divide-border')
+            div(class='mt-4 md:mt-3 flex flex-col md:flex-row items-stretch md:items-center gap-[10px] md:gap-[12px]')
+              a(class='btn btn-primary text-[16px]! w-full md:w-[353px] h-[52px] md:h-[70px] leading-[52px] md:leading-[70px] flex items-center justify-center !px-0 !py-0 !text-white rounded-[5px] flex-shrink-0' href='novel_chapter.html?id=1') 开始阅读
+
+              div(class='w-full flex-1 border border-border rounded-[5px] px-5 py-4 md:p-0  md:h-[70px] flex items-stretch divide-x divide-border')
                 div(class='flex-1 flex-center')
                   +BtnComment
                 div(class='flex-1 flex-center')
@@ -67,56 +99,60 @@ block content
                   +BtnReport
 
       //- 标签（外框外，距上方外框 20px）
-      div(class='mt-[20px] flex flex-wrap gap-[12px]')
+      div(class='mt-4 flex flex-wrap gap-[12px]')
         a(class='w-[101px] h-[30px] rounded-[4px] bg-[#FFBEBE80] text-[#FF5656] text-[14px] leading-[14px] flex items-center justify-center whitespace-nowrap' href="video_list.html?tag=1") #标签
         a(class='w-[101px] h-[30px] rounded-[4px] bg-[#FFBEBE80] text-[#FF5656] text-[14px] leading-[14px] flex items-center justify-center whitespace-nowrap' href="video_list.html?tag=2") #标签
 
-      //- 统计信息（外框外）
-      div(class='flex items-center justify-between my-3')
-        div(class='flex-center mr-3')
-          svg(class='w-4 h-4 svg-icon mr-1')
-            use(href='/static/frontend/icons/icons.svg#rou')
-          span 50(多肉)
-        div(class='flex-center mr-3')
-          svg(class='w-4 h-4 svg-icon mr-1')
-            use(href='/static/frontend/icons/icons.svg#word_count')
-          span 91.5K字
-        div(class='flex-center mr-3')
-          svg(class='w-4 h-4 svg-icon mr-1')
-            use(href='/static/frontend/icons/icons.svg#view')
-          span 2.3K
-        div(class='flex-center')
-          svg(class='w-4 h-4 svg-icon mr-1')
-            use(href='/static/frontend/icons/icons.svg#like')
-          span 204
 
-      //- 评论内容（外框外）
-      div(class='mt-3')
-        div(class='font-bold text-black total-comment') 全部评论[共0条]
-        div(class='comments')
+      //- 目录 / 评论（无外边框）
+      div(class='mt-[30px] md:mt-6')
+        //- 顶部Tab栏
+        div(class='px-[16px] md:px-[20px] h-[56px] flex items-center justify-between bg-white border-b border-[rgba(245,245,245,1)]')
+          div(class='flex items-center gap-[24px]')
+            button(type='button' class='novel-tab-btn relative flex items-center gap-[6px] text-[14px] md:text-[16px] font-semibold text-[rgba(236,99,93,1)]' data-tab='catalog')
+              span 目录
+              span(class='tab-catalog-count tab-count text-[rgba(236,99,93,1)]') (54)
+              span(class='tab-underline absolute left-0 right-0 -bottom-[10px] h-[3px] bg-[#EC635D] rounded-full')
+            button(type='button' class='novel-tab-btn relative flex items-center gap-[6px] text-[14px] md:text-[16px] font-semibold text-[rgba(102,102,102,1)]' data-tab='comments')
+              span 评论
+              span(class='tab-comment-count tab-count text-[rgba(102,102,102,1)]') (0)
+              span(class='tab-underline hidden absolute left-0 right-0 -bottom-[10px] h-[3px] bg-[#EC635D] rounded-full')
+          //- 右侧图标（占位）
+          button(type='button' class='w-8 h-8 flex items-center justify-center text-[rgba(68,68,68,1)]')
+            svg(class='w-5 h-5')
+              use(href='/static/frontend/icons/icons.svg#sort')
 
-      div(class='hidden')
-        button(class='flex-center btn-expand-comment')
-          span(class='mr-2 total-comment-expand') 展开剩余0条评论
-          svg(class='w-4 h-4')
-            use(href='/static/frontend/icons/icons.svg#arrow_down')
+        //- 内容区（PC/H5 都通过 Tab 切换）
+        div
+          //- 目录面板
+          div(class='novel-panel novel-panel-catalog w-full bg-white')
+            div(class='')
+              //- 目录列表（后续用JS填充也行）
+              div(class='space-y-[10px]')
+                a(class='h-[44px] md:h-[48px] rounded-[4px] border border-[rgba(245,245,245,1)] px-[14px] md:px-[16px] flex items-center text-[14px] md:text-[16px] text-[rgba(68,68,68,1)]' href='novel_chapter.html?id=1') 第1话 — 标题
+                a(class='h-[44px] md:h-[48px] rounded-[4px] border border-[rgba(236,99,93,0.18)] px-[14px] md:px-[16px] flex items-center text-[14px] md:text-[16px] text-[rgba(68,68,68,1)] bg-[rgba(236,99,93,0.12)]' href='novel_chapter.html?id=2') 第2话 — 标题
+                a(class='h-[44px] md:h-[48px] rounded-[4px] border border-[rgba(245,245,245,1)] px-[14px] md:px-[16px] flex items-center text-[14px] md:text-[16px] text-[rgba(68,68,68,1)]' href='novel_chapter.html?id=3') 第3话 — 标题
+                a(class='h-[44px] md:h-[48px] rounded-[4px] border border-[rgba(245,245,245,1)] px-[14px] md:px-[16px] flex items-center text-[14px] md:text-[16px] text-[rgba(68,68,68,1)]' href='novel_chapter.html?id=4') 第4话 — 标题
+                a(class='h-[44px] md:h-[48px] rounded-[4px] border border-[rgba(245,245,245,1)] px-[14px] md:px-[16px] flex items-center text-[14px] md:text-[16px] text-[rgba(68,68,68,1)]' href='novel_chapter.html?id=5') 第5话 — 标题
 
-        +BtnComment2
-    //- div(class='w-[320px] max-h-[720px] overflow-auto flex-shrink-0 ml-4 hide lg:block')
+              //- 全部展开（目录）
+              div(class='mt-[22px] flex justify-center')
+                button(type='button' class='btn-expand-catalog w-[220px] h-[44px] rounded-[6px] border border-[rgba(236,99,93,0.5)] text-[rgba(236,99,93,1)] flex items-center justify-center gap-[6px] text-[14px]')
+                  span 全部展开
+                  svg(class='w-4 h-4')
+                    use(href='/static/frontend/icons/icons.svg#arrow_down')
 
-      //- +DxTitle({ title: '热门推荐'})
-      
-      //- ul(class='grid grid-cols-1 gap-3 mr-3')
-        //- each item in [...videos, ...videos.slice(0, 4)]
-          //- li(class='border-solid border border-border p-3 rounded')
-            //- a(class='flex items-center overflow-hidden' href='novel_detail.html?id=1')
-              //- div(class='w-[75px] flex-shrink-0')
-                //- div(class='aspect-w-11 aspect-h-16')
-                  //- div( class='poster rounded-sm overflow-hidden pointer-events-auto')
-                    //- img(class="w-full h-full rounded-sm group-hover:scale-125 transition-all" src='/static/frontend/images/loading.svg' data-src=item.poster alt=item.title)
-              //- div(class='ml-3')
-                //- div(class='truncate font-bold mt-0.5')= item.title
-                //- div(class='line-clamp-4') 女神攻略调教 - 系统开启,主线攻略任务开启 | 目标:小姨子温婷 - 请宿主在温婷自愿的情况下用肉根进入小姨子
+          //- 评论面板
+          div(class='novel-panel novel-panel-comments hidden w-full bg-white')
+            div(class='')
+              include includes/components/dx-video-comment.pug
+                
+              div(class='mt-[22px] flex justify-center')
+                button(type='button' class='w-[220px] h-[44px] rounded-[6px] border border-[rgba(236,99,93,0.5)] text-[rgba(236,99,93,1)] flex items-center justify-center gap-[6px] text-[14px]')
+                  span 全部展开
+                  svg(class='w-4 h-4')
+                    use(href='/static/frontend/icons/icons.svg#arrow_down')
+   
 
   
 
@@ -124,41 +160,6 @@ block dialog
   include includes/dialog/dx-reply-dialog.pug
   include includes/dialog/dx-comment-dialog.pug
   include includes/dialog/dx-report-dialog.pug
-
-block hbs
-  template(id='comment-template')
-    | {{#each items}}
-    div(class='video-comment dx-hairline--bottom my-3 pb-3 flex')
-      a(class='avatar relative flex-shrink-0 mr-2')
-        | {{#if user.avatar_str}}
-        img(class='rounded-full w-[36px] h-[36px] md:w-[48px] md:h-[48px]' data-src='{{user.avatar_str}}' alt)
-        | {{else}}
-        img(class='rounded-full w-[36px] h-[36px] md:w-[48px] md:h-[48px]' src='/static/frontend/images/default.jpeg' alt)
-        | {{/if}}
-      div(class='flex-1 video-comment-content')
-        div(class='flex avatar-info justify-between items-start')
-          div(class='flex items-center')
-            span(class='font-bold avatar-name') {{user.nick_name}}
-            span(class='text-base3 mx-1') {{fixed comment_score}}
-            div(class='flex items-center dx-rate' data-disabled="1" data-step='2' data-value="{{comment_score}}")
-              svg(class='w-4 h-4')
-                use(href='/static/frontend/icons/icons.svg#star_red')
-              svg(class='w-4 h-4')
-                use(href='/static/frontend/icons/icons.svg#star_red')
-              svg(class='w-4 h-4')
-                use(href='/static/frontend/icons/icons.svg#star_red')
-              svg(class='w-4 h-4')
-                use(href='/static/frontend/icons/icons.svg#star_red')
-              svg(class='w-4 h-4')
-                use(href='/static/frontend/icons/icons.svg#star_icon')
-            span(class='text-base3 mx-1') {{created_at_str}}
-          button(class='btn-comment-like flex-shrink-0 flex-center' type='button')
-            span(class='mr-1') {{like_num}}
-            svg(class='w-5 h-5')
-              use(href='/static/frontend/icons/icons.svg#awesome_icon')
-        div(class='video-comment--content mt-1 text-font1')
-          | {{comment_content}}
-    | {{/each}}
 
 block footer-scripts
   script(data-main='/static/frontend/js/novel_detail_main.js' src="/static/frontend/js/lib/require.js")

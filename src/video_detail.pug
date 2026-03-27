@@ -15,67 +15,146 @@ block nav
 block content
 
   div(class='flex text-font1')
-    div(class='flex-1')
+    div(class='flex-1 w-full')
       +Breadcrumbs([{ title: '禁漫视频', isLink: true, href: 'video.html'}, { isLink: false},{ title: '全部视频', isLink: true, href: 'video_list.html'}, { isLink: false}, { title: '13331133131视频', isLink: true} ])
-     
-      div(class='aspect-w-16 aspect-h-9 mt-3')
-        div(class='player-container')
-          div(id='mse' data-url='https://hls.vdtuzv.com/videos2/39935e0bef81fba5b26ac4b203292c68/39935e0bef81fba5b26ac4b203292c68.m3u8?auth_key=1725527713-66d976a1375e5-0-586776a466ac9ccf2fcfa6804d248a9b&v=3&time=0&via=ap' data-poster='https://pic.shedtgs.cn/upload/upload/20231103/2023110315282821878.jpeg')
-      div(class='mt-2 md:mt-3')
-        h1(class='dx-title font-semibold leading-22')
-          | 手机新浪网新闻中心，新浪网新闻中心是新浪网最重要的频道之每日编发新闻数以万计。
-        div
-          span 番号：MIDV-813
-        div
-          span 片商：Moodyz
-        div
-          span 类型：高清AV
-        div
-          span 女优：
-          a(class='underline' href="actress.html") 彌生美月
-        div
-          span 标签：
-          a(class='underline' href="video_list.html?tag=1") #弟妹 
-          a(class='underline' href="video_list.html?tag=2") #乱伦
 
-        div(class='flex items-center my-3')
-          div(class='flex-center mr-3')
-            svg(class='w-4 h-4 svg-icon mr-1')
-              use(href='/static/frontend/icons/icons.svg#time')
-            span 12小时前
-          div(class='flex-center mr-3')
-            svg(class='w-4 h-4 svg-icon mr-1')
-              use(href='/static/frontend/icons/icons.svg#view')
-            span 2.3K
-          div(class='flex-center mr-3')
-            svg(class='w-4 h-4 svg-icon mr-1')
-              use(href='/static/frontend/icons/icons.svg#like')
-            span 204
-        div(class='flex justify-between')
-          +BtnComment
+      //- PC(md+)：标题最上；H5：标题在视频下方
+      h1(class='hidden md:block mt-3 dx-title w-full max-w-full font-semibold text-[15px] leading-none truncate')
+        | 手机新浪网新闻中心，新浪网新闻中心是新浪网最重要的频道之每日编发新闻数以万计。
 
-          +BtnLike({ type: 2})
+      //- 第二行：PC(md+) 左播放器右信息；H5 只显示播放器 + 下方信息
+      div(class='mt-3 flex flex-col md:flex-row gap-[12px] md:gap-[16px]')
+        div(class='flex-1 min-w-0 w-full')
+          div(class='aspect-w-16 aspect-h-9 max-w-full max-h-full')
+            div(class='player-container')
+              div(id='mse' class='relative w-full h-full overflow-hidden' data-url='https://hls.vdtuzv.com/videos2/39935e0bef81fba5b26ac4b203292c68/39935e0bef81fba5b26ac4b203292c68.m3u8?auth_key=1725527713-66d976a1375e5-0-586776a466ac9ccf2fcfa6804d248a9b&v=3&time=0&via=ap' data-poster='https://pic.shedtgs.cn/upload/upload/20231103/2023110315282821878.jpeg')
+                //- 播放器未初始化前的封面占位（初始化后会被隐藏）
+                img(class='mse-poster absolute inset-0 w-full h-full object-cover' src='https://pic.shedtgs.cn/upload/upload/20231103/2023110315282821878.jpeg' alt='poster')
 
-          +BtnShare
+          //- H5：标题在视频下方
+          h1(class='md:hidden mt-3 dx-title w-full max-w-full font-semibold text-[22px] leading-[1.35] truncate')
+            | 手机新浪网新闻中心，新浪网新闻中心是新浪网最重要的频道之每日编发新闻数以万计。
 
-          +BtnReport(3)
-        div(class='comments mt-3')
-          div(class='font-bold text-black') 全部评论[共118条]
-          include includes/components/dx-video-comment.pug
+          //- H5：评分区域（位置/样式跟小说详情）
+          div(class='md:hidden mt-4 w-full max-w-full box-border border border-[rgba(245,245,245,1)] rounded-[5px] px-[20px] py-[16px] flex items-center justify-between gap-3 overflow-hidden')
+            div(class='flex items-center gap-2 flex-shrink-0')
+              svg(class='w-6 h-6 text-[rgba(236,99,93,1)] fill-current')
+                use(href='/static/frontend/icons/icons.svg#star_red')
+              svg(class='w-6 h-6 text-[rgba(236,99,93,1)] fill-current')
+                use(href='/static/frontend/icons/icons.svg#star_red')
+              svg(class='w-6 h-6 text-[rgba(236,99,93,1)] fill-current')
+                use(href='/static/frontend/icons/icons.svg#star_red')
+              svg(class='w-6 h-6 text-[rgba(236,99,93,1)] fill-current')
+                use(href='/static/frontend/icons/icons.svg#star_red')
+              svg(class='w-6 h-6 text-[rgba(236,99,93,1)] fill-current')
+                use(href='/static/frontend/icons/icons.svg#star_icon')
+            div(class='flex-1 min-w-0 truncate text-right text-[rgba(147,147,147,1)]') 共 999,999 人参与评分
 
-          +BtnComment2({ type: 4 })
-    div(class='w-[240px] max-h-[720px] overflow-auto flex-shrink-0 ml-4 hide lg:block')
+          //- H5：类型/片商/发布时间（一行横排）
+          div(class='md:hidden mt-4 flex items-center justify-between gap-x-[16px] gap-y-2 text-[#666666]')
+            div(class='  py-1 rounded-[8px] border border-[#D9D9D9] px-[14px] flex items-center') 日本H漫
+            div(class='  py-1 rounded-[8px] border border-[#D9D9D9] px-[14px] flex items-center') 片商名称
+            div(class=' flex items-center gap-[8px]')
+              svg(width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg")
+                path(d="M8.00098 1.8335C9.63636 1.83358 11.2049 2.48374 12.3613 3.64014C13.5176 4.79658 14.167 6.36514 14.167 8.00049C14.1669 9.63587 13.5177 11.2044 12.3613 12.3608C11.2049 13.5172 9.63636 14.1664 8.00098 14.1665C6.36563 14.1665 4.79707 13.5171 3.64062 12.3608C2.48423 11.2044 1.83407 9.63587 1.83398 8.00049C1.83398 6.36499 2.48415 4.79661 3.64062 3.64014C4.7971 2.48366 6.36547 1.8335 8.00098 1.8335ZM8.00098 8.00049H8L10 9.25049H10.001L8.23535 8.14697L8.00098 7.99951V8.00049Z" stroke="#666666")
+              span 2025-12-16 更新
 
-      +DxTitle({ title: '热门推荐'})
-      
-      ul(class='grid grid-cols-1 mr-3 gap-3')
-        each item in [...videos, ...videos.slice(0, 4)]
-          li(class='border-solid border border-border p-3 rounded')
-            a(class='block overflow-hidden' href='video_detail.html?id=1')
-              div(class='aspect-w-16 group aspect-h-9')
-                div( class='poster rounded-sm overflow-hidden pointer-events-auto')
-                  img(class="w-full h-full rounded-sm group-hover:scale-125 transition-all" src='/static/frontend/images/loading.svg' data-src=item.poster alt=item.title)
-              div(class='truncate font-bold mt-0.5')= item.title
+          //- H5：番号
+          div(class='md:hidden mt-4 py-1  rounded-[8px] border border-[#D9D9D9] px-[14px] flex items-center gap-[10px] text-[#666666]')
+            span(class='font-semibold text-[#333333]') 番号
+            span(class='text-[rgba(211,211,211,1)]') |
+            span IPX - 971
+
+          //- H5：简介（跟小说详情一样）
+          div(class='md:hidden mt-4 min-h-[192px] bg-[#F5F5F5] rounded-[5px] px-[12px] py-[12px] flex overflow-hidden')
+            div(class='w-6 flex-shrink-0 flex items-center justify-center')
+              div(class='font-semibold text-black tracking-[0.35em] [writing-mode:vertical-rl] [text-orientation:upright] leading-none') 作品简介
+            div(class='w-[1px] bg-[rgba(211,211,211,1)] mx-[12px] rounded-full')
+            div(class='flex-1 text-[12px] leading-[1.8] text-font1 text-[#333333]') 这里是作品简介，字数超过适用「……」显示。这里是作品简介，字数超过适用「……」显示。这里是作品简介，字数超过适用「……」显示。这里是作品简介，字数超过适用「……」显示。
+
+          //- H5：操作区（跟小说详情一样）
+          div(class='md:hidden mt-4 w-full border border-border rounded-[5px]  py-2 flex items-stretch divide-x divide-border')
+            div(class='flex-1 flex-start')
+              +BtnComment
+            div(class='flex-1 flex-center')
+              +BtnLike({ type: 2})
+            div(class='flex-1 flex-center')
+              +BtnShare
+            div(class='flex-1 flex-center')
+              +BtnReport(3)
+
+        //- PC(md+)：右侧信息区（按截图）
+        div(class='hidden md:block w-full md:w-[360px] flex-shrink-0')
+          //- 小卡列表
+          div(class='space-y-[10px]')
+            div(class='h-[44px] rounded-[16px] border border-[#D9D9D9] px-[14px] flex items-center text-[#666666]')
+              span 动画
+            div(class='h-[44px] rounded-[16px] border border-[#D9D9D9] px-[14px] flex items-center text-[#666666]')
+              span 片商名称
+            div(class='h-[44px] rounded-[16px] border border-[#D9D9D9] px-[14px] flex items-center gap-[8px] text-[#666666]')
+              svg(width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg")
+                path(d="M8.00098 1.8335C9.63636 1.83358 11.2049 2.48374 12.3613 3.64014C13.5176 4.79658 14.167 6.36514 14.167 8.00049C14.1669 9.63587 13.5177 11.2044 12.3613 12.3608C11.2049 13.5172 9.63636 14.1664 8.00098 14.1665C6.36563 14.1665 4.79707 13.5171 3.64062 12.3608C2.48423 11.2044 1.83407 9.63587 1.83398 8.00049C1.83398 6.36499 2.48415 4.79661 3.64062 3.64014C4.7971 2.48366 6.36547 1.8335 8.00098 1.8335ZM8.00098 8.00049H8L10 9.25049H10.001L8.23535 8.14697L8.00098 7.99951V8.00049Z" stroke="#666666")
+              span 2025-11-25 上架
+            div(class='h-[44px] rounded-[16px] border border-[#D9D9D9] px-[14px] flex items-center gap-[10px] text-[#666666]')
+              span(class='font-semibold text-[#333333]') 番号
+              span(class='text-[rgba(211,211,211,1)]') |
+              span IPX - 971
+
+          //- 作品简介卡
+          div(class='mt-[10px] rounded-[16px] border border-[#D9D9D9] px-[14px] py-[12px] bg-white')
+            div(class='font-semibold text-[#333333] text-[14px] leading-none') 作品简介
+            div(class='mt-[12px] h-[1px] w-full bg-[#D9D9D9]')
+            div(class='mt-[10px] text-[12px] leading-[1.6] text-[#666666] line-clamp-5')
+              | 这里是作品简介这里是作品简介这里是作品简介这里是作品简介这里是作品简介这里是作品简介这里是作品简介这里是作品简介这里是作品简介这里是作品简介这里是作品简介这里是作品简介……
+
+          //- 评分卡（PC：右侧内展示）
+          div(class='mt-[10px] rounded-[16px] border border-[#D9D9D9] bg-white px-[16px] py-[12px]')
+            div(class='flex items-center justify-center gap-2')
+              svg(class='w-6 h-6 text-[rgba(236,99,93,1)] fill-current')
+                use(href='/static/frontend/icons/icons.svg#star_red')
+              svg(class='w-6 h-6 text-[rgba(236,99,93,1)] fill-current')
+                use(href='/static/frontend/icons/icons.svg#star_red')
+              svg(class='w-6 h-6 text-[rgba(236,99,93,1)] fill-current')
+                use(href='/static/frontend/icons/icons.svg#star_red')
+              svg(class='w-6 h-6 text-[rgba(236,99,93,1)] fill-current')
+                use(href='/static/frontend/icons/icons.svg#star_red')
+              svg(class='w-6 h-6 text-[rgba(236,99,93,1)] fill-current')
+                use(href='/static/frontend/icons/icons.svg#star_icon')
+            div(class='mt-[8px] text-[10px] leading-none text-[rgba(147,147,147,1)] text-center truncate') 共 999,999 人参与评分
+
+          //- 操作区（按截图：横排，不要外边框分栏）
+          div(class='mt-[12px] flex items-center justify-between px-[6px]')
+            +BtnComment
+            +BtnLike({ type: 2})
+            +BtnShare
+            +BtnReport(3)
+
+      //- 第三行：标签（独立一行）
+      div(class='mt-3 flex flex-wrap gap-[12px]')
+        a(class='w-[101px] h-[30px] rounded-[4px] bg-[#FFBEBE80] text-[#FF5656] text-[14px] leading-[14px] flex items-center justify-center whitespace-nowrap' href="video_list.html?tag=1") #弟妹
+        a(class='w-[101px] h-[30px] rounded-[4px] bg-[#FFBEBE80] text-[#FF5656] text-[14px] leading-[14px] flex items-center justify-center whitespace-nowrap' href="video_list.html?tag=2") #乱伦
+
+      //- 评论区域（参考小说详情：仅“评论”一个Tab，无目录）
+      div(class='mt-[30px] md:mt-6')
+        div(class='px-[16px] md:px-[20px] h-[56px] flex items-center justify-between bg-white border-b border-[rgba(245,245,245,1)]')
+          div(class='flex items-center gap-[6px] text-[14px] md:text-[16px] font-semibold text-[rgba(236,99,93,1)] relative')
+            span 评论
+            span(class='text-[rgba(236,99,93,1)]') (118)
+            span(class='absolute left-0 right-0 -bottom-[10px] h-[3px] bg-[#EC635D] rounded-full')
+          button(type='button' class='w-8 h-8 flex items-center justify-center text-[rgba(68,68,68,1)]')
+            svg(class='w-5 h-5')
+              use(href='/static/frontend/icons/icons.svg#sort')
+
+        div(class='bg-white')
+          div(class='')
+            include includes/components/dx-video-comment.pug
+
+          div(class='mt-[22px] flex justify-center')
+            button(type='button' class='w-[220px] h-[44px] rounded-[6px] border border-[rgba(236,99,93,0.5)] text-[rgba(236,99,93,1)] flex items-center justify-center gap-[6px] text-[14px]')
+              span 全部展开
+              svg(class='w-4 h-4')
+                use(href='/static/frontend/icons/icons.svg#arrow_down') 
+
   
 
 block dialog

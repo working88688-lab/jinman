@@ -51,6 +51,8 @@ requirejs(['player', 'utils', 'http', 'jquery', 'swiper', 'common'], function (p
       // 字幕，
     })
     .then(my_player => {
+      // 隐藏静态封面占位
+      $video.find('.mse-poster').hide()
       my_player.once('play', e => {
         console.log('e: ', e)
         // 统计播放
