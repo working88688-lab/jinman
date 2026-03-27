@@ -1,6 +1,6 @@
 .app-header {
     height: 60px;
-    z-index: 1;
+    z-index: 20;
 
     &.is-open-mobile-search {
 
@@ -50,10 +50,41 @@
         color: var(--dx-primary-color);
     }
 
+ 
 
     .input-control {
         display: flex;
         align-items: center;
+    }
+
+    /* 搜索分类下拉（header 搜索框） */
+    .search_category_menu {
+        min-width: 180px;
+        background: #ffffff;
+        border-radius: 10px;
+        box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12);
+        border: 1px solid rgba(0, 0, 0, 0.08);
+        overflow: hidden;
+        z-index: 9999;
+    }
+
+    .search_category_item {
+        display: block;
+        width: 100%;
+        text-align: center;
+        padding: 16px 12px;
+        color: #111;
+        background: #ffffff;
+        cursor: pointer;
+    }
+
+    .search_category_item+.search_category_item {
+        border-top: 1px solid rgba(0, 0, 0, 0.06);
+    }
+
+    .search_category_item.is-active {
+        background: #FF5656;
+        color: #fff;
     }
 
     @media (max-width: 768px) {
