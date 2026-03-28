@@ -35,12 +35,24 @@
             <!--  logo-->
             <div class="app-logo-container md:!flex mr-auto flex-shrink-0 flex-center"><a class="items-center flex justify-center md:justify-start" href="/"><img class="app-logo w-[60px] h-[23px] md:w-[120px] md:h-[45px]" src="/static/frontend/images/logo.png" title="logo" alt="logo"/></a></div>
             <!-- mobile搜索-->
-            <div class="hidden flex-1 items-center md:!hidden mobile-search">
-              <div class="input-control flex-1 search-box search-box-circle has-icon-left has-icon-right">
-                <div class="input-control-icon-left justify-center flex items-center">
-                  <button class="mr-1 search_type" type="button" title="切换搜索类型">智能</button><span class="text-border">|</span>
+            <div class="hidden flex-1 items-center md:!hidden mobile-search ">
+              <div class="input-control flex-1 search-box search-box-circle flex items-center rounded-l-full overflow-visible bg-white">
+                <div class="flex items-center pl-3  flex-shrink-0 whitespace-nowrap">
+                  <button class="mr-1 search_type text-3" type="button" title="切换搜索类型">智能</button><span class="text-border mx-1">|</span><span class="search_category_wrapper relative inline-flex items-center overflow-visible">
+                    <button class="flex items-center search_category_trigger text-3" type="button" title="选择分类" data-value="all"><span class="search_category_label">全部</span>
+                      <svg class="w-4 h-4 ml-1">
+                        <use href="/static/frontend/icons/icons.svg#arrow_down"></use>
+                      </svg>
+                    </button>
+                    <!-- 分类下拉（移动端）-->
+                    <div class="search_category_menu hide absolute left-1/2 -translate-x-1/2 top-full mt-2 w-[180px] bg-white rounded-sm shadow-lg border border-base1 overflow-hidden z-[999]">
+                      <button class="w-full text-center px-4 py-4 search_category_item" type="button" data-value="all">全部</button>
+                      <button class="w-full text-center px-4 py-4 search_category_item border-t border-base1" type="button" data-value="comic_list">禁漫</button>
+                      <button class="w-full text-center px-4 py-4 search_category_item border-t border-base1" type="button" data-value="novel_list">小说</button>
+                      <button class="w-full text-center px-4 py-4 search_category_item border-t border-base1" type="button" data-value="video_list">视频</button>
+                    </div></span>
                 </div>
-                <input class="form-control search-input pl-5 pr-2 border-none rounded-l-full" maxlength="100" autocomplete="off" type="search" placeholder="请输入您要搜索的内容"/><a class="input-control-icon-right search-clear-btn" href="#">
+                <input class="form-control search-input flex-1   border-none rounded-l-full" maxlength="100" autocomplete="off" type="search" placeholder="请输入您要搜索的内容"/><a class="search-clear-btn flex-shrink-0 px-1" href="#">
                   <svg class="w-6 h-6 text-black">
                     <use href="/static/frontend/icons/icons.svg#menu_close"></use>
                   </svg></a>
@@ -53,12 +65,24 @@
               <button class="ml-3 text-default btn-close-search" type="button">取消</button>
             </div>
             <!--  pc搜索框 -->
-            <div class="relative hide md:items-center md:flex justify-center max-w-[50vw] flex-[3] mr-4 md:mx-4">
-              <div class="input-control has-icon-left search-box has-icon-right flex-1 max-w-[420px]">
-                <div class="input-control-icon-left justify-center flex items-center">
-                  <button class="mr-1 search_type">智能</button><span class="text-border">|</span>
+            <div class="relative hide md:items-center md:flex justify-center  flex-[3] mr-4 md:mx-4">
+              <div class="input-control search-box flex items-center flex-1  max-w-[480px] w-full border border-base1 rounded-l-large overflow-visible">
+                <div class="flex items-center pl-4 pr-2 flex-shrink-0 whitespace-nowrap">
+                  <button class="mr-1 search_type" type="button" title="切换搜索类型">智能</button><span class="text-border mx-1">|</span><span class="search_category_wrapper relative inline-flex items-center overflow-visible">
+                    <button class="flex items-center search_category_trigger" type="button" title="选择分类" data-value="all"><span class="search_category_label">全部</span>
+                      <svg class="w-4 h-4 ml-1">
+                        <use href="/static/frontend/icons/icons.svg#arrow_down"></use>
+                      </svg>
+                    </button>
+                    <!-- 分类下拉（PC）-->
+                    <div class="search_category_menu hide absolute left-1/2 -translate-x-1/2 top-full mt-2 w-[180px] bg-white rounded-sm shadow-sm border border-base1 overflow-hidden z-[9999]">
+                      <button class="w-full text-center px-4 py-4 search_category_item" type="button" data-value="all">全部</button>
+                      <button class="w-full text-center px-4 py-4 search_category_item border-t border-base1" type="button" data-value="comic_list">禁漫</button>
+                      <button class="w-full text-center px-4 py-4 search_category_item border-t border-base1" type="button" data-value="novel_list">小说</button>
+                      <button class="w-full text-center px-4 py-4 search_category_item border-t border-base1" type="button" data-value="video_list">视频</button>
+                    </div></span>
                 </div>
-                <input class="app-search rounded-l-large px-4 search-input form-control border-base1 border-r-0" maxlength="100" autocomplete="off" type="search"/><a class="input-control-icon-right search-clear-btn" href="#">
+                <input class="app-search w-[320px] max-w-[320px] flex-none px-4 search-input form-control border-none outline-none" maxlength="100" autocomplete="off" type="search"/><a class="search-clear-btn flex-shrink-0 px-3" href="#">
                   <svg class="w-6 h-6 text-black">
                     <use href="/static/frontend/icons/icons.svg#menu_close"></use>
                   </svg></a>

@@ -465,75 +465,75 @@ define([
     }
   }
 
-  const SEARCH_CATEGORY_MAP = {
-    all: '全部',
-    comic_list: '禁漫',
-    novel_list: '小说',
-    video_list: '视频'
-  }
+  // const SEARCH_CATEGORY_MAP = {
+  //   all: '全部',
+  //   comic_list: '禁漫',
+  //   novel_list: '小说',
+  //   video_list: '视频'
+  // }
 
-  function sync_category_active_state(category) {
-    $('.search_category_item').each(function () {
-      const $item = $(this)
-      const val = $item.data('value')
-      const isActive = (val || 'all') === category
-      $item.toggleClass('is-active', isActive)
-    })
-  }
+  // function sync_category_active_state(category) {
+  //   $('.search_category_item').each(function () {
+  //     const $item = $(this)
+  //     const val = $item.data('value')
+  //     const isActive = (val || 'all') === category
+  //     $item.toggleClass('is-active', isActive)
+  //   })
+  // }
 
-  function set_search_category(category) {
-    const label = SEARCH_CATEGORY_MAP[category] || SEARCH_CATEGORY_MAP.all
-    $('.search_category_trigger').attr('data-value', category)
-    $('.search_category_trigger').each(function () {
-      const $trigger = $(this)
-      const $label = $trigger.find('.search_category_label')
-      if ($label.length) $label.text(label)
-    })
+  // function set_search_category(category) {
+  //   const label = SEARCH_CATEGORY_MAP[category] || SEARCH_CATEGORY_MAP.all
+  //   $('.search_category_trigger').attr('data-value', category)
+  //   $('.search_category_trigger').each(function () {
+  //     const $trigger = $(this)
+  //     const $label = $trigger.find('.search_category_label')
+  //     if ($label.length) $label.text(label)
+  //   })
 
-    // 把分类写回搜索框 data-type，让 search() 跳转到对应列表页
-    const $inputs = $('.search-box').find('.search-input')
-    if (category === 'all') {
-      $inputs.removeAttr('data-type')
-    } else {
-      $inputs.attr('data-type', category)
-    }
+  //   // 把分类写回搜索框 data-type，让 search() 跳转到对应列表页
+  //   const $inputs = $('.search-box').find('.search-input')
+  //   if (category === 'all') {
+  //     $inputs.removeAttr('data-type')
+  //   } else {
+  //     $inputs.attr('data-type', category)
+  //   }
 
-    // 分类联动 placeholder：搜索XX作品
-    $inputs.attr('placeholder', `搜索${label}作品`)
+  //   // 分类联动 placeholder：搜索XX作品
+  //   $inputs.attr('placeholder', `搜索${label}作品`)
 
-    sync_category_active_state(category)
-  }
+  //   sync_category_active_state(category)
+  // }
 
-  function close_search_category_menu() {
-    $('.search_category_menu').addClass('hide')
-  }
+  // function close_search_category_menu() {
+  //   $('.search_category_menu').addClass('hide')
+  // }
 
-  // 分类下拉：打开/关闭
-  $(document).on('click', '.search_category_trigger', function (e) {
-    e.preventDefault()
-    e.stopPropagation()
-    const $wrapper = $(this).closest('.search_category_wrapper')
-    const $menu = $wrapper.children('.search_category_menu')
-    $('.search_category_menu').not($menu).addClass('hide')
-    $menu.toggleClass('hide')
-  })
+  // // 分类下拉：打开/关闭
+  // $(document).on('click', '.search_category_trigger', function (e) {
+  //   e.preventDefault()
+  //   e.stopPropagation()
+  //   const $wrapper = $(this).closest('.search_category_wrapper')
+  //   const $menu = $wrapper.children('.search_category_menu')
+  //   $('.search_category_menu').not($menu).addClass('hide')
+  //   $menu.toggleClass('hide')
+  // })
 
-  // 分类下拉：选择
-  $(document).on('click', '.search_category_item', function (e) {
-    e.preventDefault()
-    e.stopPropagation()
-    const category = $(this).data('value') || 'all'
-    set_search_category(category)
-    close_search_category_menu()
-  })
+  // // 分类下拉：选择
+  // $(document).on('click', '.search_category_item', function (e) {
+  //   e.preventDefault()
+  //   e.stopPropagation()
+  //   const category = $(this).data('value') || 'all'
+  //   set_search_category(category)
+  //   close_search_category_menu()
+  // })
 
-  // 点击空白收起
-  $(document).on('click', function () {
-    close_search_category_menu()
-  })
+  // // 点击空白收起
+  // $(document).on('click', function () {
+  //   close_search_category_menu()
+  // })
 
-  // 初始化：默认“全部”高亮
-  set_search_category($('.search_category_trigger').first().attr('data-value') || 'all')
+  // // 初始化：默认“全部”高亮
+  // set_search_category($('.search_category_trigger').first().attr('data-value') || 'all')
   // 顶部搜索类型
   $('.search_type').on('click', function () {
     const type = $(this).data('type')

@@ -17,8 +17,7 @@
     <link rel="stylesheet" href="/static/frontend/css/lib/zui.css?v=v1.0.0"/>
     <link rel="stylesheet" href="/static/frontend/css/common.css?v=v1.0.0"/>
     <script src="/static/frontend/js/setup.js"> </script>
-    <link rel="stylesheet" href="/static/frontend/css/lib/xgplayer.css"/>
-    <link rel="stylesheet" href="/static/frontend/css/view_main.css?v=v1.0.0"/>
+    <link rel="stylesheet" href="/static/frontend/css/new_searchbox.css"/>
   </head>
   <body>
     <!-- header-->
@@ -35,7 +34,72 @@
             <!--  logo-->
             <div class="app-logo-container md:!flex mr-auto flex-shrink-0 flex-center"><a class="items-center flex justify-center md:justify-start" href="/"><img class="app-logo w-[60px] h-[23px] md:w-[120px] md:h-[45px]" src="/static/frontend/images/logo.png" title="logo" alt="logo"/></a></div>
             <!-- mobile搜索-->
+            <div class="hidden flex-1 items-center md:!hidden mobile-search ">
+              <div class="input-control flex-1 search-box search-box-circle flex items-center rounded-l-full overflow-visible bg-white">
+                <div class="flex items-center pl-3  flex-shrink-0 whitespace-nowrap">
+                  <button class="mr-1 search_type text-3" type="button" title="切换搜索类型">智能</button><span class="text-border mx-1">|</span><span class="search_category_wrapper relative inline-flex items-center overflow-visible">
+                    <button class="flex items-center search_category_trigger text-3" type="button" title="选择分类" data-value="all"><span class="search_category_label">全部</span>
+                      <svg class="w-4 h-4 ml-1">
+                        <use href="/static/frontend/icons/icons.svg#arrow_down"></use>
+                      </svg>
+                    </button>
+                    <!-- 分类下拉（移动端）-->
+                    <div class="search_category_menu hide absolute left-1/2 -translate-x-1/2 top-full mt-2 w-[180px] bg-white rounded-sm shadow-lg border border-base1 overflow-hidden z-[999]">
+                      <button class="w-full text-center px-4 py-4 search_category_item" type="button" data-value="all">全部</button>
+                      <button class="w-full text-center px-4 py-4 search_category_item border-t border-base1" type="button" data-value="comic_list">禁漫</button>
+                      <button class="w-full text-center px-4 py-4 search_category_item border-t border-base1" type="button" data-value="novel_list">小说</button>
+                      <button class="w-full text-center px-4 py-4 search_category_item border-t border-base1" type="button" data-value="video_list">视频</button>
+                    </div></span>
+                </div>
+                <input class="form-control search-input flex-1   border-none rounded-l-full" data-type="comic" maxlength="100" autocomplete="off" type="search" placeholder="请输入您要搜索的内容"/><a class="search-clear-btn flex-shrink-0 px-1" href="#">
+                  <svg class="w-6 h-6 text-black">
+                    <use href="/static/frontend/icons/icons.svg#menu_close"></use>
+                  </svg></a>
+              </div>
+              <button class="btn btn-primary w-[64px] flex-center btn-search flex-shrink-0 rounded-r-large" type="button" title="搜索">
+                <svg class="w-6 h-6 text-white">
+                  <use href="/static/frontend/icons/icons.svg#search"></use>
+                </svg>
+              </button>
+              <button class="ml-3 text-default btn-close-search" type="button">取消</button>
+            </div>
             <!--  pc搜索框 -->
+            <div class="relative hide md:items-center md:flex justify-center  flex-[3] mr-4 md:mx-4">
+              <div class="input-control search-box flex items-center flex-1  max-w-[480px] w-full border border-base1 rounded-l-large overflow-visible">
+                <div class="flex items-center pl-4 pr-2 flex-shrink-0 whitespace-nowrap">
+                  <button class="mr-1 search_type" type="button" title="切换搜索类型">智能</button><span class="text-border mx-1">|</span><span class="search_category_wrapper relative inline-flex items-center overflow-visible">
+                    <button class="flex items-center search_category_trigger" type="button" title="选择分类" data-value="all"><span class="search_category_label">全部</span>
+                      <svg class="w-4 h-4 ml-1">
+                        <use href="/static/frontend/icons/icons.svg#arrow_down"></use>
+                      </svg>
+                    </button>
+                    <!-- 分类下拉（PC）-->
+                    <div class="search_category_menu hide absolute left-1/2 -translate-x-1/2 top-full mt-2 w-[180px] bg-white rounded-sm shadow-sm border border-base1 overflow-hidden z-[9999]">
+                      <button class="w-full text-center px-4 py-4 search_category_item" type="button" data-value="all">全部</button>
+                      <button class="w-full text-center px-4 py-4 search_category_item border-t border-base1" type="button" data-value="comic_list">禁漫</button>
+                      <button class="w-full text-center px-4 py-4 search_category_item border-t border-base1" type="button" data-value="novel_list">小说</button>
+                      <button class="w-full text-center px-4 py-4 search_category_item border-t border-base1" type="button" data-value="video_list">视频</button>
+                    </div></span>
+                </div>
+                <input class="app-search w-[320px] max-w-[320px] flex-none px-4 search-input form-control border-none outline-none" data-type="comic" maxlength="100" autocomplete="off" type="search" placeholder="搜索禁漫作品"/><a class="search-clear-btn flex-shrink-0 px-3" href="#">
+                  <svg class="w-6 h-6 text-black">
+                    <use href="/static/frontend/icons/icons.svg#menu_close"></use>
+                  </svg></a>
+              </div>
+              <button class="btn btn-primary btn-search w-[48px] flex-shrink-0 rounded-r-large" title="搜索">
+                <svg class="w-5 h-5 text-white">
+                  <use href="/static/frontend/icons/icons.svg#search"></use>
+                </svg>
+              </button>
+            </div>
+            <!-- mobile 搜索icon-->
+            <div class="flex-shrink-0 items-center md:hidden flex ml-auto justify-end">
+              <button class="btn-open-search mr-3" type="button" title="search">
+                <svg class="w-7 h-7 text-base3">
+                  <use href="/static/frontend/icons/icons.svg#search"></use>
+                </svg>
+              </button>
+            </div>
             <div class="items-center md:hidden flex mobile-like"><a class="mr-3" href="favorite.html">
                 <svg class="w-6 h-6 text-base3">
                   <use href="/static/frontend/icons/icons.svg#heart"></use>
@@ -84,7 +148,7 @@
                   <div class="submenu-item"><a href="novel_common.html?type=3">最新更新</a></div>
                 </div>
               </li>
-              <li class="flex items-center is-active"><span class="app-nav-item flex-1 py-1 text-center">视频</span>
+              <li class="flex items-center"><span class="app-nav-item flex-1 py-1 text-center">视频</span>
                 <svg class="w-5 h-5 ml-0.5">
                   <use href="/static/frontend/icons/icons.svg#arrow_down"></use>
                 </svg>
@@ -97,7 +161,7 @@
                   <div class="submenu-item"><a href="video_common.html?type=2">最新上架</a></div>
                 </div>
               </li>
-              <li class="flex items-center"><span class="app-nav-item flex-1 py-1 text-center">禁漫</span>
+              <li class="flex items-center is-active"><span class="app-nav-item flex-1 py-1 text-center">禁漫</span>
                 <svg class="w-5 h-5 ml-0.5">
                   <use href="/static/frontend/icons/icons.svg#arrow_down"></use>
                 </svg>
@@ -217,197 +281,194 @@
     <!-- main-content-->
     <main class="dx-container app-content">
       <div class="flex text-font1">
-        <div class="flex-1">
+        <div class="flex-1 max-w-full">
           <ul class="dx-breadcrumbs flex whitespace-nowrap items-center mt-2 md:mt-3 dx-text">
             <li><a href="/">首页</a></li>
             <li class="mx-1.5">
               <svg class="w-4 h-4">
                 <use href="/static/frontend/icons/icons.svg#crumb_split"></use>
               </svg>
-            </li><a class="text-base2" href="video.html">禁漫视频</a>
+            </li><a class="text-base2" href="comic.html">禁漫漫画</a>
             <li class="mx-1.5">
               <svg class="w-4 h-4">
                 <use href="/static/frontend/icons/icons.svg#crumb_split"></use>
               </svg>
-            </li><a class="text-base2" href="video_list.html">全部视频</a>
+            </li><a class="text-base2" href="comic_list.html">全部漫画</a>
             <li class="mx-1.5">
               <svg class="w-4 h-4">
                 <use href="/static/frontend/icons/icons.svg#crumb_split"></use>
               </svg>
-            </li><a class="text-base3 max-w-[120px] md:max-w-[300px] truncate">13331133131视频</a>
+            </li><a class="text-base3 max-w-[120px] md:max-w-[300px] truncate">完蛋了，被七大魔女强上了！</a>
           </ul>
-          <div class="aspect-w-16 aspect-h-9 mt-3">
-            <div class="player-container">
-              <div id="mse" data-url="https://hls.vdtuzv.com/videos2/39935e0bef81fba5b26ac4b203292c68/39935e0bef81fba5b26ac4b203292c68.m3u8?auth_key=1725527713-66d976a1375e5-0-586776a466ac9ccf2fcfa6804d248a9b&amp;v=3&amp;time=0&amp;via=ap" data-poster="https://pic.shedtgs.cn/upload/upload/20231103/2023110315282821878.jpeg"></div>
+          <div class="mt-3 border border-border rounded-[5px] px-[12px] py-[12px] md:px-[20px] md:py-[13px]">
+            <div class="flex flex-col md:flex-row gap-[14px] md:gap-[24px]">
+              <div class="w-full md:w-[204px] md:flex-shrink-0 flex justify-center md:block">
+                <div class="w-[204px]">
+                  <div class="w-[204px] h-[256px] rounded-sm overflow-hidden"><img class="w-full h-full object-cover" src="/static/frontend/images/loading.svg" alt="poster"/></div>
+                  <div class="hidden md:block mt-3">
+                    <div class="w-[204px] h-[70px] box-border border border-[rgba(245,245,245,1)] rounded-[5px] px-[12px] py-[10px] flex flex-col justify-between overflow-hidden">
+                      <div class="flex items-center justify-center gap-2">
+                        <svg class="w-6 h-6 text-[rgba(236,99,93,1)] fill-current">
+                          <use href="/static/frontend/icons/icons.svg#star_red"></use>
+                        </svg>
+                        <svg class="w-6 h-6 text-[rgba(236,99,93,1)] fill-current">
+                          <use href="/static/frontend/icons/icons.svg#star_red"></use>
+                        </svg>
+                        <svg class="w-6 h-6 text-[rgba(236,99,93,1)] fill-current">
+                          <use href="/static/frontend/icons/icons.svg#star_red"></use>
+                        </svg>
+                        <svg class="w-6 h-6 text-[rgba(236,99,93,1)] fill-current">
+                          <use href="/static/frontend/icons/icons.svg#star_red"></use>
+                        </svg>
+                        <svg class="w-6 h-6 text-[rgba(236,99,93,1)] fill-current">
+                          <use href="/static/frontend/icons/icons.svg#star_icon"></use>
+                        </svg>
+                      </div>
+                      <div class="text-[10px] leading-none text-[rgba(147,147,147,1)] text-right truncate">共 999,999 人参与评分</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="flex-1 min-w-0">
+                <div class="dx-title w-full max-w-full font-semibold text-[32px] md:text-[15px] leading-[1.35] md:leading-none truncate">作品名称作品名称作品名称作品名称作品</div>
+                <div class="md:hidden mt-4 w-full max-w-full box-border border border-[rgba(245,245,245,1)] rounded-[5px] px-[20px] py-[16px] flex items-center justify-between gap-3 overflow-hidden">
+                  <div class="flex items-center gap-2 flex-shrink-0">
+                    <svg class="w-6 h-6 text-[rgba(236,99,93,1)] fill-current">
+                      <use href="/static/frontend/icons/icons.svg#star_red"></use>
+                    </svg>
+                    <svg class="w-6 h-6 text-[rgba(236,99,93,1)] fill-current">
+                      <use href="/static/frontend/icons/icons.svg#star_red"></use>
+                    </svg>
+                    <svg class="w-6 h-6 text-[rgba(236,99,93,1)] fill-current">
+                      <use href="/static/frontend/icons/icons.svg#star_red"></use>
+                    </svg>
+                    <svg class="w-6 h-6 text-[rgba(236,99,93,1)] fill-current">
+                      <use href="/static/frontend/icons/icons.svg#star_red"></use>
+                    </svg>
+                    <svg class="w-6 h-6 text-[rgba(236,99,93,1)] fill-current">
+                      <use href="/static/frontend/icons/icons.svg#star_icon"></use>
+                    </svg>
+                  </div>
+                  <div class="flex-1 min-w-0 truncate text-right text-[rgba(147,147,147,1)]">共 999,999 人参与评分</div>
+                </div>
+                <div class="mt-4 md:mt-3 flex items-center flex-wrap gap-x-[16px] md:gap-x-[20px] gap-y-2 text-[#666666]">
+                  <div>日本H漫</div>
+                  <div class="flex items-center gap-[6px]">
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M7.86426 1.23047C8.21767 1.23048 8.56255 1.33201 8.8584 1.52148L8.98242 1.6084L9.00879 1.62891L9.32812 1.94824C9.4883 2.08604 9.75237 2.24369 10.0566 2.375C10.3631 2.50724 10.6647 2.59388 10.8848 2.61523H10.8896L11.3623 2.66504H11.3613C12.1561 2.73806 12.8777 3.43348 12.9072 4.2666L12.957 4.73926L12.958 4.74902C12.9777 4.9779 13.0547 5.28555 13.1748 5.59766C13.265 5.8318 13.3719 6.0479 13.4805 6.21973L13.5889 6.37598L13.5957 6.38379L13.6016 6.39258L13.8506 6.74316L13.9395 6.86816C14.3554 7.51148 14.3257 8.37305 13.8506 8.98535L13.8311 9.01074L13.8086 9.03223L13.5117 9.32812C13.374 9.48835 13.2171 9.75269 13.0859 10.0566C12.9537 10.3631 12.8671 10.6647 12.8457 10.8848V10.8896L12.7959 11.3623C12.7222 12.1589 12.0233 12.8815 11.1875 12.9072L10.7285 12.957L10.7178 12.958C10.489 12.9777 10.182 13.0547 9.87012 13.1748C9.55773 13.2951 9.27658 13.4447 9.09082 13.5889L9.08301 13.5957L9.07422 13.6016L8.72363 13.8496C8.07057 14.3565 7.13447 14.3575 6.48145 13.8506L6.45703 13.8311L6.13477 13.5088C5.97424 13.372 5.71246 13.216 5.41113 13.0859C5.10448 12.9536 4.80213 12.867 4.58203 12.8457H4.57812L4.10547 12.7959V12.7949C3.31088 12.7217 2.58901 12.0273 2.55957 11.1943L2.50977 10.7217L2.50879 10.7119C2.4891 10.483 2.41214 10.1754 2.29199 9.86328C2.17177 9.55111 2.02206 9.27062 1.87793 9.08496L1.87109 9.07617L1.60449 8.71582L1.60547 8.71484C1.36298 8.39461 1.23047 8.00434 1.23047 7.60254C1.23057 7.19877 1.36353 6.80641 1.6084 6.48535L1.62891 6.45801L1.65234 6.43457L1.95117 6.13477C2.08811 5.97429 2.24479 5.71277 2.375 5.41113C2.50734 5.10448 2.59393 4.80213 2.61523 4.58203V4.57812L2.66504 4.10547C2.73826 3.31085 3.43361 2.58805 4.2666 2.55859L4.73926 2.50977L4.74902 2.50879L4.93457 2.4834C5.13209 2.4479 5.36371 2.38205 5.59766 2.29199C5.90985 2.17176 6.19031 2.02206 6.37598 1.87793L6.38184 1.87402L6.3877 1.86914L6.75488 1.60156V1.60254C7.07455 1.36151 7.46371 1.23047 7.86426 1.23047ZM9.10742 5.83984C8.41096 6.14457 7.79459 6.67182 7.25879 7.32031C7.00767 7.62428 6.78112 7.95155 6.5752 8.28418H7.39746C7.41828 8.28418 7.51985 8.26857 7.72266 8.03125C7.91475 7.80645 8.11526 7.48198 8.35156 7.0791C8.57052 6.70578 8.81853 6.26496 9.10742 5.83984Z" stroke="#666666"></path>
+                    </svg><span>作者名称</span>
+                  </div>
+                  <div class="flex items-center gap-[6px]">
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M3.51855 4.07227C3.779 3.02804 4.89544 2.37333 5.96484 2.75293L6.40039 2.90723L6.85449 3.07422C9.11507 3.92809 11.2368 5.11388 13.1494 6.59375C13.3641 6.75991 13.5386 6.97307 13.6582 7.2168C13.7777 7.46049 13.8398 7.72858 13.8398 8C13.8398 8.27144 13.7778 8.5395 13.6582 8.7832C13.5386 9.02693 13.3641 9.24009 13.1494 9.40625C11.2368 10.8861 9.11506 12.0719 6.85449 12.9258L6.40039 13.0928L5.96484 13.2471C4.89552 13.6266 3.77908 12.9718 3.51855 11.9277L3.47852 11.7139C3.15822 9.24839 3.15822 6.75161 3.47852 4.28613L3.51855 4.07227Z" stroke="#666666"></path>
+                    </svg><span>连载中</span>
+                  </div>
+                  <div class="flex items-center gap-[6px]">
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M8.00098 1.8335C9.63636 1.83358 11.2049 2.48374 12.3613 3.64014C13.5176 4.79658 14.167 6.36514 14.167 8.00049C14.1669 9.63587 13.5177 11.2044 12.3613 12.3608C11.2049 13.5172 9.63636 14.1664 8.00098 14.1665C6.36563 14.1665 4.79707 13.5171 3.64062 12.3608C2.48423 11.2044 1.83407 9.63587 1.83398 8.00049C1.83398 6.36499 2.48415 4.79661 3.64062 3.64014C4.7971 2.48366 6.36547 1.8335 8.00098 1.8335ZM8.00098 8.00049H8L10 9.25049H10.001L8.23535 8.14697L8.00098 7.99951V8.00049Z" stroke="#666666"></path>
+                    </svg><span>2025-12-16 更新</span>
+                  </div>
+                </div>
+                <div class="mt-4 md:mt-4 min-h-[192px] md:h-[192px] bg-[#F5F5F5] rounded-[5px] px-[12px] md:px-[20px] py-[12px] md:py-[13px] flex overflow-hidden">
+                  <div class="w-6 md:w-6 flex-shrink-0 flex items-center justify-center">
+                    <div class="font-semibold text-black tracking-[0.35em] [writing-mode:vertical-rl] [text-orientation:upright] leading-none">作品简介</div>
+                  </div>
+                  <div class="w-[1px] bg-[rgba(211,211,211,1)] mx-[12px] md:mx-[12px] rounded-full"></div>
+                  <div class="flex-1 text-[12px] leading-[1.8] text-font1 text-[#333333]">这里是作品简介，字数超过适用「……」显示。这里是作品简介，字数超过适用「……」显示。这里是作品简介，字数超过适用「……」显示。这里是作品简介，字数超过适用「……」显示。</div>
+                </div>
+                <div class="mt-4 md:mt-3 flex flex-col md:flex-row items-stretch md:items-center gap-[10px] md:gap-[12px]"><a class="btn btn-primary text-[16px]! w-full md:w-[353px] h-[52px] md:h-[70px] leading-[52px] md:leading-[70px] flex items-center justify-center !px-0 !py-0 !text-white rounded-[5px] flex-shrink-0" href="comic_chapter.html?id=1">开始阅读</a>
+                  <div class="w-full flex-1 border border-border rounded-[5px] px-5 py-4 md:p-0  md:h-[70px] flex items-stretch divide-x divide-border">
+                    <div class="flex-1 flex-center"><a class="flex items-center justify-center gap-[3px]" href="#comment">
+                        <svg class="w-5 h-5" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <g clip-path="url(#clip0_92_4830)">
+                            <path d="M9.80652 5.781C9.01552 5.781 8.48802 6.49 8.48802 7.3435C8.48802 7.3915 8.48402 7.438 8.48802 7.4835C8.44652 9.0785 7.22802 10.362 5.77902 10.538L5.76802 17.998H12.9465C13.2105 17.998 13.361 17.926 13.6025 17.761C13.8243 17.6058 14.0013 17.3949 14.1155 17.1495L14.1195 17.14C14.1515 17.091 15.2405 12.028 15.2685 11.728C15.2926 11.3952 15.2158 11.0629 15.048 10.7745L15.0525 10.7825C14.786 10.32 14.399 10.133 13.9295 10.113C13.9055 10.109 11.0945 10.097 11.0945 10.097C11.281 9.521 11.332 8.837 11.332 8.193C11.332 7.785 11.2905 7.377 11.207 6.9785H11.2005C11.054 6.292 10.486 5.7815 9.80702 5.7815L9.80652 5.781ZM4.74702 10.5655H3.22052C2.91402 10.5655 2.66602 10.8295 2.66602 11.156V17.4095C2.66602 17.735 2.91402 18 3.22052 18H4.74702C5.05252 18 5.30052 17.736 5.30052 17.4095V11.156C5.30052 10.8305 5.05252 10.5655 4.74702 10.5655ZM5.96252 17.9975H5.92102H5.95202C5.95602 17.9975 5.95702 17.9975 5.95202 17.9975H5.96252ZM17.32 4.133C17.3084 4.09469 17.2873 4.05995 17.2586 4.03205C17.2299 4.00415 17.1946 3.984 17.156 3.9735L17.1545 3.973L15.5465 3.5705L14.68 2.1145C14.66 2.08005 14.6313 2.0514 14.5969 2.03133C14.5624 2.01126 14.5234 2.00047 14.4835 2C14.4433 2.00017 14.4039 2.01082 14.3691 2.0309C14.3343 2.05098 14.3053 2.0798 14.285 2.1145L13.4185 3.5705L11.8105 3.9735C11.7718 3.98352 11.7362 4.00323 11.7071 4.03079C11.6781 4.05834 11.6566 4.09282 11.6445 4.131L11.644 4.1325C11.6317 4.17148 11.6293 4.2129 11.637 4.25305C11.6447 4.29319 11.6622 4.3308 11.688 4.3625L11.6875 4.362L12.7595 5.665L12.633 7.37C12.6298 7.41042 12.6368 7.45098 12.6533 7.48801C12.6698 7.52504 12.6953 7.55735 12.7275 7.582L12.728 7.5825C12.7599 7.60645 12.7975 7.62156 12.8371 7.62631C12.8767 7.63105 12.9169 7.62525 12.9535 7.6095L12.952 7.61L14.4815 6.9595L16.012 7.6105C16.0486 7.62617 16.0888 7.63183 16.1283 7.62691C16.1678 7.62199 16.2053 7.60667 16.237 7.5825C16.2668 7.55981 16.291 7.53054 16.3076 7.49698C16.3243 7.46342 16.333 7.42647 16.333 7.389L16.332 7.369V7.37L16.2055 5.665L17.2775 4.362C17.3035 4.33008 17.321 4.29217 17.3285 4.25173C17.336 4.21129 17.3333 4.16961 17.3205 4.1305L17.321 4.132L17.32 4.133Z" fill="#444444"></path>
+                          </g>
+                          <defs>
+                            <clipPath id="clip0_92_4830">
+                              <rect width="16" height="16" fill="white" transform="translate(2 2)"></rect>
+                            </clipPath>
+                          </defs>
+                        </svg><span class="text-[14px] md:text-[16px] leading-none">评论</span></a>
+                    </div>
+                    <div class="flex-1 flex-center">
+                      <button class="flex items-center justify-center gap-[3px] btn-collect" data-type="3">
+                        <svg class="w-5 h-5 not-like" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M13.001 4.875C15.0856 4.87516 16.792 6.42688 16.792 8.3584C16.792 9.74419 16.1461 10.9375 15.2285 11.9678H15.2275C14.3115 12.9975 13.1174 13.8743 12.0029 14.6289L10.0703 15.9375C10.0498 15.9513 10.0257 15.9589 10.001 15.959C9.98842 15.959 9.97574 15.9568 9.96387 15.9531L9.93066 15.9375L7.99805 14.6289C7.02355 13.9686 5.98704 13.2146 5.12891 12.3467L4.77246 11.9678C3.85556 10.9375 3.209 9.74423 3.20898 8.3584C3.20898 6.42678 4.91623 4.875 7.00098 4.875C8.03563 4.8751 8.96904 5.36175 9.6543 6.02051L10.001 6.35352L10.3467 6.02051C11.0321 5.36164 11.9654 4.875 13.001 4.875Z" stroke="#444444"></path>
+                        </svg>
+                        <svg class="w-5 h-5 like" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M7.00065 4.375C4.68398 4.375 2.70898 6.10833 2.70898 8.35833C2.70898 9.91083 3.43565 11.2175 4.39898 12.3C5.35982 13.3792 6.59898 14.285 7.71815 15.0433L9.65065 16.3517C9.75401 16.4215 9.8759 16.4589 10.0007 16.4589C10.1254 16.4589 10.2473 16.4215 10.3507 16.3517L12.2832 15.0433C13.4032 14.285 14.6415 13.3792 15.6015 12.3C16.5657 11.2175 17.2923 9.91083 17.2923 8.35833C17.2923 6.10833 15.3173 4.375 13.0007 4.375C11.8056 4.375 10.7548 4.935 10.0007 5.66C9.24648 4.935 8.19482 4.375 7.00065 4.375Z" fill="#FF5656"></path>
+                        </svg><span class="text-[14px] md:text-[16px] leading-none">收藏</span>
+                      </button>
+                    </div>
+                    <div class="flex-1 flex-center">
+                      <button class="flex items-center justify-center gap-[3px] btn-share" data-clipboard-text="https://18mh.net/mv/video?id=21609">
+                        <svg class="w-5 h-5" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M1.2771 13.7894C1.2332 13.8759 1.21734 13.9739 1.23172 14.0698C1.24611 14.1658 1.29003 14.2548 1.35737 14.3246C1.42471 14.3944 1.51213 14.4415 1.60747 14.4593C1.70281 14.4772 1.80134 14.4648 1.88935 14.4241L4.22169 13.348C6.17242 12.4475 8.31083 12.0285 10.4571 12.1262C10.4823 12.8122 10.5206 13.4982 10.5701 14.1833L10.6345 15.0596C10.6434 15.1812 10.6837 15.2983 10.7515 15.3995C10.8193 15.5007 10.9122 15.5826 11.0211 15.6372C11.1301 15.6918 11.2513 15.7171 11.373 15.7108C11.4947 15.7044 11.6126 15.6666 11.7152 15.601C13.6648 14.3552 15.3596 12.75 16.7094 10.8709L17.1387 10.2736C17.1958 10.1942 17.2266 10.0989 17.2266 10.0011C17.2266 9.9033 17.1958 9.80796 17.1387 9.72857L16.7094 9.13125C15.3597 7.25188 13.6649 5.64637 11.7152 4.4003C11.6126 4.33469 11.4947 4.29686 11.373 4.29051C11.2513 4.28416 11.1301 4.3095 11.0211 4.36406C10.9122 4.41862 10.8193 4.50053 10.7515 4.60177C10.6837 4.70301 10.6434 4.82012 10.6345 4.94162L10.5701 5.81893C10.5275 6.40637 10.4939 6.99443 10.4693 7.58289H9.86823C8.22927 7.58301 6.62241 8.03741 5.22611 8.89562C3.82981 9.75383 2.69871 10.9823 1.95842 12.4445L1.2771 13.7903V13.7894Z" fill="#444444"></path>
+                        </svg><span class="text-[14px] md:text-[16px] leading-none">分享</span>
+                      </button>
+                    </div>
+                    <div class="flex-1 flex-center">
+                      <button class="flex items-center justify-center gap-[3px] btn-report" data-title="黑狱之凌月篇宁落尘泥碾作尘" data-type="2">
+                        <svg class="w-5 h-5" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M9.99922 8.9585C10.165 8.9585 10.324 9.02434 10.4412 9.14155C10.5584 9.25876 10.6242 9.41774 10.6242 9.5835V13.7502C10.6242 13.9159 10.5584 14.0749 10.4412 14.1921C10.324 14.3093 10.165 14.3752 9.99922 14.3752C9.83346 14.3752 9.67449 14.3093 9.55728 14.1921C9.44007 14.0749 9.37422 13.9159 9.37422 13.7502V9.5835C9.37422 9.41774 9.44007 9.25876 9.55728 9.14155C9.67449 9.02434 9.83346 8.9585 9.99922 8.9585ZM9.99922 7.50016C10.1087 7.50018 10.217 7.47864 10.3182 7.43677C10.4193 7.39489 10.5112 7.33351 10.5886 7.25613C10.666 7.17875 10.7273 7.08687 10.7692 6.98576C10.8111 6.88465 10.8327 6.77628 10.8327 6.66683C10.8327 6.55738 10.8111 6.44901 10.7692 6.3479C10.7273 6.24678 10.666 6.15491 10.5886 6.07753C10.5112 6.00015 10.4193 5.93876 10.3182 5.89689C10.217 5.85502 10.1087 5.83348 9.99922 5.8335C9.77823 5.83353 9.5663 5.92134 9.41005 6.07762C9.2538 6.2339 9.16602 6.44584 9.16602 6.66683C9.16602 6.88782 9.2538 7.09976 9.41005 7.25604C9.5663 7.41232 9.77823 7.50013 9.99922 7.50016Z" fill="#444444"></path>
+                          <path d="M2.70898 10.0002C2.70898 8.06629 3.47721 6.21163 4.84466 4.84418C6.21212 3.47672 8.06678 2.7085 10.0007 2.7085C11.9345 2.7085 13.7892 3.47672 15.1566 4.84418C16.5241 6.21163 17.2923 8.06629 17.2923 10.0002C17.2923 11.934 16.5241 13.7887 15.1566 15.1561C13.7892 16.5236 11.9345 17.2918 10.0007 17.2918C8.06678 17.2918 6.21212 16.5236 4.84466 15.1561C3.47721 13.7887 2.70898 11.934 2.70898 10.0002ZM10.0007 3.9585C8.3983 3.9585 6.86158 4.59503 5.72855 5.72806C4.59552 6.86109 3.95898 8.39781 3.95898 10.0002C3.95898 11.6025 4.59552 13.1392 5.72855 14.2723C6.86158 15.4053 8.3983 16.0418 10.0007 16.0418C11.603 16.0418 13.1397 15.4053 14.2728 14.2723C15.4058 13.1392 16.0423 11.6025 16.0423 10.0002C16.0423 8.39781 15.4058 6.86109 14.2728 5.72806C13.1397 4.59503 11.603 3.9585 10.0007 3.9585Z" fill="#444444"></path>
+                        </svg><span class="text-[14px] md:text-[16px] leading-none">投诉</span>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
-          <div class="mt-2 md:mt-3">
-            <h1 class="dx-title font-semibold leading-22">手机新浪网新闻中心，新浪网新闻中心是新浪网最重要的频道之每日编发新闻数以万计。</h1>
-            <div><span>番号：MIDV-813</span></div>
-            <div><span>片商：Moodyz</span></div>
-            <div><span>类型：高清AV</span></div>
-            <div><span>女优：</span><a class="underline" href="actress.html">彌生美月</a></div>
-            <div><span>标签：</span><a class="underline" href="video_list.html?tag=1">#弟妹 </a><a class="underline" href="video_list.html?tag=2">#乱伦</a></div>
-            <div class="flex items-center my-3">
-              <div class="flex-center mr-3">
-                <svg class="w-4 h-4 svg-icon mr-1">
-                  <use href="/static/frontend/icons/icons.svg#time"></use>
-                </svg><span>12小时前</span>
+          <div class="mt-4 flex flex-wrap gap-[12px]"><a class="w-[101px] h-[30px] rounded-[4px] bg-[#FFBEBE80] text-[#FF5656] text-[14px] leading-[14px] flex items-center justify-center whitespace-nowrap" href="video_list.html?tag=1">#标签</a><a class="w-[101px] h-[30px] rounded-[4px] bg-[#FFBEBE80] text-[#FF5656] text-[14px] leading-[14px] flex items-center justify-center whitespace-nowrap" href="video_list.html?tag=2">#标签</a></div>
+          <div class="mt-[30px] md:mt-6">
+            <div class="px-[16px] md:px-[20px] h-[56px] flex items-center justify-between bg-white border-b border-[rgba(245,245,245,1)]">
+              <div class="flex items-center gap-[24px]">
+                <button class="novel-tab-btn relative flex items-center gap-[6px] text-[14px] md:text-[16px] font-semibold text-[rgba(236,99,93,1)]" type="button" data-tab="catalog"><span>目录</span><span class="tab-catalog-count tab-count text-[rgba(236,99,93,1)]">(54)</span><span class="tab-underline absolute left-0 right-0 -bottom-[10px] h-[3px] bg-[#EC635D] rounded-full"></span></button>
+                <button class="novel-tab-btn relative flex items-center gap-[6px] text-[14px] md:text-[16px] font-semibold text-[rgba(102,102,102,1)]" type="button" data-tab="comments"><span>评论</span><span class="tab-comment-count tab-count text-[rgba(102,102,102,1)]">(54)</span><span class="tab-underline hidden absolute left-0 right-0 -bottom-[10px] h-[3px] bg-[#EC635D] rounded-full"></span></button>
               </div>
-              <div class="flex-center mr-3">
-                <svg class="w-4 h-4 svg-icon mr-1">
-                  <use href="/static/frontend/icons/icons.svg#view"></use>
-                </svg><span>2.3K</span>
-              </div>
-              <div class="flex-center mr-3">
-                <svg class="w-4 h-4 svg-icon mr-1">
-                  <use href="/static/frontend/icons/icons.svg#like"></use>
-                </svg><span>204</span>
-              </div>
-            </div>
-            <div class="flex justify-between"><a class="flex-col-center" href="#comment">
+              <button class="w-8 h-8 flex items-center justify-center text-[rgba(68,68,68,1)]" type="button">
                 <svg class="w-5 h-5">
-                  <use href="/static/frontend/icons/icons.svg#comment"></use>
-                </svg><span class="mt-0.5">评论</span></a>
-              <button class="flex-col-center btn-collect" data-type="2">
-                <svg class="w-5 h-5">
-                  <use class="not-like" href="/static/frontend/icons/icons.svg#like"></use>
-                  <use class="like" href="/static/frontend/icons/icons.svg#heart"></use>
-                </svg><span class="mt-0.5">收藏</span>
-              </button>
-              <button class="flex-col-center btn-share" data-clipboard-text="https://18mh.net/mv/video?id=21609">
-                <svg class="w-5 h-5">
-                  <use href="/static/frontend/icons/icons.svg#forward"></use>
-                </svg><span class="mt-0.5">分享</span>
-              </button>
-              <button class="flex-col-center btn-report" data-title="黑狱之凌月篇宁落尘泥碾作尘" data-type="3">
-                <svg class="w-5 h-5">
-                  <use href="/static/frontend/icons/icons.svg#report"></use>
-                </svg><span class="mt-0.5">投诉</span>
+                  <use href="/static/frontend/icons/icons.svg#sort"></use>
+                </svg>
               </button>
             </div>
-            <div class="comments mt-3">
-              <div class="font-bold text-black">全部评论[共118条]</div>
-              <div class="video-comment dx-hairline--bottom  my-3 flex"><a class="avatar relative avatar-link flex-shrink-0 mr-2" href="./member.html?id=1"><img class="rounded-full w-[36px] h-[36px] md:w-[48px] md:h-[48px]" src="/static/frontend/images/default.jpeg" alt="alt"/>
-                  <svg class="w-3 h-3.5 absolute right-0 bottom-0">
-                    <use href="/static/frontend/icons/icons.svg#badge"></use>
-                  </svg></a>
-                <div class="flex-1 video-comment-content">
-                  <div class="flex justify-between items-start">
-                    <div><a class="text-primary avatar-link" href="./member.html?id=1">波多野结衣</a>
-                      <div class="flex items-center text-sm md:text-default text-white opacity-40"><span class="mr-2 md:mr-4">注册：12个月</span><span class="mr-2 md:mr-4">视频：68</span><span class="mr-2 md:mr-4">粉丝：11</span><span>（2天前）</span></div>
-                    </div>
-                    <button class="btn-reply flex-shrink-0" type="button">回复</button>
-                  </div>
-                  <div class="video-comment--content mt-1 text-font1">
-                    | 提供跨平台最新時事動態，讓你dsfssd隨時隨事議題、線上直播、風向節目、天氣變化、名人 提供跨平台最新時事動態，讓你隨時隨事議題、線上直播、風向節目、天氣變化、名人
-                    
-                  </div>
-                  <div class="video-comment px-3 dx-hairline--bottom my-3 flex"><a class="avatar flex-shrink-0 mr-2 avatar-link" href="./member.html?id=1"><img class="rounded-full w-[36px] h-[36px] md:w-[48px] md:h-[48px]" src="images/default.jpeg" alt="alt"/></a>
-                    <div class="flex-1">
-                      <div class="flex justify-between items-center title">
-                        <div><a class="text-primary avatar-link" href="./member.html?id=1">波多野结衣</a>
-                          <div class="flex items-center text-sm md:text-default text-white opacity-40"><span class="mr-2 md:mr-4">注册：12个月</span><span class="mr-2 md:mr-4">视频：68</span><span class="mr-2 md:mr-4">粉丝：11</span><span>（2天前）</span></div>
-                        </div>
-                      </div>
-                      <div class="video-comment--content mt-1 text-font1">提供跨平台最新時事動態，讓你dsfssd隨時隨事議題、線上直播、風向節目、天氣變化、名人 提供跨平台最新時事動態，讓你隨時隨事議題、線上直播、風向節目、天氣變化、名人</div>
-                    </div>
-                  </div>
-                  <div class="video-comment px-3 dx-hairline--bottom my-3 flex"><a class="avatar flex-shrink-0 mr-2 avatar-link" href="./member.html?id=1"><img class="rounded-full w-[36px] h-[36px] md:w-[48px] md:h-[48px]" src="images/default.jpeg" alt="alt"/></a>
-                    <div class="flex-1">
-                      <div class="flex justify-between items-start">
-                        <div><a class="text-primary avatar-link" href="./member.html?id=1">波多野结衣</a>
-                          <div class="flex items-center text-sm md:text-default text-white opacity-40"><span class="mr-2 md:mr-4">注册：12个月</span><span class="mr-2 md:mr-4">视频：68</span><span class="mr-2 md:mr-4">粉丝：11</span><span>（2天前）</span></div>
-                        </div>
-                      </div>
-                      <div class="video-comment--content mt-1 text-font1">
-                        提供跨平台最新時事動態，讓你dsfssd隨時隨事議題、線上直播、風向節目、天氣變化、名人 提供跨平台最新時事動態，讓你隨時隨事議題、線上直播、風向節目、天氣變化、名人
-                        
-                      </div>
-                    </div>
+            <div>
+              <div class="novel-panel novel-panel-catalog w-full bg-white">
+                <div>
+                  <div class="space-y-[10px]"><a class="h-[44px] md:h-[48px] rounded-[4px] border border-[rgba(245,245,245,1)] px-[14px] md:px-[16px] flex items-center text-[14px] md:text-[16px] text-[rgba(68,68,68,1)]" href="comic_chapter.html?id=1">第1话 — 标题</a><a class="h-[44px] md:h-[48px] rounded-[4px] border border-[rgba(236,99,93,0.18)] px-[14px] md:px-[16px] flex items-center text-[14px] md:text-[16px] text-[rgba(68,68,68,1)] bg-[rgba(236,99,93,0.12)]" href="comic_chapter.html?id=2">第2话 — 标题</a><a class="h-[44px] md:h-[48px] rounded-[4px] border border-[rgba(245,245,245,1)] px-[14px] md:px-[16px] flex items-center text-[14px] md:text-[16px] text-[rgba(68,68,68,1)]" href="comic_chapter.html?id=3">第3话 — 标题</a></div>
+                  <div class="mt-[22px] flex justify-center">
+                    <button class="btn-expand-catalog w-[220px] h-[44px] rounded-[6px] border border-[rgba(236,99,93,0.5)] text-[rgba(236,99,93,1)] flex items-center justify-center gap-[6px] text-[14px]" type="button"><span>全部展开</span>
+                      <svg class="w-4 h-4">
+                        <use href="/static/frontend/icons/icons.svg#arrow_down"></use>
+                      </svg>
+                    </button>
                   </div>
                 </div>
               </div>
-              <div class="video-comment dx-hairline--bottom my-3 flex"><a class="avatar flex-shrink-0 mr-2 avatar-link" href="./member.html?id=1"><img class="rounded-full w-[36px] h-[36px] md:w-[48px] md:h-[48px]" src="images/default.jpeg" alt="alt"/></a>
-                <div class="flex-1 video-comment-content">
-                  <div class="flex justify-between items-start">
-                    <div><a class="text-primary avatar-link" href="./member.html?id=1">波多野结衣</a>
-                      <div class="flex items-center text-sm md:text-default text-white opacity-40"><span class="mr-2 md:mr-4">注册：12个月</span><span class="mr-2 md:mr-4">视频：68</span><span class="mr-2 md:mr-4">粉丝：11</span><span>（2天前）</span></div>
+              <div class="novel-panel novel-panel-comments hidden w-full bg-white">
+                <div>
+                  <div class="video-comment flex flex-col items-start  ">
+                    <div class="flex-1 min-w-0 flex items-center justify-start gap-[12px]"><img class="w-[44px] h-[44px] rounded-full flex-shrink-0 object-cover" src="/static/frontend/images/default.jpeg" alt="alt"/>
+                      <div class="flex-1 min-w-0"> 
+                        <div class="min-w-0"></div>
+                        <div class="font-semibold text-[18px] leading-[32px] tracking-[0.005em] text-[#333] truncate">用户昵称</div>
+                        <div class="font-normal text-[14px] leading-[24px] text-[#999999]">3小时前</div>
+                      </div>
                     </div>
-                    <button class="btn-reply flex-shrink-0" type="button">回复</button>
+                    <div class="font-normal text-[14px] leading-[20px] tracking-[0px] text-[#333333] break-words">那個胖子癲側好一次能夾死三隻蚊子那個胖子癲側好一次能夾死三隻蚊子那個胖子癲側好一次能夾死三隻蚊子那個胖子癲側好一次能夾死三隻蚊子</div>
                   </div>
-                  <div class="video-comment--content mt-1 text-font1">
-                    提供跨平台最新時事動態，讓你dsfssd隨時隨事議題、線上直播、風向節目、天氣變化、名人 提供跨平台最新時事動態，讓你隨時隨事議題、線上直播、風向節目、天氣變化、名人
-                    
-                  </div>
-                  <div class="hide reply-container my-2 md:my-3">
-                    <div class="flex items-center flex-1">
-                      <input class="px-3 bg-base1 py-2 w-full dx-text" autocomplete="off" type="text"/>
-                      <button class="flex-shrink-0 px-3 btn btn-primary reply">回复</button>
-                    </div>
+                  <div class="mt-[22px] flex justify-center">
+                    <button class="w-[220px] h-[44px] rounded-[6px] border border-[rgba(236,99,93,0.5)] text-[rgba(236,99,93,1)] flex items-center justify-center gap-[6px] text-[14px]" type="button"><span>全部展开</span>
+                      <svg class="w-4 h-4">
+                        <use href="/static/frontend/icons/icons.svg#arrow_down"></use>
+                      </svg>
+                    </button>
                   </div>
                 </div>
               </div>
-              <button class="btn btn-block btn-comment btn-primary my-3" id="comment" data-id="1" data-title="连体网丝美女,爸爸用力操我好受,深喉吃鸡舔菊花,被胖哥无套插屁眼,鸡吧操操吃吃,喷了一床黄水,都操肿合不拢了 - 国产自拍视频" data-type="4">给作品评个分</button>
             </div>
           </div>
-        </div>
-        <div class="w-[240px] max-h-[720px] overflow-auto flex-shrink-0 ml-4 hide lg:block">
-          <header class="flex items-center md:py-3 py-2 text-default">
-            <h2 class="mr-2 font-semibold">热门推荐</h2>
-          </header>
-          <ul class="grid grid-cols-1 mr-3 gap-3">
-            <li class="border-solid border border-border p-3 rounded"><a class="block overflow-hidden" href="video_detail.html?id=1">
-                <div class="aspect-w-16 group aspect-h-9">
-                  <div class="poster rounded-sm overflow-hidden pointer-events-auto"><img class="w-full h-full rounded-sm group-hover:scale-125 transition-all" src="/static/frontend/images/loading.svg" alt="黑暗的荣耀"/></div>
-                </div>
-                <div class="truncate font-bold mt-0.5">黑暗的荣耀</div></a></li>
-            <li class="border-solid border border-border p-3 rounded"><a class="block overflow-hidden" href="video_detail.html?id=1">
-                <div class="aspect-w-16 group aspect-h-9">
-                  <div class="poster rounded-sm overflow-hidden pointer-events-auto"><img class="w-full h-full rounded-sm group-hover:scale-125 transition-all" src="/static/frontend/images/loading.svg" alt="My post title"/></div>
-                </div>
-                <div class="truncate font-bold mt-0.5">My post title</div></a></li>
-            <li class="border-solid border border-border p-3 rounded"><a class="block overflow-hidden" href="video_detail.html?id=1">
-                <div class="aspect-w-16 group aspect-h-9">
-                  <div class="poster rounded-sm overflow-hidden pointer-events-auto"><img class="w-full h-full rounded-sm group-hover:scale-125 transition-all" src="/static/frontend/images/loading.svg" alt="黑暗的荣耀"/></div>
-                </div>
-                <div class="truncate font-bold mt-0.5">黑暗的荣耀</div></a></li>
-            <li class="border-solid border border-border p-3 rounded"><a class="block overflow-hidden" href="video_detail.html?id=1">
-                <div class="aspect-w-16 group aspect-h-9">
-                  <div class="poster rounded-sm overflow-hidden pointer-events-auto"><img class="w-full h-full rounded-sm group-hover:scale-125 transition-all" src="/static/frontend/images/loading.svg" alt="黑暗的荣耀"/></div>
-                </div>
-                <div class="truncate font-bold mt-0.5">黑暗的荣耀</div></a></li>
-            <li class="border-solid border border-border p-3 rounded"><a class="block overflow-hidden" href="video_detail.html?id=1">
-                <div class="aspect-w-16 group aspect-h-9">
-                  <div class="poster rounded-sm overflow-hidden pointer-events-auto"><img class="w-full h-full rounded-sm group-hover:scale-125 transition-all" src="/static/frontend/images/loading.svg" alt="黑暗的荣耀"/></div>
-                </div>
-                <div class="truncate font-bold mt-0.5">黑暗的荣耀</div></a></li>
-            <li class="border-solid border border-border p-3 rounded"><a class="block overflow-hidden" href="video_detail.html?id=1">
-                <div class="aspect-w-16 group aspect-h-9">
-                  <div class="poster rounded-sm overflow-hidden pointer-events-auto"><img class="w-full h-full rounded-sm group-hover:scale-125 transition-all" src="/static/frontend/images/loading.svg" alt="黑暗的荣耀"/></div>
-                </div>
-                <div class="truncate font-bold mt-0.5">黑暗的荣耀</div></a></li>
-            <li class="border-solid border border-border p-3 rounded"><a class="block overflow-hidden" href="video_detail.html?id=1">
-                <div class="aspect-w-16 group aspect-h-9">
-                  <div class="poster rounded-sm overflow-hidden pointer-events-auto"><img class="w-full h-full rounded-sm group-hover:scale-125 transition-all" src="/static/frontend/images/loading.svg" alt="黑暗的荣耀"/></div>
-                </div>
-                <div class="truncate font-bold mt-0.5">黑暗的荣耀</div></a></li>
-            <li class="border-solid border border-border p-3 rounded"><a class="block overflow-hidden" href="video_detail.html?id=1">
-                <div class="aspect-w-16 group aspect-h-9">
-                  <div class="poster rounded-sm overflow-hidden pointer-events-auto"><img class="w-full h-full rounded-sm group-hover:scale-125 transition-all" src="/static/frontend/images/loading.svg" alt="My post title"/></div>
-                </div>
-                <div class="truncate font-bold mt-0.5">My post title</div></a></li>
-            <li class="border-solid border border-border p-3 rounded"><a class="block overflow-hidden" href="video_detail.html?id=1">
-                <div class="aspect-w-16 group aspect-h-9">
-                  <div class="poster rounded-sm overflow-hidden pointer-events-auto"><img class="w-full h-full rounded-sm group-hover:scale-125 transition-all" src="/static/frontend/images/loading.svg" alt="黑暗的荣耀"/></div>
-                </div>
-                <div class="truncate font-bold mt-0.5">黑暗的荣耀</div></a></li>
-            <li class="border-solid border border-border p-3 rounded"><a class="block overflow-hidden" href="video_detail.html?id=1">
-                <div class="aspect-w-16 group aspect-h-9">
-                  <div class="poster rounded-sm overflow-hidden pointer-events-auto"><img class="w-full h-full rounded-sm group-hover:scale-125 transition-all" src="/static/frontend/images/loading.svg" alt="黑暗的荣耀"/></div>
-                </div>
-                <div class="truncate font-bold mt-0.5">黑暗的荣耀</div></a></li>
-          </ul>
         </div>
       </div>
     </main>
@@ -821,6 +882,6 @@
       </nav>
     </div>
     <script>const js_assets_version = '1.0.0'</script>
-    <script data-main="/static/frontend/js/video_detail_main.js" src="/static/frontend/js/lib/require.js"></script>
+    <script data-main="/static/frontend/js/novel_detail_main.js" src="/static/frontend/js/lib/require.js"></script>
   </body>
 </html>
