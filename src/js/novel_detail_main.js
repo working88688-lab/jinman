@@ -19,18 +19,14 @@ requirejs(['utils', 'jquery', 'common'], function (utils) {
     $btns.each(function () {
       const $btn = $(this)
       const isActive = $btn.data('tab') === tab
-      $btn.toggleClass('text-[rgba(236,99,93,1)]', isActive)
-      $btn.toggleClass('text-[rgba(102,102,102,1)]', !isActive)
-      $btn.find('.tab-count').toggleClass('text-[rgba(236,99,93,1)]', isActive)
-      $btn.find('.tab-count').toggleClass('text-[rgba(102,102,102,1)]', !isActive)
-      $btn.find('.tab-underline').toggleClass('hidden', !isActive)
+      $btn.toggleClass('is-active', isActive)
     })
 
-    $('.novel-panel').addClass('hidden')
+    $('.novel-panel').addClass('detail-page__panel--hidden')
     if (tab === 'catalog') {
-      $('.novel-panel-catalog').removeClass('hidden')
+      $('.novel-panel-catalog').removeClass('detail-page__panel--hidden')
     } else {
-      $('.novel-panel-comments').removeClass('hidden')
+      $('.novel-panel-comments').removeClass('detail-page__panel--hidden')
     }
   }
 
