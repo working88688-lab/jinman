@@ -931,3 +931,70 @@
   width: 16px;
   height: 16px;
 }
+
+/* ========== 详情页评论条目（小说 / 漫画 / 视频 / CG 共用，不依赖 Tailwind） ========== */
+
+.detail-comment-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.detail-comment-item {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.detail-comment-item__row {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 12px;
+  width: 100%;
+  min-width: 0;
+}
+
+.detail-comment-item__avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 9999px;
+  flex-shrink: 0;
+  object-fit: cover;
+}
+
+.detail-comment-item__meta {
+  flex: 1 1 0%;
+  min-width: 0;
+}
+
+.detail-comment-item__name {
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 32px;
+  letter-spacing: 0.005em;
+  color: #333;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.detail-comment-item__time {
+  margin-top: 0;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 24px;
+  color: #999999;
+}
+
+/* 与头像行间距 10px；正文左缘与昵称起始对齐（头像 44px + 间距 12px） */
+.detail-comment-item__text {
+  margin-top: 10px;
+  margin-left: 56px;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 0;
+  color: #333333;
+  word-break: break-word;
+}

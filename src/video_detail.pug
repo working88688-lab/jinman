@@ -132,8 +132,16 @@ block content
               use(href='/static/frontend/icons/icons.svg#sort')
 
         div(class='video-detail-page__comment-body')
-          div(class='')
-            include includes/components/dx-video-comment.pug
+          div(class='detail-comment-list')
+            - var _detailCommentSample = '那個胖子癲側好一次能夾死三隻蚊子那個胖子癲側好一次能夾死三隻蚊子那個胖子癲側好一次能夾死三隻蚊子那個胖子癲側好一次能夾死三隻蚊子'
+            each _i in [1, 2, 3]
+              article(class='detail-comment-item')
+                div(class='detail-comment-item__row')
+                  img(class='detail-comment-item__avatar' src='/static/frontend/images/default.jpeg' alt='')
+                  div(class='detail-comment-item__meta')
+                    div(class='detail-comment-item__name') 用户昵称
+                    div(class='detail-comment-item__time') 3小时前
+                div(class='detail-comment-item__text')= _detailCommentSample
 
           div(class='video-detail-page__expand-wrap')
             button(type='button' class='video-detail-page__expand-btn')

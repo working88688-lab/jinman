@@ -130,8 +130,16 @@ block content
 
           div(class='novel-panel novel-panel-comments detail-page__panel detail-page__panel--hidden')
             div(class='')
-              include includes/components/dx-video-comment.pug
-                
+              - var _detailCommentSample = '那個胖子癲側好一次能夾死三隻蚊子那個胖子癲側好一次能夾死三隻蚊子那個胖子癲側好一次能夾死三隻蚊子那個胖子癲側好一次能夾死三隻蚊子'
+              div(class='detail-comment-list')
+                each _i in [1, 2, 3]
+                  article(class='detail-comment-item')
+                    div(class='detail-comment-item__row')
+                      img(class='detail-comment-item__avatar' src='/static/frontend/images/default.jpeg' alt='')
+                      div(class='detail-comment-item__meta')
+                        div(class='detail-comment-item__name') 用户昵称
+                        div(class='detail-comment-item__time') 3小时前
+                    div(class='detail-comment-item__text')= _detailCommentSample
               div(class='detail-page__expand-wrap')
                 button(type='button' class='detail-page__expand-btn')
                   span 全部展开
