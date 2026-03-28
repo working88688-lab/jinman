@@ -970,7 +970,7 @@
 
 .detail-comment-item__name {
   font-weight: 600;
-  font-size: 18px;
+  font-size: 16px;
   line-height: 32px;
   letter-spacing: 0.005em;
   color: #333;
@@ -982,19 +982,315 @@
 .detail-comment-item__time {
   margin-top: 0;
   font-weight: 400;
-  font-size: 14px;
+  font-size: 13px;
   line-height: 24px;
   color: #999999;
 }
 
-/* 与头像行间距 10px；正文左缘与昵称起始对齐（头像 44px + 间距 12px） */
+/* 与头像行间距 10px */
 .detail-comment-item__text {
   margin-top: 10px;
-  margin-left: 56px;
   font-weight: 400;
   font-size: 14px;
   line-height: 20px;
   letter-spacing: 0;
   color: #333333;
   word-break: break-word;
+}
+
+/* ========== 详情页「热门推荐」（封面角标 + 标题单行，纯 CSS） ========== */
+
+.detail-page__hot {
+  margin-top: 24px;
+  color: var(--dx-font1-color, #333);
+}
+
+.detail-page__hot-head {
+  display: flex;
+  align-items: center;
+  padding: 8px 0 12px;
+}
+
+@media (min-width: 768px) {
+  .detail-page__hot-head {
+    padding: 12px 0 12px;
+  }
+}
+
+.detail-page__hot-head-icon {
+  flex-shrink: 0;
+  margin-right: 8px;
+  display: block;
+}
+
+.detail-page__hot-title {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.25;
+}
+
+/* H5 三列，与原先 .dx-novel-list 一致 */
+.detail-page__hot-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+}
+
+@media (min-width: 768px) {
+  .detail-page__hot-list {
+    gap: 16px;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1024px) {
+  .detail-page__hot-list {
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+  }
+}
+
+.detail-page__hot-list > li {
+  min-width: 0;
+}
+
+.detail-page__hot-card {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+
+.detail-page__hot-aspect {
+  position: relative;
+  width: 100%;
+  padding-bottom: calc(16 / 11 * 100%);
+}
+
+.detail-page__hot-poster {
+  position: absolute;
+  inset: 0;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.detail-page__hot-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 4px;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.detail-page__hot-card:hover .detail-page__hot-img {
+  transform: scale(1.25);
+}
+
+.detail-page__hot-badges {
+  position: absolute;
+  left: 0;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  box-sizing: border-box;
+  width: 100%;
+  padding: 4px 2px;
+  pointer-events: none;
+}
+
+@media (min-width: 768px) {
+  .detail-page__hot-badges {
+    padding: 8px;
+  }
+}
+
+.detail-page__hot-badges--top {
+  top: 0;
+  justify-content: flex-start;
+  gap: 0;
+}
+
+.detail-page__hot-badge {
+  font-size: 12px;
+  line-height: 1.2;
+  padding: 2px 8px;
+  color: #fff;
+  border-radius: 50px;
+  margin-right: 8px;
+}
+
+.detail-page__hot-badge--primary {
+  background: var(--detail-accent);
+}
+
+.detail-page__hot-badge--muted {
+  background: linear-gradient(to right, #73726d, #333);
+}
+
+.detail-page__hot-body {
+  margin-top: 6px;
+  font-size: 14px;
+  line-height: 1.35;
+}
+
+.detail-page__hot-name {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--dx-base2-color, #333);
+}
+
+/* ========== 视频详情「热门推荐」（栅格同 .dx-video-list：2 / 3 / 4 列；标题 + 时间/浏览/点赞） ========== */
+
+.video-detail-page__hot {
+  margin-top: 24px;
+  color: var(--dx-font1-color, #333);
+}
+
+.video-detail-page__hot-head {
+  display: flex;
+  align-items: center;
+  padding: 8px 0 12px;
+}
+
+@media (min-width: 768px) {
+  .video-detail-page__hot-head {
+    padding: 12px 0 12px;
+  }
+}
+
+.video-detail-page__hot-head-icon {
+  flex-shrink: 0;
+  margin-right: 8px;
+  display: block;
+}
+
+.video-detail-page__hot-title {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.25;
+}
+
+/* 与 .dx-video-list 一致 */
+.video-detail-page__hot-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+}
+
+@media (min-width: 768px) {
+  .video-detail-page__hot-list {
+    gap: 16px;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1024px) {
+  .video-detail-page__hot-list {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+.video-detail-page__hot-list > li {
+  min-width: 0;
+}
+
+.video-detail-page__hot-card {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+
+.video-detail-page__hot-aspect {
+  position: relative;
+  width: 100%;
+  padding-bottom: calc(9 / 16 * 100%);
+}
+
+.video-detail-page__hot-poster {
+  position: absolute;
+  inset: 0;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.video-detail-page__hot-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 4px;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.video-detail-page__hot-card:hover .video-detail-page__hot-img {
+  transform: scale(1.25);
+}
+
+.video-detail-page__hot-body {
+  margin-top: 6px;
+  font-size: 14px;
+  line-height: 1.35;
+}
+
+/* 标题最多两行省略；下一行 meta 与列表页 VideoItem 信息区一致 */
+.video-detail-page__hot-name {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--dx-base2-color, #333);
+}
+
+.video-detail-page__hot-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-top: 4px;
+  font-size: 12px;
+  line-height: 1.3;
+  color: var(--dx-base3-color, #999);
+}
+
+.video-detail-page__hot-time {
+  flex-shrink: 0;
+}
+
+.video-detail-page__hot-stats {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  gap: 12px;
+}
+
+.video-detail-page__hot-stat {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.video-detail-page__hot-stat-icon {
+  width: 12px;
+  height: 12px;
+  flex-shrink: 0;
+  color: var(--dx-base3-color, #999);
+}
+
+@media (min-width: 768px) {
+  .video-detail-page__hot-stat-icon {
+    width: 16px;
+    height: 16px;
+  }
 }
