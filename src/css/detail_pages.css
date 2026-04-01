@@ -569,10 +569,30 @@
   width: 100%;
 }
 
-/* 与原先 max-w-full max-h-full 一致，不依赖 Tailwind */
 .video-detail-page__aspect-wrap {
+  position: relative;
+  width: 100%;
   max-width: 100%;
-  max-height: 100%;
+}
+.video-detail-page__aspect-wrap::before {
+  content: '';
+  display: block;
+  padding-top: 56.25%; /* 9 / 16 */
+}
+
+.player-container {
+  position: absolute;
+  inset: 0;
+}
+
+/* 介于 768px 和 1048px 之间时，高度固定，不再随宽度继续缩放 */
+@media (min-width: 768px) and (max-width: 1047.98px) {
+  .video-detail-page__aspect-wrap {
+    height: 480px;       /* 根据当前视觉效果定一个固定高度 */
+  }
+  .video-detail-page__aspect-wrap::before {
+    display: none;       /* 关闭 16:9 padding 技巧，避免叠加高度 */
+  }
 }
 
 .video-detail-page__mse {
@@ -588,6 +608,14 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+
+/* 约束 xgplayer 自带的封面层，让它也只在容器内铺满，不再把整体高度拉长 */
+.video-detail-page__mse .xgplayer-poster {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
 }
 
 .video-detail-page__title-m {
