@@ -1,4 +1,7 @@
 extends includes/layout.pug
+
+include includes/mixin/dx-detail-info-share.pug
+
 block css
   link(rel='stylesheet' href='/static/frontend/css/new_searchbox.css')
   link(rel='stylesheet' href='/static/frontend/css/detail_pages.css')
@@ -164,6 +167,8 @@ block content
                       span(class='detail-page__hot-badge detail-page__hot-badge--muted') 连载中
                 div(class='detail-page__hot-body')
                   div(class='detail-page__hot-name') 易孕娇妻被宠哭了
+
+      +DetailInfoShare()
 
 block dialog
   include includes/dialog/dx-reply-dialog.pug

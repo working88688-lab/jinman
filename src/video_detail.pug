@@ -1,5 +1,7 @@
 extends includes/layout.pug
 
+include includes/mixin/dx-detail-info-share.pug
+
 block css
   link(rel='stylesheet' href='/static/frontend/css/lib/xgplayer.css')
   link(rel='stylesheet' href='/static/frontend/css/view_main.css?v=' + css_assets_version)
@@ -199,6 +201,8 @@ block content
                         svg(class='video-detail-page__hot-stat-icon' aria-hidden='true')
                           use(href='/static/frontend/icons/icons.svg#like')
                         span 259
+
+      +DetailInfoShare()
 
 block dialog
   include includes/dialog/dx-reply-dialog.pug
