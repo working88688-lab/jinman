@@ -1,0 +1,47 @@
+mixin DetailInfoShare(opts = {})
+  -
+    var o = Object.assign({
+      freeUrl: 'https://085c.wwgigql.cc',
+      publishUrl: 'https://18mh.co',
+      permanentUrl: 'https://18mh.net',
+      tgGroupUrl: 'https://t.me/JMTTSQ',
+      tgChannelUrl: 'https://t.me/EXE_AD',
+      xUrl: 'https://x.com/18mh1671',
+      email: '18mh.net@gmail.com'
+    }, opts || {})
+
+  section(class='detail-info-share' aria-label='站点地址与分享')
+    div(class='detail-info-share__list')
+      div(class='detail-info-share__item')
+        span(class='detail-info-share__label') 免翻墙地址：
+        a(class='detail-info-share__link' href=o.freeUrl target='_blank' rel='noopener noreferrer')= o.freeUrl
+
+      div(class='detail-info-share__item')
+        span(class='detail-info-share__label') 地址发布：
+        a(class='detail-info-share__link' href=o.publishUrl target='_blank' rel='noopener noreferrer')= o.publishUrl
+        span(class='detail-info-share__hint') 务必牢记，防止迷路
+
+      div(class='detail-info-share__item')
+        span(class='detail-info-share__label') 永久地址：
+        a(class='detail-info-share__link' href=o.permanentUrl target='_blank' rel='noopener noreferrer')= o.permanentUrl
+        span(class='detail-info-share__hint') 谷歌浏览器搜索 “18mh.net”
+
+      div(class='detail-info-share__item')
+        span(class='detail-info-share__label') TG 交流群：
+        a(class='detail-info-share__link' href=o.tgGroupUrl target='_blank' rel='noopener noreferrer') 点击加入官方 TG 群
+
+      div(class='detail-info-share__item')
+        span(class='detail-info-share__label') 官方邮箱：
+        a(class='detail-info-share__link detail-info-share__link--blue' href=('mailto:' + o.email) target='_blank' rel='noopener noreferrer')= o.email
+        span(class='detail-info-share__hint') 点击邮箱地址，发送任意邮件即可获取最新地址
+
+    div(class='detail-info-share__share-title') 点击分享给你的好友！
+    div(class='detail-info-share__icons' aria-label='分享渠道')
+      button(type='button' class='detail-info-share__icon detail-info-share__icon--copy btn-share' data-clipboard-text=o.permanentUrl)
+        span(class='detail-info-share__icon-text') 复制
+      a(class='detail-info-share__icon detail-info-share__icon--x' href=o.xUrl target='_blank' rel='noopener noreferrer' aria-label='X')
+        svg(class='detail-info-share__svg' aria-hidden='true')
+          use(href='/static/frontend/icons/icons.svg#x')
+      a(class='detail-info-share__icon detail-info-share__icon--tg' href=o.tgChannelUrl target='_blank' rel='noopener noreferrer' aria-label='Telegram')
+        svg(class='detail-info-share__svg' aria-hidden='true')
+          use(href='/static/frontend/icons/icons.svg#telegram')
