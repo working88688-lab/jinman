@@ -328,6 +328,7 @@
 }
 
 .detail-page__actions-bar>*+* {
+.detail-page__actions-bar>*+* {
   border-left: 1px solid var(--dx-border-color);
 }
 
@@ -459,6 +460,28 @@
 
 .detail-page__panel--hidden {
   display: none !important;
+}
+
+/* 小说 / 漫画评论面板：不渲染占位格时，用内边距模拟「3 格留白」效果 */
+.novel-panel-comments.detail-page__panel {
+  padding-bottom: 192px;
+}
+
+@media (min-width: 768px) {
+  .novel-panel-comments.detail-page__panel {
+    padding-bottom: 184px;
+  }
+}
+
+/* 小说 / 漫画目录面板：不渲染章节占位格时，用内边距模拟「3 格留白」效果 */
+.novel-panel-catalog.detail-page__panel {
+  padding-bottom: 152px;
+}
+
+@media (min-width: 768px) {
+  .novel-panel-catalog.detail-page__panel {
+    padding-bottom: 164px;
+  }
 }
 
 .detail-page__catalog-list {
@@ -962,6 +985,17 @@
   background: #fff;
 }
 
+/* 视频详情：不在模板中渲染占位格时，用内边距模拟「3 格留白」效果 */
+.video-detail-page__comment-body {
+  padding-bottom: 192px;
+}
+
+@media (min-width: 768px) {
+  .video-detail-page__comment-body {
+    padding-bottom: 184px;
+  }
+}
+
 .video-detail-page__tabs-wrap {
   margin-top: 30px;
 }
@@ -1072,6 +1106,51 @@
   letter-spacing: 0;
   color: #333333;
   word-break: break-word;
+}
+
+/* 「全部展开」按钮下方固定 3 格留白（与列表 gap 对齐） */
+.detail-page__tail-slots {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-top: 22px;
+  gap: 10px;
+}
+
+.detail-page__tail-slots--comments {
+  gap: 30px;
+}
+
+@media (min-width: 768px) {
+  .detail-page__tail-slots--comments {
+    gap: 20px;
+  }
+}
+
+.detail-page__tail-slot--chapter {
+  min-height: 44px;
+  border-radius: 4px;
+  flex-shrink: 0;
+  box-sizing: border-box;
+}
+
+@media (min-width: 768px) {
+  .detail-page__tail-slot--chapter {
+    min-height: 48px;
+  }
+}
+
+.detail-page__tail-slot--comment {
+  min-height: 44px;
+  border-radius: 5px;
+  flex-shrink: 0;
+  box-sizing: border-box;
+}
+
+@media (min-width: 768px) {
+  .detail-page__tail-slot--comment {
+    min-height: 48px;
+  }
 }
 
 /* ========== 详情页「热门推荐」（封面角标 + 标题单行，纯 CSS） ========== */
@@ -1370,6 +1449,524 @@
     height: 16px;
   }
 }
+
+/*
+ * Purpose: novel detail volume catalogue styles
+ */
+
+.detail-page__catalog-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.detail-page__catalog-list>li {
+  list-style: none;
+}
+
+.detail-page__catalog-volume-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.detail-page__volume-card {
+  border: 1px solid var(--detail-border-soft, #f5f5f5);
+  border-radius: 8px;
+  background: #fff;
+  overflow: hidden;
+  transition: border-color .2s ease, box-shadow .2s ease;
+}
+
+.detail-page__volume-card.is-open {
+  border-color: rgba(236, 99, 93, .22);
+  box-shadow: 0 6px 20px rgba(236, 99, 93, .08);
+}
+
+.detail-page__volume-head {
+  width: 100%;
+  min-height: 52px;
+  padding: 0 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  background: #fff;
+  border: 0;
+  cursor: pointer;
+}
+
+.detail-page__volume-card.is-open .detail-page__volume-head {
+  background: rgba(236, 99, 93, .04);
+}
+
+.detail-page__volume-toggle {
+  flex: 1 1 0%;
+  min-width: 0;
+  font-weight: 600;
+  font-size: 15px;
+  line-height: 1.4;
+  color: #333;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.detail-page__volume-arrow {
+  width: 28px;
+  height: 28px;
+  border-radius: 9999px;
+  background: #f7f7f7;
+  color: #999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.detail-page__volume-card.is-open .detail-page__volume-arrow {
+  background: rgba(236, 99, 93, .12);
+  color: var(--detail-accent, #ec635d);
+}
+
+.detail-page__volume-arrow svg {
+  transition: transform .2s ease;
+}
+
+.detail-page__catalog-volume-list .detail-page__catalog-list {
+  padding: 0 12px 12px;
+  gap: 8px;
+}
+
+.detail-page__chapter-link {
+  height: 44px;
+  border-radius: 4px;
+  border: 1px solid var(--detail-border-soft, #f5f5f5);
+  padding: 0 14px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  font-size: 14px;
+  color: var(--detail-chapter-text, #444);
+  text-decoration: none;
+}
+
+@media (min-width: 768px) {
+  .detail-page__chapter-link {
+    height: 48px;
+    padding: 0 16px;
+    font-size: 16px;
+  }
+}
+
+.detail-page__chapter-link>span:first-child {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.detail-page__chapter-meta {
+  margin-left: auto;
+  height: 24px;
+  padding: 0 10px;
+  border-radius: 9999px;
+  background: rgba(236, 99, 93, .12);
+  color: var(--detail-accent, #ec635d);
+  font-size: 12px;
+  line-height: 24px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+/*
+ * Extracted from: storage/static/frontend/css/detail_pages.css
+ * Purpose: mv detail player layout styles
+ */
+
+@media (min-width: 768px) {
+  .video-detail-page__aspect-wrap::before {
+    padding-top: 76.5%;
+  }
+}
+
+/* ========== 详情页底部「地址 / 分享」组件（小说 / 漫画 / 视频共用） ========== */
+
+.detail-info-share {
+  margin-top: 24px;
+  border: 1px solid var(--detail-border-soft);
+  border-radius: 10px;
+  background: #fff;
+  padding: 14px 14px 12px;
+  color: #000000;
+}
+
+@media (min-width: 768px) {
+  .detail-info-share {
+    padding: 16px 18px 14px;
+  }
+}
+
+.detail-info-share__list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  font-size: 14px;
+  line-height: 1.45;
+  font-weight: 400;
+}
+
+.detail-info-share__item {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  align-items: baseline;
+}
+
+.detail-info-share__label {
+  color: #000000;
+  font-weight: 600;
+  flex-shrink: 0;
+}
+
+.detail-info-share__link {
+  color: #EC635D;
+  text-decoration: none;
+  word-break: break-all;
+  font-weight: 400;
+}
+
+.detail-info-share__link:hover {
+  text-decoration: underline;
+}
+
+.detail-info-share__link--blue {
+  color: #226CFF;
+}
+
+.detail-info-share__hint {
+  color: #000000;
+  font-size: 12px;
+  font-weight: 400;
+}
+
+.detail-info-share__share-title {
+  margin-top: 14px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #000000;
+}
+
+.detail-info-share__icons {
+  margin-top: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.detail-info-share__icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--detail-border-soft);
+  background: #f7f7f7;
+  color: #333;
+  text-decoration: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.detail-info-share__icon:hover {
+  filter: brightness(0.98);
+}
+
+.detail-info-share__icon--copy {
+  background: #2f6df6;
+  border-color: rgba(47, 109, 246, 0.3);
+  color: #fff;
+}
+
+.detail-info-share__icon-text {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+.detail-info-share__svg {
+  width: 22px;
+  height: 22px;
+  display: block;
+}
+
+
+
+/*
+ * Purpose: novel detail volume catalogue styles
+ */
+
+.detail-page__catalog-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.detail-page__catalog-list>li {
+  list-style: none;
+}
+
+.detail-page__catalog-volume-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.detail-page__volume-card {
+  border: 1px solid var(--detail-border-soft, #f5f5f5);
+  border-radius: 8px;
+  background: #fff;
+  overflow: hidden;
+  transition: border-color .2s ease, box-shadow .2s ease;
+}
+
+.detail-page__volume-card.is-open {
+  border-color: rgba(236, 99, 93, .22);
+  box-shadow: 0 6px 20px rgba(236, 99, 93, .08);
+}
+
+.detail-page__volume-head {
+  width: 100%;
+  min-height: 52px;
+  padding: 0 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  background: #fff;
+  border: 0;
+  cursor: pointer;
+}
+
+.detail-page__volume-card.is-open .detail-page__volume-head {
+  background: rgba(236, 99, 93, .04);
+}
+
+.detail-page__volume-toggle {
+  flex: 1 1 0%;
+  min-width: 0;
+  font-weight: 600;
+  font-size: 15px;
+  line-height: 1.4;
+  color: #333;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.detail-page__volume-arrow {
+  width: 28px;
+  height: 28px;
+  border-radius: 9999px;
+  background: #f7f7f7;
+  color: #999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.detail-page__volume-card.is-open .detail-page__volume-arrow {
+  background: rgba(236, 99, 93, .12);
+  color: var(--detail-accent, #ec635d);
+}
+
+.detail-page__volume-arrow svg {
+  transition: transform .2s ease;
+}
+
+.detail-page__catalog-volume-list .detail-page__catalog-list {
+  padding: 0 12px 12px;
+  gap: 8px;
+}
+
+.detail-page__chapter-link {
+  height: 44px;
+  border-radius: 4px;
+  border: 1px solid var(--detail-border-soft, #f5f5f5);
+  padding: 0 14px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  font-size: 14px;
+  color: var(--detail-chapter-text, #444);
+  text-decoration: none;
+}
+
+@media (min-width: 768px) {
+  .detail-page__chapter-link {
+    height: 48px;
+    padding: 0 16px;
+    font-size: 16px;
+  }
+}
+
+.detail-page__chapter-link>span:first-child {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.detail-page__chapter-meta {
+  margin-left: auto;
+  height: 24px;
+  padding: 0 10px;
+  border-radius: 9999px;
+  background: rgba(236, 99, 93, .12);
+  color: var(--detail-accent, #ec635d);
+  font-size: 12px;
+  line-height: 24px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+/*
+ * Extracted from: storage/static/frontend/css/detail_pages.css
+ * Purpose: mv detail player layout styles
+ */
+
+@media (min-width: 768px) {
+  .video-detail-page__aspect-wrap::before {
+    padding-top: 76.5%;
+  }
+}
+
+/* ========== 详情页底部「地址 / 分享」组件（小说 / 漫画 / 视频共用） ========== */
+
+.detail-info-share {
+  margin-top: 24px;
+  border: 1px solid var(--detail-border-soft);
+  border-radius: 10px;
+  background: #fff;
+  padding: 14px 14px 12px;
+  color: #000000;
+}
+
+@media (min-width: 768px) {
+  .detail-info-share {
+    padding: 16px 18px 14px;
+  }
+}
+
+.detail-info-share__list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  font-size: 14px;
+  line-height: 1.45;
+  font-weight: 400;
+}
+
+.detail-info-share__item {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  align-items: baseline;
+}
+
+.detail-info-share__label {
+  color: #000000;
+  font-weight: 600;
+  flex-shrink: 0;
+}
+
+.detail-info-share__link {
+  color: #EC635D;
+  text-decoration: none;
+  word-break: break-all;
+  font-weight: 400;
+}
+
+.detail-info-share__link:hover {
+  text-decoration: underline;
+}
+
+.detail-info-share__link--blue {
+  color: #226CFF;
+}
+
+.detail-info-share__hint {
+  color: #000000;
+  font-size: 12px;
+  font-weight: 400;
+}
+
+.detail-info-share__share-title {
+  margin-top: 14px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #000000;
+}
+
+.detail-info-share__icons {
+  margin-top: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.detail-info-share__icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--detail-border-soft);
+  background: #f7f7f7;
+  color: #333;
+  text-decoration: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.detail-info-share__icon:hover {
+  filter: brightness(0.98);
+}
+
+.detail-info-share__icon--copy {
+  background: #2f6df6;
+  border-color: rgba(47, 109, 246, 0.3);
+  color: #fff;
+}
+
+.detail-info-share__icon-text {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+.detail-info-share__svg {
+  width: 22px;
+  height: 22px;
+  display: block;
+}
+
+
 
 /*
  * Purpose: novel detail volume catalogue styles
