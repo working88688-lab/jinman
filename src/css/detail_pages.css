@@ -124,12 +124,61 @@
     height: 256px;
     border-radius: 4px;
     overflow: hidden;
+    position: relative;
 }
 
 .detail-page__poster-img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+}
+
+.detail-page__poster-stats {
+    position: absolute;
+    left: 12px;
+    bottom: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    z-index: 1;
+}
+
+/* 视频详情：右上角，PC/H5 都横排 */
+.video-detail-page__poster-stats.detail-page__poster-stats {
+    left: auto;
+    right: 12px;
+    top: 12px;
+    bottom: auto;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+}
+
+.detail-page__poster-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 3px 10px;
+    border-radius: 999px;
+    background: rgba(0, 0, 0, 0.35);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    color: #fff;
+    line-height: 1;
+    user-select: none;
+}
+
+.detail-page__poster-pill-icon {
+    width: 16px;
+    height: 16px;
+    flex: 0 0 auto;
+}
+
+.detail-page__poster-pill-text {
+    font-size: 12px;
+    font-weight: 400;
+    letter-spacing: 0.2px;
+    white-space: nowrap;
 }
 
 @media (max-width: 767px) {
@@ -149,6 +198,20 @@
         display: block;
         width: 100%;
         height: 100%;
+    }
+
+    .detail-page__poster-stats {
+        flex-direction: row;
+        align-items: center;
+        gap: 10px;
+        top: auto;
+        bottom: 12px;
+    }
+
+    .video-detail-page__poster-stats.detail-page__poster-stats {
+        top: 12px;
+        bottom: auto;
+        right: 12px;
     }
 }
 
