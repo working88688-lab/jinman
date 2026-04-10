@@ -397,6 +397,11 @@
         min-width: 0;
     }
 
+    /* H5：底部三项按 1:1:2 分配宽度（类型 / 连载 / 更新） */
+    .detail-page__meta-row > .detail-page__meta-item:nth-child(4) {
+        flex: 2 1 0;
+    }
+
     .detail-page__meta-row > .detail-page__meta-item:nth-child(1) {
         justify-content: flex-start;
         text-align: left;
@@ -648,6 +653,12 @@
     gap: 12px;
 }
 
+@media (min-width: 768px) {
+    .detail-page__tags {
+        margin-bottom: 12px;
+    }
+}
+
 .detail-page__tag {
     width: 101px;
     height: 30px;
@@ -788,7 +799,7 @@
 
 @media (min-width: 768px) {
     .novel-panel-catalog.detail-page__panel {
-        padding-bottom: 164px;
+        padding-bottom: 106px;
     }
 }
 
@@ -1340,6 +1351,12 @@
     gap: 12px;
 }
 
+@media (min-width: 768px) {
+    .video-detail-page__tags {
+        margin-bottom: 12px;
+    }
+}
+
 .video-detail-page__tag {
     width: 101px;
     height: 30px;
@@ -1407,7 +1424,7 @@
 
 @media (min-width: 768px) {
     .video-detail-page__comment-body {
-        padding-bottom: 184px;
+        padding-bottom: 126px;
     }
 }
 
