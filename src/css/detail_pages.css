@@ -143,13 +143,9 @@
     z-index: 1;
 }
 
-/* 视频详情：右上角，PC/H5 都横排 */
-.video-detail-page__poster-stats.detail-page__poster-stats {
-    left: auto;
-    right: 12px;
-    top: 12px;
-    bottom: auto;
-    flex-direction: row;
+/* 视频详情：顶部信息条热度信息（H5/PC 共用） */
+.video-detail-page__meta-stats {
+    display: inline-flex;
     align-items: center;
     gap: 10px;
 }
@@ -208,11 +204,25 @@
         bottom: 12px;
     }
 
-    .video-detail-page__poster-stats.detail-page__poster-stats {
-        top: 12px;
-        bottom: auto;
-        right: 12px;
+    /* 视频详情 H5：热度 pill 字更小、间距更紧 */
+    .video-detail-page__meta-m .video-detail-page__meta-stats {
+        gap: 6px;
     }
+
+    .video-detail-page__meta-m .video-detail-page__meta-stats .detail-page__poster-pill {
+        gap: 3px;
+        padding: 2px 8px;
+    }
+
+    .video-detail-page__meta-m .video-detail-page__meta-stats .detail-page__poster-pill-icon {
+        width: 14px;
+        height: 14px;
+    }
+
+    .video-detail-page__meta-m .video-detail-page__meta-stats .detail-page__poster-pill-text {
+        font-size: 11px;
+    }
+
 }
 
 .detail-page__rating-pc {

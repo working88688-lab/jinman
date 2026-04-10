@@ -32,15 +32,6 @@ block content
             div(class='player-container')
               div(id='mse' class='video-detail-page__mse' data-url='https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8' data-poster='https://pic.shedtgs.cn/upload/upload/20231103/2023110315282821878.jpeg')
                 img(class='mse-poster video-detail-page__poster' src='https://pics7.baidu.com/feed/6a600c338744ebf87432dea40355a33b6159a72c.jpeg@f_auto?token=deda06e5865a3bbedf7aa1d482d020d1' alt='poster')
-                div(class='video-detail-page__poster-stats detail-page__poster-stats' aria-label='热度信息')
-                  div(class='detail-page__poster-pill')
-                    svg(class='detail-page__poster-pill-icon' width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true")
-                      path(d="M10.8854 3.19287C9.85383 3.19287 8.64742 4.3624 8.00102 5.11568C7.35477 4.36225 6.14836 3.19287 5.1168 3.19287C3.2907 3.19287 2.23242 4.61725 2.23242 6.43006C2.23242 8.43818 4.15539 10.564 8.00117 12.8074C11.847 10.564 13.7699 8.48084 13.7699 6.55803C13.7698 4.74506 12.7115 3.19287 10.8854 3.19287Z" fill="white")
-                    span(class='detail-page__poster-pill-text') 999.9M
-                  div(class='detail-page__poster-pill')
-                    svg(class='detail-page__poster-pill-icon' width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true")
-                      path(d="M10.8854 3.19287C9.85383 3.19287 8.64742 4.3624 8.00102 5.11568C7.35477 4.36225 6.14836 3.19287 5.1168 3.19287C3.2907 3.19287 2.23242 4.61725 2.23242 6.43006C2.23242 8.43818 4.15539 10.564 8.00117 12.8074C11.847 10.564 13.7699 8.48084 13.7699 6.55803C13.7698 4.74506 12.7115 3.19287 10.8854 3.19287Z" fill="white")
-                    span(class='detail-page__poster-pill-text') 999.9M
 
       //- PC：类型+更新时间（左） + 评分+操作区（右），同一行
       div(class='video-detail-page__pc-topbar')
@@ -58,6 +49,16 @@ block content
             svg(width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true")
               path(d="M8.00098 1.8335C9.63636 1.83358 11.2049 2.48374 12.3613 3.64014C13.5176 4.79658 14.167 6.36514 14.167 8.00049C14.1669 9.63587 13.5177 11.2044 12.3613 12.3608C11.2049 13.5172 9.63636 14.1664 8.00098 14.1665C6.36563 14.1665 4.79707 13.5171 3.64062 12.3608C2.48423 11.2044 1.83407 9.63587 1.83398 8.00049C1.83398 6.36499 2.48415 4.79661 3.64062 3.64014C4.7971 2.48366 6.36547 1.8335 8.00098 1.8335ZM8.00098 8.00049H8L10 9.25049H10.001L8.23535 8.14697L8.00098 7.99951V8.00049Z" stroke="#666666")
             span 2025-12-16 更新
+
+          div(class='video-detail-page__poster-stats video-detail-page__meta-stats' aria-label='热度信息')
+            div(class='detail-page__poster-pill')
+              svg(class='detail-page__poster-pill-icon' width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true")
+                path(d="M10.8854 3.19287C9.85383 3.19287 8.64742 4.3624 8.00102 5.11568C7.35477 4.36225 6.14836 3.19287 5.1168 3.19287C3.2907 3.19287 2.23242 4.61725 2.23242 6.43006C2.23242 8.43818 4.15539 10.564 8.00117 12.8074C11.847 10.564 13.7699 8.48084 13.7699 6.55803C13.7698 4.74506 12.7115 3.19287 10.8854 3.19287Z" fill="white")
+              span(class='detail-page__poster-pill-text') 999.9M
+            div(class='detail-page__poster-pill')
+              svg(class='detail-page__poster-pill-icon' width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true")
+                path(d="M7.99907 3.8876C3.41873 3.8876 0.990234 8.23123 0.990234 8.23123C0.990234 8.23123 3.61239 12.092 7.99907 12.092C12.3861 12.092 15.0085 8.23123 15.0085 8.23123C15.0085 8.23123 12.8541 3.8876 7.99907 3.8876ZM8.00337 10.4612C6.60673 10.4612 5.47447 9.35638 5.47447 7.99367C5.47447 6.63098 6.60673 5.52609 8.00337 5.52609C9.4 5.52609 10.5323 6.63098 10.5323 7.99367C10.5323 9.35638 9.39999 10.4612 8.00337 10.4612ZM7.99937 6.98747C7.3879 6.98747 6.89222 7.47915 6.89222 8.08549C6.89222 8.69183 7.3879 9.18352 7.99937 9.18352C8.61084 9.18352 9.10652 8.69183 9.10652 8.08549C9.10652 7.47915 8.61084 6.98747 7.99937 6.98747Z" fill="white")
+              span(class='detail-page__poster-pill-text') 999.9M
 
         div(class='video-detail-page__pc-ops')
           div(class='video-detail-page__rating-pc')
@@ -112,6 +113,15 @@ block content
             path(d="M23.3346 13.3333C25.912 13.3333 28.0013 11.244 28.0013 8.66667C28.0013 6.08934 25.912 4 23.3346 4C20.7573 4 18.668 6.08934 18.668 8.66667C18.668 11.244 20.7573 13.3333 23.3346 13.3333Z" stroke="#666666" stroke-width="2" stroke-linejoin="round")
             path(d="M26.668 18.666H20.0013C19.2649 18.666 18.668 19.2629 18.668 19.9993V26.666C18.668 27.4024 19.2649 27.9993 20.0013 27.9993H26.668C27.4044 27.9993 28.0013 27.4024 28.0013 26.666V19.9993C28.0013 19.2629 27.4044 18.666 26.668 18.666Z" stroke="#666666" stroke-width="2" stroke-linejoin="round")
           span 类型名称
+        div(class='video-detail-page__poster-stats video-detail-page__meta-stats' aria-label='热度信息')
+          div(class='detail-page__poster-pill')
+            svg(class='detail-page__poster-pill-icon' width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true")
+              path(d="M10.8854 3.19287C9.85383 3.19287 8.64742 4.3624 8.00102 5.11568C7.35477 4.36225 6.14836 3.19287 5.1168 3.19287C3.2907 3.19287 2.23242 4.61725 2.23242 6.43006C2.23242 8.43818 4.15539 10.564 8.00117 12.8074C11.847 10.564 13.7699 8.48084 13.7699 6.55803C13.7698 4.74506 12.7115 3.19287 10.8854 3.19287Z" fill="white")
+            span(class='detail-page__poster-pill-text') 999.9M
+          div(class='detail-page__poster-pill')
+            svg(class='detail-page__poster-pill-icon' width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true")
+              path(d="M7.99907 3.8876C3.41873 3.8876 0.990234 8.23123 0.990234 8.23123C0.990234 8.23123 3.61239 12.092 7.99907 12.092C12.3861 12.092 15.0085 8.23123 15.0085 8.23123C15.0085 8.23123 12.8541 3.8876 7.99907 3.8876ZM8.00337 10.4612C6.60673 10.4612 5.47447 9.35638 5.47447 7.99367C5.47447 6.63098 6.60673 5.52609 8.00337 5.52609C9.4 5.52609 10.5323 6.63098 10.5323 7.99367C10.5323 9.35638 9.39999 10.4612 8.00337 10.4612ZM7.99937 6.98747C7.3879 6.98747 6.89222 7.47915 6.89222 8.08549C6.89222 8.69183 7.3879 9.18352 7.99937 9.18352C8.61084 9.18352 9.10652 8.69183 9.10652 8.08549C9.10652 7.47915 8.61084 6.98747 7.99937 6.98747Z" fill="white")
+            span(class='detail-page__poster-pill-text') 999.9M
         div(class='video-detail-page__meta-time')
           svg(width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg")
             path(d="M8.00098 1.8335C9.63636 1.83358 11.2049 2.48374 12.3613 3.64014C13.5176 4.79658 14.167 6.36514 14.167 8.00049C14.1669 9.63587 13.5177 11.2044 12.3613 12.3608C11.2049 13.5172 9.63636 14.1664 8.00098 14.1665C6.36563 14.1665 4.79707 13.5171 3.64062 12.3608C2.48423 11.2044 1.83407 9.63587 1.83398 8.00049C1.83398 6.36499 2.48415 4.79661 3.64062 3.64014C4.7971 2.48366 6.36547 1.8335 8.00098 1.8335ZM8.00098 8.00049H8L10 9.25049H10.001L8.23535 8.14697L8.00098 7.99951V8.00049Z" stroke="#666666")
