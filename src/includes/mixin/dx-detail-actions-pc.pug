@@ -1,0 +1,25 @@
+include dx-action-icons-placeholder.pug
+
+mixin DetailActionsPc(options)
+  -
+    var _opt = options || {};
+    var _comment = _opt.comment || '评论评分';
+    var _fav = _opt.favorite || '收藏';
+    var _share = _opt.share || '分享';
+    var _report = _opt.report || '投诉';
+  div(class='detail-page__actions-pc')
+    button(type='button' class='detail-page__action-btn' data-action='comment')
+      +ActionIconComment()
+      span(class='detail-page__action-text')= _comment
+    span(class='detail-page__action-sep' aria-hidden='true')
+    button(type='button' class='detail-page__action-btn' data-action='favorite')
+      +ActionIconFavorite()
+      span(class='detail-page__action-text')= _fav
+    span(class='detail-page__action-sep' aria-hidden='true')
+    button(type='button' class='detail-page__action-btn' data-action='share')
+      +ActionIconShare()
+      span(class='detail-page__action-text')= _share
+    span(class='detail-page__action-sep' aria-hidden='true')
+    button(type='button' class='detail-page__action-btn' data-action='report')
+      +ActionIconReport()
+      span(class='detail-page__action-text')= _report

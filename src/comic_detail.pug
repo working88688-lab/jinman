@@ -1,6 +1,9 @@
 extends includes/layout.pug
 
 include includes/mixin/dx-detail-info-share.pug
+include includes/mixin/dx-play-icon-asset.pug
+include includes/mixin/dx-catalog-play-icon.pug
+include includes/mixin/dx-detail-actions-pc.pug
 
 block css
   link(rel='stylesheet' href='/static/frontend/css/new_searchbox.css')
@@ -16,6 +19,7 @@ block header
   })
 block nav
   +Nav
+
 
 block content
 
@@ -54,12 +58,64 @@ block content
                       use(href='/static/frontend/icons/icons.svg#star_red')
                     svg(class='detail-page__star-icon')
                       use(href='/static/frontend/icons/icons.svg#star_icon')
+                  div(class='detail-page__rating-score') 9.4
                   div(class='detail-page__rating-meta') 共 999,999 人参与评分
 
           div(class='detail-page__body')
             div(class='dx-title detail-page__title') 作品名称作品名称作品名称作品名称作品
 
+            div(class='detail-page__meta-row')
+              div(class='detail-page__meta-item')
+                svg(width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true")
+                  path(fill-rule="evenodd" clip-rule="evenodd" d="M6.97962 2.50362H13.02C13.7297 2.46734 14.4252 2.70517 14.953 3.16461C15.4808 3.62404 15.7975 4.26732 15.8331 4.95247V16.6637C15.8341 16.8982 15.7326 17.1223 15.5536 17.2808C15.3746 17.4394 15.1346 17.5177 14.8926 17.4966C14.6805 17.4966 14.4743 17.4293 14.3058 17.305L10.5694 14.5647C10.2165 14.3092 9.73137 14.3092 9.37853 14.5647L5.67662 17.305C5.51281 17.4259 5.31324 17.493 5.10709 17.4966C4.8651 17.5177 4.6251 17.4394 4.44606 17.2808C4.26702 17.1223 4.16552 16.8982 4.16651 16.6637V4.95247C4.2022 4.26732 4.51887 3.62404 5.04665 3.16461C5.57443 2.70517 6.26991 2.46734 6.97962 2.50362ZM11.3719 13.5734L14.5215 15.9057L14.5043 4.95247C14.4226 4.22628 13.7571 3.69466 13.0028 3.75303H6.96236C6.20804 3.69466 5.54255 4.22628 5.46089 4.95247V15.9057L8.61053 13.5734C9.4261 12.9736 10.5563 12.9736 11.3719 13.5734Z" fill="#9EA2AA")
+                span(class='detail-page__meta-text--accent') 类型名称
+              div(class='detail-page__meta-item')
+                svg(width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true")
+                  path(fill-rule="evenodd" clip-rule="evenodd" d="M16.3168 13.9249L16.5168 14.8749C16.7064 15.6962 16.5192 16.5592 16.0065 17.2283C15.4939 17.8974 14.7092 18.3026 13.8668 18.3332H6.13349C5.29114 18.3026 4.50647 17.8974 3.99378 17.2283C3.4811 16.5592 3.29397 15.6962 3.48349 14.8749L3.68349 13.9249C3.91352 12.6388 5.01901 11.6938 6.32516 11.6665H13.6752C14.9813 11.6938 16.0868 12.6388 16.3168 13.9249ZM13.8668 17.0749C14.29 17.07 14.6882 16.8739 14.9502 16.5415V16.5499C15.2716 16.1467 15.3968 15.6213 15.2918 15.1165L15.0918 14.1665C14.9809 13.4625 14.3874 12.9353 13.6752 12.9082H6.32516C5.61297 12.9353 5.01947 13.4625 4.9085 14.1665L4.7085 15.1165C4.60613 15.6187 4.73121 16.1404 5.05016 16.5415C5.31211 16.8739 5.71034 17.07 6.1335 17.0749H13.8668Z" fill="#9EA2AA")
+                  path(fill-rule="evenodd" clip-rule="evenodd" d="M10.4168 9.99985H9.58348C7.74253 9.99985 6.25015 8.50747 6.25015 6.66652V4.46652C6.24793 3.72323 6.54221 3.00975 7.0678 2.48416C7.59338 1.95858 8.30686 1.66429 9.05015 1.66652H10.9501C11.6934 1.66429 12.4069 1.95858 12.9325 2.48416C13.4581 3.00975 13.7524 3.72323 13.7501 4.46652V6.66652C13.7501 8.50747 12.2578 9.99985 10.4168 9.99985ZM9.05015 2.91652C8.19411 2.91652 7.50015 3.61048 7.50015 4.46652V6.66652C7.50015 7.81711 8.43289 8.74985 9.58348 8.74985H10.4168C11.5674 8.74985 12.5001 7.81711 12.5001 6.66652V4.46652C12.5001 4.05543 12.3368 3.66118 12.0462 3.3705C11.7555 3.07982 11.3612 2.91652 10.9501 2.91652H9.05015Z" fill="#9EA2AA")
+                span(class='detail-page__meta-text--accent') 作者名称
+              div(class='detail-page__meta-item')
+                svg(width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg")
+                  path(d="M3.51855 4.07227C3.779 3.02804 4.89544 2.37333 5.96484 2.75293L6.40039 2.90723L6.85449 3.07422C9.11507 3.92809 11.2368 5.11388 13.1494 6.59375C13.3641 6.75991 13.5386 6.97307 13.6582 7.2168C13.7777 7.46049 13.8398 7.72858 13.8398 8C13.8398 8.27144 13.7778 8.5395 13.6582 8.7832C13.5386 9.02693 13.3641 9.24009 13.1494 9.40625C11.2368 10.8861 9.11506 12.0719 6.85449 12.9258L6.40039 13.0928L5.96484 13.2471C4.89552 13.6266 3.77908 12.9718 3.51855 11.9277L3.47852 11.7139C3.15822 9.24839 3.15822 6.75161 3.47852 4.28613L3.51855 4.07227Z" stroke="#666666")
+                span 连载中
+              div(class='detail-page__meta-item')
+                svg(width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg")
+                  path(d="M8.00098 1.8335C9.63636 1.83358 11.2049 2.48374 12.3613 3.64014C13.5176 4.79658 14.167 6.36514 14.167 8.00049C14.1669 9.63587 13.5177 11.2044 12.3613 12.3608C11.2049 13.5172 9.63636 14.1664 8.00098 14.1665C6.36563 14.1665 4.79707 13.5171 3.64062 12.3608C2.48423 11.2044 1.83407 9.63587 1.83398 8.00049C1.83398 6.36499 2.48415 4.79661 3.64062 3.64014C4.7971 2.48366 6.36547 1.8335 8.00098 1.8335ZM8.00098 8.00049H8L10 9.25049H10.001L8.23535 8.14697L8.00098 7.99951V8.00049Z" stroke="#666666")
+                span 2025-12-16 更新
+              div(class='detail-page__meta-item detail-page__meta-item--chapter detail-page__meta-item--chapter-comic')
+                svg(width="16" height="16" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true")
+                  path(fill-rule="evenodd" clip-rule="evenodd" d="M17.9248 2.14999C17.4571 1.6861 16.8252 1.42556 16.1664 1.42499C15.5958 1.42684 15.043 1.62386 14.5998 1.98332L6.79144 8.33332L6.66644 8.45832C5.57813 9.5373 5.3367 11.2069 6.07477 12.55C5.77197 12.4576 5.45794 12.4071 5.14144 12.4C3.30049 12.4 1.80811 13.8924 1.80811 15.7333V17.8167C1.80811 18.507 2.36775 19.0667 3.05811 19.0667H5.14144C6.29861 19.0603 7.3697 18.4543 7.97105 17.4656C8.57241 16.4769 8.61798 15.2471 8.09144 14.2167C8.4245 14.3291 8.77325 14.3882 9.12477 14.3917C10.0477 14.3978 10.9341 14.0313 11.5831 13.375L11.6664 13.2833L18.0581 5.47499C18.8649 4.49375 18.8075 3.06348 17.9248 2.14999ZM5.17477 17.8167H3.09144V15.7333C3.09144 14.5827 4.02418 13.65 5.17477 13.65C6.32537 13.65 7.25811 14.5827 7.25811 15.7333C7.25811 16.8839 6.32537 17.8167 5.17477 17.8167ZM10.7331 12.5L17.1248 4.68332C17.5166 4.19256 17.4771 3.48578 17.033 3.04174C16.589 2.5977 15.8822 2.55819 15.3914 2.94999L7.58311 9.34165C6.71096 10.2115 6.70909 11.6237 7.57894 12.4958C8.44879 13.368 9.86096 13.3698 10.7331 12.5Z" fill="#9EA2AA")
+                  path(d="M10.9998 8.19165L8.49977 10.6917C8.25606 10.9357 8.25606 11.331 8.49977 11.575C8.74379 11.8187 9.13909 11.8187 9.38311 11.575L11.8831 9.07499C12.0503 8.91918 12.1191 8.68452 12.0626 8.46308C12.006 8.24164 11.8331 8.06872 11.6117 8.01217C11.3902 7.95561 11.1556 8.02444 10.9998 8.19165Z" fill="#9EA2AA")
+                span(class='detail-page__meta-text--chapter') 第 x 话 章节名称章节名称
+
+            // PC：作品简介在封面右侧（红框区域）
+            div(class='detail-page__synopsis detail-page__synopsis--pc')
+              div(class='detail-intro__head')
+                span(class='detail-intro__bar' aria-hidden='true')
+                div(class='detail-intro__title') 作品简介
+              div(class='detail-intro__body')
+                div(class='detail-intro__text') 这里是作品简介，字数超过适用「……」显示。这里是作品简介，字数超过适用「……」显示。这里是作品简介，字数超过适用「……」显示。这里是作品简介，字数超过适用「……」显示。
+
+            // PC：阅读按钮 + 操作区在封面右侧
+            div(class='detail-page__cta-row detail-page__cta-row--pc')
+              a(class='btn btn-primary detail-page__read-btn' href='comic_chapter.html?id=1')
+                +PlayIcon({ class: 'detail-page__read-btn-icon' })
+                span(class='detail-page__read-btn-text') 开始阅读
+              +DetailActionsPc()
+
+        // H5：作品简介置于封面+信息区下方
+        div(class='detail-page__synopsis detail-page__synopsis--h5')
+          div(class='detail-intro__head')
+            span(class='detail-intro__bar' aria-hidden='true')
+            div(class='detail-intro__title') 作品简介
+          div(class='detail-intro__body')
+            div(class='detail-intro__text') 这里是作品简介，字数超过适用「……」显示。这里是作品简介，字数超过适用「……」显示。这里是作品简介，字数超过适用「……」显示。这里是作品简介，字数超过适用「……」显示。
+
+        // H5：评分 + 阅读按钮（同一行），下方操作区
+        div(class='detail-page__cta-row detail-page__cta-row--h5')
+          div(class='detail-page__cta-primary')
             div(class='detail-page__rating-m')
+              div(class='detail-page__rating-m-score') 9.4
               div(class='detail-page__stars-row--m')
                 svg(class='detail-page__star-icon')
                   use(href='/static/frontend/icons/icons.svg#star_red')
@@ -71,52 +127,12 @@ block content
                   use(href='/static/frontend/icons/icons.svg#star_red')
                 svg(class='detail-page__star-icon')
                   use(href='/static/frontend/icons/icons.svg#star_icon')
-              div(class='detail-page__rating-m-text') 共 999,999 人参与评分
 
-            div(class='detail-page__meta-row')
-              div(class='detail-page__meta-item')
-                svg(width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true")
-                  path(fill-rule="evenodd" clip-rule="evenodd" d="M6.97962 2.50362H13.02C13.7297 2.46734 14.4252 2.70517 14.953 3.16461C15.4808 3.62404 15.7975 4.26732 15.8331 4.95247V16.6637C15.8341 16.8982 15.7326 17.1223 15.5536 17.2808C15.3746 17.4394 15.1346 17.5177 14.8926 17.4966C14.6805 17.4966 14.4743 17.4293 14.3058 17.305L10.5694 14.5647C10.2165 14.3092 9.73137 14.3092 9.37853 14.5647L5.67662 17.305C5.51281 17.4259 5.31324 17.493 5.10709 17.4966C4.8651 17.5177 4.6251 17.4394 4.44606 17.2808C4.26702 17.1223 4.16552 16.8982 4.16651 16.6637V4.95247C4.2022 4.26732 4.51887 3.62404 5.04665 3.16461C5.57443 2.70517 6.26991 2.46734 6.97962 2.50362ZM11.3719 13.5734L14.5215 15.9057L14.5043 4.95247C14.4226 4.22628 13.7571 3.69466 13.0028 3.75303H6.96236C6.20804 3.69466 5.54255 4.22628 5.46089 4.95247V15.9057L8.61053 13.5734C9.4261 12.9736 10.5563 12.9736 11.3719 13.5734Z" fill="#9EA2AA")
-                span(class='detail-page__meta-text--accent') 类型名称
-              div(class='detail-page__meta-item')
-                svg(width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg")
-                  path(d="M7.86426 1.23047C8.21767 1.23048 8.56255 1.33201 8.8584 1.52148L8.98242 1.6084L9.00879 1.62891L9.32812 1.94824C9.4883 2.08604 9.75237 2.24369 10.0566 2.375C10.3631 2.50724 10.6647 2.59388 10.8848 2.61523H10.8896L11.3623 2.66504H11.3613C12.1561 2.73806 12.8777 3.43348 12.9072 4.2666L12.957 4.73926L12.958 4.74902C12.9777 4.9779 13.0547 5.28555 13.1748 5.59766C13.265 5.8318 13.3719 6.0479 13.4805 6.21973L13.5889 6.37598L13.5957 6.38379L13.6016 6.39258L13.8506 6.74316L13.9395 6.86816C14.3554 7.51148 14.3257 8.37305 13.8506 8.98535L13.8311 9.01074L13.8086 9.03223L13.5117 9.32812C13.374 9.48835 13.2171 9.75269 13.0859 10.0566C12.9537 10.3631 12.8671 10.6647 12.8457 10.8848V10.8896L12.7959 11.3623C12.7222 12.1589 12.0233 12.8815 11.1875 12.9072L10.7285 12.957L10.7178 12.958C10.489 12.9777 10.182 13.0547 9.87012 13.1748C9.55773 13.2951 9.27658 13.4447 9.09082 13.5889L9.08301 13.5957L9.07422 13.6016L8.72363 13.8496C8.07057 14.3565 7.13447 14.3575 6.48145 13.8506L6.45703 13.8311L6.13477 13.5088C5.97424 13.372 5.71246 13.216 5.41113 13.0859C5.10448 12.9536 4.80213 12.867 4.58203 12.8457H4.57812L4.10547 12.7959V12.7949C3.31088 12.7217 2.58901 12.0273 2.55957 11.1943L2.50977 10.7217L2.50879 10.7119C2.4891 10.483 2.41214 10.1754 2.29199 9.86328C2.17177 9.55111 2.02206 9.27062 1.87793 9.08496L1.87109 9.07617L1.60449 8.71582L1.60547 8.71484C1.36298 8.39461 1.23047 8.00434 1.23047 7.60254C1.23057 7.19877 1.36353 6.80641 1.6084 6.48535L1.62891 6.45801L1.65234 6.43457L1.95117 6.13477C2.08811 5.97429 2.24479 5.71277 2.375 5.41113C2.50734 5.10448 2.59393 4.80213 2.61523 4.58203V4.57812L2.66504 4.10547C2.73826 3.31085 3.43361 2.58805 4.2666 2.55859L4.73926 2.50977L4.74902 2.50879L4.93457 2.4834C5.13209 2.4479 5.36371 2.38205 5.59766 2.29199C5.90985 2.17176 6.19031 2.02206 6.37598 1.87793L6.38184 1.87402L6.3877 1.86914L6.75488 1.60156V1.60254C7.07455 1.36151 7.46371 1.23047 7.86426 1.23047ZM9.10742 5.83984C8.41096 6.14457 7.79459 6.67182 7.25879 7.32031C7.00767 7.62428 6.78112 7.95155 6.5752 8.28418H7.39746C7.41828 8.28418 7.51985 8.26857 7.72266 8.03125C7.91475 7.80645 8.11526 7.48198 8.35156 7.0791C8.57052 6.70578 8.81853 6.26496 9.10742 5.83984Z" stroke="#666666")
-                span(class='detail-page__meta-text--accent') 作者名称
-              div(class='detail-page__meta-item')
-                svg(width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg")
-                  path(d="M3.51855 4.07227C3.779 3.02804 4.89544 2.37333 5.96484 2.75293L6.40039 2.90723L6.85449 3.07422C9.11507 3.92809 11.2368 5.11388 13.1494 6.59375C13.3641 6.75991 13.5386 6.97307 13.6582 7.2168C13.7777 7.46049 13.8398 7.72858 13.8398 8C13.8398 8.27144 13.7778 8.5395 13.6582 8.7832C13.5386 9.02693 13.3641 9.24009 13.1494 9.40625C11.2368 10.8861 9.11506 12.0719 6.85449 12.9258L6.40039 13.0928L5.96484 13.2471C4.89552 13.6266 3.77908 12.9718 3.51855 11.9277L3.47852 11.7139C3.15822 9.24839 3.15822 6.75161 3.47852 4.28613L3.51855 4.07227Z" stroke="#666666")
-                span 连载中
-              div(class='detail-page__meta-item')
-                svg(width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg")
-                  path(d="M8.00098 1.8335C9.63636 1.83358 11.2049 2.48374 12.3613 3.64014C13.5176 4.79658 14.167 6.36514 14.167 8.00049C14.1669 9.63587 13.5177 11.2044 12.3613 12.3608C11.2049 13.5172 9.63636 14.1664 8.00098 14.1665C6.36563 14.1665 4.79707 13.5171 3.64062 12.3608C2.48423 11.2044 1.83407 9.63587 1.83398 8.00049C1.83398 6.36499 2.48415 4.79661 3.64062 3.64014C4.7971 2.48366 6.36547 1.8335 8.00098 1.8335ZM8.00098 8.00049H8L10 9.25049H10.001L8.23535 8.14697L8.00098 7.99951V8.00049Z" stroke="#666666")
-                span 2025-12-16 更新
-              div(class='detail-page__meta-item')
-                svg(width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg")
-                  path(d="M2 3C2 2.44772 2.44772 2 3 2H11.4271L14 4.40217V13C14 13.5523 13.5523 14 13 14H3C2.44772 14 2 13.5523 2 13V3Z" stroke="#666666" stroke-linejoin="round")
-                  path(d="M8.0026 2L7.99984 4.46153C7.99984 4.57483 7.8506 4.66667 7.6665 4.66667H4.99984C4.81574 4.66667 4.6665 4.57483 4.6665 4.46153V2H8.0026Z" stroke="#666666" stroke-linejoin="round")
-                  path(d="M3 2H11.4271" stroke="#666666" stroke-linecap="round" stroke-linejoin="round")
-                  path(d="M4.6665 8.66666H11.3332" stroke="#666666" stroke-linecap="round" stroke-linejoin="round")
-                  path(d="M4.6665 11.3333H8.0026" stroke="#666666" stroke-linecap="round" stroke-linejoin="round")
-                span 第 x 话 章节名称章节名称
+            a(class='btn btn-primary detail-page__read-btn' href='comic_chapter.html?id=1')
+              +PlayIcon({ class: 'detail-page__read-btn-icon' })
+              span(class='detail-page__read-btn-text') 开始阅读
 
-            div(class='detail-page__synopsis')
-              div(class='detail-page__synopsis-label-wrap')
-                div(class='detail-page__synopsis-label') 作品简介
-              div(class='detail-page__synopsis-rule')
-              div(class='detail-page__synopsis-text') 这里是作品简介，字数超过适用「……」显示。这里是作品简介，字数超过适用「……」显示。这里是作品简介，字数超过适用「……」显示。这里是作品简介，字数超过适用「……」显示。
-
-            div(class='detail-page__cta-row')
-              a(class='btn btn-primary detail-page__read-btn' href='comic_chapter.html?id=1') 开始阅读
-
-              div(class='detail-page__actions-bar')
-                div(class='detail-page__action-cell flex-center')
-                  +BtnComment
-                div(class='detail-page__action-cell flex-center')
-                  +BtnLike({ type: 3})
-                div(class='detail-page__action-cell flex-center')
-                  +BtnShare
-                div(class='detail-page__action-cell flex-center')
-                  +BtnReport(2)
+          +DetailActionsPc()
 
       div(class='detail-page__tags')
         a(class='detail-page__tag' href="video_list.html?tag=1") #标签
@@ -124,15 +140,13 @@ block content
 
       div(class='detail-page__tabs-wrap')
         div(class='detail-page__tab-bar')
-          div(class='detail-page__tab-btns')
-            button(type='button' class='novel-tab-btn detail-page__tab-btn is-active' data-tab='catalog')
-              span 目录
-              span(class='tab-catalog-count tab-count') (54)
-              span(class='detail-page__tab-underline')
-            button(type='button' class='novel-tab-btn detail-page__tab-btn' data-tab='comments')
-              span 评论
-              span(class='tab-comment-count tab-count') (54)
-              span(class='detail-page__tab-underline')
+          div(class='detail-page__seg-tabs' role='tablist' aria-label='目录与评论')
+            button(type='button' class='novel-tab-btn detail-page__seg-tab is-active' data-tab='catalog' role='tab' aria-selected='true')
+              span(class='detail-page__seg-text') 目录
+              span(class='tab-catalog-count detail-page__seg-count') 54
+            button(type='button' class='novel-tab-btn detail-page__seg-tab' data-tab='comments' role='tab' aria-selected='false')
+              span(class='detail-page__seg-text') 评论
+              span(class='tab-comment-count detail-page__seg-count') 54
           button(type='button' class='detail-page__sort-btn')
             svg(class='detail-page__sort-icon')
               use(href='/static/frontend/icons/icons.svg#sort')
@@ -141,14 +155,36 @@ block content
           div(class='novel-panel novel-panel-catalog detail-page__panel')
             div(class='')
               div(class='detail-page__catalog-list')
-                a(class='detail-page__chapter-link' href='comic_chapter.html?id=1') 第1话 — 标题
-                a(class='detail-page__chapter-link detail-page__chapter-link--current' href='comic_chapter.html?id=2') 第2话 — 标题
-                a(class='detail-page__chapter-link' href='comic_chapter.html?id=3') 第3话 — 标题
+                a(class='detail-page__catalog-item detail-page__catalog-item--current' href='comic_chapter.html?id=1')
+                  div(class='detail-page__catalog-left')
+                    span(class='detail-page__chapter-badge') 第 128 话
+                    span(class='detail-page__chapter-title') 最终决战 — 魔女的觉醒
+                  div(class='detail-page__catalog-right')
+                    span(class='detail-page__chapter-new') NEW
+                    span(class='detail-page__chapter-date') 2025-12-16
+                    span(class='detail-page__chapter-play' aria-hidden='true')
+                      +CatalogPlayIcon({ class: 'detail-page__chapter-play-icon' })
+
+                a(class='detail-page__catalog-item' href='comic_chapter.html?id=2')
+                  div(class='detail-page__catalog-left')
+                    span(class='detail-page__chapter-badge') 第 127 话
+                    span(class='detail-page__chapter-title') 破晓之前的约定
+                  div(class='detail-page__catalog-right')
+                    span(class='detail-page__chapter-date') 2025-12-09
+                    span(class='detail-page__chapter-play' aria-hidden='true')
+                      +CatalogPlayIcon({ class: 'detail-page__chapter-play-icon' })
+
+                a(class='detail-page__catalog-item' href='comic_chapter.html?id=3')
+                  div(class='detail-page__catalog-left')
+                    span(class='detail-page__chapter-badge') 第 126 话
+                    span(class='detail-page__chapter-title') 隐藏的真相浮出水面
+                  div(class='detail-page__catalog-right')
+                    span(class='detail-page__chapter-date') 2025-12-02
+                    span(class='detail-page__chapter-play' aria-hidden='true')
+                      +CatalogPlayIcon({ class: 'detail-page__chapter-play-icon' })
               div(class='detail-page__expand-wrap')
                 button(type='button' class='btn-expand-catalog detail-page__expand-btn')
-                  span 全部展开
-                  svg(class='detail-page__expand-icon')
-                    use(href='/static/frontend/icons/icons.svg#arrow_down')
+                  span 查看全部 128 话
 
           div(class='novel-panel novel-panel-comments detail-page__panel detail-page__panel--hidden')
             div(class='')
@@ -156,17 +192,15 @@ block content
               div(class='detail-comment-list')
                 each _i in [1, 2, 3]
                   article(class='detail-comment-item')
-                    div(class='detail-comment-item__row')
-                      img(class='detail-comment-item__avatar' src='/static/frontend/images/default.jpeg' alt='')
-                      div(class='detail-comment-item__meta')
+                    img(class='detail-comment-item__avatar' src='/static/frontend/images/default.jpeg' alt='')
+                    div(class='detail-comment-item__content')
+                      div(class='detail-comment-item__head')
                         div(class='detail-comment-item__name') 用户昵称
-                        div(class='detail-comment-item__time') 3小时前
-                    div(class='detail-comment-item__text')= _detailCommentSample
+                        div(class='detail-comment-item__time') 2025-01-15
+                      div(class='detail-comment-item__text')= _detailCommentSample
               div(class='detail-page__expand-wrap')
                 button(type='button' class='detail-page__expand-btn')
                   span 全部展开
-                  svg(class='detail-page__expand-icon')
-                    use(href='/static/frontend/icons/icons.svg#arrow_down')
 
       section(class='detail-page__hot' aria-label='热门推荐')
         header(class='detail-page__hot-head')
