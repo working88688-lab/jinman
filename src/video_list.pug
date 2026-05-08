@@ -4,7 +4,7 @@ include includes/mixin/dx-filter.pug
 
 
 block css
-
+    link(rel="stylesheet" href="/static/frontend/css/home-page-banner.css?v=" + css_assets_version)
 
 block header
     +Header({
@@ -20,7 +20,7 @@ block nav
 
 block content
     +Breadcrumbs([{  title: '禁漫视频', isLink: true, href: "video.html" }, { isLink: false }, {  title: '全部视频',isLink: true }])
-
+    h1(class="dx-comic-list-heading my-2 md:my-3") 全部视频
     +Filter
 
     div(class='index-content')

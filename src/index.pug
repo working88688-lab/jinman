@@ -4,6 +4,7 @@ extends includes/layout.pug
 block css
     link(rel='stylesheet' href='/static/frontend/css/lib/swiper.css')
     link(rel="stylesheet" href="/static/frontend/css/warn.css")
+    link(rel="stylesheet" href="/static/frontend/css/home-page-banner.css?v=" + css_assets_version)
 
 block header
     +Header({
@@ -13,11 +14,19 @@ block header
 
 block nav
     +Nav
-
+    
 block content
+    section(class="mb-1.5 md:mb-3 last:mb-0")
+        .dx-home-banner(role="banner")
+            .dx-home-banner__media
+                img.dx-home-banner__art(src="/static/frontend/images/page_title.png" alt="" decoding="async")
+                h1.dx-home-banner__title 禁漫天堂首页
+            .dx-home-banner__bar
+                p.dx-home-banner__bar-text 禁漫天堂永久官方地址: 18mh.net 18mh.co 18mh.me
     +RecommendIcon
 
     div(class='index-content')
+       
         +Swiper
         section(class="mb-1.5 md:mb-3 last:mb-0")
            

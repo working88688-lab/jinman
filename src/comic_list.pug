@@ -5,7 +5,7 @@ extends includes/layout.pug
 include includes/mixin/dx-filter.pug
 
 block css
-
+    link(rel="stylesheet" href="/static/frontend/css/home-page-banner.css?v=" + css_assets_version)
 
 
 block header
@@ -22,7 +22,7 @@ block nav
 
 block content
     +Breadcrumbs([{  title: '禁漫漫画', isLink: true, href: "comic.html" }, { isLink: false }, {  title: '全部漫画',isLink: true }])
-    
+    h1(class="dx-comic-list-heading my-2 md:my-3") 全部漫画
     +Filter
 
     div(class='index-content')

@@ -6,7 +6,7 @@ include includes/mixin/dx-novel-card.pug
 
 
 block css
-
+    link(rel="stylesheet" href="/static/frontend/css/home-page-banner.css?v=" + css_assets_version)
 
 block header
     +Header({
@@ -21,7 +21,8 @@ block nav
 
 
 block content
-    +Breadcrumbs([{  title: '禁漫视频', isLink: true, href: "video.html" }, { isLink: false }, {  title: '视频收藏榜',isLink: true }])
+    +Breadcrumbs([{  title: '禁漫视频', isLink: true, href: "video.html" }, { isLink: false }, {  title: '视频排行榜',isLink: true }])
+    h1(class="dx-comic-list-heading my-2 md:my-3") 视频排行榜
 
     div(class='index-content')
 

@@ -6,7 +6,7 @@ include includes/mixin/dx-novel-card.pug
 
 
 block css
-
+    link(rel="stylesheet" href="/static/frontend/css/home-page-banner.css?v=" + css_assets_version)
 
 block header
     +Header({
@@ -21,7 +21,8 @@ block nav
 
 
 block content
-    +Breadcrumbs([{  title: '禁漫漫画', isLink: true, href: "comic.html" }, { isLink: false }, {  title: '热门漫画',isLink: true }])
+    +Breadcrumbs([{  title: '禁漫漫画', isLink: true, href: "comic.html" }, { isLink: false }, {  title: '禁漫排行榜',isLink: true }])
+    h1(class="dx-comic-list-heading my-2 md:my-3") 禁漫排行榜
 
     div(class='index-content')
          

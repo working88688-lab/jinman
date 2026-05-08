@@ -7,6 +7,7 @@ mixin EditorRecommendItem(item)
 
 block css
     link(rel='stylesheet' href='/static/frontend/css/lib/swiper.css')
+    link(rel="stylesheet" href="/static/frontend/css/home-page-banner.css?v=" + css_assets_version)
 
 mixin RankItem(item, index)
     div(class='grid grid-cols-2 gap-x-1')
@@ -32,7 +33,15 @@ block nav
     +Nav
 
 block swiper
-    +Swiper
+    div(class="dx-container")
+        section(class="mb-1.5 md:mb-3 last:mb-0")
+            .dx-home-banner(role="banner")
+                .dx-home-banner__media
+                    img.dx-home-banner__art(src="/static/frontend/images/page_title.png" alt="" decoding="async")
+                    h1.dx-home-banner__title 禁漫首页
+                .dx-home-banner__bar
+                    p.dx-home-banner__bar-text 禁漫天堂永久官方地址: 18mh.net 18mh.co 18mh.me
+        +Swiper
 
 block content
     +TagList({

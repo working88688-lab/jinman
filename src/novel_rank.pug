@@ -6,7 +6,7 @@ include includes/mixin/dx-novel-card.pug
 
 
 block css
-
+    link(rel="stylesheet" href="/static/frontend/css/home-page-banner.css?v=" + css_assets_version)
 
 
 block header
@@ -23,6 +23,7 @@ block nav
 
 block content
     +Breadcrumbs([{  title: '禁漫小说', isLink: true, href: "novel.html" }, { isLink: false }, {  title: '小说收藏榜',isLink: true }])
+    h1(class="dx-comic-list-heading my-2 md:my-3") 排行榜
 
     div(class='index-content')
         div(class='mb-2 dx-tabs mt-3')

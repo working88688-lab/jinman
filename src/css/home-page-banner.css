@@ -1,0 +1,103 @@
+/* 左：图 + H1 同容器相对定位，标题绝对定位叠在图上；右：地址条固定 32px 高 */
+.dx-home-banner {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    position: relative;
+    overflow: visible;
+}
+
+/* 图片与标题共用定位上下文 */
+.dx-home-banner__media {
+    position: relative;
+    flex-shrink: 0;
+    line-height: 0;
+    overflow: visible;
+}
+
+.dx-home-banner__art {
+    display: block;
+    height: auto;
+    width: auto;
+    max-height: 76px;
+    vertical-align: top;
+}
+
+@media (min-width: 768px) {
+    .dx-home-banner__art {
+        max-height: 96px;
+    }
+}
+
+/* 叠在图上前层（渐变标题区），位置按图比例微调 left / bottom */
+.dx-home-banner__title {
+    position: absolute;
+    z-index: 2;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background: none;
+    border: none;
+    font-family: "PingFang SC", "PingFang TC", "Microsoft YaHei", sans-serif;
+    font-weight: 500;
+    font-size: 22px;
+    line-height: 100%;
+    letter-spacing: 0;
+    text-align: center;
+    color: #ffffff;
+    white-space: nowrap;
+    left: 58%;
+    bottom: 12px;
+    transform: translateX(-50%);
+}
+
+@media (min-width: 768px) {
+    .dx-home-banner__title {
+        left: 56%;
+        bottom: 14px;
+    }
+}
+
+/* 右侧条：严格 32px 高 */
+.dx-home-banner__bar {
+    flex: 1;
+    min-width: 0;
+    margin-left: -6px;
+    height: 32px;
+    min-height: 32px;
+    max-height: 32px;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center; 
+    border-radius: 0 8px 8px 0;
+    color: #fff;
+    font-size: 12px;
+    line-height: 1.2;
+    background-color: rgba(255, 87, 86, 1);
+}
+
+@media (min-width: 768px) {
+    .dx-home-banner__bar {
+        padding: 0 12px 0 0;
+        border-radius: 0 10px 10px 0;
+    }
+}
+
+.dx-home-banner__bar-text {
+    margin: 0;
+    font-weight: 500;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.12);
+    padding-left: 20px;
+}
+
+/* 列表页标题（漫画列表等） */
+.dx-comic-list-heading {
+    margin: 0;
+    font-family: "PingFang SC", "PingFang TC", "Microsoft YaHei", sans-serif;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 140%;
+    letter-spacing: 0;
+    vertical-align: middle;
+    color: rgba(255, 87, 86, 1);
+}
