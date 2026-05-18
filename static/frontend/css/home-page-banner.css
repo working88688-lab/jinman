@@ -6,7 +6,6 @@
     position: relative;
     overflow: visible;
 }
-
 /* 图片与标题共用定位上下文 */
 .dx-home-banner__media {
     position: relative;
@@ -16,7 +15,6 @@
     overflow: visible;
     margin-top: 4px;
 }
-
 .dx-home-banner__art {
     display: block;
     height: auto;
@@ -24,17 +22,12 @@
     max-height: 37px;
     margin-left: 4px;
 }
-
 @media (min-width: 768px) {
 
     .dx-home-banner__art {
         max-height: 57px;
     }
 }
-
- 
- 
- 
 .dx-home-banner__bar {
     position: absolute;
     z-index: 1;
@@ -71,9 +64,6 @@
         padding-left: 50px;
     }
 }
-
-
-
 /* 列表页标题（漫画列表等） */
 .dx-comic-list-heading {
     margin: 0;
