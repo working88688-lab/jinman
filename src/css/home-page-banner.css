@@ -66,11 +66,66 @@
     font-weight: 600;
     color: rgba(255, 86, 86, 1);
     padding-left: 32px;
-    font-size: 15px;
+    font-size: 14px;
 }
+
+/* H5：单行 + 溢出时自动横向滚动（如 iPhone SE） */
+@media (max-width: 767px) {
+    .dx-home-banner__bar {
+        container-type: inline-size;
+        overflow: hidden;
+    }
+
+    .dx-home-banner__bar-text {
+        flex-shrink: 0;
+        display: inline-block;
+        white-space: nowrap;
+        animation: dx-home-banner-marquee 18s linear infinite;
+    }
+
+    @keyframes dx-home-banner-marquee {
+        0%,
+        18% {
+            transform: translateX(0);
+        }
+        82%,
+        100% {
+            transform: translateX(min(0px, calc(-100% + 100cqw - 48px)));
+        }
+    }
+}
+
+@supports not (container-type: inline-size) {
+    @media (max-width: 767px) {
+        .dx-home-banner__bar-text {
+            animation: none;
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+            scrollbar-width: none;
+        }
+
+        .dx-home-banner__bar-text::-webkit-scrollbar {
+            display: none;
+        }
+    }
+}
+
+@media (max-width: 767px) and (prefers-reduced-motion: reduce) {
+    .dx-home-banner__bar-text {
+        animation: none;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+    }
+
+    .dx-home-banner__bar-text::-webkit-scrollbar {
+        display: none;
+    }
+}
+
 @media (min-width: 768px) {
     .dx-home-banner__bar-text {
-        font-size: 16px;
+        font-size: 15px;
         padding-left: 50px;
     }
 }
