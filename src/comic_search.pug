@@ -1,12 +1,10 @@
 
 extends includes/layout.pug
 
-
 include includes/mixin/dx-filter.pug
 
 block css
     link(rel="stylesheet" href="/static/frontend/css/home-page-banner.css?v=" + css_assets_version)
-
 
 block header
     +Header({
@@ -19,23 +17,19 @@ block header
 block nav
     +Nav
 
-
 block content
     +ListPageHeader(
-        [{ title: '禁漫漫画', isLink: true, href: 'comic.html' }, { isLink: false }, { title: '全部禁漫', isLink: true }],
-        '全部禁漫'
+        [{ title: '禁漫漫画', isLink: true, href: 'comic.html' }, { isLink: false }, { title: '分类筛选', isLink: true }],
+        '分类筛选'
     )
     +Filter
 
     div(class='index-content')
-        
         ul(class='dx-novel-list mt-3 gap-2.5 md:gap-4')
             each val in [...videos, ...videos]
                 li
                     +Comic(val)
-        +SimplePager({ page: 'comic_list.html'})
-     
+        +SimplePager({ page: 'comic_search.html'})
 
-      
 block footer-scripts
     script(data-main='/static/frontend/js/list_main.js' src="/static/frontend/js/lib/require.js")

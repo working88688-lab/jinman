@@ -21,8 +21,11 @@ block nav
 
 
 block content
-    +Breadcrumbs([{  title: '禁漫漫画', isLink: true, href: "comic.html" }, { isLink: false }, {  title: '禁漫排行榜',isLink: true }])
-    h1(class="dx-comic-list-heading my-2 md:my-3") 禁漫排行榜
+    +ListPageHeader(
+        [{ title: '禁漫漫画', isLink: true, href: 'comic.html' }, { isLink: false }, { title: '热门禁漫', isLink: true }],
+        '热门禁漫',
+        { pageKey: 'comic_common' }
+    )
 
     div(class='index-content')
          

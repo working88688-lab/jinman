@@ -1,3 +1,12 @@
+mixin ListPageHeader(breadcrumbItems = [], pageTitle = '', options = {})
+    - var pageKey = options.pageKey || ''
+    div(
+        class="dx-list-page-header my-2 md:my-3"
+        data-list-page-header=pageKey || undefined
+    )
+        +Breadcrumbs(breadcrumbItems)
+        h1(class="dx-list-page-header__title" data-list-page-title)= pageTitle
+
 mixin Breadcrumbs(items = [])
     ul(class='dx-breadcrumbs flex whitespace-nowrap items-center mt-2 md:mt-3 dx-text')
         li

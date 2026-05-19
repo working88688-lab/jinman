@@ -77,6 +77,46 @@
 
 
 
+/* 列表页面包屑 + 标题容器（视频列表等） */
+.dx-list-page-header {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    width: 100%;
+    min-height: 53px;
+    border-radius: 10px;
+    padding: 8px 16px;
+    background: linear-gradient(90deg, #fff3f3 0%, #ffffff 100%);
+}
+
+.dx-list-page-header .dx-breadcrumbs {
+    margin-top: 0;
+}
+
+.dx-list-page-header__title {
+    margin: 0;
+    font-family: "PingFang SC", "PingFang TC", "Microsoft YaHei", sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 120%;
+    letter-spacing: -0.5px;
+    color: #737373;
+}
+
+@media (min-width: 768px) {
+    .dx-list-page-header {
+        gap: 8px;
+        min-height: 75px;
+        max-width: 1126px;
+        border-radius: 12px;
+        padding: 16px 24px;
+    }
+
+    .dx-list-page-header__title {
+        font-size: 16px;
+    }
+}
+
 /* 列表页标题（漫画列表等） */
 .dx-comic-list-heading {
     margin: 0;
