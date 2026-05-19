@@ -1,10 +1,20 @@
 /* 左：图 + H1 同容器相对定位，标题绝对定位叠在图上；右：地址条固定 32px 高 */
 .dx-home-banner {
+    --dx-home-banner-bar-height: 27.75px;
+    --dx-home-banner-gap-y: 10px;
     display: flex;
     flex-direction: row;
     align-items: flex-end;
     position: relative;
     overflow: visible;
+    margin-top: var(--dx-home-banner-gap-y);
+}
+
+@media (min-width: 768px) {
+    .dx-home-banner {
+        --dx-home-banner-bar-height: 42.75px;
+        --dx-home-banner-gap-y: 8px; /* 与包裹 section 的 md:mb-3 一致 */
+    }
 }
 
 /* 图片与标题共用定位上下文 */
@@ -14,22 +24,20 @@
     flex-shrink: 0;
     line-height: 0;
     overflow: visible;
-    margin-top: 4px;
+    height: var(--dx-home-banner-bar-height);
+    min-height: var(--dx-home-banner-bar-height);
+    max-height: var(--dx-home-banner-bar-height);
+    display: flex;
+    align-items: flex-end;
 }
 
 .dx-home-banner__art {
     display: block;
-    height: auto;
+    height: 100%;
     width: auto;
-    max-height: 37px;
+    max-height: 100%;
     margin-left: 4px;
-}
-
-@media (min-width: 768px) {
-
-    .dx-home-banner__art {
-        max-height: 57px;
-    }
+    object-fit: contain;
 }
 
  
@@ -40,9 +48,9 @@
     z-index: 1;
     width: 100%;
     min-width: 0;
-    height: 27.75px;
-    min-height: 27.75px;
-    max-height: 27.75px;
+    height: var(--dx-home-banner-bar-height);
+    min-height: var(--dx-home-banner-bar-height);
+    max-height: var(--dx-home-banner-bar-height);
     box-sizing: border-box;
     display: flex;
     align-items: center; 
@@ -61,11 +69,6 @@
     font-size: 15px;
 }
 @media (min-width: 768px) {
-    .dx-home-banner__bar {
-        height: 42.75px;
-        min-height: 42.75px;
-        max-height: 42.75px;
-    }
     .dx-home-banner__bar-text {
         font-size: 16px;
         padding-left: 50px;
