@@ -69,57 +69,33 @@
     font-size: 14px;
 }
 
-/* H5：单行 + 溢出时自动横向滚动（如 iPhone SE） */
+/* H5：单行 + 随条形容器宽度自适应字号（类 FittedBox / auto_size_text） */
 @media (max-width: 767px) {
     .dx-home-banner__bar {
         container-type: inline-size;
         overflow: hidden;
+        padding-right: 12px;
     }
 
     .dx-home-banner__bar-text {
-        flex-shrink: 0;
-        display: inline-block;
+        flex: 1;
+        min-width: 0;
+        width: 100%;
+        box-sizing: border-box;
         white-space: nowrap;
-        animation: dx-home-banner-marquee 18s linear infinite;
-    }
-
-    @keyframes dx-home-banner-marquee {
-        0%,
-        18% {
-            transform: translateX(0);
-        }
-        82%,
-        100% {
-            transform: translateX(min(0px, calc(-100% + 100cqw - 48px)));
-        }
+        overflow: hidden;
+        text-overflow: ellipsis;
+        /* 可用宽度 ≈ 条宽 - 左右留白；除数略小字号更大，cap 14px */
+        font-size: clamp(10px, calc((100cqi - 36px) / 26), 14px);
+        line-height: 1;
     }
 }
 
 @supports not (container-type: inline-size) {
     @media (max-width: 767px) {
         .dx-home-banner__bar-text {
-            animation: none;
-            overflow-x: auto;
-            -webkit-overflow-scrolling: touch;
-            scrollbar-width: none;
+            font-size: clamp(10px, 4.2vw, 14px);
         }
-
-        .dx-home-banner__bar-text::-webkit-scrollbar {
-            display: none;
-        }
-    }
-}
-
-@media (max-width: 767px) and (prefers-reduced-motion: reduce) {
-    .dx-home-banner__bar-text {
-        animation: none;
-        overflow-x: auto;
-        -webkit-overflow-scrolling: touch;
-        scrollbar-width: none;
-    }
-
-    .dx-home-banner__bar-text::-webkit-scrollbar {
-        display: none;
     }
 }
 
